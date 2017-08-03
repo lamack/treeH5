@@ -1,0 +1,18 @@
+div#header{border:none;}
+body{background:green;}
+.blur_container{
+	position: absolute;
+	height: 40px;
+	width:80%;
+	border-radius: 20px;
+	overflow: hidden;
+	top:50px;right:10px;
+}
+.blur_bg{height:100%;opacity: 0.1;background:#fff;}
+.blur_box{position: absolute;top:0;left:0;height:100%;width:100%;}
+.blur_container.col{
+	width:40px;position: absolute;height: 400px;
+	border-radius: 20px;
+	overflow: hidden;
+	top:90px;left:10px;
+}
