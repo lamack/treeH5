@@ -8,89 +8,95 @@
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
-	<div id="container">
-		<div class="blur_container">
-			<div class="blur_bg"></div>
-			<div class="blur_box none">
-		        <div class="item_row flex flex-justify-arround">
-		        	<div class="css/">
-		        	    <img src="images/">
-		             	<span class="">1000</span>
-		            </div>
-		            <div class="">
-		        	    <img src="images/">
-		             	<span class="">10</span>
-		            </div>
-		            <div class="">
-		        	    <img src="images/">
-		             	<span class="">10</span>
-		            </div>
-		            <div class="exchange">兑换</div>
-		        </div>
-			</div>
+	<div class="blur_container">
+		<div class="blur_bg"></div>
+		<div class="blur_box none">
+	        <div class="item_row flex flex-justify-arround">
+	        	<div class="css/">
+	        	    <img src="images/">
+	             	<span class="">1000</span>
+	            </div>
+	            <div class="">
+	        	    <img src="images/">
+	             	<span class="">10</span>
+	            </div>
+	            <div class="">
+	        	    <img src="images/">
+	             	<span class="">10</span>
+	            </div>
+	            <div class="exchange">兑换</div>
+	        </div>
 		</div>
-		<div class="bomb">
-			<div class="title">树苗兑换</div>
-			<div class="bomb-box">
-				<div class="middle clearfix">
-					<div class="content">是否需要花费<span>500</span>绿值兑换一颗树苗？</div>
-					<img src="images/">
-				</div>
-                <div class="bottom">
-                	<div class="status">
-                		<div class="cancle btn">取消</div>
-                		<div class="sure btn">兑换</div>
-                	</div>
-                	<div class="status2">
-                		<div class="close btn">兑换</div>
-                	</div>
-                </div>
+	</div>
+	<div class="bomb">
+		<div class="title">树苗兑换</div>
+		<div class="bomb-box">
+			<div class="middle clearfix">
+				<div class="content">是否需要花费<span>500</span>绿值兑换一颗树苗？</div>
+				<img src="images/">
 			</div>
+            <div class="bottom">
+            	<div class="status">
+            		<div class="cancle btn">取消</div>
+            		<div class="sure btn">兑换</div>
+            	</div>
+            	<div class="status2">
+            		<div class="close btn">兑换</div>
+            	</div>
+            </div>
 		</div>
-		<div class="blur_container col">
-			<div class="blur_bg"></div>
-			<div class="blur_box flex flex-col">
-		        <div class="item_col flex-1">
-		             <a href="pages/notice.html" class="flex flex-align">
-		             	<div class="center">
-		             		<img src="images/">
-		             		公告
-		             	</div>
-		             </a>
-		        </div>
-		        <div class="item_col flex-1">
-		             <a href="pages/notice.html" class="flex flex-align">
-		             	<div class="center">
-		             		<img src="images/">
-		             		红色寻访
-		             	</div>
-		             </a>
-		        </div>
-		        <div class="item_col flex-1">
-		             <a href="pages/notice.html" class="flex flex-align">
-		             	<div class="center">
-		             		<img src="images/">
-		             		抽奖
-		             	</div>
-		             </a>
-		        </div>
-		        <div class="item_col flex-1">
-		             <a href="pages/treemap.html" class="flex flex-align">
-		             	<div class="center">
-		             		<img src="images/">
-		             		地图
-		             	</div>
-		             </a>
-		        </div>
-		        <div class="item_col flex-1">
-		             <a href="pages/task.html" class="flex flex-align">
-		             	<div class="center">
-		             		<img src="images/">
-		             		任务
-		             	</div>
-		             </a>
-		        </div>
-			</div>
+	</div>
+
+    <div class="tree">
+        <div class="old tree-box"><img src="images/oldtree.png"></div>
+        <div class="grow tree-box"><img src="images/growtree.png"></div>
+    	<div class="child tree-box active"><img src="images/childtree.png"></div>
+    </div>
+   
+
+	<div class="blur_container col">
+		<div class="blur_bg"></div>
+		<div class="blur_box flex flex-col">
+	        <div class="item_col flex-1">
+	             <a href="pages/notice.html" class="flex flex-align">
+	             	<div class="center">
+	             		<img src="images/">
+	             		公告
+	             	</div>
+	             </a>
+	        </div>
+	        <div class="item_col flex-1">
+	             <a href="pages/notice.html" class="flex flex-align">
+	             	<div class="center">
+	             		<img src="images/">
+	             		红色寻访
+	             	</div>
+	             </a>
+	        </div>
+	        <div class="item_col flex-1">
+	             <a href="pages/notice.html" class="flex flex-align">
+	             	<div class="center">
+	             		<img src="images/">
+	             		抽奖
+	             	</div>
+	             </a>
+	        </div>
+	        <div class="item_col flex-1">
+	             <a href="pages/treemap.html" class="flex flex-align">
+	             	<div class="center">
+	             		<img src="images/">
+	             		地图
+	             	</div>
+	             </a>
+	        </div>
+	        <div class="item_col flex-1">
+	             <a href="pages/task.html" class="flex flex-align">
+	             	<div class="center">
+	             		<img src="images/">
+	             		任务
+	             	</div>
+	             </a>
+	        </div>
 		</div>
 	</div>
 	<div class="planting flex">
@@ -130,7 +136,16 @@
 			</div>
 		</div>
 		<div class="rank-box">
-			<div class="rank-box-item active">111</div>
+			<div class="rank-box-item active">
+				<div class="self-type flex">
+					<div class="self-type-item flex-1">拼车</div>
+					<div class="self-type-item flex-1">步行</div>
+					<div class="self-type-item flex-1">种树达人</div>
+				</div>
+				<div class="self-type-box active"></div>
+				<div class="self-type-box"></div>
+				<div class="self-type-box"></div>
+			</div>
 			<div class="rank-box-item">222</div>
 			<div class="rank-box-item">333</div>
 			<div class="rank-box-item">444</div>
