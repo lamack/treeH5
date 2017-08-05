@@ -8,22 +8,132 @@
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
-	<div id="header">
-		<div id="back">返回</div>
-		开心植树
-	</div>
 	<div id="container">
 		<div class="blur_container">
 			<div class="blur_bg"></div>
-			<div class="blur_box">
-		        <div class="item_row"></div>
+			<div class="blur_box none">
+		        <div class="item_row flex flex-justify-arround">
+		        	<div class="css/">
+		        	    <img src="images/">
+		             	<span class="">1000</span>
+		            </div>
+		            <div class="">
+		        	    <img src="images/">
+		             	<span class="">10</span>
+		            </div>
+		            <div class="">
+		        	    <img src="images/">
+		             	<span class="">10</span>
+		            </div>
+		            <div class="exchange">兑换</div>
+		        </div>
+			</div>
+		</div>
+		<div class="bomb">
+			<div class="title">树苗兑换</div>
+			<div class="bomb-box">
+				<div class="middle clearfix">
+					<div class="content">是否需要花费<span>500</span>绿值兑换一颗树苗？</div>
+					<img src="images/">
+				</div>
+                <div class="bottom">
+                	<div class="status">
+                		<div class="cancle btn">取消</div>
+                		<div class="sure btn">兑换</div>
+                	</div>
+                	<div class="status2">
+                		<div class="close btn">兑换</div>
+                	</div>
+                </div>
 			</div>
 		</div>
 		<div class="blur_container col">
 			<div class="blur_bg"></div>
-			<div class="blur_box">
-		        <div class="item_col"></div>
+			<div class="blur_box flex flex-col">
+		        <div class="item_col flex-1">
+		             <a href="pages/notice.html" class="flex flex-align">
+		             	<div class="center">
+		             		<img src="images/">
+		             		公告
+		             	</div>
+		             </a>
+		        </div>
+		        <div class="item_col flex-1">
+		             <a href="pages/notice.html" class="flex flex-align">
+		             	<div class="center">
+		             		<img src="images/">
+		             		红色寻访
+		             	</div>
+		             </a>
+		        </div>
+		        <div class="item_col flex-1">
+		             <a href="pages/notice.html" class="flex flex-align">
+		             	<div class="center">
+		             		<img src="images/">
+		             		抽奖
+		             	</div>
+		             </a>
+		        </div>
+		        <div class="item_col flex-1">
+		             <a href="pages/treemap.html" class="flex flex-align">
+		             	<div class="center">
+		             		<img src="images/">
+		             		地图
+		             	</div>
+		             </a>
+		        </div>
+		        <div class="item_col flex-1">
+		             <a href="pages/task.html" class="flex flex-align">
+		             	<div class="center">
+		             		<img src="images/">
+		             		任务
+		             	</div>
+		             </a>
+		        </div>
 			</div>
+		</div>
+	</div>
+	<div class="planting flex">
+		<div class="planting-item flex-1 flex flex-justify-arround flex-align">
+			<div class="item watering">
+				<img src="images/">
+				x<span class="water-num">2</span>
+			</div>
+			<div class="item cutting">
+				<img src="images/">
+				x<span class="cut-num">2</span>
+			</div>
+			<div class="item feeding">
+				<img src="images/">
+				x<span class="feed-num">2</span>
+			</div>
+			<div class="item defense">
+				<img src="images/">
+				x<span class="defense-num">2</span>
+			</div>
+		</div>
+	</div>
+	
+	<div id="bottom">
+		<div class="ranking flex">
+			<div class="ranking-item active flex-1 self">
+				个人排名
+			</div>
+			<div class="ranking-item flex-1 banzu">
+				班组排名
+			</div>
+			<div class="ranking-item flex-1 copm">
+				企业排名
+			</div>
+			<div class="ranking-item flex-1 area">
+				地区排名
+			</div>
+		</div>
+		<div class="rank-box">
+			<div class="rank-box-item active">111</div>
+			<div class="rank-box-item">222</div>
+			<div class="rank-box-item">333</div>
+			<div class="rank-box-item">444</div>
 		</div>
 	</div>
 <script type="text/javascript" src="js/zepto.js"></script>
