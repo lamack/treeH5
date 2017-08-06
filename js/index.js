@@ -9,7 +9,7 @@ $(function(){
 		taps:$('.ranking').find('.ranking-item'),
 		rankBoxs:$('.rank-box').find('.rank-box-item'),
 		init:function(){
-			// this.bottom.css('bottom',-this.low+'px');
+			this.bottom.css('bottom',-this.low+'px');
 			this.bindEvent();
 		},
 		bindEvent:function(){
