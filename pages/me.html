@@ -113,22 +113,25 @@
     <script type="text/javascript" src="../js/zepto.js"></script>
     <script type="text/javascript" src="../js/public.js"></script>
     <script type="text/javascript">
-    // 计算列表的line-height
-    var lh = $('.list-wrap').height();
-    $('.list-wrap').css('line-height', lh + 'px');
+    $(function() {
+    	 // 计算列表的line-height
+	    var lh = $('.list-wrap').height();
+	    $('.list-wrap').css('line-height', lh + 'px');
 
-    // tab-item选中效果
-    $('.tab-item').click(function() {
-        $(this).addClass('active').siblings().removeClass('active');
-        var index = $(this).index();
-        if (index == 0) {
-            $('.my-info').show();
-            $('.my-award').hide();
-        } else {
-            $('.my-info').hide();
-            $('.my-award').show();
-        }
+	    // tab-item选中效果
+	    $('.tab-item').click(function() {
+	        $(this).addClass('active').siblings().removeClass('active');
+	        var index = $(this).index();
+	        if (index == 0) {
+	            $('.my-info').show();
+	            $('.my-award').hide();
+	        } else {
+	            $('.my-info').hide();
+	            $('.my-award').show();
+	        }
+	    })
     })
+   
     </script>
 </body>
 

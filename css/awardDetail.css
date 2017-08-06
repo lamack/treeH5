@@ -42,12 +42,10 @@
     color: #a05e00;
     background: #dfd8ab;
     font-size: 15px;
-}
-
-.award-name .tag {
     width: 6rem;
+    text-align: center;
+    margin:0 auto;
 }
-
 .ticket-num .tag {
     width: 12rem;
 }

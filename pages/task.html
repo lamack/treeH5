@@ -1,20 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>任务</title>
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>任务</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/task.css">
 </head>
+
 <body>
-	<div id="header">
-		<div id="back">返回</div>
-		上汽植树
-	</div>
-	<div id="container"></div>
-<script type="text/javascript" src="js/zepto.js"></script>
-<script type="text/javascript" src="js/public.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
+    <div id="header">
+        <div id="back">返回</div>
+        植树任务
+    </div>
+    <div id="container">
+        <ul class="task-list">
+            <li data-link="http://e.weekly.cn/wap/item-detail.html?item_id=5190">
+                <div class="thumbnail flex">
+                    <div class="thumb-img">
+                    	<img src="http://image.weekly.cn/images/56/8e/41/b53d147655f0d12414bb58e886adec9cb9607713.jpg_m.jpg" alt="">
+                    </div>
+                    <div class="caption flex">
+                        <p class="task-title">这是一条任务描述的简介</p>
+                        <div class="task-award">任务奖励：</div>
+                    </div>
+                    <div class="btn-options">
+                        <div class="btn btn-default">
+							已领取
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="../js/zepto.js"></script>
+    <script type="text/javascript" src="../js/public.js"></script>
+    <script type="text/javascript" src="../js/index.js"></script>
 </body>
+
 </html>
