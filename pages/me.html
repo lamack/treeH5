@@ -1,20 +1,135 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>个人中心</title>
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>个人中心</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/me.css">
 </head>
+
 <body>
-	<div id="header">
-		<div id="back">返回</div>
-		上汽植树
-	</div>
-	<div id="container"></div>
-<script type="text/javascript" src="js/zepto.js"></script>
-<script type="text/javascript" src="js/public.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
+    <div id="header">
+        <header>
+            <div id="back">返回</div>
+            <div class="title">上汽植树</div>
+        </header>
+    </div>
+    <div id="container">
+        <div class="tab-wrap flex">
+            <p class="tab-item active">我的信息</p>
+            <p class="tab-item ">我的奖品</p>
+        </div>
+        <div class="body-wrap my-info">
+            <div class="list-wrap flex">
+                <p class="item-name">名称</p>
+                <p class="item-value">用户名称</p>
+            </div>
+            <div class="list-wrap flex">
+                <p class="item-name">头像</p>
+                <p class="item-value">用户名称</p>
+            </div>
+            <div class="list-wrap flex">
+                <p class="item-name">联系方式</p>
+                <p class="item-value">用户名称</p>
+            </div>
+            <div class="list-wrap flex">
+                <p class="item-name">区域</p>
+                <p class="item-value">用户名称</p>
+            </div>
+            <div class="list-wrap flex">
+                <p class="item-name">所在企业</p>
+                <p class="item-value">用户名称</p>
+            </div>
+            <div class="list-wrap flex">
+                <p class="item-name">所在班组</p>
+                <p class="item-value">用户名称</p>
+            </div>
+            <div class="list-wrap flex">
+                <p class="item-name">树苗总数</p>
+                <p class="item-value">用户名称</p>
+            </div>
+            <div class="list-wrap flex">
+                <p class="item-name">拥有最高绿值</p>
+                <p class="item-value">用户名称</p>
+            </div>
+            <div class="list-wrap flex">
+                <p class="item-name">当前绿植</p>
+                <p class="item-value">用户名称</p>
+            </div>
+            <div class="list-wrap flex">
+                <p class="item-name">当前享币</p>
+                <p class="item-value">用户名称</p>
+            </div>
+            <div class="list-wrap flex">
+                <p class="item-name">当前里程数</p>
+                <p class="item-value">用户名称</p>
+            </div>
+        </div>
+        <div class="rank-box my-award">
+            <div class="rank-box-item active">
+                <div class="self-type-box active">
+                    <div class="rank-list flex">
+                        <div class="rank-num"><img scr="imagse/"></div>
+                        <div class="self-icon"><img src=""></div>
+                        <div class="self-name flex-1">张三</div>
+                        <div class="self-num">999</div>
+                    </div>
+                    <div class="rank-list flex">
+                        <div class="rank-num"><img scr="imagse/"></div>
+                        <div class="self-icon"><img src=""></div>
+                        <div class="self-name flex-1">张三</div>
+                        <div class="self-num">999</div>
+                    </div>
+                    <div class="rank-list flex">
+                        <div class="rank-num"><img scr="imagse/"></div>
+                        <div class="self-icon"><img src=""></div>
+                        <div class="self-name flex-1">张三</div>
+                        <div class="self-num">999</div>
+                    </div>
+                    <div class="rank-list flex">
+                        <div class="rank-num">4</div>
+                        <div class="self-icon"><img src=""></div>
+                        <div class="self-name flex-1">张三</div>
+                        <div class="self-num">999</div>
+                    </div>
+                    <div class="rank-list flex">
+                        <div class="rank-num">5</div>
+                        <div class="self-icon"><img src=""></div>
+                        <div class="self-name flex-1">张三</div>
+                        <div class="self-num">999</div>
+                    </div>
+                </div>
+                <div class="self-type-box"></div>
+                <div class="self-type-box"></div>
+            </div>
+            <div class="rank-box-item">222</div>
+            <div class="rank-box-item">333</div>
+            <div class="rank-box-item">444</div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../js/zepto.js"></script>
+    <script type="text/javascript" src="../js/public.js"></script>
+    <script type="text/javascript">
+    // 计算列表的line-height
+    var lh = $('.list-wrap').height();
+    $('.list-wrap').css('line-height', lh + 'px');
+
+    // tab-item选中效果
+    $('.tab-item').click(function() {
+        $(this).addClass('active').siblings().removeClass('active');
+        var index = $(this).index();
+        if (index == 0) {
+            $('.my-info').show();
+            $('.my-award').hide();
+        } else {
+            $('.my-info').hide();
+            $('.my-award').show();
+        }
+    })
+    </script>
 </body>
+
 </html>
