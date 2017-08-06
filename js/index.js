@@ -1,10 +1,4 @@
 $(function(){
-	$('.exchange').click(function(){
-		$('.bomb').show()
-	});
-	$('.cancle','.bomb').click(function(){
-		$('.bomb').hide();
-	})
 	$('.close','.bomb').click(function(){
 		$('.bomb').hide();
 	})
@@ -15,7 +9,7 @@ $(function(){
 		taps:$('.ranking').find('.ranking-item'),
 		rankBoxs:$('.rank-box').find('.rank-box-item'),
 		init:function(){
-			// this.bottom.css('bottom',-this.low+'px');
+			this.bottom.css('bottom',-this.low+'px');
 			this.bindEvent();
 		},
 		bindEvent:function(){
@@ -53,6 +47,8 @@ $(function(){
 		bindEvent:function(){
 			var that = this;
             this.tools.click(function(){
+            	//兑换弹框
+            	$('.bomb').show()
             	that.growing(that.now,that.next)
             	that.now --;
             	
