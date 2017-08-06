@@ -9,7 +9,7 @@ $(function(){
 		taps:$('.ranking').find('.ranking-item'),
 		rankBoxs:$('.rank-box').find('.rank-box-item'),
 		init:function(){
-			this.bottom.css('bottom',-this.low+'px');
+			// this.bottom.css('bottom',-this.low+'px');
 			this.bindEvent();
 		},
 		bindEvent:function(){
@@ -54,6 +54,7 @@ $(function(){
             });
             // 点击使用
             this.bomb.find('.use').click(function(event) {
+            	that.bomb.hide();
             	//树苗成长
             	that.growing(that.now,that.next)
             	that.now --;
@@ -108,11 +109,14 @@ $(function(){
            	    if(that.haxi[index].render) return;
                 that.getData(index,1,that.haxi[index].url);
            });
+           //排行列表用户点击
+           this.selfboxs.on('click','.self-icon',function(){
+                location.href = 'pages/other.html'
+           })
 		},
 		render:function(index,data){
 			var str = ''
             for(var i = 0;i<data.length;i++){
-            	console.log(i)
             	var rank = data[i].rank;
             	switch(rank){
             		case 1:
@@ -138,7 +142,8 @@ $(function(){
 		},
 		getData:function(index,page,url){
 		   var that = this;
-           getData({
+		   //getData从public.js引用，封装的ajax
+		   getData({
            	   url:url,
            	   data:{
            	   	 page:page,
