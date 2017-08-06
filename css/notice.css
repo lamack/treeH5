@@ -1,11 +1,11 @@
 #container {
     background: #fffded;
-    padding: 0 1rem;
     height: calc(100% - 64px);
 }
 .notice-content-wrap{
-	color: #a05e00;
-	padding-top: 2.5rem;
+    color: #a05e00;
+    padding: 0 1rem;
+    padding-top: 2.5rem;
 }
 .tag {
     border-radius: 2rem;

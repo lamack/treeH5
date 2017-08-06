@@ -56,17 +56,9 @@
 .ticket-detail p:last-of-type{
 	text-indent: 4.4rem;
 }
-.btn {
-    color: #fff;
-    background: red;
-    border-radius: 1rem;
-    padding: 0.8rem 0.5rem;
-    text-align: center;
+
+.ticket-detail .btn {
     width: 6rem;
     margin: 0 auto;
     margin-top: 2rem;
-}
-
-.ticket-detail .btn {
-    // text-align: center;
 }

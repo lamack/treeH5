@@ -10,18 +10,6 @@
 .my-award{
 	height: calc(100% - 94px);
 }
-.tab-wrap{
-	height: 44px;
-	background: red;
-	justify-content: space-around;
-    align-items: center;
-}
-.tab-wrap .tab-item{
-	background: red;
-}
-.tab-wrap .tab-item.active{
-	background: blue;
-}
 .my-award{
 	display: none;
 }
