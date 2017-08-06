@@ -38,6 +38,7 @@ $(function(){
 	var Tree = {
 		tree:$('.tree').find('.tree-box'),
 		tools:$('.planting').find('.item'),
+		bomb:$('.bomb'),
 		now:2,
 		next:null,
 		init:function(){
@@ -46,13 +47,19 @@ $(function(){
 		},
 		bindEvent:function(){
 			var that = this;
+			//点击工具
             this.tools.click(function(){
-            	//兑换弹框
-            	$('.bomb').show()
+            	//兑换弹框显示
+            	that.bomb.show()
+            });
+            // 点击使用
+            this.bomb.find('.use').click(function(event) {
+            	//树苗成长
             	that.growing(that.now,that.next)
             	that.now --;
-            	
-            })
+            });
+            // 点击兑换
+
 		},
 		growing:function(now,next){
 			var that = this;
