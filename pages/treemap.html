@@ -5,22 +5,80 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>森林地图</title>
 	<link rel="stylesheet" type="text/css" href="../css/reset.css">
-	<link rel="stylesheet" type="text/css" href="../css/index.css">
+	<link rel="stylesheet" type="text/css" href="../css/treemap.css">
 </head>
 <body>
 	<div id="header">
 		<div id="back">返回</div>
-		上汽植树
+		我的森林地图
 	</div>
 	<div id="container">
 		<div class="tab-wrap flex">
             <p class="tab-item active">我的森林</p>
             <p class="tab-item">班组的森林</p>
             <p class="tab-item">企业的森林</p>
-            <p class="tab-item">区域</p>
+            <p class="tab-item">区域地图</p>
         </div>
+        <div class="tab-box active">
+        	<div class="blur_container">
+        		<div class="blur_bg"></div>
+        		<div class="blur_box none">
+        	        <div class="item_row flex flex-justify-arround">
+        	        	<div class="css/">
+        	        	    <img src="../images/">
+        	             	<span class="">1000</span>
+        	            </div>
+        	            <div class="">
+        	        	    <img src="../images/">
+        	             	<span class="">10</span>
+        	            </div>
+        	        </div>
+        		</div>
+        	</div>
+        </div>
+        <div class="tab-box">
+        	<div class="blur_container">
+        		<div class="blur_bg"></div>
+        		<div class="blur_box none">
+        	        <div class="item_row flex flex-justify-arround">
+        	        	<div class="css/">
+        	        	    <img src="../images/">
+        	             	<span class="">1000</span>
+        	            </div>
+        	            <div class="">
+        	        	    <img src="../images/">
+        	             	<span class="">10</span>
+        	            </div>
+        	        </div>
+        		</div>
+        	</div>
+        </div>
+        <div class="tab-box">
+        	<div class="blur_container">
+        		<div class="blur_bg"></div>
+        		<div class="blur_box none">
+        	        <div class="item_row flex flex-justify-arround">
+        	        	<div class="css/">
+        	        	    <img src="../images/">
+        	             	<span class="">1000</span>
+        	            </div>
+        	            <div class="">
+        	        	    <img src="../images/">
+        	             	<span class="">10</span>
+        	            </div>
+        	        </div>
+        		</div>
+        	</div>
+        </div>
+        <div class="tab-box"></div>
 	</div>
 <script type="text/javascript" src="../js/zepto.js"></script>
 <script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript">
+	$('.tab-wrap').find('.tab-item').click(function(){
+		var index= $(this).index();
+		$('.tab-box').eq(index).addClass('active').siblings().removeClass('active')
+	})
+</script>
 </body>
 </html>
