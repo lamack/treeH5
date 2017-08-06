@@ -7,11 +7,14 @@
     border: 1px solid #d6c461;
     margin: 25px 15px;
 }
-.my-award{
-	height: calc(100% - 94px);
+.tab-box{
+    display: none;
+}
+.tab-box.active{
+    display: block;
 }
 .my-award{
-	display: none;
+	height: calc(100% - 94px);
 }
 .list-wrap {
     height: 8.88%;
