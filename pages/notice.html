@@ -20,7 +20,12 @@
             <p class="tab-item active">游戏公告</p>
             <p class="tab-item ">游戏介绍</p>
         </div>
-        <div class="notice-content-wrap">
+        <div class="tab-box game-notice-wrap active">
+            <p class="tag">奖品名称</p>
+            <p class="notice-content">这里是一条关于游戏公告的说明这里是一条关于 游戏公告的说明这里是一条关于游戏公告的说明这里 是一条关于游戏公告的说</p>
+            <p class="notice-content">这里是一条关于游戏公告的说明这里是一条关于 游戏公告的说明这里是一条关于游戏公告的说明这里 是一条关于游戏公告的说</p>
+        </div>
+        <div class="tab-box game-introduce-wrap">
             <p class="tag">奖品名称</p>
             <p class="notice-content">这里是一条关于游戏公告的说明这里是一条关于 游戏公告的说明这里是一条关于游戏公告的说明这里 是一条关于游戏公告的说</p>
             <p class="notice-content">这里是一条关于游戏公告的说明这里是一条关于 游戏公告的说明这里是一条关于游戏公告的说明这里 是一条关于游戏公告的说</p>
@@ -28,6 +33,17 @@
     </div>
     <script type="text/javascript" src="../js/zepto.js"></script>
     <script type="text/javascript" src="../js/public.js"></script>
+    <script type="text/javascript">
+    $(function() {
+	    // tab-item选中效果
+	    $('.tab-item').click(function() {
+	        $(this).addClass('active').siblings().removeClass('active');
+	        var index = $(this).index();
+	        $('.tab-box').eq(index).addClass('active').siblings().removeClass('active');
+	    })
+    })
+   
+    </script>
 </body>
 
 </html>

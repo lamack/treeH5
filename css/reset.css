@@ -195,7 +195,13 @@ input {
     background: url(../images/me_tap_1.png) no-repeat;
     background-size: 100% 100%;
 }
-/*那妞*/
+.tab-box{
+    display: none;
+}
+.tab-box.active{
+    display: block;
+}
+/*按钮*/
 .btn-default {
     color: #fff;
     background: url(../images/me_tap_2.png) no-repeat;
@@ -204,4 +210,16 @@ input {
     height: 2.6rem;
     text-align: center;
     line-height: 2.6rem;
+}
+
+/*标签*/
+.tag {
+    border-radius: 2rem;
+    padding: 0.3rem;
+    color: #a05e00;
+    background: #dfd8ab;
+    font-size: 15px;
+    width: 6rem;
+    text-align: center;
+    margin: 0 auto;
 }

@@ -2,25 +2,16 @@
     background: #fffded;
     height: calc(100% - 64px);
 }
-.notice-content-wrap{
+.game-notice-wrap{
     color: #a05e00;
     padding: 0 1rem;
     padding-top: 2.5rem;
 }
-.tag {
-    border-radius: 2rem;
-    padding: 0.3rem;
-    color: #a05e00;
-    background: #dfd8ab;
-    font-size: 15px;
-    width: 6rem;
-    text-align: center;
-    margin: 0 auto;
-}
-.notice-content-wrap .tag{
+
+.game-notice-wrap .tag{
 	margin-bottom: 1rem;
 }
-.notice-content-wrap .notice-content{
+.game-notice-wrap .notice-content{
 	text-indent: 2rem;
 	margin-bottom: 1rem;
 }

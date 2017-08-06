@@ -7,12 +7,6 @@
     border: 1px solid #d6c461;
     margin: 25px 15px;
 }
-.tab-box{
-    display: none;
-}
-.tab-box.active{
-    display: block;
-}
 .my-award{
 	height: calc(100% - 94px);
 }
