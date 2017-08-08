@@ -44,7 +44,7 @@ div#header{border:none;}
 .rank-box .rank-box-item .self-type .self-type-item {height:100%;border-right:1px solid #37ae15;}
 .ranking-item {height:100%;text-align:center;color:#fff;background:url(../images/tap2.png) no-repeat;background-size:100% 100%;font-size:17px;line-height: 40px;}
 .ranking-item.active{color:#37ae15;background:url(../images/tap1.png) no-repeat;background-size:100% 100%;}
-.planting{position: fixed;bottom: 80px;left:0;height:70px;width:100%;background:red;}
+.planting{position: fixed;bottom: 80px;left:0;height:70px;width:100%;}
 .planting .planting-item{height:100%;}
 .planting .planting-item .item{height:42px;width:65px;font-size:8px;color:#fff;}
 .planting .planting-item .item img{width:45px;height:40px;}
