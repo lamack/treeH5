@@ -29,7 +29,7 @@
     justify-content: space-around;
     flex-direction: column;
 	color: #dbc8a3;
-	font-size: 14px;
+	font-size: 13px;
 }
 .task-list .thumbnail .caption .task-award{
 	color: #ddd6ad;

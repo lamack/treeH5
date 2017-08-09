@@ -204,14 +204,22 @@ input {
 /*按钮*/
 .btn-default {
     color: #fff;
-    background: url(../images/me_tap_2.png) no-repeat;
+    background: url(../images/taskbtn.png) no-repeat;
     background-size: 100% 100%;
     width: 5rem;
     height: 2.6rem;
     text-align: center;
     line-height: 2.6rem;
 }
-
+.btn-next{
+    color: #fff;
+    background: url(../images/go.png) no-repeat;
+    background-size: 100% 100%;
+    width: 2rem;
+    height: 2.6rem;
+    text-align: center;
+    line-height: 2.6rem;
+}
 /*标签*/
 .tag {
     border-radius: 2rem;
