@@ -12,7 +12,7 @@
 	margin-bottom: 0.6rem;
 	background: #f5f1d4;
 	border-radius: 8px;
-	padding: 0.4rem;
+	padding: 0.7rem 0.4rem 0.7rem 0.7rem;
 }
 .task-list .thumbnail {
     width: 100%;
@@ -21,7 +21,9 @@
 }
 .task-list .thumbnail .thumb-img {
     position: relative;
-    width: 20%;
+    width: 3rem;
+    height: 3rem;
+    margin-right: 0.3rem;
 }
 .task-list .thumbnail .caption {
     justify-content: space-around;
@@ -47,4 +49,12 @@
     height: 100%;
     width: 100%;
     border-radius: 5px;
+}
+.task-award img{
+    width: 0.8rem;
+    height: 0.8rem;
+    vertical-align: text-top;
+}
+.task-award em{
+    color: #59b313;
 }
