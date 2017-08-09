@@ -231,3 +231,14 @@ input {
     text-align: center;
     margin: 0 auto;
 }
+
+.back-btn-wrap{
+    width: 9rem;
+    height: 2.5rem;
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    margin-left: -4.5rem;
+    background: url(../images/backbtn.png) no-repeat;
+    background-size: 100% 100%;
+}

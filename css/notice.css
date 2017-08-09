@@ -21,24 +21,3 @@
 	text-indent: 2rem;
 	margin-bottom: 1.5rem;
 }
-.back-btn-wrap{
-	border-radius: 2rem;
-    width: 10rem;
-    height: 2.5rem;
-    line-height: 2.5rem;
-    font-size: 20px;
-    color: #a05e00;
-    background: #fff;
-    border: 1px solid #a05e00;
-    text-align: center;
-    margin: auto;
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    margin-left: -5rem;
-}
-.back-btn-wrap .back-img{
-    width: 1.5rem;
-    height: 1.5rem;
-	vertical-align: sub;
-}
