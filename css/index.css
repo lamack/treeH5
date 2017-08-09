@@ -45,7 +45,7 @@ body{background: url(../images/indexbg.jpg) no-repeat;background-size: 100% 100%
 .rank-box .rank-box-item .self-type .self-type-item {height:100%;border-right:1px solid #37ae15;}
 .ranking-item {height:100%;text-align:center;color:#fff;background:url(../images/tap2.png) no-repeat;background-size:100% 100%;font-size:17px;line-height: 40px;}
 .ranking-item.active{color:#37ae15;background:url(../images/tap1.png) no-repeat;background-size:100% 100%;}
-.planting{position: fixed;bottom: 80px;left:0;height:70px;width:100%;}
+.planting{position: fixed;bottom: 80px;left:0;height:70px;width:100%;z-index: 9;}
 .planting .planting-item{height:100%;}
 .planting .planting-item .item{height:42px;width:65px;font-size:8px;color:#fff;}
 .planting .planting-item .item img{width:45px;height:40px;}
@@ -75,10 +75,42 @@ body{background: url(../images/indexbg.jpg) no-repeat;background-size: 100% 100%
     color: #fff;}
 .bomb .bomb-box .bottom .status2{display: none;}
 .bomb .bomb-box .bottom .btn:nth-child(1){margin-right:12px;}
-.tree{position: fixed;width:90%;height:50%;left:5%;bottom:190px;}
+.tree{position: fixed;width:90%;height:50%;left:5%;bottom:190px;z-index:2;}
 .tree .tree-box{position: absolute;bottom:0;opacity: 0;transform-origin:50% 100%;transition:all 2s;}
 .tree .tree-box.active{opacity: 1;}
 .tree .tree-box img{width:100%;height:100%;;}
 .tree .tree-box.old {width:100%;height:100%;left:0;}
 .tree .tree-box.grow{width:60%;height:80%;left:20%;}
 .tree .tree-box.child{height: 27%;width:22%;left:38%;}
+.hongshui{
+    position: absolute;
+    width: 400%;
+    bottom: 21%;
+    left: 100%;
+    height: 26%;
+    animation:hs 4s linear;
+    display: none;
+}
+.hongshui img{width:33%;height:100%;}
+.hongshui img:nth-child(2){margin-left: -5px;}
+.hongshui img:nth-child(3){margin-left: -5px;}
+.cloud{position: absolute;
+      width:100%;
+      height:20%;
+      top:0;
+      left:100%;
+      animation:cloud 4s linear;
+      display: none;
+}
+@keyframes cloud{
+    0%{left:100%;}
+    25%{left:0;}
+    75%{left:0;}
+    100%{left:-100%;}
+}
+@keyframes hs{
+    0%{left:100%;}
+    25%{}
+    75%{}
+    100%{left:-400%;}
+}

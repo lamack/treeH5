@@ -157,4 +157,15 @@ $(function(){
 
 	}
 	Selfrank.init();
+
+	var Disaster = {
+		honshui:$('.hongshui'),
+		ganhan:$('.ganhan'),
+		cloud:$('.cloud'),
+		init:function(){
+			this.honshui.show();
+			this.cloud.show();
+		}
+	}
+	Disaster.init();
 })
