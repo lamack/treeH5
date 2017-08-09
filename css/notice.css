@@ -1,17 +1,44 @@
 #container {
     background: #fffded;
     height: calc(100% - 64px);
+    position: relative;
 }
-.game-notice-wrap{
+.game-notice-wrap,.game-introduce-wrap{
     color: #a05e00;
     padding: 0 1rem;
     padding-top: 2.5rem;
 }
 
-.game-notice-wrap .tag{
+.game-notice-wrap .tag,.game-introduce-wrap .tag{
 	margin-bottom: 1rem;
 }
-.game-notice-wrap .notice-content{
-	text-indent: 2rem;
+.game-notice-wrap .time{
+	color: #a99745;
+	text-align: center;
 	margin-bottom: 1rem;
+}
+.game-notice-wrap .notice-content,.game-introduce-wrap .notice-content{
+	text-indent: 2rem;
+	margin-bottom: 1.5rem;
+}
+.back-btn-wrap{
+	border-radius: 2rem;
+    width: 10rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 20px;
+    color: #a05e00;
+    background: #fff;
+    border: 1px solid #a05e00;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    margin-left: -5rem;
+}
+.back-btn-wrap .back-img{
+    width: 1.5rem;
+    height: 1.5rem;
+	vertical-align: sub;
 }
