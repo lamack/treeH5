@@ -20,10 +20,10 @@ body{background: url(../images/indexbg.jpg) no-repeat;background-size: 100% 100%
 .blur_box .item_row .exchange{width:50px;}
 .blur_box .item_row img {width:30px;height:30px;vertical-align: middle;}
 .blur_container.col{
-	width:40px;position: absolute;height: 62%;
+	width:40px;position: absolute;height: 40%;
 	border-radius: 20px;
 	overflow: hidden;
-	top:40px;left:10px;
+	top:80px;left:10px;
 }
 #bottom{
 	position: fixed;left:0;height:100%;width:100%;transition:all 1s;
@@ -83,6 +83,51 @@ body{background: url(../images/indexbg.jpg) no-repeat;background-size: 100% 100%
 .tree .tree-box.old {width:100%;height:100%;left:0;}
 .tree .tree-box.grow{width:60%;height:80%;left:20%;}
 .tree .tree-box.child{height: 27%;width:22%;left:38%;}
+
+.hsf{
+    position: absolute;
+    top:80px;
+    right:10px;
+    height: 60px;
+    width:60px;
+    z-index: 999;
+}
+.hsf a{
+        display: block;
+        height: 100%;width:100%;
+        text-align: center;
+        color:#fff;
+    font-size:14px;
+}
+.hsf a img{
+    width:100%;
+    height:auto;
+    display: block;
+}
+.me{
+    position: absolute;
+    top:10px;
+    left:10px;
+    height: 60px;
+    width:60px;
+    z-index: 999; 
+    text-align: center;
+}
+.me a{
+        display: block;
+        height: 100%;width:100%;
+        text-align: center;
+        color:#fff;
+    font-size:14px;
+}
+.me a p{
+    margin-top:-5px;
+}
+.me a img{
+    width:40px;
+    height:35px;
+
+}
 .hongshui{
     position: absolute;
     width: 500%;
