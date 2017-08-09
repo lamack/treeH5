@@ -49,18 +49,33 @@ $(function(){
 			var that = this;
 			//点击工具
             this.tools.click(function(){
+            	if($(this).index()==3) return;
             	//兑换弹框显示
             	that.bomb.show()
             });
             // 点击使用
             this.bomb.find('.use').click(function(event) {
+            	that.water();
             	that.bomb.hide();
             	//树苗成长
-            	that.growing(that.now,that.next)
-            	that.now --;
+            	setTimeout(function(){
+            		that.tools.find('.water').attr('src','images/water1.png')
+            	},1800)
+            	setTimeout(function(){
+            		that.tools.find('.water').attr('src','images/water.png')
+            	},2800)
+            	setTimeout(function(){
+            		that.growing(that.now,that.next)
+            	    that.now --;
+            	    that.tools.find('.water').removeClass('active')
+            	},4000)
             });
             // 点击兑换
 
+		},
+		//植树效果
+		water(){
+			this.tools.find('.water').addClass('active')
 		},
 		growing:function(now,next){
 			var that = this;
@@ -159,12 +174,30 @@ $(function(){
 	Selfrank.init();
 
 	var Disaster = {
-		honshui:$('.hongshui'),
+		hongshui:$('.hongshui'),
 		ganhan:$('.ganhan'),
 		cloud:$('.cloud'),
 		init:function(){
-			this.honshui.show();
+			this.hongshuicom();
+		},
+		hongshuicom(){
+			this.hongshui.show();
 			this.cloud.show();
+			this.hudun();
+		},
+		hudun:function(){
+			var that = this;
+			//护盾激活效果
+			$('.hudun').addClass('active')
+			//护盾运动效果
+			$('.gethudun').addClass('active')
+			//护盾效果结束
+			setTimeout(function(){
+				$('.hudun').removeClass('active')
+				$('.gethudun').removeClass('active')
+				that.hongshui.hide();
+				that.cloud.hide();
+			},4000)
 		}
 	}
 	Disaster.init();
