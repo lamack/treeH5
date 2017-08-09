@@ -54,12 +54,12 @@ class Publics extends Common
             if ($uid) {
                 // 记录行为
                 action_log('user_signin', 'admin_user', $uid, $uid);
-                $this->success('登录成功', url('admin/index/index'));
+                $this->success('登录成功', url('admin/index/profile'));
             } else {
                 $this->error($UserModel->getError());
             }
         } else {
-            return is_signin() ? $this->redirect('admin/index/index') : $this->fetch();
+            return is_signin() ? $this->redirect('admin/index/profile') : $this->fetch();
         }
     }
 
