@@ -1,0 +1,26 @@
+.tab-wrap{font-size:14px;}
+div.tab-box{
+	height:calc(100% - 44px);
+	position: absolute;
+	width:100%;
+}
+div.tab-box:nth-child(5){background: url(../images/map.png) no-repeat; background-size:100% 100%;}
+.blur_container{
+	position: absolute;
+	height: 40px;
+	width:170px;
+	border-radius: 20px;
+	overflow: hidden;
+	top:10px;right:10px;
+	z-index: 9;
+}
+.blur_bg{height:100%;opacity: 0.2;background:#fff;}
+.blur_box{position: absolute;top:0;left:0;height:100%;width:100%;padding:10px 0;box-sizing: border-box;}
+.blur_box.none{padding:0 10px;}
+.blur_box .item_col{width:100%;}
+.blur_box .item_col a{height:100%;width:100%;padding:3px;color:#fff;font-size:12px;text-align:center;box-sizing: border-box;}
+.blur_box .item_col a .center{height:50px;}
+.blur_box .item_col a img{width:30px;height:30px;}
+.blur_box .item_row{padding:5px 0;font-size: 12px;color:#fff;box-sizing: border-box;height: 100%;}
+.blur_box .item_row .exchange{width:50px;}
+.blur_box .item_row img {width:30px;height:30px;vertical-align: middle;}

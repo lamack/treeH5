@@ -9,9 +9,19 @@ namespace app\index\controller;
  */
 class Index extends Home
 {
+     /**
+     * 获取入口目录
+
+     */
+    protected function _initialize() {
+        $base_file = $this->request->baseFile();
+        $base_dir  = rtrim($base_file, 'index.php');
+        $this->assign('static_dir', $base_dir. 'public/static/');
+    }      
+
     public function index()
     {
-        exit('正在开发中……');
-        
+        return $this->fetch(); // 渲染模板
     }
+
 }

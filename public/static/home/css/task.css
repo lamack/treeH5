@@ -1,0 +1,60 @@
+#container {
+    background: #fffded;
+    height: calc(100% - 64px);
+}
+.task-list{
+	padding: 1rem 0.6rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.task-list li {
+	margin-bottom: 0.6rem;
+	background: #f5f1d4;
+	border-radius: 8px;
+	padding: 0.7rem 0.4rem 0.7rem 0.7rem;
+}
+.task-list .thumbnail {
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.task-list .thumbnail .thumb-img {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    margin-right: 0.3rem;
+}
+.task-list .thumbnail .caption {
+    justify-content: space-around;
+    flex-direction: column;
+	color: #dbc8a3;
+	font-size: 13px;
+}
+.task-list .thumbnail .caption .task-award{
+	color: #ddd6ad;
+	font-size: 12px;
+	margin-top: 0.2rem;
+}
+
+.task-list .thumbnail .thumb-img a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+.task-list .thumbnail .thumb-img img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+.task-award img{
+    width: 0.8rem;
+    height: 0.8rem;
+    vertical-align: text-top;
+}
+.task-award em{
+    color: #59b313;
+}

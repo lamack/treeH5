@@ -1,0 +1,23 @@
+#container {
+    background: #fffded;
+    height: calc(100% - 64px);
+    position: relative;
+}
+.game-notice-wrap,.game-introduce-wrap{
+    color: #a05e00;
+    padding: 0 1rem;
+    padding-top: 2.5rem;
+}
+
+.game-notice-wrap .tag,.game-introduce-wrap .tag{
+	margin-bottom: 1rem;
+}
+.game-notice-wrap .time{
+	color: #a99745;
+	text-align: center;
+	margin-bottom: 1rem;
+}
+.game-notice-wrap .notice-content,.game-introduce-wrap .notice-content{
+	text-indent: 2rem;
+	margin-bottom: 1.5rem;
+}

@@ -1,0 +1,64 @@
+#container {
+    background: #fffded;
+    padding: 0 10px;
+    height: calc(100% - 64px);
+}
+
+.award-detail-wrap {
+    padding: 1rem 0;
+    font-size: 14px;
+    border-bottom: 1px solid #d6c461;
+}
+.award-detail-wrap:last-child {
+	border-bottom: 0;
+}
+.ticket-num {
+    padding-bottom: 0;
+}
+
+.award-name p,
+.ticket-num p {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.ticket-num .tl {
+    text-align: left;
+    padding-bottom: 0.5rem;
+}
+
+.award-detail-wrap p {
+    color: #a05e00;
+    margin-bottom: 1rem;
+}
+
+.award-detail-wrap p:last-child {
+    margin-bottom: 0;
+}
+
+.tag {
+    border-radius: 2rem;
+    padding: 0.3rem;
+    color: #a05e00;
+    background: #dfd8ab;
+    font-size: 15px;
+    width: 6rem;
+    text-align: center;
+    margin:0 auto;
+}
+.ticket-num .tag {
+    width: 12rem;
+}
+
+.ticket-detail p {
+    margin-bottom: 0.5rem;
+}
+.ticket-detail p:last-of-type{
+	text-indent: 4.4rem;
+}
+
+.ticket-detail .btn {
+    width: 6rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
