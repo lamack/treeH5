@@ -85,16 +85,22 @@ body{background: url(../images/indexbg.jpg) no-repeat;background-size: 100% 100%
 .tree .tree-box.child{height: 27%;width:22%;left:38%;}
 .hongshui{
     position: absolute;
-    width: 400%;
+    width: 500%;
     bottom: 21%;
     left: 100%;
     height: 26%;
     animation:hs 4s linear;
     display: none;
 }
-.hongshui img{width:33%;height:100%;}
-.hongshui img:nth-child(2){margin-left: -5px;}
+.hongshui img{width:20%;height:100%;}
 .hongshui img:nth-child(3){margin-left: -5px;}
+.hongshui .inline{
+    display: inline-block;
+    height:100%;
+    margin-left:-5px;
+    width:60%;
+    background: url(../images/hongshui.png) repeat-x;background-size:auto 100%;
+}
 .cloud{position: absolute;
       width:100%;
       height:20%;
@@ -113,5 +119,5 @@ body{background: url(../images/indexbg.jpg) no-repeat;background-size: 100% 100%
     0%{left:100%;}
     25%{}
     75%{}
-    100%{left:-400%;}
+    100%{left:-500%;}
 }
