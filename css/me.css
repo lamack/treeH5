@@ -2,6 +2,7 @@
 #container{
 	background: #fffded;
     height: 100%;
+    padding-bottom: 5px;
 }
 .body-wrap {
     border-radius: 5px;
