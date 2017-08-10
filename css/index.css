@@ -35,7 +35,7 @@ body{background: url(../images/indexbg.jpg) no-repeat;background-size: 100% 100%
 .blur_box .item_col a img{width:34px;}
 .blur_box .item_row{padding:5px 0;font-size: 12px;color:#fff;box-sizing: border-box;height: 100%;}
 .blur_box .item_row .exchange{width:50px;}
-.blur_box .item_row img {width:30px;height:30px;vertical-align: middle;}
+.blur_box .item_row img {width:36px;height:30px;vertical-align: middle;}
 .blur_container.col{
 	width:40px;position: absolute;height: 40%;
 	border-radius: 20px;
