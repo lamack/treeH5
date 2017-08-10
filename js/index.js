@@ -1,4 +1,11 @@
 $(function(){
+
+	// 启动页
+	setTimeout(function(){
+		$('.launch').hide();
+		$('.container').show();
+	},3000);
+
 	$('.close','.bomb').click(function(){
 		$('.bomb').hide();
 	})
