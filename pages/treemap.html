@@ -78,6 +78,7 @@
 $(function(){
     $('.tab-wrap').find('.tab-item').click(function(){
         var index= $(this).index();
+        $(this).addClass('active').siblings().removeClass('active');
         $('.tab-box').eq(index).addClass('active').siblings().removeClass('active')
     })
     //设置top left百分比
