@@ -1,10 +1,36 @@
 .tab-wrap{font-size:14px;}
 div.tab-box{
-	height:calc(100% - 44px);
+	height:calc(100% - 84px);
 	position: absolute;
 	width:100%;
 }
-div.tab-box:nth-child(5){background: url(../images/map.png) no-repeat; background-size:100% 100%;}
+div.tab-box:nth-child(5){background: url(../images/shanghaibg.png) no-repeat; background-size:100% 100%;}
+.tab-box.quyu .title{color:#288e01;text-align:center;font-size: 12px;padding: 5px 0;}
+.tab-box.quyu .city{
+	width:90%;
+	height:50%;
+	position: relative;
+	margin:10px auto;
+	background: url(../images/shanghai.png) no-repeat;background-size: 100% 100%;
+}
+.tab-box.quyu .qu{
+	width:80%;
+	height:40%;
+	position: relative;
+	margin:0 auto;
+	background: url(../images/qu.png) no-repeat;background-size: 100% 100%;
+}
+.tab-box.quyu .tap{
+	position: absolute;
+    height: 54px;
+    width: 39px;
+    font-size:12px;    
+    line-height: 23px;
+    text-align: center;
+    color:#fff;
+	background:url(../images/maptree.png) no-repeat;background-size:100% 100%;
+}
+
 .blur_container{
 	position: absolute;
 	height: 40px;
