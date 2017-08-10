@@ -156,7 +156,7 @@ body{background: url(../images/indexbg.jpg) no-repeat;background-size: 100% 100%
 .bomb {    width: 260px;
     height: 160px;
     position: fixed;
-    z-index: 999;
+    z-index: 1000;
     top: 40%;
     left: 50%;
     margin-left: -130px;
