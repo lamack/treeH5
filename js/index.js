@@ -41,6 +41,7 @@ $(function(){
 		bomb:$('.bomb'),
 		now:2,
 		next:null,
+		index:0,
 		init:function(){
 			this.next = this.now-1;
 			this.bindEvent();
@@ -50,32 +51,27 @@ $(function(){
 			//点击工具
             this.tools.click(function(){
             	if($(this).index()==3) return;
+            	that.index = $(this).index();
             	//兑换弹框显示
             	that.bomb.show()
             });
             // 点击使用
             this.bomb.find('.use').click(function(event) {
-            	that.water();
+            	that.event(that.index);
             	that.bomb.hide();
             	//树苗成长
             	setTimeout(function(){
-            		that.tools.find('.water').attr('src','images/water1.png')
-            	},1800)
-            	setTimeout(function(){
-            		that.tools.find('.water').attr('src','images/water.png')
-            	},2800)
-            	setTimeout(function(){
             		that.growing(that.now,that.next)
             	    that.now --;
-            	    that.tools.find('.water').removeClass('active')
+            	    that.tools.find('.act').eq(that.index).removeClass('active')
             	},4000)
             });
             // 点击兑换
 
 		},
 		//植树效果
-		water(){
-			this.tools.find('.water').addClass('active')
+		event(i){
+			this.tools.find('.act').eq(i).addClass('active')
 		},
 		growing:function(now,next){
 			var that = this;
