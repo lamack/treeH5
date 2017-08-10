@@ -24,60 +24,51 @@
         		<div class="blur_bg"></div>
         		<div class="blur_box none">
         	        <div class="item_row flex flex-justify-arround">
-        	        	<div class="css/">
-        	        	    <img src="../images/">
-        	             	<span class="">1000</span>
-        	            </div>
-        	            <div class="">
-        	        	    <img src="../images/">
-        	             	<span class="">10</span>
+        	            <div class="xxx">
+        	        	    <img src="../images/bigtree.png">
+        	             	<span class="">树木总数：10</span>
         	            </div>
         	        </div>
         		</div>
         	</div>
+            <div class="dianzan">X100</div>
+            <div class="senlin xiaoshu"></div>
         </div>
         <div class="tab-box">
         	<div class="blur_container">
-        		<div class="blur_bg"></div>
-        		<div class="blur_box none">
-        	        <div class="item_row flex flex-justify-arround">
-        	        	<div class="css/">
-        	        	    <img src="../images/">
-        	             	<span class="">1000</span>
-        	            </div>
-        	            <div class="">
-        	        	    <img src="../images/">
-        	             	<span class="">10</span>
-        	            </div>
-        	        </div>
-        		</div>
-        	</div>
+                <div class="blur_bg"></div>
+                <div class="blur_box none">
+                    <div class="item_row flex flex-justify-arround">
+                        <div class="xxx">
+                            <img src="../images/bigtree.png">
+                            <span class="">树木总数：10</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dianzan">X100</div>
+            <div class="senlin"></div>
         </div>
         <div class="tab-box">
         	<div class="blur_container">
-        		<div class="blur_bg"></div>
-        		<div class="blur_box none">
-        	        <div class="item_row flex flex-justify-arround">
-        	        	<div class="css/">
-        	        	    <img src="../images/">
-        	             	<span class="">1000</span>
-        	            </div>
-        	            <div class="">
-        	        	    <img src="../images/">
-        	             	<span class="">10</span>
-        	            </div>
-        	        </div>
-        		</div>
-        	</div>
+                <div class="blur_bg"></div>
+                <div class="blur_box none">
+                    <div class="item_row flex flex-justify-arround">
+                        <div class="xxx">
+                            <img src="../images/bigtree.png">
+                            <span class="">树木总数：10</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dianzan">X100</div>
+            <div class="senlin"></div>
         </div>
         <div class="tab-box quyu">
             <div class="title">全上海参数与人数：100人&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;共植树500棵</div>
             <div class="city">
             </div>
             <div class="qu">
-                <div class="tap">
-                    22棵
-                </div>
             </div>
         </div>
 	</div>
@@ -116,7 +107,43 @@ $(function(){
     }
     var Quyu = {
         el:$('.quyu'),
+        init:function(){
+            //模拟上海市植树数据 arr arr2;
+           var arr=[
+              {name:'shiqu',
+                num:70},
+              {name:'jiading',
+                num:90},
+              {name:'baoshan',
+                num:7},
+              {name:'minhang',
+                num:88},
+              {name:'pudong',
+                num:733},
+              {name:'nanhui',
+                num:23},
+              {name:'fengxian',
+                num:2},
+              {name:'songjiang',
+                num:18},
+              {name:'jinshan',
+                num:70},
+              {name:'qingpu',
+                num:57},
+           ];
+           this.el.find('.city').html(this.rendercity(arr));
+           // this.el.find('.qu').html(this.rendercity(arr2));
+        },
+        rendercity(arr){
+           var str = '';
+           for(var i in arr){
+               var name = arr[i].name
+               str+= '<div class="tap" style="top:'+citymap[name][0]+';left:'+citymap[name][1]+';">'+arr[i].num+'棵</div>'
+           }
+           return str
+        },
     }
+    Quyu.init();
 })
 </script>
 </body>
