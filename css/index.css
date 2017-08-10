@@ -66,12 +66,70 @@ body{background: url(../images/indexbg.jpg) no-repeat;background-size: 100% 100%
 .planting .planting-item .item .act.water{
     animation: water 4s;
 }
+.planting .planting-item .item .act.water .water1{
+    height:100%;width:100%;
+}
+.planting .planting-item .item .act.water .water2{
+    position: relative;
+    top: -51px;
+    left: -77%;
+    height: 70%;
+    width: 70%;
+    transform: rotate(40deg);
+    animation:water2 4s;
+    opacity: 0;
+}
+.planting .planting-item .item .act.cut .cut2{
+    position: relative;
+    top: -24px;
+    left: 0;
+    height: 60%;
+    width: 60%;
+    animation:water2 4s;
+    opacity: 0;
+}
+.planting .planting-item .item .act.shifei .shifei2{
+    position: relative;
+    top: -11px;
+    left: -4px;
+    height: 82%;
+    width: 76%;
+    animation: water2 4s;
+    transform: rotate(-26deg);
+}
+.planting .planting-item .item .act.cut{
+     animation: cut 4s;
+}
+.planting .planting-item .item .act.shifei{
+     animation: shifei 4s;
+}
+@keyframes shifei{
+    0%{top:0;left:0;}
+    25%{top:-300%;left:-30%;}
+    50%{top:-300%;left:-30%;transform:translateY(30px)}
+    75%{top:-300%;left:-30%;transform:translateY(0px)}
+    100%{top:0;left:0;}
+}
+@keyframes cut{
+    0%{top:0;left:0;}
+    25%{top:-250%;left:100%;transform: rotate(-45deg)}
+    50%{transform: rotate(-45deg) translateY(30px);top:-250%;left:60%;}
+    75%{transform: rotate(0deg);translateY(0px);top:-250%;left:100%;}
+    100%{transform: rotate(0deg);top:0;left:0;}
+}
 @keyframes water{
     0%{top:0;left:0;}
     25%{top:-200%;left:300%;}
-    50%{transform: rotate(-45deg);top:-200%;left:300%;}
-    75%{transform: rotate(0deg);top:-200%;left:300%;}
+    50%{transform: rotate(-45deg);top:-250%;left:300%;}
+    75%{transform: rotate(0deg);top:-250%;left:300%;}
     100%{transform: rotate(0deg);top:0;left:0;}
+}
+@keyframes water2{
+    0%{opacity: 0}
+    25%{opacity: 0}
+    50%{opacity: 1}
+    75%{topacity: 0}
+    100%{opacity: 0}
 }
 @keyframes hudun{
     from{transform: scale(1,1);opacity: 1;}
