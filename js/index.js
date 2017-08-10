@@ -1,10 +1,18 @@
 $(function(){
 
-	// 启动页
-	setTimeout(function(){
+	var flag = localStorage.getItem('isFlag');
+	console.log(flag);
+	if (!flag) {
+		localStorage.setItem('isFlag','true');
+		// 启动页
+		setTimeout(function(){
+			$('.launch').hide();
+			$('.container').show();
+		},3000);
+	}else{
 		$('.launch').hide();
 		$('.container').show();
-	},3000);
+	}
 
 	$('.close','.bomb').click(function(){
 		$('.bomb').hide();
