@@ -1,7 +1,8 @@
 #container {
     background: #fffded;
     padding: 0 10px;
-    height: calc(100% - 64px);
+    padding-bottom: 5rem;
+    position: relative;
 }
 
 .award-detail-wrap {
@@ -9,7 +10,7 @@
     font-size: 14px;
     border-bottom: 1px solid #d6c461;
 }
-.award-detail-wrap:last-child {
+.ticket-detail{
 	border-bottom: 0;
 }
 .ticket-num {
@@ -53,9 +54,14 @@
 .ticket-detail p {
     margin-bottom: 0.5rem;
 }
-.ticket-detail p:last-of-type{
+.ticket-detail .indent{
 	text-indent: 4.4rem;
 }
+.ticket-detail .indent img{
+    width: 12rem;
+    height: 7rem;
+}
+
 
 .ticket-detail .btn {
     width: 6rem;

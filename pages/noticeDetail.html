@@ -43,6 +43,10 @@
 	        var index = $(this).index();
 	        $('.tab-box').eq(index).addClass('active').siblings().removeClass('active');
 	    })
+
+        $('.back-btn-wrap').click(function(event) {
+            window.history.back(-1);
+        });;
     })
    
     </script>
