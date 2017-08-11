@@ -43,9 +43,9 @@ body{background: url(../images/indexbg.jpg) no-repeat;background-size: 100% 100%
 	top:80px;left:10px;
 }
 #bottom{
-	position: fixed;left:0;height:100%;width:100%;transition:all 1s;
+	position: fixed;left:0;height:100%;width:100%;transition:all 1s;z-index: 9999;
 }
-// #bottom.active{transform: translateY(-500px);}
+#bottom.active{transform: translateY(-500px);}
 .ranking{
 	height:40px;width:100%;	
 }
@@ -56,6 +56,8 @@ body{background: url(../images/indexbg.jpg) no-repeat;background-size: 100% 100%
 .rank-box .rank-box-item .self-type-box {padding:0 10px;display: none;}
 .rank-box .rank-box-item .self-type-box.active{display: block;}
 .rank-box .rank-box-item .self-type-box .rank-list{height:30px;border-bottom: 1px dashed #37ae15;line-height: 30px;}
+.rank-box .rank-box-item .self-type-box .rank-list.self{color:#ff8400;}
+.rank-box .rank-box-item .self-type-box .rank-list.self .rank-num{color:#ff8400;}
 .rank-box .rank-box-item .self-type-box .rank-list .rank-num{width:20px;height:100%;font-weight: bold;color:#999;margin-right: 10px;text-align: center;vertical-align: middle;}
 .rank-box .rank-box-item .self-type-box .rank-list .self-icon{width:20px;height:100%;margin-right:10px;vertical-align: middle;}
 .rank-box .rank-box-item .self-type-box .rank-list img{width:20px;height:20px;margin-top:5px;}

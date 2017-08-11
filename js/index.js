@@ -23,6 +23,7 @@ $(function(){
 		low:window.innerHeight -80,
 		taps:$('.ranking').find('.ranking-item'),
 		rankBoxs:$('.rank-box').find('.rank-box-item'),
+		current:$('.rank-box').find('.rank-box-item').eq(0),
 		init:function(){
 			this.bottom.css('bottom',-this.low+'px');
 			this.bindEvent();
@@ -33,22 +34,17 @@ $(function(){
             	var index = $(this).index()
             	$(this).addClass('active').siblings().removeClass('active');
             	that.rankBoxs.eq(index).addClass('active').siblings().removeClass('active');
+            	that.current = that.rankBoxs.eq(index);
             })
-            this.bottom.swipeUp(function(){
-            	that.bottom.css('transform','translateY('+-that.low+'px)')
-            })
-            this.bottom.swipeDown(function(){
-            	that.bottom.css('transform','translateY(0px)')
-            })
-		},
-		swiperUp:function(){
-			this.bottom.addClass('active')
-		},
-		swiperDown:function(){
-			this.bottom.removeClass('active')
 		}
 	}
 	Bottom.init();
+	touch.on('#bottom','swipeup',function(){
+		$('#bottom').css('transform','translateY('+(-Bottom.low)+'px)')
+	})
+	touch.on('#bottom','swipedown',function(){
+		$('#bottom').css('transform','translateY(0px)')
+	})
     //植树
 	var Tree = {
 		tree:$('.tree').find('.tree-box'),
@@ -109,8 +105,7 @@ $(function(){
 
 	// 个人排名
 	var Selfrank = {
-		els:$('.rank-box').find('.self-type-item'),
-		selfboxs:$('.rank-box').find('.self-type-box'),
+		els:$('.rank-box-item').find('.self-type-item'),
 		haxi:{
 			0:{url:'',render:true,page:1},
 			1:{url:'',render:false,page:1},
@@ -131,12 +126,13 @@ $(function(){
 			var that = this;
            this.els.click(function(event) {
            	    var index = $(this).index();
-           	    that.selfboxs.eq(index).addClass('active').siblings().removeClass('active');
-           	    if(that.haxi[index].render) return;
+           	    $(this).parents('.rank-box-item').find('.self-type-box').eq(index).addClass('active').siblings().removeClass('active');
+           	    // if(that.haxi[index].render) return;
                 that.getData(index,1,that.haxi[index].url);
            });
            //排行列表用户点击
-           this.selfboxs.on('click','.self-icon',function(){
+           $('.rank-box-item').eq(0).on('click','.self-icon',function(){
+           	    console.log('777')
                 location.href = 'pages/other.html'
            })
 		},
@@ -163,7 +159,7 @@ $(function(){
 					+	'<div class="self-num">'+data[i].num+'</div>'
 				+	'</div>'
             }
-            this.selfboxs.eq(index).append(str);
+            Bottom.current.find('.self-type-box').eq(index).append(str);
             this.haxi[index].render = true;
 		},
 		getData:function(index,page,url){
