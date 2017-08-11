@@ -187,7 +187,23 @@ body{background: url(../images/indexbg.jpg) no-repeat;background-size: 100% 100%
 .tree .tree-box.old {width:100%;height:100%;left:0;}
 .tree .tree-box.grow{width:60%;height:80%;left:20%;}
 .tree .tree-box.child{height: 27%;width:22%;left:38%;}
-
+.tree .qipao {position: absolute;height:40px;width:40px;left:20%;bottom: 0;color:rgb(240,187,0);text-align: center; 
+     background: url(../images/qipao.png) no-repeat;background-size: 100% 100%;
+}
+.tree .qipao .life-num {font-size:16px;line-height: 16px;padding-top:6px;}
+.tree .qipao .chengzhang {font-size:10px;line-height: 12px;}
+.tree .qipao .move {position: absolute;left:10px;font-size:12px;display: none;}
+.tree .qipao .move.active{display: block;}
+.tree .qipao .move.add{top:-12px;animation:add 1.5s}
+.tree .qipao .move.minus{animation:minus 1.5s}
+@keyframes add{
+    from{}
+    to{transform:translateY(-15px);opacity: 0;}
+}
+@keyframes minus{
+    from{}
+    to{transform:translateY(15px);opacity: 0;}
+}
 .tree .gethudun{
     position: absolute;
     width:50%;

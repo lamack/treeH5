@@ -82,8 +82,28 @@ $(function(){
 		},
 		//植树效果
 		event(i){
+			var that = this;
 			this.tools.find('.act').eq(i).addClass('active')
+			setTimeout(function(){
+				that.qipao('add')
+			},4000)
 		},
+		qipao(add){
+			var el = $('.qipao').find('.life-num');
+			var num = parseInt(el.html())
+			if(add){
+				$('.qipao').find('.add').addClass('active')
+				num += 10;
+			}else{
+                $('.qipao').find('.minus').addClass('active')
+                num -= 10;
+			}
+			el.html(num);
+			setTimeout(function(){
+				$('.qipao').find('.minus').removeClass('active')
+				$('.qipao').find('.add').removeClass('active')
+			},1500)
+		},	
 		growing:function(now,next){
 			var that = this;
 			var heinow = this.tree.eq(now).height();
@@ -188,7 +208,7 @@ $(function(){
 			this.hongshuicom();
 		},
 		hongshuicom(){
-			this.hongshui.show();
+			this.hongshui.show();	
 			this.cloud.show();
 			this.hudun();
 		},
