@@ -1,18 +1,5 @@
 $(function(){
 
-	var flag = localStorage.getItem('isFlag');
-	if (!flag) {
-		localStorage.setItem('isFlag','true');
-		// 启动页
-		setTimeout(function(){
-			$('.launch').hide();
-			$('.container').show();
-		},3000);
-	}else{
-		$('.launch').hide();
-		$('.container').show();
-	}
-
 	$('.close','.bomb').click(function(){
 		$('.bomb').hide();
 	})
