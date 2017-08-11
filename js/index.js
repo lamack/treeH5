@@ -205,12 +205,17 @@ $(function(){
 		ganhan:$('.ganhan'),
 		cloud:$('.cloud'),
 		init:function(){
-			this.hongshuicom();
+			this.gnahancom();
 		},
 		hongshuicom(){
-			this.hongshui.show();	
-			this.cloud.show();
-			this.hudun();
+		    this.hongshui.show();	
+		    this.cloud.show();
+		    this.hudun();
+		},
+		gnahancom(){
+			var that = this;
+			this.ganhan.addClass('active')
+			setTimeout(function(){that.hudun();},4000)
 		},
 		hudun:function(){
 			var that = this;

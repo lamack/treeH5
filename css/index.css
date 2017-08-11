@@ -67,7 +67,7 @@ body{background: url(../images/indexbg.jpg) no-repeat;background-size: 100% 100%
 .ranking-item.active{color:#37ae15;background:url(../images/tap1.png) no-repeat;background-size:100% 100%;}
 .planting{position: fixed;bottom: 80px;left:0;height:70px;width:100%;z-index: 9;}
 .planting .planting-item{height:100%;}
-.planting .planting-item .item{height:42px;width:65px;font-size:8px;color:#fff;position: relative;}
+.planting .planting-item .item{height:42px;font-size:8px;color:#fff;position: relative;}
 .planting .planting-item .item .act{
     position: absolute;
     width:45px;height:40px;
@@ -75,7 +75,7 @@ body{background: url(../images/indexbg.jpg) no-repeat;background-size: 100% 100%
     display: none;
 }
 .planting .planting-item .item .act.hudun{
-    animation: hudun 2s;
+    animation: hudun 4s;
 }
 .planting .planting-item .item .act.water{
     animation: water 4s;
@@ -146,14 +146,21 @@ body{background: url(../images/indexbg.jpg) no-repeat;background-size: 100% 100%
     100%{opacity: 0}
 }
 @keyframes hudun{
-    from{transform: scale(1,1);opacity: 1;}
-    to{transform: scale(1.5,1.5);opacity: 0;}
+    0%{transform: scale(1,1);opacity: 1;}
+    25%{transform: scale(1.5,1.5);opacity: 0;}
+    75%{transform: scale(1,1);opacity: 1;}
+    100%{transform: scale(1.5,1.5);opacity: 0;}
 }
 .planting .planting-item .item .hudun.active{display: block;}
 .planting .planting-item .item .water.active{display: block;}
 .planting .planting-item .item .shifei.active{display: block;}
 .planting .planting-item .item .cut.active{display: block;}
 .planting .planting-item .item img{width:45px;height:40px;}
+@media screen and (min-width:350px) {
+    .planting .planting-item .item img{width:55px;height:50px;}
+    .planting {bottom:88px;}
+    .planting .planting-item .item .act{width:55px;height:50px;}
+}
 .planting .planting-item .item span {}
 .bomb {    width: 260px;
     height: 160px;
@@ -293,6 +300,21 @@ body{background: url(../images/indexbg.jpg) no-repeat;background-size: 100% 100%
       left:100%;
       animation:cloud 4s linear;
       display: none;
+}
+.ganhan{
+    position: absolute;
+    width:100%;
+    height:80%;
+    background:url(../images/ganhan.png) no-repeat;background-size:100% 100%;
+    display: none;
+    animation:ganhan 8s ease-in;
+    opacity: 0;
+}
+.ganhan.active{display: block;}
+@keyframes ganhan{
+    0%{}
+    50%{opacity: 1;}
+    100%{opacity: 1;}
 }
 @keyframes cloud{
     0%{left:100%;}
