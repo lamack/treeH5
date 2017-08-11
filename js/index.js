@@ -1,7 +1,6 @@
 $(function(){
 
 	var flag = localStorage.getItem('isFlag');
-	console.log(flag);
 	if (!flag) {
 		localStorage.setItem('isFlag','true');
 		// 启动页
@@ -17,6 +16,34 @@ $(function(){
 	$('.close','.bomb').click(function(){
 		$('.bomb').hide();
 	})
+	//操作+1和-1小图标
+	var Handlecount = {
+		els:$('.planting').find('.item'),
+        init:function(){},
+        add:function(index){
+        	var that = this;
+            this.els.eq(index).find('.add1').addClass('active')
+            this.dom(index,add)
+            setTimeout(function(){
+                that.els.eq(index).find('.add1').removeClass('active')
+            },1000)
+        },
+        minus:function(index){
+        	var that = this;
+            this.els.eq(index).find('.minus1').addClass('active')
+            this.dom(index)
+            setTimeout(function(){
+                that.els.eq(index).find('.minus1').removeClass('active')
+            },1000)
+        },
+        dom:function(index,add){
+        	var el = this.els.eq(index).find('.num');
+        	var num = parseInt(el.html());
+            num = add? (num+1) :(num-1);
+        	el.html(num)
+        }
+	}
+	Handlecount.init();
 	//排名分类
 	var Bottom = {
 		bottom:$('#bottom'),
@@ -78,10 +105,9 @@ $(function(){
             	},4000)
             });
             // 点击兑换
-
 		},
 		//植树效果
-		event(i){
+		event:function(i){
 			var that = this;
 			this.tools.find('.act').eq(i).addClass('active')
 			Handlecount.minus(i)
@@ -200,31 +226,41 @@ $(function(){
 
 	}
 	Selfrank.init();
-
+    //灾难来袭
 	var Disaster = {
 		hongshui:$('.hongshui'),
 		ganhan:$('.ganhan'),
+		taifeng:$('.taifeng'),
 		cloud:$('.cloud'),
 		init:function(){
-			this.gnahancom();
+			// this.gnahancom();
+			this.taifengcom();
 		},
-		hongshuicom(){
+		hongshuicom:function(){
 		    this.hongshui.show();	
 		    this.cloud.show();
 		    this.hudun();
 		},
-		gnahancom(){
+		gnahancom:function(){
 			var that = this;
 			this.ganhan.addClass('active')
 			setTimeout(function(){
 				that.hudun();
 			},4000)
 		},
+		taifengcom:function(){
+			var that = this;
+            this.taifeng.addClass('active')
+			that.hudun();
+            setTimeout(function(){
+            	that.taifeng.removeClass('active')
+			},8000)
+		},
 		hudun:function(){
 			var that = this;
 			//护盾激活效果
 			$('.hudun').addClass('active')
-            Handlecount.minus(3)
+            Handlecount.minus(3);
 			//护盾运动效果
 			$('.gethudun').addClass('active')
 			//护盾效果结束
@@ -237,32 +273,5 @@ $(function(){
 		}
 	}
 	Disaster.init();
-	//操作+1和-1小图标
-	var Handlecount = {
-		els:$('.planting').find('.item'),
-        init:function(){},
-        add:function(index){
-        	var that = this;
-            this.els.eq(index).find('.add1').addClass('active')
-            this.dom(index,add)
-            setTimeout(function(){
-                that.els.eq(index).find('.add1').removeClass('active')
-            },1000)
-        },
-        minus:function(index){
-        	var that = this;
-            this.els.eq(index).find('.minus1').addClass('active')
-            this.dom(index)
-            setTimeout(function(){
-                that.els.eq(index).find('.minus1').removeClass('active')
-            },1000)
-        },
-        dom:function(index,add){
-        	var el = this.els.eq(index).find('.num');
-        	var num = parseInt(el.html());
-            num = add? (num+1) :(num-1);
-        	el.html(num)
-        }
-	}
-	Handlecount.init();
+	
 })
