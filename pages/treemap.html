@@ -31,7 +31,7 @@
         	        </div>
         		</div>
         	</div>
-            <div class="dianzan">X100</div>
+            <div class="dianzan"><div class="add">+1</div>X100</div>
             <div class="senlin xiaoshu"></div>
         </div>
         <div class="tab-box">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
             </div>
-            <div class="dianzan">X100</div>
+            <div class="dianzan"><div class="add">+1</div>X100</div>
             <div class="senlin"></div>
         </div>
         <div class="tab-box">
@@ -61,7 +61,7 @@
                     </div>
                 </div>
             </div>
-            <div class="dianzan">X100</div>
+            <div class="dianzan"><div class="add">+1</div>X100</div>
             <div class="senlin"></div>
         </div>
         <div class="tab-box quyu">
@@ -145,6 +145,14 @@ $(function(){
         },
     }
     Quyu.init();
+    //点赞
+    $('.dianzan').click(function(){
+        var index = $(this).parent().index();
+        $(this).find('.add').show();
+        setTimeout(function(){
+            $('.dianzan').find('.add').hide();
+        },1000)
+    })
 })
 </script>
 </body>
