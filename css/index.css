@@ -37,7 +37,7 @@ body{background: url(../images/indexbg.jpg) no-repeat;background-size: 100% 100%
 #bottom.active{transform: translateY(-500px);}
 #bottom .topbg{
     background: url(../images/other_bg.jpg) no-repeat;background-size: 100% 100%;
-    height:0;width:100%;transition:all 1s;margin-bottom: -44px;
+    height:0;width:100%;transition:all 1s;
 }
 .ranking{
 	height:40px;width:100%;	

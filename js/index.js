@@ -55,11 +55,17 @@ $(function(){
 	Bottom.init();
 	touch.on('#bottom','swipeup',function(){
 		$('#bottom').css('transform','translateY('+(-Bottom.low)+'px)')
-		$('#bottom').find('.topbg').css('height','30%')
+		$('#bottom').find('.topbg').css({
+			height:'30%',
+			marginBottom: '-44px',
+		})
 	})
 	touch.on('#bottom','swipedown',function(){
 		$('#bottom').css('transform','translateY(0px)')
-		$('#bottom').find('.topbg').css('height','0px')
+		$('#bottom').find('.topbg').css({
+			height:'0px',
+			marginBottom: '0px',
+		})
 	})
     //植树
 	var Tree = {
