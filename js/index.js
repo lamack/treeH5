@@ -55,9 +55,11 @@ $(function(){
 	Bottom.init();
 	touch.on('#bottom','swipeup',function(){
 		$('#bottom').css('transform','translateY('+(-Bottom.low)+'px)')
+		$('#bottom').find('.topbg').css('height','30%')
 	})
 	touch.on('#bottom','swipedown',function(){
 		$('#bottom').css('transform','translateY(0px)')
+		$('#bottom').find('.topbg').css('height','0px')
 	})
     //植树
 	var Tree = {
