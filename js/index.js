@@ -269,5 +269,34 @@ $(function(){
 		}
 	}
 	Disaster.init();
-	
+	//轮播
+	var Lunbo = {
+		lunboCon : $('.lunbo-container'),
+		lunbo : $('.lunbobox'),
+		top:30,
+		hei:$('.lunbobox').height(),
+		init:function(){
+			var that = this;
+			this.lunbo.append(this.lunboCon.clone())
+			this.move()
+			setInterval(function(){
+				if(that.top <= -that.hei){
+	                that.lunbo.append($(that.lunbo.children()[0]))
+	                that.lunbo.css({
+	                	transition:'top 0s',
+	                	top:'0px'
+	                })
+	        		that.top = 0;
+	        	}
+				setTimeout(function(){that.move();},1000)
+			},3000)
+		},
+        move(){
+        	this.lunbo.css({'transition':'top 1s'})
+        	this.top -= 30;
+        	this.lunbo.css({top:this.top+'px'});
+
+        },
+	}
+	Lunbo.init();
 })

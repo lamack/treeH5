@@ -353,5 +353,31 @@ body{background: url(../images/indexbg.jpg) no-repeat;background-size: 100% 100%
     75%{}
     100%{left:-500%;}
 }
-
+.lunbo {
+    position: absolute;
+    top:80px;
+    left:60px;
+    width:57%;
+    height:30px;
+    line-height:30px;
+    padding:0 10px;
+    overflow: hidden;
+}
+.lunbo .lunbobg{
+    position: absolute;
+    height:100%;
+    width:100%;
+    top:0;left:0;
+    border-radius:15px;
+    background:#fff;
+    opacity:0.2;
+}
+.lunbo .lunbobox{
+    position: absolute;
+    top:0;left: 10px;
+    width:calc(100% - 20px);
+    height:auto;
+    color:rgb(240,187,0);
+    transition:top 1s;
+}
 
