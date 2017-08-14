@@ -73,25 +73,25 @@ class Index extends Home
         //道具
         $waterMap['user_id'] = $member['id'];
         $waterMap['status'] = '0';
-        $waterMap['prop_type'] = '1';
+        $waterMap['prop_type'] = '0';
         $waterprop = db('my_prop')->where($waterMap)->count();
         $this->assign('waterprop', $waterprop);
 
         $cutMap['user_id'] = $member['id'];
         $cutMap['status'] = '0';
-        $cutMap['prop_type'] = '2';
+        $cutMap['prop_type'] = '1';
         $cutprop = db('my_prop')->where($cutMap)->count();
         $this->assign('cutprop', $cutprop);
 
         $shifeiMap['user_id'] = $member['id'];
         $shifeiMap['status'] = '0';
-        $shifeiMap['prop_type'] = '3';
+        $shifeiMap['prop_type'] = '2';
         $shifeiprop = db('my_prop')->where($shifeiMap)->count();
         $this->assign('shifeiprop', $shifeiprop);
 
         $hudunMap['user_id'] = $member['id'];
         $hudunMap['status'] = '0';
-        $hudunMap['prop_type'] = '4';
+        $hudunMap['prop_type'] = '3';
         $hudunprop = db('my_prop')->where($hudunMap)->count();
         $this->assign('hudunprop', $hudunprop);
         //个人排名
