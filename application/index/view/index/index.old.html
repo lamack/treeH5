@@ -10,6 +10,9 @@
 </head>
 
 <body>
+    <div class="launch">
+        <img src="{$static_dir}home/img/start.png">
+    </div>
     <div class="container">
         <div class="blur_container hei">
             <div class="blur_bg"></div>
@@ -99,9 +102,7 @@
                         <img src="{$static_dir}home/img/water2.png" class="water2">
                     </div>
                     <img src="{$static_dir}home/img/water.png"> x
-                    <span class="num">2</span>
-                    <div class="add1 one">+1</div>
-                    <div class="minus1 one">-1</div>
+                    <span class="water-num">2</span>
                 </div>
                 <div class="item cutting">
                     <div class="cut act">
@@ -109,9 +110,7 @@
                         <img src="{$static_dir}home/img/cut2.png" class="cut2">
                     </div>
                     <img src="{$static_dir}home/img/cut.png"> x
-                    <span class="num">2</span>
-                    <div class="add1 one">+1</div>
-                    <div class="minus1 one">-1</div>
+                    <span class="cut-num">2</span>
                 </div>
                 <div class="item feeding">
                     <div class="shifei act">
@@ -119,21 +118,16 @@
                         <img src="{$static_dir}home/img/shifei1.png" class="shifei2">
                     </div>
                     <img src="{$static_dir}home/img/shifei.png"> x
-                    <span class="num">2</span>
-                    <div class="add1 one">+1</div>
-                    <div class="minus1 one">-1</div>
+                    <span class="feed-num">2</span>
                 </div>
                 <div class="item defense">
                     <img src="{$static_dir}home/img/hudun.png" class="hudun act">
                     <img src="{$static_dir}home/img/hudun.png"> x
-                    <span class="num">2</span>
-                    <div class="add1 one">+1</div>
-                    <div class="minus1 one">-1</div>
+                    <span class="defense-num">2</span>
                 </div>
             </div>
         </div>
         <div id="bottom">
-            <div class="topbg"></div>
             <div class="ranking flex">
                 <div class="ranking-item active flex-1 self">
                     个人排名
@@ -155,97 +149,54 @@
                         <div class="self-type-item flex-1">植树达人</div>
                     </div>
                     <div class="self-type-box active">
-                        <div class="rank-list flex self">
-                             <div class="rank-num">{$me_rank.rank}</div>
-                             <div class="self-icon"><img src=""></div>
-                             <div class="self-name flex-1">{$me_rank.name}1</div>
-                             <div class="self-num">{$me_rank.green_max}</div>
-                         </div>
-                         {volist name="person_rank" id="item" }
-                            <div class="rank-list flex ">
-                                 <div class="rank-num">{$key+1}</div>
-                                 <div class="self-icon"><img src=""></div>
-                                 <div class="self-name flex-1">{$item.username}</div>
-                                 <div class="self-num">{$item.green_max}</div>
-                             </div>
-                        {/volist} 
+                    	<div class="rank-list flex self">
+						     <div class="rank-num">66</div>
+						     <div class="self-icon"><img src=""></div>
+						     <div class="self-name flex-1">dafdsa</div>
+						     <div class="self-num">99</div>
+					     </div>
                     </div>
                     <div class="self-type-box">
-                        <div class="rank-list flex self">
-                             <div class="rank-num">{$me_rank.rank}</div>
-                             <div class="self-icon"><img src=""></div>
-                             <div class="self-name flex-1">{$me_rank.name}</div>
-                             <div class="self-num">{$me_rank.green_max}</div>
-                         </div>
-                         {volist name="driver_rank" id="item" }
-                            <div class="rank-list flex ">
-                                 <div class="rank-num">{$key+1}</div>
-                                 <div class="self-icon"><img src=""></div>
-                                 <div class="self-name flex-1">{$item.username}</div>
-                                 <div class="self-num">{$item.green_max}</div>
-                             </div>
-                        {/volist} 
+                    	<div class="rank-list flex self">
+						     <div class="rank-num">66</div>
+						     <div class="self-icon"><img src=""></div>
+						     <div class="self-name flex-1">dafdsa</div>
+						     <div class="self-num">99</div>
+					     </div>
                     </div>
                 </div>
                 <div class="rank-box-item">
                    <div class="self-type flex">
                         <div class="self-type-item flex-1">排行榜</div>
                     </div>
-                    <div class="self-type-box active">
-                        {volist name="class_rank" id="item" }
-                            <div class="rank-list flex ">
-                                 <div class="rank-num">{$key+1}</div>
-                                 <div class="self-icon"><img src=""></div>
-                                 <div class="self-name flex-1">{$item.class}</div>
-                                 <div class="self-num">{$item.max}</div>
-                             </div>
-                        {/volist} 
-                    </div>
+                    <div class="self-type-box active">22</div>
                 </div>
                 <div class="rank-box-item">
                     <div class="self-type flex">
                         <div class="self-type-item flex-1">排行榜</div>
                     </div>
-                    <div class="self-type-box active">
-                        {volist name="company_rank" id="item" }
-                            <div class="rank-list flex ">
-                                 <div class="rank-num">{$key+1}</div>
-                                 <div class="self-icon"><img src=""></div>
-                                 <div class="self-name flex-1">{$item.company}</div>
-                                 <div class="self-num">{$item.max}</div>
-                             </div>
-                        {/volist} 
-                    </div>
+                    <div class="self-type-box active">33</div>
                 </div>
                 <div class="rank-box-item">
                     <div class="self-type flex">
                         <div class="self-type-item flex-1">区域</div>
                         <div class="self-type-item flex-1">产业局</div>
                     </div>
-                    <div class="self-type-box active">
-                        {volist name="area_rank" id="item" }
-                            <div class="rank-list flex ">
-                                 <div class="rank-num">{$key+1}</div>
-                                 <div class="self-icon"><img src=""></div>
-                                 <div class="self-name flex-1">{$item.area}</div>
-                                 <div class="self-num">{$item.max}</div>
-                             </div>
-                        {/volist} 
-                    </div>
+                    <div class="self-type-box active">44</div>
                     <div class="self-type-box">66s</div>
                 </div>
             </div>
         </div>
         <div class="hsf">
             <a href="javascript:;" class="">
-                <img src="{$static_dir}home/img/hsf1.png">
-                红色寻访
+         		<img src="{$static_dir}home/img/hsf1.png">
+         		红色寻访
          </a>
         </div>
         <div class="me">
             <a href="{:url('Me/index')}" class="">
-                <img src="{$static_dir}home/img/self.png">
-                <p>{$_MEMBER.username}</p>
+         		<img src="{$static_dir}home/img/self.png">
+         		<p>admin</p>
          </a>
         </div>
         <div class="disaster">
@@ -258,9 +209,6 @@
                 <img src="{$static_dir}home/img/cloud.png">
             </div>
             <div class="ganhan"></div>
-            <div class="taifeng">
-                <img src="{$static_dir}home/img/taifeng.png">
-            </div>
         </div>
     </div>
     <script type="text/javascript" src="{$static_dir}home/js/zepto.js"></script>

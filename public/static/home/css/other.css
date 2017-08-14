@@ -1,4 +1,4 @@
-body{background:url(../images/other_bg.jpg) no-repeat; background-size:100% 100%;}
+body{background:url(../img/other_bg.jpg) no-repeat; background-size:100% 100%;}
 div#header{color:#fff;}
 .blur_container{
 	position: absolute;
@@ -22,8 +22,8 @@ div#header{color:#fff;}
 
 .give{height:45px;width:100%;position: absolute;bottom:25%;left:0;text-align: center;}
 .give>div{height:100%;width:114px;display: inline-block;}
-.give .givetree{margin-right:10px;background:url(../images/givetree.png) no-repeat;background-size:100% 100%;}
-.give .givegreen{background:url(../images/givegreen.png) no-repeat;background-size:100% 100%;}
+.give .givetree{margin-right:10px;background:url(../img/givetree.png) no-repeat;background-size:100% 100%;}
+.give .givegreen{background:url(../img/givegreen.png) no-repeat;background-size:100% 100%;}
 .belong {height:50px;width:100%;position: absolute;bottom:35px;left:0;text-align: center;color:#c19385;font-size:14px;}
 .belong .belongto{display: block;}
 
@@ -35,8 +35,8 @@ div#header{color:#fff;}
     left: 10%;
     display: none;
 }
-.bomb.bomb1{ background: url(../images/givebox2.png) no-repeat;background-size: 100% 100%;}
-.bomb.bomb{ background: url(../images/givebox1.png) no-repeat;background-size: 100% 100%;}
+.bomb.bomb1{ background: url(../img/givebox2.png) no-repeat;background-size: 100% 100%;}
+.bomb.bomb{ background: url(../img/givebox1.png) no-repeat;background-size: 100% 100%;}
 .bomb .title{height:30px;line-height:30px;text-align:center;}
 .bomb>.close{position: absolute;top:0;right:0;width:40px;height:40px;}
 .bomb .bomb-box{height:170px;}

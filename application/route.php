@@ -18,4 +18,5 @@ return [
         ':name' => ['index/hello', ['method' => 'post']],
     ],
 
+    'start:sign'   => ['index/start', ['method' => 'get'], ['sign' => '\d+']],
 ];

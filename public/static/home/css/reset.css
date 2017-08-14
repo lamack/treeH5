@@ -215,10 +215,10 @@ input {
     color: #fff;
     background: url(../img/go.png) no-repeat;
     background-size: 100% 100%;
-    width: 2rem;
-    height: 2.6rem;
+    width: 1.2rem;
+    height: 1.6rem;
     text-align: center;
-    line-height: 2.6rem;
+    line-height: 1.6rem;
 }
 /*标签*/
 .tag {

@@ -21,3 +21,38 @@
 	text-indent: 2rem;
 	margin-bottom: 1.5rem;
 }
+.task-list{
+    padding: 1rem 0.6rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.task-list li {
+    margin-bottom: 0.6rem;
+    // background: #f5f1d4;
+    border-radius: 8px;
+    padding: 0.7rem 0.4rem 0.7rem 0.7rem;
+    background: url(../img/noticeicon.png) no-repeat #f5f1d4;
+    background-size: 15% 50%;
+}
+.task-list li a{
+    display: block;
+}
+.task-list .thumbnail {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-list .thumbnail .caption {
+    justify-content: space-around;
+    flex-direction: column;
+    color: #dbc8a3;
+    font-size: 13px;
+    margin-left: 0.6rem;
+}
+.task-list .thumbnail .caption .task-award{
+    color: #ddd6ad;
+    font-size: 12px;
+    margin-top: 0.2rem;
+}

@@ -47,6 +47,12 @@ class Member extends Admin
             'icon'  => 'fa fa-fw fa-newspaper-o',
             'href'  => url('recode', ['uid' => '__id__'])
         ];
+        $btn_3 = [
+            'title' => '同步',
+            'icon'  => 'fa fa-fw fa-copy',
+            'class' => 'btn btn-primary ajax-post',
+            'href'  => url('synchro')
+        ];
 
         // 使用ZBuilder快速创建数据表格
         return ZBuilder::make('table')
@@ -68,6 +74,7 @@ class Member extends Admin
             ])
             ->addRightButton('custom', $btn_1) // 添加查看祥情按钮
             ->addRightButton('custom', $btn_2) // 添加查看记录按钮
+            ->addTopButton('custom', $btn_3) // 批量添加顶部按钮
             ->setRowList($data_list) // 设置表格数据
             ->setPages($page) // 设置分页数据
             ->fetch(); // 渲染页面
@@ -177,5 +184,7 @@ class Member extends Admin
             ->fetch();
     }
 
-
+    public function synchro(){
+        exit('synchro');
+    }
 }

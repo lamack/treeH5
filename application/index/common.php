@@ -25,5 +25,15 @@ if (!function_exists('is_mobile')) {
         // preg_match()方法功能为匹配字符，既第二个参数所含字符是否包含第一个参数所含字符，包含则返回1既true
         return preg_match($regex_match, strtolower($_SERVER['HTTP_USER_AGENT']));
     }
+
+    function get_conpon($cid){
+        if (!$cid) {
+            return null;
+        }
+        $conpon = db('conpon')->alias('a')->join(' conpon_type b',' b.id = a.conpon_type','LEFT')->where('a.id',$cid)->find();
+        if ($conpon) {
+            return $conpon['conpon_name'];
+        }
+    }
 }
 

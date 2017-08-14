@@ -11,7 +11,7 @@
  Target Server Version : 50622
  File Encoding         : utf-8
 
- Date: 08/09/2017 10:27:36 AM
+ Date: 08/14/2017 10:24:10 AM
 */
 
 SET NAMES utf8;
@@ -353,7 +353,7 @@ CREATE TABLE `game_admin_user` (
 --  Records of `game_admin_user`
 -- ----------------------------
 BEGIN;
-INSERT INTO `game_admin_user` VALUES ('1', 'admin', '超级管理员', '$2y$10$Brw6wmuSLIIx3Yabid8/Wu5l8VQ9M/H/CG3C9RqN9dUCwZW3ljGOK', '', '0', '', '0', '0', '0.00', '0', '1', '0', '0', '1476065410', '1501952340', '1501952339', '167772674', '100', '1');
+INSERT INTO `game_admin_user` VALUES ('1', 'admin', '超级管理员', '$2y$10$Brw6wmuSLIIx3Yabid8/Wu5l8VQ9M/H/CG3C9RqN9dUCwZW3ljGOK', '', '0', '', '0', '0', '0.00', '0', '1', '0', '0', '1476065410', '1502258464', '1502258464', '167772674', '100', '1');
 COMMIT;
 
 -- ----------------------------
@@ -399,8 +399,16 @@ CREATE TABLE `game_conpon` (
   `conpon_password` varchar(25) DEFAULT NULL COMMENT '代号',
   `conpon_status` tinyint(1) DEFAULT '0' COMMENT '0没分配 1已分配',
   `create_time` int(11) unsigned NOT NULL COMMENT '创建时间',
+  `cash_date` varchar(200) DEFAULT NULL COMMENT '兑奖日期',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `game_conpon`
+-- ----------------------------
+BEGIN;
+INSERT INTO `game_conpon` VALUES ('1', '1', '00124534223', '123456', '0', '1502165873', '2017.07.19至2017.07.26');
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `game_conpon_type`
@@ -420,7 +428,7 @@ CREATE TABLE `game_conpon_type` (
 --  Records of `game_conpon_type`
 -- ----------------------------
 BEGIN;
-INSERT INTO `game_conpon_type` VALUES ('1', '优惠1', 'CCTV', 'WEKWE', '1502208698', '怎么用');
+INSERT INTO `game_conpon_type` VALUES ('1', '优惠1', 'CCTV', 'WEKWE', '1502208698', '<p>兑奖日期：2017.07.19 至 2017.07.26</p><p>可用时段：任何时间</p><p>兑奖方式：网页兑换</p><p>联系电话：021-1234567899</p><p>(周一至周五 9:00-18:00)</p><p><br/></p>');
 COMMIT;
 
 -- ----------------------------
@@ -442,7 +450,7 @@ CREATE TABLE `game_develop` (
 --  Records of `game_develop`
 -- ----------------------------
 BEGIN;
-INSERT INTO `game_develop` VALUES ('1', '80', '100', '20', '10', '15', '10');
+INSERT INTO `game_develop` VALUES ('1', '80', '120', '24', '10', '15', '10');
 COMMIT;
 
 -- ----------------------------
@@ -469,6 +477,18 @@ INSERT INTO `game_disaster` VALUES ('2', '0', '1502294400', '1504195200', '0', '
 COMMIT;
 
 -- ----------------------------
+--  Table structure for `game_green_record`
+-- ----------------------------
+DROP TABLE IF EXISTS `game_green_record`;
+CREATE TABLE `game_green_record` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) unsigned NOT NULL COMMENT '会员id',
+  `green` int(11) unsigned NOT NULL COMMENT '绿值',
+  `create_time` int(11) unsigned NOT NULL COMMENT '获奖时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
 --  Table structure for `game_member`
 -- ----------------------------
 DROP TABLE IF EXISTS `game_member`;
@@ -479,7 +499,8 @@ CREATE TABLE `game_member` (
   `company` varchar(255) DEFAULT NULL COMMENT '所在企业',
   `class` varchar(255) DEFAULT NULL COMMENT '所在班组',
   `mileage` int(10) unsigned NOT NULL COMMENT '里程数',
-  `green` int(10) unsigned NOT NULL COMMENT '绿值',
+  `green_nocash` int(10) DEFAULT NULL COMMENT '不可兑换',
+  `green` int(10) unsigned NOT NULL COMMENT '可兑换绿值',
   `green_max` int(10) unsigned NOT NULL COMMENT '最大绿值',
   `share` int(10) unsigned NOT NULL COMMENT '享币',
   `trees` int(10) unsigned NOT NULL COMMENT '树苗',
@@ -488,14 +509,16 @@ CREATE TABLE `game_member` (
   `create_time` int(11) unsigned NOT NULL COMMENT '创建时间',
   `sign` varchar(100) DEFAULT NULL COMMENT '用户标识',
   `class_no` int(10) DEFAULT NULL COMMENT '班级编号',
+  `company_no` int(10) DEFAULT NULL COMMENT '公司id',
+  `type` tinyint(1) DEFAULT '0' COMMENT '0为乘客 1为司机',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Records of `game_member`
 -- ----------------------------
 BEGIN;
-INSERT INTO `game_member` VALUES ('1', 'xxxxxxx', '虹口区', '企业名称', '班组名称', '110', '110', '11110', '110', '10', '13500000000', null, '1502165873', '00001', '1');
+INSERT INTO `game_member` VALUES ('1', 'xxxxxxx', '上海市区', '企业名称', '班组名称', '110', null, '110', '11110', '110', '10', '13500000000', null, '1502165873', '00001', '1', '1', '0'), ('2', '1111', '嘉定', '企业名称', '班组名称', '110', null, '120', '12120', '110', '10', '18321730541', null, '1502165873', '00002', '1', '2', '0');
 COMMIT;
 
 -- ----------------------------
@@ -532,7 +555,14 @@ CREATE TABLE `game_recode` (
   `status` tinyint(1) DEFAULT '0' COMMENT '状态 0 未使用 1使用',
   `create_time` int(11) unsigned NOT NULL COMMENT '获奖时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `game_recode`
+-- ----------------------------
+BEGIN;
+INSERT INTO `game_recode` VALUES ('1', '1', '1', '0', '1502165873');
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `game_reward_setting`
@@ -545,7 +575,7 @@ CREATE TABLE `game_reward_setting` (
   `share_limit` int(10) unsigned NOT NULL COMMENT '成长币最小值',
   `share_max` int(10) unsigned NOT NULL COMMENT '成长币最大值',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Records of `game_reward_setting`
@@ -565,13 +595,67 @@ CREATE TABLE `game_task` (
   `create_time` int(11) unsigned NOT NULL COMMENT '创建时间',
   `task_introduce` varchar(200) DEFAULT NULL COMMENT '奖品说明',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Records of `game_task`
 -- ----------------------------
 BEGIN;
 INSERT INTO `game_task` VALUES ('1', '任务1', '<p>啥任务</p>', '0', '10-100绿值');
+COMMIT;
+
+-- ----------------------------
+--  Table structure for `game_task_process`
+-- ----------------------------
+DROP TABLE IF EXISTS `game_task_process`;
+CREATE TABLE `game_task_process` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `task_id` int(10) DEFAULT NULL COMMENT '任务id',
+  `user_id` int(11) unsigned NOT NULL COMMENT '用户id',
+  `status` tinyint(1) DEFAULT '0' COMMENT '是否已领取  1是  0为否',
+  `create_time` int(11) unsigned NOT NULL COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `game_task_recode`
+-- ----------------------------
+DROP TABLE IF EXISTS `game_task_recode`;
+CREATE TABLE `game_task_recode` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `mobile` varchar(20) NOT NULL COMMENT '用户手机号',
+  `task_id` int(10) DEFAULT NULL COMMENT '任务id',
+  `green` int(10) unsigned NOT NULL COMMENT '奖励的绿植数量',
+  `create_time` int(11) unsigned NOT NULL COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `game_task_recode`
+-- ----------------------------
+BEGIN;
+INSERT INTO `game_task_recode` VALUES ('1', '13500000000', '1', '10', '1502165873'), ('2', '13500000000', '1', '15', '1502167873');
+COMMIT;
+
+-- ----------------------------
+--  Table structure for `game_trees`
+-- ----------------------------
+DROP TABLE IF EXISTS `game_trees`;
+CREATE TABLE `game_trees` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned NOT NULL COMMENT '用户id',
+  `level` int(10) DEFAULT '1' COMMENT '当前阶段',
+  `lifes` int(10) DEFAULT '0' COMMENT '当前成长值 总120点',
+  `status` tinyint(1) DEFAULT '0' COMMENT '状态  0末成年树 1成年末结果实  2有果实 3果实已领取',
+  `create_time` int(11) unsigned NOT NULL COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `game_trees`
+-- ----------------------------
+BEGIN;
+INSERT INTO `game_trees` VALUES ('1', '1', '1', '0', '0', '1502511300');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;

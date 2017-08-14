@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>公告</title>
+    <link rel="stylesheet" type="text/css" href="{$static_dir}home/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="{$static_dir}home/css/index.css">
+    <link rel="stylesheet" type="text/css" href="{$static_dir}home/css/notice.css">
+    <style type="text/css">
+        img{
+            width: 100%
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div id="back">返回</div>
+        上汽植树
+    </div>
+    <div id="container">
+        <div class="tab-box game-notice-wrap active">
+            <p class="tag">{$info.type}</p>
+            <p class="time">{$info.create_time|format_time}</p>
+            <div class="notice-content">
+                {$info.adv_content|default=""}
+            </div>
+            <!-- <p class="notice-content">这里是一条关于游戏公告的说明这里是一条关于 游戏公告的说明这里是一条关于游戏公告的说明这里 是一条关于游戏公告的说</p> -->
+            <!-- <p class="notice-content">这里是一条关于游戏公告的说明这里是一条关于 游戏公告的说明这里是一条关于游戏公告的说明这里 是一条关于游戏公告的说</p> -->
+        </div>
+        <!-- <div class="tab-box game-introduce-wrap">
+            <p class="tag">游戏介绍</p>
+            <p class="notice-content">这里是一条关于游戏公告的说明这里是一条关于 游戏公告的说明这里是一条关于游戏公告的说明这里 是一条关于游戏公告的说</p>
+            <p class="notice-content">这里是一条关于游戏公告的说明这里是一条关于 游戏公告的说明这里是一条关于游戏公告的说明这里 是一条关于游戏公告的说</p>
+        </div> -->
+        <div class="back-btn-wrap"></div>
+    </div>
+    <script type="text/javascript" src="{$static_dir}home/js/zepto.js"></script>
+    <script type="text/javascript" src="{$static_dir}home/js/public.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        // tab-item选中效果
+        $('.tab-item').click(function() {
+            $(this).addClass('active').siblings().removeClass('active');
+            var index = $(this).index();
+            $('.tab-box').eq(index).addClass('active').siblings().removeClass('active');
+        })
+        $('.back-btn-wrap').click(function() {
+            window.history.back(-1)
+        })
+    })
+   
+    </script>
+</body>
+
+</html>

@@ -83,7 +83,8 @@ class Conpontepy extends Admin
                 ['text', 'conpon_parnter', '合伙伙伴'],
                 ['text', 'conpon_code', '代号'],
             ])
-            ->addTextarea('conpon_introduce', '使用说明')
+            ->addUeditor('conpon_introduce', '使用说明')
+            // ->addTextarea('conpon_introduce', '使用说明')
             ->fetch();
     }
 
@@ -125,7 +126,8 @@ class Conpontepy extends Admin
                 ['text', 'conpon_parnter', '合伙伙伴'],
                 ['text', 'conpon_code', '代号'],
             ])
-            ->addTextarea('conpon_introduce', '使用说明')
+            ->addUeditor('conpon_introduce', '使用说明')
+            // ->addTextarea('conpon_introduce', '使用说明')
             ->setFormData($info) // 设置表单数据
             ->fetch();
     }
