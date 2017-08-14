@@ -56,6 +56,7 @@ body{background: url(../images/indexbg.jpg) no-repeat;background-size: 100% 100%
 .rank-box .rank-box-item .self-type-box .rank-list img{width:20px;height:20px;margin-top:5px;}
 .rank-box .rank-box-item .self-type-box .rank-list .self-num{color:#ff8400;}
 .rank-box .rank-box-item .self-type .self-type-item {height:100%;border-right:1px solid #37ae15;}
+.rank-box .rank-box-item .self-type .ranking-list {text-align: left;margin-left: 1rem;}
 .ranking-item {height:100%;text-align:center;color:#fff;background:url(../images/tap2.png) no-repeat;background-size:100% 100%;font-size:17px;line-height: 40px;}
 .ranking-item.active{color:#37ae15;background:url(../images/tap1.png) no-repeat;background-size:100% 100%;}
 .planting{position: fixed;bottom: 80px;left:0;height:70px;width:100%;z-index: 9;}
