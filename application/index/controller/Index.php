@@ -50,6 +50,13 @@ class Index extends Home
         //取用户
         $member = session('_MEMBER');
 
+        //当前树苗阶段 3 或 <3
+        $map['user_id'] = $member['id'];
+        $map['status'] = array('lt',3);
+        $tree = db('trees')->where($map)->find();
+        $this->assign('tree', $tree);
+        $count = db('trees')->where('user_id',$member['id'])->count();
+        $this->assign('count', $count);
         //个人排名
         $me_rank = [];
         $person_rank = db('member')->field('username,green_max,id')->where('type','0')->order('green_max DESC')->limit('100')->select();
