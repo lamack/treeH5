@@ -57,6 +57,13 @@ class Index extends Home
         $this->assign('tree', $tree);
         $count = db('trees')->where('user_id',$member['id'])->count();
         $this->assign('count', $count);
+
+        //灾害
+        $now = time();
+        $disasterMap['start_time'] = array('lt',$now);
+        $disasterMap['end_time'] = array('gt',$now);
+        $disaster = db('disaster')->where($disasterMap)->find();
+        $this->assign('disaster', $disaster);    
         //个人排名
         $me_rank = [];
         $person_rank = db('member')->field('username,green_max,id')->where('type','0')->order('green_max DESC')->limit('100')->select();
@@ -95,4 +102,28 @@ class Index extends Home
         return $this->fetch(); // 渲染模板
     }
 
+    public function prop()
+    {
+        //取用户
+        $member = session('_MEMBER');
+
+        $request = Request::instance();
+        $params = $request->param();
+
+        //当前用户 | 道具 
+        $prop_type = (int)$params['prop_type'];
+        $propMap['user_id'] = $member['id'];
+        $propMap['prop_type'] = $prop_type;
+
+        if (db('my_prop')->where($propMap)->find()) {
+            $data['status'] = 1;
+            if(db('my_prop')->where($propMap)->update($data)){
+                $data = ['status'=>'succ','msg'=>'成功'];
+            }
+        }else{
+            $data = ['status'=>'error','msg'=>'道具不在存或已使用'];
+            
+        }
+        return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
+    }
 }
