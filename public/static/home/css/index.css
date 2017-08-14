@@ -187,7 +187,14 @@ body{background: url(../img/indexbg.jpg) no-repeat;background-size: 100% 100%;po
 .tree .tree-box.active{opacity: 1;}
 .tree .tree-box img{width:100%;height:100%;;}
 .tree .tree-box.old {width:100%;height:100%;left:0;position: absolute;}
-.tree .tree-box.old .guoshi{position: absolute;height:40px;width:40px;background:url(../img/guoshi1.png) no-repeat;background-size: 100% 100%;}
+.tree .tree-box.old .guoshi{position: absolute;height:40px;width:40px;background:url(../img/guoshi1.png) no-repeat;background-size: 100% 100%;
+    opacity: 0;
+    animation:guoshi 2s;
+}
+@keyframes guoshi{
+    0%{}
+    100%{opacity: 1;}
+}
 .tree .tree-box.grow{width:60%;height:80%;left:20%;}
 .tree .tree-box.child{height: 27%;width:22%;left:38%;}
 .tree .qipao {position: absolute;height:40px;width:40px;left:20%;bottom: 0;color:rgb(240,187,0);text-align: center; 
@@ -364,6 +371,7 @@ body{background: url(../img/indexbg.jpg) no-repeat;background-size: 100% 100%;po
     line-height:30px;
     padding:0 10px;
     overflow: hidden;
+    display: none;
 }
 .lunbo .lunbobg{
     position: absolute;

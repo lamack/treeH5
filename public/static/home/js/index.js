@@ -145,89 +145,104 @@ $(function(){
 	Selfrank.init();
     //植树
 	var treelevel = JSON.parse('{$tree|json_encode}');
-        var treeindex = 2;
-        switch(treelevel){
-            case 1:
-            treeindex=2;
-            break;
-            case 2:
-            treeindex=1;
-            break;
-            case 3:
-            treeindex=0;
-            break;
-        }
-        var Tree = {
-            tree:$('.tree').find('.tree-box'),
-            tools:$('.planting').find('.item'),
-            bomb:$('.bomb'),
-            now:treeindex,
-            next:null,
-            index:0,
-            init:function(){
-                this.next = this.now-1;
-                this.bindEvent();
-            },
-            bindEvent:function(){
-                var that = this;
-                //点击工具
-                this.tools.click(function(){
-                    if($(this).index()==3) return;
-                    that.index = $(this).index();
-                    //兑换弹框显示
-                     that.bomb.show()
-                });
-                // 点击使用
-                this.bomb.find('.use').click(function(event) {
-                     var data = {
-                         url:'/prop?prop_type='+(that.index+1),
-                         success:function(ref){
-                             console.log(ref)
-                             var data=ref.data;
-                             if(data.status = 'error'){
-                                 alert(data.msg)
-                             }else{
-                                 that.event(that.index)
-                             }
+    var treeindex = 2;
+    switch(treelevel){
+        case 1:
+        treeindex=2;
+        break;
+        case 2:
+        treeindex=1;
+        break;
+        case 3:
+        treeindex=0;
+        break;
+    }
+    var Tree = {
+        tree:$('.tree').find('.tree-box'),
+        tools:$('.planting').find('.item'),
+        bomb:$('.bomb'),
+        now:treeindex,
+        next:null,
+        index:0,
+        init:function(){
+            this.next = this.now-1;
+            this.bindEvent();
+        },
+        bindEvent:function(){
+            var that = this;
+            //点击工具
+            this.tools.click(function(){
+                if($(this).index()==3) return;
+                that.index = $(this).index();
+                //兑换弹框显示
+                 that.bomb.show()
+            });
+            // 点击使用
+            this.bomb.find('.use').click(function(event) {
+                 var data = {
+                     url:'/prop?prop_type='+(that.index+1),
+                     success:function(ref){
+                         console.log(ref)
+                         var data=ref.data;
+                         if(data.status == 'error'){
+                             alert(data.msg)
+                         }else{
+                             that.event(that.index);
+                             getData({
+                             	url:'level',
+                             	success:function(ref){
+                             	    var data = ref.data;
+                             	    if(data.status=='succ'){
+                             	    	var list =data.list;
+                             	    	if(list.status == 1){
+                             	    		$('.lunbo').show();
+                             	    	}else if(list.status == 2){
+                             	    		Guoshi.num = 2;
+                             	    		Guoshi.init();
+                             	    	}
+                             	    }
+                             	}
+                             })
                          }
                      }
-                     getData(data)
+                 }
+                 getData(data)
 
-                    that.event(that.index);
-                    that.bomb.hide();
-                    //树苗成长
-                    setTimeout(function(){
-                        that.growing(that.now,that.next)
-                        that.now --;
-                        that.tools.find('.act').eq(that.index).removeClass('active')
-                    },4000)
-                });
-                // 点击兑换
-            },
-            //植树效果
-            event:function(i){
-                var that = this;
-                this.tools.find('.act').eq(i).addClass('active')
-                 Handlecount.minus(i)
-            },
-            growing:function(now,next){
-                var that = this;
-                var heinow = this.tree.eq(now).height();
-                var heinext = this.tree.eq(next).height();
-                var per = heinext/heinow;
-                this.tree.eq(now).css({
-                    transform:'scale('+per+','+per+')',
-                    opacity:0,
+                that.event(that.index);
+                that.bomb.hide();
+                //树苗成长
+                setTimeout(function(){
+                    that.growing(that.now,that.next)
+                    that.now --;
+                    that.tools.find('.act').eq(that.index).removeClass('active')
+                },4000)
+            });
+            // 点击兑换
+        },
+        //植树效果
+        event:function(i){
+            var that = this;
+            this.tools.find('.act').eq(i).addClass('active')
+             Handlecount.minus(i)
+        },
+        growing:function(now,next){
+            var that = this;
+            var heinow = this.tree.eq(now).height();
+            var heinext = this.tree.eq(next).height();
+            var per = heinext/heinow;
+            this.tree.eq(now).css({
+                transform:'scale('+per+','+per+')',
+                opacity:0,
+            })
+            setTimeout(function(){  
+                that.tree.eq(next).css({
+                    opacity:1,
                 })
-                setTimeout(function(){  
-                    that.tree.eq(next).css({
-                        opacity:1,
-                    })
-                    that.next --;
-                },1000)
-            }
+                that.next --;
+            },1000)
         }
-        Tree.init();
+    }
+    Tree.init();
     //灾难来袭
 	var Disaster = {
 		hongshui:$('.hongshui'),
@@ -306,7 +321,7 @@ $(function(){
 	}
 	Lunbo.init();
 	var Guoshi = {
-		num :2,
+		num :0,
 		el:$('.old','.tree'),
 		init:function(){
             this.render(this.num)
