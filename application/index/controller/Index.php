@@ -63,6 +63,11 @@ class Index extends Home
         $disasterMap['start_time'] = array('lt',$now);
         $disasterMap['end_time'] = array('gt',$now);
         $disaster = db('disaster')->where($disasterMap)->find();
+        $myDisasterMap['disaster_id'] = $disaster['id'];
+        $myDisasterMap['user_id'] = $member['id'];
+        if ($disaster&&db('prop_disaster')->where($myDisasterMap)->find()) {
+            $disaster = array();//已经历过
+        }
         $this->assign('disaster', $disaster);  
 
         //道具
@@ -137,12 +142,28 @@ class Index extends Home
 
         //当前用户 | 道具 
         $prop_type = (int)$params['prop_type'];
+        $disaster_id = (int)$params['disaster_id'];
         $propMap['user_id'] = $member['id'];
         $propMap['prop_type'] = $prop_type;
-
-        if (db('my_prop')->where($propMap)->find()) {
+        $prop = $db('my_prop')->where($propMap)->find();
+        if ($prop) {
             $data['status'] = 1;
+            $trees_id = $this->currentTree()['id'];
+            if (!$trees_id) {
+                $data = ['status'=>'error','msg'=>'服务器错误'];
+                return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
+            }
+            $data['trees_id'] = $trees_id;
             if(db('my_prop')->where($propMap)->update($data)){
+                //抵御灾害处理
+                if ($prop_type==3) {
+                    $disaster['user_id'] = $member['id'];
+                    $disaster['prop_id'] = $$prop['id'];
+                    $disaster['disaster_id'] = $disaster_id;
+                    $disaster['create_time'] = time();
+                    db('prop_disaster')->insert($disaster);
+                }
+                
                 $data = ['status'=>'succ','msg'=>'成功'];
             }else{
                 $data = ['status'=>'error','msg'=>'道具不在存或已使用'];
@@ -175,6 +196,16 @@ class Index extends Home
             
         }
         return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
+    }
+
+    function currentTree(){
+        $member = session('_MEMBER');
+
+        $map['user_id'] = $member['id'];
+        $map['status'] = array('lt',3);
+
+        $tree = db('trees')->where($map)->find();
+        return $tree;
     }
 
 }
