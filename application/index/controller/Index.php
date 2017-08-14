@@ -153,4 +153,28 @@ class Index extends Home
         }
         return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
     }
+
+    public function level()
+    {
+        //取用户
+        $member = session('_MEMBER');
+
+        $request = Request::instance();
+        $params = $request->param();
+
+
+        //当前树苗阶段 3 或 <3
+        $map['user_id'] = $member['id'];
+        $map['status'] = array('lt',3);
+
+        if (db('trees')->where($map)->find()) {
+            $tree = db('trees')->where($map)->find();
+            $data = ['status'=>'succ','msg'=>'','list'=>$tree];
+        }else{
+            $data = ['status'=>'error','msg'=>'服务器错误'];
+            
+        }
+        return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
+    }
+
 }
