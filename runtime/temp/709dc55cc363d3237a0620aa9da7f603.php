@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:59:"/data/httpd/treeH5/application/index/view/index/launch.html";i:1502677776;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -32,13 +33,13 @@
 
 <body>
     <div class="launch">
-        <img src="{$static_dir}home/img/start.png">
+        <img src="<?php echo $static_dir; ?>home/img/start.png">
     </div>
-    <script type="text/javascript" src="{$static_dir}home/js/zepto.js"></script>
+    <script type="text/javascript" src="<?php echo $static_dir; ?>home/js/zepto.js"></script>
     <script type="text/javascript">
         // 启动页
         setTimeout(function() {
-            location.href = "{:url('Index/index')}";
+            location.href = "<?php echo url('Index/index'); ?>";
         }, 5000);
     </script>
 </body>
