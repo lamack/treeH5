@@ -299,4 +299,25 @@ $(function(){
         },
 	}
 	Lunbo.init();
+	var Guoshi = {
+		num :2,
+		el:$('.old','.tree'),
+		init:function(){
+            this.render(this.num)
+		},
+		getT(){
+			return parseInt(17+Math.random()*25)
+		},
+		getL(){
+			return parseInt(18+Math.random()*56)
+		},
+		render(num){
+			var str = '';
+           for(var i =0;i<num;i++){
+              str+= '<div style="top:'+this.getT()+'%;left:'+this.getL()+'%;" class="guoshi"></div>'
+           }
+           this.el.append(str)
+		}
+	}
+	Guoshi.init();
 })
