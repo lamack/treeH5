@@ -17,23 +17,23 @@
                 <div class="item_row flex flex-justify-arround">
                     <div class="">
                         <img src="{$static_dir}home/img/green.png">
-                        <p class="">{$_MEMBER.green_max}</p>
+                        <p class="">{$_MEMBER.green_max|default=0}</p>
                     </div>
                     <div class="">
                         <img src="{$static_dir}home/img/dui.png">
-                        <p class="">{$_MEMBER.green}</p>
+                        <p class="">{$_MEMBER.green|default=0}</p>
                     </div>
                     <div class="">
                         <img src="{$static_dir}home/img/budui.png">
-                        <p class="">{$_MEMBER.green_nocash}</p>
+                        <p class="">{$_MEMBER.green_nocash|default=0}</p>
                     </div>
                     <div class="">
                         <img src="{$static_dir}home/img/hsf2.png">
-                        <p class="">{$_MEMBER.share}</p>
+                        <p class="">{$_MEMBER.share|default=0}</p>
                     </div>
                     <div class="">
                         <img src="{$static_dir}home/img/bigtree.png">
-                        <p class="">{$count}</p>
+                        <p class="">{$count|default=1}</p>
                     </div>
                 </div>
             </div>
