@@ -145,7 +145,7 @@ class Index extends Home
         $disaster_id = (int)$params['disaster_id'];
         $propMap['user_id'] = $member['id'];
         $propMap['prop_type'] = $prop_type;
-        $prop = $db('my_prop')->where($propMap)->find();
+        $prop = db('my_prop')->where($propMap)->find();
         if ($prop) {
             $data['status'] = 1;
             $trees_id = $this->_currentTree()['id'];
@@ -156,7 +156,7 @@ class Index extends Home
             $data['trees_id'] = $trees_id;
             if(db('my_prop')->where($propMap)->update($data)){
                 //抵御灾害处理
-                if ($prop_type==3) {
+                if ($prop_type==4) {
                     $disaster['user_id'] = $member['id'];
                     $disaster['prop_id'] = $$prop['id'];
                     $disaster['disaster_id'] = $disaster_id;
@@ -192,7 +192,7 @@ class Index extends Home
             $tree = db('trees')->where($map)->find();
             //处理结果
             if ($tree['status']<3) {
-                $this->_hanldTree(&$tree);
+                $tree = $this->_hanldTree($tree);
             }
             $data = ['status'=>'succ','msg'=>'','list'=>$tree];
         }else{
