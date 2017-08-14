@@ -175,6 +175,7 @@ $(function(){
                 if($(this).index()==3) return;
                 that.index = $(this).index();
                 //兑换弹框显示
+                if($('.planting').find('.item').eq(index).find('.num').html == 0) return;
                  that.bomb.show()
             });
             // 点击使用
@@ -244,52 +245,92 @@ $(function(){
     }
     Tree.init();
     //灾难来袭
-	var Disaster = {
-		hongshui:$('.hongshui'),
-		ganhan:$('.ganhan'),
-		taifeng:$('.taifeng'),
-		cloud:$('.cloud'),
-		init:function(){
-			// this.gnahancom();
-			this.taifengcom();
-		},
-		hongshuicom:function(){
-		    this.hongshui.show();	
-		    this.cloud.show();
-		    this.hudun();
-		},
-		gnahancom:function(){
-			var that = this;
-			this.ganhan.addClass('active')
-			setTimeout(function(){
-				that.hudun();
-			},4000)
-		},
-		taifengcom:function(){
-			var that = this;
-            this.taifeng.addClass('active')
-			that.hudun();
-            setTimeout(function(){
-            	that.taifeng.removeClass('active')
-			},8000)
-		},
-		hudun:function(){
-			var that = this;
-			//护盾激活效果
-			$('.hudun').addClass('active')
-            Handlecount.minus(3);
-			//护盾运动效果
-			$('.gethudun').addClass('active')
-			//护盾效果结束
-			setTimeout(function(){
-				$('.hudun').removeClass('active')
-				$('.gethudun').removeClass('active')
-				that.hongshui.hide();
-				that.cloud.hide();
-			},4000)
-		}
-	}
-	Disaster.init();
+      var Disaster = {
+          hongshui:$('.hongshui'),
+          ganhan:$('.ganhan'),
+          taifeng:$('.taifeng'),
+          cloud:$('.cloud'),
+          init:function(t){
+              //api
+              var that = this;
+              var baseUrl = "{:url('Index/prop')}";
+              console.log(baseUrl);
+              var disasterArr = '{$disaster|json_encode}';
+                  disasterArr = JSON.parse(disasterArr);
+              if (disasterArr) {
+                  $.get(baseUrl,{'prop_type':'4','disaster_id':disasterArr.id},function(rs){
+                      if (rs.data.status=='succ') {
+                          switch (disasterArr.disaster_type){
+                              case 0:
+                              that.taifengcom();
+                              that.hudun();
+                              break;
+                              case 1:
+                              that.hongshuicom();
+                              that.hudun();
+                              break;
+                              case 2:
+                              that.gnahancom();
+                              that.hudun();
+                              break;
+                          }
+                              
+                      } else {
+                          switch (disasterArr.disaster_type){
+                              case 0:
+                              that.taifengcom();
+                              break;
+                              case 1:
+                              that.hongshuicom();
+                              break;
+                              case 2:
+                              that.gnahancom();
+                              break;
+                          }
+                              
+                      }
+                  })
+                  
+              }
+              
+          },
+          hongshuicom:function(){
+              this.hongshui.show();   
+              this.cloud.show();
+              //this.hudun();
+          },
+          gnahancom:function(){
+              var that = this;
+              this.ganhan.addClass('active')
+              setTimeout(function(){
+                  // that.hudun();
+              },4000)
+          },
+          taifengcom:function(){
+              var that = this;
+              this.taifeng.addClass('active')
+              // that.hudun();
+              setTimeout(function(){
+                  that.taifeng.removeClass('active')
+              },8000)
+          },
+          hudun:function(){
+              var that = this;
+              //护盾激活效果
+              $('.hudun').addClass('active')
+              Handlecount.minus(3);
+              //护盾运动效果
+              $('.gethudun').addClass('active')
+              //护盾效果结束
+              setTimeout(function(){
+                  $('.hudun').removeClass('active')
+                  $('.gethudun').removeClass('active')
+                  that.hongshui.hide();
+                  that.cloud.hide();
+              },4000)
+          }
+      }
+      Disaster.init();
 	//轮播
 	var Lunbo = {
 		lunboCon : $('.lunbo-container'),
