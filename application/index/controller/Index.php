@@ -63,7 +63,32 @@ class Index extends Home
         $disasterMap['start_time'] = array('lt',$now);
         $disasterMap['end_time'] = array('gt',$now);
         $disaster = db('disaster')->where($disasterMap)->find();
-        $this->assign('disaster', $disaster);    
+        $this->assign('disaster', $disaster);  
+
+        //道具
+        $waterMap['user_id'] = $member['id'];
+        $waterMap['status'] = '0';
+        $waterMap['prop_type'] = '1';
+        $waterprop = db('my_prop')->where($waterMap)->count();
+        $this->assign('waterprop', $waterprop);
+
+        $cutMap['user_id'] = $member['id'];
+        $cutMap['status'] = '0';
+        $cutMap['prop_type'] = '2';
+        $cutprop = db('my_prop')->where($cutMap)->count();
+        $this->assign('cutprop', $cutprop);
+
+        $shifeiMap['user_id'] = $member['id'];
+        $shifeiMap['status'] = '0';
+        $shifeiMap['prop_type'] = '3';
+        $shifeiprop = db('my_prop')->where($shifeiMap)->count();
+        $this->assign('shifeiprop', $shifeiprop);
+
+        $hudunMap['user_id'] = $member['id'];
+        $hudunMap['status'] = '0';
+        $hudunMap['prop_type'] = '4';
+        $hudunprop = db('my_prop')->where($hudunMap)->count();
+        $this->assign('hudunprop', $hudunprop);
         //个人排名
         $me_rank = [];
         $person_rank = db('member')->field('username,green_max,id')->where('type','0')->order('green_max DESC')->limit('100')->select();
@@ -119,6 +144,8 @@ class Index extends Home
             $data['status'] = 1;
             if(db('my_prop')->where($propMap)->update($data)){
                 $data = ['status'=>'succ','msg'=>'成功'];
+            }else{
+                $data = ['status'=>'error','msg'=>'道具不在存或已使用'];
             }
         }else{
             $data = ['status'=>'error','msg'=>'道具不在存或已使用'];
