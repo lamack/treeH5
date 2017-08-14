@@ -148,7 +148,7 @@ class Index extends Home
         $prop = $db('my_prop')->where($propMap)->find();
         if ($prop) {
             $data['status'] = 1;
-            $trees_id = $this->currentTree()['id'];
+            $trees_id = $this->_currentTree()['id'];
             if (!$trees_id) {
                 $data = ['status'=>'error','msg'=>'服务器错误'];
                 return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
@@ -187,9 +187,13 @@ class Index extends Home
         //当前树苗阶段 3 或 <3
         $map['user_id'] = $member['id'];
         $map['status'] = array('lt',3);
-
+        $develop = $this->_maxLiveTree();
         if (db('trees')->where($map)->find()) {
             $tree = db('trees')->where($map)->find();
+            //处理结果
+            if ($tree['status']<3) {
+                $this->_hanldTree(&$tree);
+            }
             $data = ['status'=>'succ','msg'=>'','list'=>$tree];
         }else{
             $data = ['status'=>'error','msg'=>'服务器错误'];
@@ -198,7 +202,7 @@ class Index extends Home
         return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
     }
 
-    function currentTree(){
+    function _currentTree(){
         $member = session('_MEMBER');
 
         $map['user_id'] = $member['id'];
@@ -206,6 +210,65 @@ class Index extends Home
 
         $tree = db('trees')->where($map)->find();
         return $tree;
+    }
+
+    function _maxLiveTree(){
+
+        $develop = db('develop')->find();
+        return $develop;
+    }
+
+    function _hanldTree($tree){
+        if (!$tree) {
+            return null;
+        }
+        $member = session('_MEMBER');
+        $lives = $tree['lifes'];
+        $maxLives = $this->_maxLiveTree();
+        $average = $maxLives/5;
+        switch ($lives) {
+            case $lives>=$average*0 && $score<=$average*1:
+                $level = 1;
+                break;
+            case $lives>=$average*1 && $score<=$average*2:
+                $level = 2;
+                //更新
+                $treesMap['id'] = $tree['id'];
+                $treesMap['level'] = 2;
+                if (!db('trees')->where($treesMap)->find()) {
+                    $data['level'] = 2;
+                    db('trees')->where('id',$tree['id'])->update($data);  
+                }
+                break;
+            case $lives>=$average*2 && $score<=$average*3:
+                $level = 3;
+                //更新
+                $treesMap['id'] = $tree['id'];
+                $treesMap['level'] = 3;
+                if (!db('trees')->where($treesMap)->find()) {
+                    $data['level'] = 3;
+                    db('trees')->where('id',$tree['id'])->update($data);  
+                }
+                //判断是不是要结果了
+                $propMap['trees_id'] = $tree['id'];
+                $propMap['status'] = 0;
+                $prop_use = db('my_prop')->where($propMap)->select($data); 
+                $prop_type = array_column($prop_use, 'prop_type');
+                if (array_unique($prop_type)==3) {
+                    $treesMap['id'] = $tree['id'];
+                    $udata['status'] = 2;
+                    db('trees')->where($treesMap)->update($udata);
+                }else{
+                    $treesMap['id'] = $tree['id'];
+                    $udata['status'] = 1;
+                    db('trees')->where($treesMap)->update($udata);
+                }
+                break;    
+            default:
+                # code...
+                break;
+        }
+        return db('trees')->where('id',$tree['id'])->find();
     }
 
 }
