@@ -31,7 +31,7 @@
                     </div>
                 </div>
             </div>
-            <div class="dianzan"><div class="add">+1</div>X100</div>
+            <div class="dianzan"><div class="add">+1</div>X<div style="display: inline-block;margin-left:3px;" class="num">0</div></div>
             <div class="senlin xiaoshu"></div>
         </div>
         <div class="tab-box">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
             </div>
-            <div class="dianzan"><div class="add">+1</div>X100</div>
+            <div class="dianzan"><div class="add">+1</div>X<div style="display: inline-block;margin-left:3px;" class="num">0</div></div>
             <div class="senlin"></div>
         </div>
         <div class="tab-box">
@@ -61,7 +61,7 @@
                     </div>
                 </div>
             </div>
-            <div class="dianzan"><div class="add">+1</div>X100</div>
+            <div class="dianzan"><div class="add">+1</div>X<div style="display: inline-block;margin-left:3px;" class="num">0</div></div>
             <div class="senlin"></div>
         </div>
         <div class="tab-box quyu">
@@ -150,9 +150,13 @@ $(function(){
     $('.dianzan').click(function(){
         var index = $(this).parent().index();
         $(this).find('.add').show();
+        var num  = $(this).find('.num').html();
+        num++;
+        $(this).find('.num').html(num)
         setTimeout(function(){
             $('.dianzan').find('.add').hide();
         },1000)
+
     })
 })
 </script>
