@@ -1,5 +1,5 @@
 div#header{border:none;}
-body{background: url(../img/indexbg.jpg) no-repeat;background-size: 100% 100%;position: fixed;width:100%;}
+body{background: url(../img/indexbg.jpg) no-repeat;background-size: 100% 100%;position: fixed;width:100%;overflow: hidden;}
 
 .blur_container{
     position: absolute;
@@ -32,7 +32,7 @@ body{background: url(../img/indexbg.jpg) no-repeat;background-size: 100% 100%;po
     top:80px;left:10px;
 }
 #bottom{
-    position: fixed;left:0;height:100%;width:100%;transition:all 1s;z-index: 9999;
+    position: absolute;left:0;height:100%;width:100%;transition:all 1s;z-index: 9999;
 }
 #bottom.active{transform: translateY(-500px);}
 #bottom .topbg{
