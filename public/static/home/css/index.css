@@ -184,7 +184,7 @@ body{background: url(../img/indexbg.jpg) no-repeat;background-size: 100% 100%;po
     color: #fff;}
 .bomb .bomb-box .bottom .status2{display: none;}
 .bomb .bomb-box .bottom .btn:nth-child(1){margin-right:12px;}
-.tree{position: absolute;width:90%;height:50%;left:5%;bottom:190px;z-index:2;}
+.tree{position: absolute;width:90%;height:50%;left:5%;bottom:35%;z-index:2;}
 .tree .tree-box{position: absolute;bottom:0;opacity: 0;transform-origin:50% 100%;transition:all 2s;}
 .tree .tree-box.active{opacity: 1;}
 .tree .tree-box img{width:100%;height:100%;;}
