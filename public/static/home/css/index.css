@@ -1,5 +1,5 @@
 div#header{border:none;}
-body{background: url(../img/indexbg.jpg) no-repeat;background-size: 100% 100%;position: fixed;width:100%;overflow: hidden;}
+body{background: url(../img/indexbg.jpg) no-repeat;background-size: 100% 100%;position: fixed;width:100%;}
 
 .blur_container{
     position: absolute;
