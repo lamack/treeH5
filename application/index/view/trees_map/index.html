@@ -100,7 +100,6 @@ $(function(){
         changning:['29%','6%'],
         xuhui:['44%','23%'],
         zhabei:['-9%','40%'],
-        luwan:['35%','42%'],
         jingan:['13%','45%'],
         hongkou:['-5%','56%'],
         yangpu:['-5%','68%'],
@@ -110,31 +109,25 @@ $(function(){
         el:$('.quyu'),
         init:function(){
             //模拟上海市植树数据 arr arr2;
-           // var arr=[
-           //    {name:'shiqu',
-           //      num:0},
-           //    {name:'jiading',
-           //      num:90},
-           //    {name:'baoshan',
-           //      num:7},
-           //    {name:'minhang',
-           //      num:88},
-           //    {name:'pudong',
-           //      num:733},
-           //    {name:'nanhui',
-           //      num:23},
-           //    {name:'fengxian',
-           //      num:2},
-           //    {name:'songjiang',
-           //      num:18},
-           //    {name:'jinshan',
-           //      num:70},
-           //    {name:'qingpu',
-           //      num:57},
-           // ];
+           var arr2=[
+              {name:'putuo',
+                num:0},
+              {name:'changning',
+                num:90},
+              {name:'xuhui',
+                num:7},
+              {name:'jingan',
+                num:88},
+              {name:'hongkou',
+                num:733},
+              {name:'yangpu',
+                num:23},
+              {name:'huangpu',
+                num:2},
+           ];
            var arr = {$quyu};
            this.el.find('.city').html(this.rendercity(arr));
-           // this.el.find('.qu').html(this.rendercity(arr2));
+           this.el.find('.qu').html(this.rendercity(arr2));
         },
         rendercity(arr){
            var str = '';

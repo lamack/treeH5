@@ -527,7 +527,7 @@
                          disasterArr = JSON.parse(disasterArr);
                      if (disasterArr) {
                          $.get(baseUrl,{'prop_type':'4','disaster_id':disasterArr.id},function(rs){
-                             if (rs.data.status=='succ') {
+                             /*if (rs.data.status=='succ') {
                                  switch (disasterArr.disaster_type){
                                      case 0:
                                      that.taifengcom();
@@ -557,7 +557,7 @@
                                  }
                                      
                              }
-                         })
+                         })*/
                          
                      }
                      
