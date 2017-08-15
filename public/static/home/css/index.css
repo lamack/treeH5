@@ -323,6 +323,7 @@ body{background: url(../img/indexbg.jpg) no-repeat;background-size: 100% 100%;po
     display: none;
     opacity: 0;
     animation: taifengbg 8s ;
+    top:0;left:0;
 }
 .taifeng.active{display: block;}
 .taifeng img{
