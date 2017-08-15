@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>首页</title>
+    <title>欢乐植树</title>
     <link rel="stylesheet" type="text/css" href="{$static_dir}home/css/reset.css">
     <link rel="stylesheet" type="text/css" href="{$static_dir}home/css/index.css">
 </head>
@@ -49,6 +49,21 @@
                     <div class="status">
                         <div class="use btn">使用</div>
                         <div class="exchange btn">兑换</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bomb bomb-dialog">
+            <div class="title">温馨提示</div>
+            <div class="close"></div>
+            <div class="bomb-box">
+                <div class="middle clearfix">
+                    请先去兑换工具
+                </div>
+                <div class="bottom">
+                    <div class="status">
+                        <div class="use btn">确定</div>
+                        <div class="exchange btn">取消</div>
                     </div>
                 </div>
             </div>
@@ -278,8 +293,9 @@
     <script type="text/javascript">
        $(function(){
 
-        $('.close','.bomb').click(function(){
+        $('.close','.bomb','.bomb-dialog').click(function(){
             $('.bomb').hide();
+            $('.bomb-dialog').hide();
         })
         //操作+1和-1小图标
         var Handlecount = {
@@ -312,7 +328,7 @@
         //排名分类
         var Bottom = {
             bottom:$('#bottom'),
-            low:window.innerHeight -80,
+            low:window.innerHeight - 80,
             taps:$('.ranking').find('.ranking-item'),
             rankBoxs:$('.rank-box').find('.rank-box-item'),
             current:$('.rank-box').find('.rank-box-item').eq(0),
@@ -334,7 +350,7 @@
         touch.on('#bottom','swipeup',function(){
             $('#bottom').css('transform','translateY('+(-Bottom.low)+'px)')
             $('#bottom').find('.topbg').css({
-                height:'30%',
+                height:'40%',
                 marginBottom: '-44px',
             })
         })
@@ -423,6 +439,7 @@
         Selfrank.init();*/
            //植树
         var treelevel = JSON.parse('{$tree|json_encode}');
+        var taiFengIsOver = false; // 台风是否结束
            var treeindex = 2;
            switch(treelevel){
                case 1:
@@ -448,16 +465,25 @@
                },
                bindEvent:function(){
                    var that = this;
-                   //点击工具
+                       //点击工具
                    this.tools.click(function(){
-                       if($(this).index()==3) return;
-                       that.index = $(this).index();
-                       //兑换弹框显示
-                       if($('.planting').find('.item').eq(index).find('.num').html == 0) return;
-                        that.bomb.show()
+                       // 台风结束才可以使用道具
+                       if (taiFengIsOver) {
+                           if($(this).index()==3) return;
+                           that.index = $(this).index();
+                           console.log(that.index);
+                           //兑换弹框显示
+                           if($('.planting').find('.item').eq(that.index).find('.num').text() == 0) {
+                            $('.bomb-dialog').show();
+                            return;
+                           }
+                            that.bomb.show()
+                       }
                    });
                    // 点击使用
                    this.bomb.find('.use').click(function(event) {
+                    console.log($(this).parents('.bomb').hasClass('.bomb-dialog'));
+                    if ($(this).parents('.bomb').hasClass('.bomb-dialog')) {
                         var data = {
                             url:'/prop?prop_type='+(that.index+1),
                             success:function(ref){
@@ -495,8 +521,17 @@
                            that.now --;
                            that.tools.find('.act').eq(that.index).removeClass('active')
                        },4000)
+                    }
+
                    });
                    // 点击兑换
+                   this.bomb.find('.exchange').click(function(event) {
+                        // 点击取消
+                        if (!$(this).parents('.bomb').hasClass('.bomb-dialog')) {
+                            $('.bomb-dialog').hide();
+                            return;
+                        }
+                   });
                },
                //植树效果
                event:function(i){
@@ -548,7 +583,7 @@
                                      that.hudun();
                                      break;
                                      case 2:
-                                     that.gnahancom();
+                                     that.ganhancom();
                                      that.hudun();
                                      break;
                                  }
@@ -562,7 +597,7 @@
                                      that.hongshuicom();
                                      break;
                                      case 2:
-                                     that.gnahancom();
+                                     that.ganhancom();
                                      break;
                                  }
                                      
@@ -577,7 +612,7 @@
                      this.cloud.show();
                      //this.hudun();
                  },
-                 gnahancom:function(){
+                 ganhancom:function(){
                      var that = this;
                      this.ganhan.addClass('active')
                      setTimeout(function(){
@@ -589,8 +624,9 @@
                      this.taifeng.addClass('active')
                      // that.hudun();
                      setTimeout(function(){
-                         that.taifeng.removeClass('active')
-                     },8000)
+                         that.taifeng.removeClass('active');
+                         taiFengIsOver = true;
+                     },1000)
                  },
                  hudun:function(){
                      var that = this;
