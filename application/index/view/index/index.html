@@ -171,19 +171,12 @@
                     </div>
                     <div class="self-type-box active">
                         <div class="rank-list flex self">
-                             <div class="rank-num">{$me_rank.rank}</div>
-                             <div class="self-icon"><img src=""></div>
+                             <div class="rank-num"></div>
+                             <div class="self-icon"><img src="{$static_dir}home/img/self.png"></div>
                              <div class="self-name flex-1">{$me_rank.name}1</div>
                              <div class="self-num">{$me_rank.green_max}</div>
                          </div>
-                         {volist name="person_rank" id="item" }
-                            <div class="rank-list flex ">
-                                 <div class="rank-num">{$key+1}</div>
-                                 <div class="self-icon"><img src=""></div>
-                                 <div class="self-name flex-1">{$item.username}</div>
-                                 <div class="self-num">{$item.green_max}</div>
-                             </div>
-                        {/volist} 
+                         
                     </div>
                     <div class="self-type-box">
                         <div class="rank-list flex self">
@@ -192,14 +185,6 @@
                              <div class="self-name flex-1">{$me_rank.name}</div>
                              <div class="self-num">{$me_rank.green_max}</div>
                          </div>
-                         {volist name="driver_rank" id="item" }
-                            <div class="rank-list flex ">
-                                 <div class="rank-num">{$key+1}</div>
-                                 <div class="self-icon"><img src=""></div>
-                                 <div class="self-name flex-1">{$item.username}</div>
-                                 <div class="self-num">{$item.green_max}</div>
-                             </div>
-                        {/volist} 
                     </div>
                 </div>
                 <div class="rank-box-item">
@@ -207,14 +192,7 @@
                         <div class="self-type-item flex-1 ranking-list">排行榜</div>
                     </div>
                     <div class="self-type-box active">
-                        {volist name="class_rank" id="item" }
-                            <div class="rank-list flex ">
-                                 <div class="rank-num">{$key+1}</div>
-                                 <div class="self-icon"><img src=""></div>
-                                 <div class="self-name flex-1">{$item.class}</div>
-                                 <div class="self-num">{$item.max}</div>
-                             </div>
-                        {/volist} 
+                       
                     </div>
                 </div>
                 <div class="rank-box-item">
@@ -222,14 +200,7 @@
                         <div class="self-type-item flex-1 ranking-list">排行榜</div>
                     </div>
                     <div class="self-type-box active">
-                        {volist name="company_rank" id="item" }
-                            <div class="rank-list flex ">
-                                 <div class="rank-num">{$key+1}</div>
-                                 <div class="self-icon"><img src=""></div>
-                                 <div class="self-name flex-1">{$item.company}</div>
-                                 <div class="self-num">{$item.max}</div>
-                             </div>
-                        {/volist} 
+                        
                     </div>
                 </div>
                 <div class="rank-box-item">
@@ -238,14 +209,7 @@
                         <div class="self-type-item flex-1">产业局</div>
                     </div>
                     <div class="self-type-box active">
-                        {volist name="area_rank" id="item" }
-                            <div class="rank-list flex ">
-                                 <div class="rank-num">{$key+1}</div>
-                                 <div class="self-icon"><img src=""></div>
-                                 <div class="self-name flex-1">{$item.area}</div>
-                                 <div class="self-num">{$item.max}</div>
-                             </div>
-                        {/volist} 
+                        
                     </div>
                     <div class="self-type-box">66s</div>
                 </div>
@@ -291,8 +255,7 @@
     <script type="text/javascript" src="{$static_dir}home/js/touch.js"></script>
     <!-- <script type="text/javascript" src="{$static_dir}home/js/index.js"></script> -->
     <script type="text/javascript">
-       $(function(){
-
+    $(function(){
         $('.close','.bomb','.bomb-dialog').click(function(){
             $('.bomb').hide();
             $('.bomb-dialog').hide();
@@ -347,12 +310,18 @@
             }
         }
         Bottom.init();
+
+        var flaginit = true;
         touch.on('#bottom','swipeup',function(){
             $('#bottom').css('transform','translateY('+(-Bottom.low)+'px)')
             $('#bottom').find('.topbg').css({
                 height:'40%',
                 marginBottom: '-44px',
             })
+            if(flaginit){
+                Selfrank.init();
+                flaginit = false;
+            }
         })
         touch.on('#bottom','swipedown',function(){
             $('#bottom').css('transform','translateY(0px)')
@@ -362,22 +331,22 @@
             })
         })
         // 个人排名
-        /*var Selfrank = {
+        var Selfrank = {
             els:$('.rank-box-item').find('.self-type-item'),
-            haxi:{
-                0:{url:'',render:true,page:1},
-                1:{url:'',render:false,page:1},
-                2:{url:'',render:false,page:1},
-            },
+            class_rank:JSON.parse('{$class_rank|json_encode}'),
+            company_rank:JSON.parse('{$company_rank|json_encode}'),
+            area_rank:JSON.parse('{$area_rank|json_encode}'),
             init:function(){
-                var data = [
-                      {name:'张三',num:'999',url:'',rank:1},
-                      {name:'张三',num:'999',url:'',rank:2},
-                      {name:'张三',num:'999',url:'',rank:3},
-                      {name:'张三',num:'999',url:'',rank:4},
-                      {name:'张三',num:'999',url:'',rank:5},
-                ];
-                this.render(0,data)
+                var me = JSON.parse('{$me_rank.rank|json_encode}');
+                var box = $('.self-type-box ').eq(0);
+                $('.self',box).eq(0).find('.rank-num').html(this.switchicon(me))
+
+                var data = JSON.parse('{$person_rank|json_encode}')
+                console.log(this.company_rank,data)
+                this.render(Bottom.rankBoxs.eq(0),0,data)
+                this.render(Bottom.rankBoxs.eq(1),0,this.class_rank)
+                this.render(Bottom.rankBoxs.eq(2),0,this.company_rank)
+                this.render(Bottom.rankBoxs.eq(3),0,this.area_rank)
                 this.bindEvent();
             },
             bindEvent:function(){
@@ -385,58 +354,42 @@
                   this.els.click(function(event) {
                         var index = $(this).index();
                         $(this).parents('.rank-box-item').find('.self-type-box').eq(index).addClass('active').siblings().removeClass('active');
-                        // if(that.haxi[index].render) return;
-                       that.getData(index,1,that.haxi[index].url);
                   });
                   //排行列表用户点击
-                  $('.rank-box-item').eq(0).on('click','.self-icon',function(){
-                        console.log('777')
+                  $('.rank-box-item').eq(0).on('click','.self-icon',function(){   
                        location.href = 'pages/other.html'
                   })
             },
-            render:function(index,data){
+            render:function(current,index,data){
                 var str = ''
                    for(var i = 0;i<data.length;i++){
-                    var rank = data[i].rank;
-                    switch(rank){
-                        case 1:
-                        rank = '<img scr="imagse/">';
-                        break;
-                        case 2:
-                        rank = '<img scr="imagse/">';
-                        break;
-                        case 3:
-                        rank = '<img scr="imagse/">';
-                        break;
-                    }
-
+                       var rank = i+1
+                       var name = data[i].username?data[i].username:(data[i].area?data[i].area:(data[i].company?data[i].company:data[i].class))
+                       var max = data[i].green_max?data[i].green_max:data[i].max
                        str+='<div class="rank-list flex">'
-                        +   '<div class="rank-num">'+rank+'</div>'
-                        +   '<div class="self-icon"><img src="'+data[i].url+'"></div>'
-                        +   '<div class="self-name flex-1">'+data[i].name+'</div>'
-                        +   '<div class="self-num">'+data[i].num+'</div>'
+                        +   '<div class="rank-num">'+this.switchicon(rank)+'</div>'
+                        +   '<div class="self-icon"><img src="{$static_dir}home/img/self.png"></div>'
+                        +   '<div class="self-name flex-1">'+name+'</div>'
+                        +   '<div class="self-num">'+max+'</div>'
                     +   '</div>'
                    }
-                   Bottom.current.find('.self-type-box').eq(index).append(str);
-                   this.haxi[index].render = true;
+                   current.find('.self-type-box').eq(index).append(str);
             },
-            getData:function(index,page,url){
-               var that = this;
-               //getData从public.js引用，封装的ajax
-               getData({
-                       url:url,
-                       data:{
-                         page:page,
-                       },
-                       success:function(data){
-                           data = JSON.parse(data)
-                          console.log(data)
-                          that.render(index,data)
-                       }
-                  })
+            switchicon(d){
+                switch(d){
+                    case 1:
+                    d = '<img src="{$static_dir}home/img/jin.png">';
+                    break;
+                    case 2:
+                    d = '<img src="{$static_dir}home/img/yin.png">';
+                    break;
+                    case 3:
+                    d = '<img src="{$static_dir}home/img/tong.png">';
+                    break;
+                }
+                return d
             },
         }
-        Selfrank.init();*/
            //植树
         var treelevel = JSON.parse('{$tree|json_encode}');
         var taiFengIsOver = false; // 台风是否结束
