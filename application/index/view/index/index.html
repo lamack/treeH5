@@ -343,7 +343,7 @@
 
                 var data = JSON.parse('{$person_rank|json_encode}')
                 console.log(this.company_rank,data)
-                this.render(Bottom.rankBoxs.eq(0),0,data)
+                this.render(Bottom.rankBoxs.eq(0),0,data,'true')
                 this.render(Bottom.rankBoxs.eq(1),0,this.class_rank)
                 this.render(Bottom.rankBoxs.eq(2),0,this.company_rank)
                 this.render(Bottom.rankBoxs.eq(3),0,this.area_rank)
@@ -360,15 +360,16 @@
                        location.href = 'pages/other.html'
                   })
             },
-            render:function(current,index,data){
+            render:function(current,index,data,flag){
                 var str = ''
                    for(var i = 0;i<data.length;i++){
                        var rank = i+1
                        var name = data[i].username?data[i].username:(data[i].area?data[i].area:(data[i].company?data[i].company:data[i].class))
-                       var max = data[i].green_max?data[i].green_max:data[i].max
+                       var max = data[i].green_max?data[i].green_max:data[i].max;
+                       var strli = !flag? '':'<div class="self-icon"><img src="{$static_dir}home/img/self.png"></div>'
                        str+='<div class="rank-list flex">'
                         +   '<div class="rank-num">'+this.switchicon(rank)+'</div>'
-                        +   '<div class="self-icon"><img src="{$static_dir}home/img/self.png"></div>'
+                        +    strli
                         +   '<div class="self-name flex-1">'+name+'</div>'
                         +   '<div class="self-num">'+max+'</div>'
                     +   '</div>'

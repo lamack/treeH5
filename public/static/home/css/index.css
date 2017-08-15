@@ -55,7 +55,17 @@ body{background: url(../img/indexbg.jpg) no-repeat;background-size: 100% 100%;po
 .rank-box .rank-box-item .self-type-box .rank-list .self-icon{width:20px;height:100%;margin-right:10px;vertical-align: middle;}
 .rank-box .rank-box-item .self-type-box .rank-list img{width:20px;height:20px;margin-top:5px;}
 .rank-box .rank-box-item .self-type-box .rank-list .self-num{color:#ff8400;}
-.rank-box .rank-box-item .self-type .self-type-item {height:100%;border-right:1px solid #37ae15;}
+.rank-box .rank-box-item .self-type .self-type-item {height:100%;}
+.rank-box .rank-box-item .self-type .self-type-item:nth-child(2) {position: relative;}
+.rank-box .rank-box-item .self-type .self-type-item:nth-child(2)::after {
+    position: absolute;
+    border-left:1px solid #37ae15;
+    height:50%;
+    width:0;
+    left:0;top:25%;
+    content:"";
+    display: block;
+}
 .rank-box .rank-box-item .self-type .ranking-list {text-align: left;margin-left: 1rem;}
 .ranking-item {height:100%;text-align:center;color:#fff;background:url(../img/tap2.png) no-repeat;background-size:100% 100%;font-size:14px;line-height: 40px;}
 .ranking-item.active{color:#37ae15;background:url(../img/tap1.png) no-repeat;background-size:100% 100%;}
