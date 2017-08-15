@@ -32,11 +32,11 @@ body{background: url(../img/indexbg.jpg) no-repeat;background-size: 100% 100%;po
     top:80px;left:10px;
 }
 #bottom{
-    position: fixed;left:0;height:100%;width:100%;transition:all 1s;z-index: 9999;
+    position: absolute;left:0;height:100%;width:100%;transition:all 1s;z-index: 9999;
 }
 #bottom.active{transform: translateY(-500px);}
 #bottom .topbg{
-    background: url(../img/other_bg.jpg) no-repeat;background-size: 100% 100%;
+    background: url(../img/phtop.png) no-repeat;background-size: 100% 100%;
     height:0;width:100%;transition:all 1s;
 }
 .ranking{
@@ -58,7 +58,7 @@ body{background: url(../img/indexbg.jpg) no-repeat;background-size: 100% 100%;po
 .rank-box .rank-box-item .self-type .self-type-item {height:100%;border-right:1px solid #37ae15;}
 .ranking-item {height:100%;text-align:center;color:#fff;background:url(../img/tap2.png) no-repeat;background-size:100% 100%;font-size:17px;line-height: 40px;}
 .ranking-item.active{color:#37ae15;background:url(../img/tap1.png) no-repeat;background-size:100% 100%;}
-.planting{position: fixed;bottom: 80px;left:0;height:70px;width:100%;z-index: 9;}
+.planting{position: absolute;bottom: 80px;left:0;height:70px;width:100%;z-index: 9;}
 .planting .planting-item{height:100%;}
 .planting .planting-item .item{height:42px;font-size:8px;color:#fff;position: relative;}
 .planting .planting-item .item .act{
@@ -182,7 +182,7 @@ body{background: url(../img/indexbg.jpg) no-repeat;background-size: 100% 100%;po
     color: #fff;}
 .bomb .bomb-box .bottom .status2{display: none;}
 .bomb .bomb-box .bottom .btn:nth-child(1){margin-right:12px;}
-.tree{position: fixed;width:90%;height:50%;left:5%;bottom:190px;z-index:2;}
+.tree{position: absolute;width:90%;height:50%;left:5%;bottom:190px;z-index:2;}
 .tree .tree-box{position: absolute;bottom:0;opacity: 0;transform-origin:50% 100%;transition:all 2s;}
 .tree .tree-box.active{opacity: 1;}
 .tree .tree-box img{width:100%;height:100%;;}
