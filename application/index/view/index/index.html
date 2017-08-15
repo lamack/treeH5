@@ -435,7 +435,6 @@
                    });
                    // 点击使用
                    this.bomb.find('.use').click(function(event) {
-                    console.log($(this).parents('.bomb').hasClass('.bomb-dialog'));
                     if ($(this).parents('.bomb').hasClass('.bomb-dialog')) {
                         var data = {
                             url:'/prop?prop_type='+(that.index+1),
