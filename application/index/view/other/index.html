@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>TA的植树</title>
+    <link rel="stylesheet" type="text/css" href="{$static_dir}home/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="{$static_dir}home/css/other.css">
+
+</head>
+<body>
+    <div id="header">
+        <div id="back">&lt;返回</div>
+        TA的植树
+    </div>
+    <div id="container">
+        <div class="blur_container">
+            <div class="blur_bg"></div>
+            <div class="blur_box none">
+                <div class="item_row flex flex-justify-arround">
+                    <div class="css/">
+                        <img src="{$static_dir}home/img/">
+                        <span class="">1000</span>
+                    </div>
+                    <div class="">
+                        <img src="{$static_dir}home/img/">
+                        <span class="">10</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="give">
+            <div class="givetree"></div>
+            <div class="givegreen"></div>
+        </div>
+        <div class="belong">
+            <div class="belongto">所属单位：<span class="belongcomp">单位名称</span></div>
+            <div class="belongto">所属班组：<span class="belongban">班组名称</span></div>
+        </div>
+
+        <div class="bomb bomb1">
+            <div class="title"></div>
+            <div class="close"></div>
+            <div class="bomb-box">
+                <div class="middle clearfix">
+                您拥有<span class="saplings">3</span>棵可捐赠的树苗是否需要 捐赠1棵树苗？
+                </div>
+                <div class="bottom">
+                    <div class="status">
+                        <div class="close btn"></div>
+                        <div class="sure btn"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bomb bomb2">
+            <div class="title"></div>
+            <div class="close"></div>
+            <div class="bomb-box">
+                <div class="middle clearfix">
+                您没有更多的树苗
+                </div>
+                <div class="bottom">
+                    <div class="status">
+                        <div class="use btn">使用</div>
+                        <div class="exchange btn">兑换</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tree">
+        </div>
+    </div>
+<script type="text/javascript" src="{$static_dir}home/js/zepto.js"></script>
+<script type="text/javascript" src="{$static_dir}home/js/public.js"></script>
+<script type="text/javascript">
+    $(function(){
+        var treeObj = {
+            0:'<div class="child tree-box"><img src="{$static_dir}home/img/childtree.png"></div>',
+            1:'<div class="grow tree-box"><img src="{$static_dir}home/img/growtree.png"></div>',
+            2:'<div class="old tree-box"><img src="{$static_dir}home/img/oldtree.png"></div>'
+        }
+        var pro = 0;
+        $('.tree').html(treeObj[pro])
+        var givetree = $('.givetree','.give');
+        var givegreen = $('.givegreen','.give');
+        $('.close').click(function(){
+            $('.bomb').hide();
+        })
+        givetree.click(function(event) {
+            $('.bomb1').show();
+        });
+    })
+</script>
+</body>
+</html>
