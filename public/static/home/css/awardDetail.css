@@ -1,3 +1,6 @@
+body{
+    position: inherit;
+}
 #container {
     background: #fffded;
     padding: 0 10px;

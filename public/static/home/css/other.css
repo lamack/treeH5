@@ -1,4 +1,4 @@
-body{background:url(../img/other_bg.jpg) no-repeat; background-size:100% 100%;}
+body{background:url(../img/other_bg.jpg) no-repeat; background-size:100% 100%;position: inherit;}
 div#header{color:#fff;}
 .blur_container{
 	position: absolute;

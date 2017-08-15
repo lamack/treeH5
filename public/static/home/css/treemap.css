@@ -1,3 +1,6 @@
+body{
+    position: inherit;
+}
 .tab-wrap{font-size:14px;}
 div.tab-box{
     height:calc(100% - 84px);

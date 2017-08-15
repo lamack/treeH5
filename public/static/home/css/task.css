@@ -1,3 +1,6 @@
+body{
+    position: inherit;
+}
 #container {
     background: #fffded;
     height: calc(100% - 64px);

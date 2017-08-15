@@ -1,4 +1,6 @@
-
+body{
+    position: inherit;
+}
 #container{
 	background: #fffded;
     height: 100%;
