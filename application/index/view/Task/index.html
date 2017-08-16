@@ -73,7 +73,7 @@
             {/volist} 
         </ul>
     </div>
-    <div class="bomb">
+    <div class="bomb bomb-task">
             <div class="title">温馨提示</div>
             <div class="close"></div>
             <div class="bomb-box">
@@ -82,8 +82,7 @@
                 </div>
                 <div class="bottom">
                     <div class="status">
-                        <div class="use btn">确定</div>
-                        <div class="exchange btn">取消</div>
+                        <div class="use btn" style="margin-right:0px;">确定</div>
                     </div>
                 </div>
             </div>
@@ -94,7 +93,7 @@
         $('.btn-options .btn-default').click(function(event) {
             $('.bomb').show();
         });
-        $('.bomb .btn').click(function(event) {
+        $('.bomb .use').click(function(event) {
             $('.bomb').hide();
         });
     </script>

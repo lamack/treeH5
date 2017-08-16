@@ -176,6 +176,16 @@ body{background: url(../img/indexbg.jpg) no-repeat;background-size: 100% 100%;po
     background: url(../img/bomb.png) no-repeat;
     background-size: 100% 100%;display: none;}
 
+.bomb-task {    width: 260px;
+    height: 160px;
+    position: fixed;
+    z-index: 1000;
+    top: 40%;
+    left: 50%;
+    margin-left: -130px;
+    background: url(../img/bomb3.png) no-repeat;
+    background-size: 100% 100%;display: none;}
+
 .planting .planting-item .item .one{position: absolute;right:0;top:12px;animation:add 1s;display: none;font-size:12px;color:#fff;opacity: 0}
 .planting .planting-item .item .one.active{display: block}
 .bomb .title{height:30px;line-height:30px;text-align:center;}
@@ -194,6 +204,7 @@ body{background: url(../img/indexbg.jpg) no-repeat;background-size: 100% 100%;po
     color: #fff;}
 .bomb .bomb-box .bottom .status2{display: none;}
 .bomb .bomb-box .bottom .btn:nth-child(1){margin-right:12px;}
+.bomb-task .bomb-box .bottom .btn:nth-child(1){margin-right:0px;}
 .tree{position: absolute;width:90%;height:50%;left:5%;bottom:35%;z-index:2;}
 .tree .tree-box{position: absolute;bottom:0;opacity: 0;transform-origin:50% 100%;transition:all 2s;}
 .tree .tree-box.active{opacity: 1;}
