@@ -320,7 +320,7 @@
 
         var flaginit = true;
         touch.on('#bottom','swipeup',function(){
-            $('#bottom').css('transform','translateY('+(-Bottom.low)+'px)')
+            $('.container').css('transform','translateY('+(-Bottom.low)+'px)')
             $('#bottom').find('.topbg').css({
                 height:'40%',
                 marginBottom: '-44px',
@@ -331,7 +331,7 @@
             }
         })
         touch.on('#bottom','swipedown',function(){
-            $('#bottom').css('transform','translateY(0px)')
+            $('.container').css('transform','translateY(0px)')
             $('#bottom').find('.topbg').css({
                 height:'0px',
                 marginBottom: '0px',
