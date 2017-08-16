@@ -1,46 +1,77 @@
-body{
+body {
     position: inherit;
 }
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
 #container {
     background: #fffded;
     height: calc(100% - 64px);
 }
-.task-list{
-	padding: 1rem 0.6rem;
+
+.task-list {
+    padding: 1rem 0.6rem;
     margin-top: 0;
     margin-bottom: 0;
     list-style: none;
 }
+
 .task-list li {
-	margin-bottom: 0.6rem;
-	background: #f5f1d4;
-	border-radius: 8px;
-	padding: 0.7rem 0.4rem 0.7rem 0.7rem;
+    margin-bottom: 0.6rem;
+    background: #f5f1d4;
+    border-radius: 8px;
+    padding: 0.7rem 0.4rem 0.7rem 0.7rem;
 }
-.task-list li.active{
+
+.task-list li.active {
     background: #fff;
 }
+
 .task-list .thumbnail {
     width: 100%;
     justify-content: space-around;
     align-items: center;
 }
+
 .task-list .thumbnail .thumb-img {
     position: relative;
     width: 3rem;
     height: 3rem;
     margin-right: 0.3rem;
+    float: left;
+    display: inline-block;
 }
+
 .task-list .thumbnail .caption {
     justify-content: space-around;
     flex-direction: column;
-	color: #dbc8a3;
-	font-size: 13px;
+    color: #dbc8a3;
+    font-size: 13px;
+    float: left;
+    display: inline-block;
+    margin-top: 0.3rem;
 }
-.task-list .thumbnail .caption .task-award{
-	color: #ddd6ad;
-	font-size: 12px;
-	margin-top: 0.2rem;
+
+.task-list .thumbnail .btn-options {
+    float: right;
+    margin-top: 0.2rem;
+    display: inline-block;
+}
+
+.task-list .thumbnail .caption .task-award {
+    color: #ddd6ad;
+    font-size: 12px;
+    margin-top: 0.2rem;
 }
 
 .task-list .thumbnail .thumb-img a {
@@ -50,41 +81,48 @@ body{
     right: 0;
     bottom: 0;
 }
+
 .task-list .thumbnail .thumb-img img {
     display: block;
     height: 100%;
     width: 100%;
     border-radius: 5px;
 }
-.task-award img{
+
+.task-award img {
     width: 0.8rem;
     height: 0.8rem;
     vertical-align: text-top;
 }
-.task-award em{
+
+.task-award em {
     color: #59b313;
 }
-.task-list li .finish{
-    display: none;
 
+.task-list li .finish {
+    display: none;
 }
-.task-list li.active .finish{
+
+.task-list li.active .finish {
     display: black;
     width: 3rem;
     height: 2rem;
     margin-top: 0.3rem;
-
 }
-.task-list li.active .task{
+
+.task-list li.active .task {
     display: none;
 }
-.task-list li.active .task-award img{
+
+.task-list li.active .task-award img {
     visibility: hidden;
 }
-.task-list li.active .btn-default{
+
+.task-list li.active .btn-default {
     display: none;
 }
-.task-list li.active .btn-done{
+
+.task-list li.active .btn-done {
     display: block;
     color: #59b313;
     width: 4.8rem;
