@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="{$static_dir}home/css/index.css">
     <style type="text/css">
         body{
-            overflow: hidden;
+            
         }
     </style>
 </head>
@@ -319,7 +319,7 @@
         Bottom.init();
 
         var flaginit = true;
-        touch.on('#bottom','swipeup',function(){
+        /*touch.on('#bottom','swipeup',function(){
             $('.container').css('transform','translateY('+(-Bottom.low)+'px)')
             $('#bottom').find('.topbg').css({
                 height:'40%',
@@ -336,7 +336,7 @@
                 height:'0px',
                 marginBottom: '0px',
             })
-        })
+        })*/
         // 个人排名
         var Selfrank = {
             els:$('.rank-box-item').find('.self-type-item'),
@@ -398,6 +398,7 @@
                 return d
             },
         }
+         Selfrank.init();
            //植树
         var treelevel = JSON.parse('{$tree|json_encode}');
         var taiFengIsOver = false; // 台风是否结束

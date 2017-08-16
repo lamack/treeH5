@@ -1,5 +1,5 @@
 div#header{border:none;}
-body{position: fixed;width:100%;}
+body{width:100%;}
 .container{
     transition:all 1s;
     background: url(../img/indexbg.jpg) no-repeat;
