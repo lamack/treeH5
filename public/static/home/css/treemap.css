@@ -11,7 +11,7 @@ div.tab-box:nth-child(5){background: url(../img/shanghaibg.png) no-repeat; backg
 .tab-box.quyu .title{color:#288e01;text-align:center;font-size: 12px;padding: 5px 0;}
 .tab-box.quyu .city{
     width:90%;
-    height:50%;
+    height:48%;
     position: relative;
     margin:10px auto;
     background: url(../img/shanghai.png) no-repeat;background-size: 100% 100%;
