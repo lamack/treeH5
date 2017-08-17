@@ -4,7 +4,7 @@ $('#back').on('click',function(){
 	window.history.back(-1)
 })
 //请求地址的域名
-var host = 'http://tree.com/index.php/index/index';
+var host = 'http://trees.com/index.php/index/index';
 var baseData = {
 
 }
@@ -17,4 +17,17 @@ var getData=function(data){
         data:$.extend(baseData,datas),
         success:data.success
     })
+}
+function myBrowser(){
+    var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+    if (userAgent.indexOf("Safari") > -1) {
+        return "Safari";
+    }
+}
+var mb = myBrowser();
+var chengfa = 1;
+if("Safari" == mb){
+    var viewp = $('meta[name="viewport"]');
+    var width = window.innerWidth;
+     viewp.attr('content','width='+width+'px, minimum-scale=1,maximum-scale=1,initial-scale=1.0, user-scalable=no');
 }
