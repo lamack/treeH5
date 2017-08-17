@@ -162,9 +162,6 @@
                 <div class="ranking-item flex-1 banzu">
                     班组排名
                 </div>
-                <div class="ranking-item flex-1 copm">
-                    企业排名
-                </div>
                 <div class="ranking-item flex-1 area">
                     地区排名
                 </div>
@@ -417,16 +414,16 @@
         var taiFengIsOver = false; // 台风是否结束
            var treeindex = 3;
            switch(treelevel){
-               case 1:
+               case null:
                treeindex=3;
                break;
-               case 2:
+               case 1:
                treeindex=2;
                break;
-               case 3:
+               case 2:
                treeindex=1;
                break;
-               case 4:
+               case 3:
                treeindex=0;
                break;
            }
@@ -438,6 +435,7 @@
                next:null,
                index:0,
                init:function(){
+                   this.tree.eq(this.now).addClass('active').siblings().removeClass('active')
                    this.next = this.now-1;
                    this.bindEvent();
                },
@@ -523,9 +521,6 @@
                    var heinow = this.tree.eq(now).height();
                    var heinext = this.tree.eq(next).height();
                    var per = heinext/heinow;
-                   console.log('now');
-                   console.log(now);
-                   console.log(next);
                    this.tree.eq(now).css({
                        transform:'scale('+per+','+per+')',
                        opacity:0,
@@ -651,19 +646,26 @@
                     setTimeout(function(){that.move();},1000)
                 },3000)
             },
-               move(){
+            move(){
                 this.lunbo.css({'transition':'top 1s'})
                 this.top -= 30;
                 this.lunbo.css({top:this.top+'px'});
 
-               },
+            },
         }
         Lunbo.init();
         var Guoshi = {
             num :0,
             el:$('.old','.tree'),
             init:function(){
-                   this.render(this.num)
+                   this.render(this.num);
+                   this.bindEvent();
+            },
+            bindEvent(){
+                // 点击果实
+                this.el.on('click','.guoshi',function(){
+                    $(this).hide();
+                })
             },
             getT(){
                 return parseInt(17+Math.random()*25)
