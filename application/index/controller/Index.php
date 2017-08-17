@@ -58,17 +58,7 @@ class Index extends Home
         $count = db('trees')->where('user_id',$member['id'])->count();
         $this->assign('count', $count);
 
-        //灾害
-        $now = time();
-        $disasterMap['start_time'] = array('lt',$now);
-        $disasterMap['end_time'] = array('gt',$now);
-        $disaster = db('disaster')->where($disasterMap)->find();
-        $myDisasterMap['disaster_id'] = $disaster['id'];
-        $myDisasterMap['user_id'] = $member['id'];
-        if ($disaster&&db('prop_disaster')->where($myDisasterMap)->find()) {
-            $disaster = array();//已经历过
-        }
-        $this->assign('disaster', $disaster);  
+        
 
         //道具
         $waterMap['user_id'] = $member['id'];
@@ -94,10 +84,30 @@ class Index extends Home
         $hudunMap['prop_type'] = '3';
         $hudunprop = db('my_prop')->where($hudunMap)->count();
         $this->assign('hudunprop', $hudunprop);
+
+        //灾害
+        // $now = time();
+        // $disasterMap['start_time'] = array('lt',$now);
+        // $disasterMap['end_time'] = array('gt',$now);
+        // $disaster = db('disaster')->where($disasterMap)->find();
+        // $myDisasterMap['disaster_id'] = $disaster['id'];
+        // $myDisasterMap['user_id'] = $member['id'];
+        // if ($disaster&&db('prop_disaster')->where($myDisasterMap)->find()) {
+        //     $disaster = array();//已经历过
+        // }
+        
+        $disaster = db('adv_disaster')->order('id DESC')->find();
+        $disaster['start_time'] = __mdate($disaster['start_time']);
+        $this->assign('disaster', $disaster);  
         //个人排名
         $me_rank = [];
-        $person_rank = db('member')->field('username,green_max,id')->where('type','0')->order('green_max DESC')->limit('100')->select();
-        $driver_rank = db('member')->field('username,green_max,id')->where('type','1')->order('green_max DESC')->limit('100')->select();
+
+        $person_rank = db('rank')->field('name as username,green as green_max,user_id as id')->where('type','0')->order('green DESC')->select();
+        $driver_rank = db('rank')->field('name as username,green as green_max,user_id as id')->where('type','1')->order('green DESC')->select();
+
+
+        // $person_rank = db('member')->field('username,green_max,id')->where('type','0')->order('green_max DESC')->limit('100')->select();
+        // $driver_rank = db('member')->field('username,green_max,id')->where('type','1')->order('green_max DESC')->limit('100')->select();
         if ($member['type']==1) {
             foreach ($driver_rank as $key => $value) {
                 if ($value['id']==$member['id']) {
@@ -116,11 +126,14 @@ class Index extends Home
             }
         }
         //班组排名
-        $class_rank = db('member')->field('class,sum(green_max) as max')->order('sum(green_max) DESC')->group('class_no')->limit('100')->select();
+        $class_rank = db('rank')->field('name as class,green as max')->where('type','2')->order('green DESC')->select();
+        // $class_rank = db('member')->field('class,sum(green_max) as max')->order('sum(green_max) DESC')->group('class_no')->limit('100')->select();
         //企业排名
-        $company_rank = db('member')->field('company,sum(green_max) as max')->order('sum(green_max) DESC')->group('company_no')->limit('100')->select();
+        $company_rank = db('rank')->field('name as company,green as max')->where('type','3')->order('green DESC')->select();
+        // $company_rank = db('member')->field('company,sum(green_max) as max')->order('sum(green_max) DESC')->group('company_no')->limit('100')->select();
         //地区排名
-        $area_rank = db('member')->field('area,sum(green_max) as max')->order('sum(green_max) DESC')->group('area')->limit('100')->select();
+        $area_rank = db('rank')->field('name as area,green as max')->where('type','4')->order('green DESC')->select();
+        // $area_rank = db('member')->field('area,sum(green_max) as max')->order('sum(green_max) DESC')->group('area')->limit('100')->select();
         $this->assign('_MEMBER', $member);
         $this->assign('me_rank', $me_rank);
         $this->assign('person_rank', $person_rank);

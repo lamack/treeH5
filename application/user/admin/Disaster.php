@@ -91,10 +91,10 @@ class Disaster extends Admin
             ->addFormItems([ // 批量添加表单项
                 ['select', 'disaster_type', '灾害类型', '', ['台风', '洪水', '干旱']],
             ])
-            ->addDate('start_time', '触发开始时间', '', '', 'yyyy/mm/dd')
-            ->addDate('end_time', '触发结束时间', '', '', 'yyyy/mm/dd')
+            ->addDatetime('start_time', '触发开始时间', '', '', 'yyyy/mm/dd')
+            ->addDatetime('end_time', '触发结束时间', '', '', 'yyyy/mm/dd')
             ->addUeditor('push_content', '公告内容')
-            ->addDate('push_flish_time', '公告发布时间', '', '', 'yyyy/mm/dd')
+            ->addDatetime('push_flish_time', '公告发布时间', '', '', 'yyyy/mm/dd')
             ->fetch();
     }
 
@@ -129,7 +129,9 @@ class Disaster extends Admin
 
         // 获取数据
         $info = DisasterModel::where('id', $id)->find();
-
+        $info['start_time'] = date('Y-m-d H:i',$info['start_time']);
+        $info['end_time'] = date('Y-m-d H:i',$info['end_time']);
+        $info['push_flish_time'] = date('Y-m-d H:i',$info['push_flish_time']);
         // 使用ZBuilder快速创建表单
         return ZBuilder::make('form')
             ->setPageTitle('编辑') // 设置页面标题
@@ -137,10 +139,10 @@ class Disaster extends Admin
                 ['hidden', 'id'],
                 ['select', 'disaster_type', '灾害类型', '', ['台风', '洪水', '干旱']],
             ])
-            ->addDate('start_time', '触发开始时间', '', '', 'yyyy/mm/dd')
-            ->addDate('end_time', '触发结束时间', '', '', 'yyyy/mm/dd')
+            ->addDatetime('start_time', '触发开始时间', '', '', 'YYYY-MM-DD HH:mm')
+            ->addDatetime('end_time', '触发结束时间', '', '', 'YYYY-MM-DD HH:mm')
             ->addUeditor('push_content', '公告内容')
-            ->addDate('push_flish_time', '公告发布时间', '', '', 'yyyy/mm/dd')
+            ->addDatetime('push_flish_time', '公告发布时间', '', '', 'YYYY-MM-DD HH:mm')
             ->setFormData($info) // 设置表单数据
             ->fetch();
     }

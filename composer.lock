@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0f1a3530a154f6a245f95118f89a54df",
+    "hash": "248361c97afb1986bbc4badbb44f773d",
+    "content-hash": "189e7b22f82e5c37514cbc6a26b778cc",
     "packages": [
         {
             "name": "ezyang/htmlpurifier",
@@ -16,7 +17,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://dl.composer-proxy.org/ezyang/htmlpurifier/95e1bae3182efc0f3422896a3236e991049dac69.zip",
+                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/95e1bae3182efc0f3422896a3236e991049dac69",
                 "reference": "95e1bae3182efc0f3422896a3236e991049dac69",
                 "shasum": ""
             },
@@ -51,7 +52,43 @@
             "keywords": [
                 "html"
             ],
-            "time": "2017-06-03T02:28:16+00:00"
+            "time": "2017-06-03 02:28:16"
+        },
+        {
+            "name": "taskphp/taskphp",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/qq8044023/taskPHP.git",
+                "reference": "17814a2564a64117fdb2e3ff3f82b721d3ef1982"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/qq8044023/taskPHP/zipball/17814a2564a64117fdb2e3ff3f82b721d3ef1982",
+                "reference": "17814a2564a64117fdb2e3ff3f82b721d3ef1982",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "project",
+            "extra": {
+                "think-path": "taskphp"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "cunzhang",
+                    "email": "8044023@qq.com"
+                }
+            ],
+            "description": "the new taskphp framework",
+            "keywords": [
+                "framework",
+                "task",
+                "taskphp"
+            ],
+            "time": "2017-07-31 02:28:52"
         },
         {
             "name": "topthink/framework",
@@ -63,7 +100,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/top-think/framework/e428c43ec5138c989cfdb38ac300a964ad77f9cb.zip",
+                "url": "https://api.github.com/repos/top-think/framework/zipball/e428c43ec5138c989cfdb38ac300a964ad77f9cb",
                 "reference": "e428c43ec5138c989cfdb38ac300a964ad77f9cb",
                 "shasum": ""
             },
@@ -102,7 +139,7 @@
                 "orm",
                 "thinkphp"
             ],
-            "time": "2017-07-05T03:35:06+00:00"
+            "time": "2017-07-05 03:35:06"
         },
         {
             "name": "topthink/think-captcha",
@@ -138,7 +175,7 @@
                 }
             ],
             "description": "captcha package for thinkphp5",
-            "time": "2016-07-06T01:47:11+00:00"
+            "time": "2016-07-06 01:47:11"
         },
         {
             "name": "topthink/think-helper",
@@ -150,7 +187,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://dl.composer-proxy.org/topthink/think-helper/0c99dc625b0d2d4124e1b6ca15a3ad6f0125963f.zip",
+                "url": "https://api.github.com/repos/top-think/think-helper/zipball/0c99dc625b0d2d4124e1b6ca15a3ad6f0125963f",
                 "reference": "0c99dc625b0d2d4124e1b6ca15a3ad6f0125963f",
                 "shasum": ""
             },
@@ -174,7 +211,7 @@
                 }
             ],
             "description": "The ThinkPHP5 Helper Package",
-            "time": "2017-04-05T07:15:37+00:00"
+            "time": "2017-04-05 07:15:37"
         },
         {
             "name": "topthink/think-image",
@@ -186,7 +223,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://dl.composer-proxy.org/topthink/think-image/8586cf47f117481c6d415b20f7dedf62e79d5512.zip",
+                "url": "https://api.github.com/repos/top-think/think-image/zipball/8586cf47f117481c6d415b20f7dedf62e79d5512",
                 "reference": "8586cf47f117481c6d415b20f7dedf62e79d5512",
                 "shasum": ""
             },
@@ -214,7 +251,7 @@
                 }
             ],
             "description": "The ThinkPHP5 Image Package",
-            "time": "2016-09-29T06:05:43+00:00"
+            "time": "2016-09-29 06:05:43"
         },
         {
             "name": "topthink/think-installer",
@@ -226,7 +263,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/top-think/think-installer/1be326e68f63de4e95977ed50f46ae75f017556d.zip",
+                "url": "https://api.github.com/repos/top-think/think-installer/zipball/1be326e68f63de4e95977ed50f46ae75f017556d",
                 "reference": "1be326e68f63de4e95977ed50f46ae75f017556d",
                 "shasum": ""
             },
@@ -255,13 +292,15 @@
                     "email": "448901948@qq.com"
                 }
             ],
-            "time": "2017-05-27T06:58:09+00:00"
+            "time": "2017-05-27 06:58:09"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "taskphp/taskphp": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
