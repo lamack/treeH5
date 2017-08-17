@@ -222,7 +222,8 @@ class Index extends Home
         if ($prop&&($growCoin>$prop['cash'])) {
             $map1['id'] = $member['id'];
             if(db('member')->where($map1)->setDec('share',$prop['cash'])){
-                $data = ['status'=>'succ','msg'=>''];
+                $list['cash'] = $prop['cash'];
+                $data = ['status'=>'succ','msg'=>'','data'=>$list];
             }else{
                 $data = ['status'=>'error','msg'=>'服务器错误'];
             }
@@ -231,6 +232,8 @@ class Index extends Home
             $save['recode'] = '兑换道具，消耗成长币'.$prop['cash'];
             $save['create_time'] = time();
             db('growCoin')->insert($save);
+            $c_member = db('member')->where('id',$member['id'])->find();
+            session('_MEMBER',$c_member);
         }else{
             $data = ['status'=>'error','msg'=>'成长币不够，快去红色寻访吧'];
         }
