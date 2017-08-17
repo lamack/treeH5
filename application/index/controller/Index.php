@@ -54,12 +54,18 @@ class Index extends Home
         $map['user_id'] = $member['id'];
         $map['status'] = array('lt',3);
         $tree = db('trees')->where($map)->find();
+        
+        //果实
+        if ($tree) {
+            $furit = db('furit')->where('trees_id',$tree['id'])->select();
+            $tree['furit'] = $furit;
+        }
+
         $this->assign('tree', $tree);
         $count = db('trees')->where('user_id',$member['id'])->count();
         $this->assign('count', $count);
 
         
-
         //道具
         $waterMap['user_id'] = $member['id'];
         $waterMap['status'] = '0';
@@ -204,7 +210,7 @@ class Index extends Home
         }
         return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
     }
-
+    //兑换道具
     public function cash()
     {
         //取用户
@@ -222,7 +228,10 @@ class Index extends Home
         if ($prop&&($growCoin>$prop['cash'])) {
             $map1['id'] = $member['id'];
             if(db('member')->where($map1)->setDec('share',$prop['cash'])){
-                $list['cash'] = $prop['cash'];
+                $save['user_id'] = $member['id'];
+                $save['create_time'] = time();
+                $save['prop_type'] = $prop_type;
+                db('my_prop')->insert($save);
                 $data = ['status'=>'succ','msg'=>'','data'=>array('cash'=>$prop['cash'])];
             }else{
                 $data = ['status'=>'error','msg'=>'服务器错误'];
@@ -240,6 +249,22 @@ class Index extends Home
         
         return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
     }
+    //果实领取
+    function furit(){
+        //取用户
+        $member = session('_MEMBER');
+        $request = Request::instance();
+        $params = $request->param();
+
+        $type = (int)$params['type'];
+        $trees_id = $this->_currentTree()['id'];
+
+        //更新状态
+        
+        //抽取优惠券
+        
+    }
+
     function _currentTree(){
         $member = session('_MEMBER');
 
