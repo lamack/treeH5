@@ -613,9 +613,10 @@
                             $('.bomb-dialog').hide();
                         } else {
                             // 道具+1
-                            var num = parseInt($('.planting').find('.item').eq(that.index).find('.num').text());
-                             num += 1;
-                             $('.planting').find('.item').eq(that.index).find('.num').text(num);
+                            Handlecount.add(that.index)
+                            // var num = parseInt($('.planting').find('.item').eq(that.index).find('.num').text());
+                            //  num += 1;
+                            //  $('.planting').find('.item').eq(that.index).find('.num').text(num);
                              // 金币数
                              var cashNum = parseInt($('.item-cash p').text()) - data.data.cash;
                              $('.item-cash p').text(cashNum)
