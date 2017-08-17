@@ -405,6 +405,34 @@
             },
         }
         Selfrank.init();
+        var Guoshi = {
+            num: 0,
+            el: $('.old', '.tree'),
+            init: function() {
+                this.render(this.num);
+                this.bindEvent();
+            },
+            bindEvent() {
+                // 点击果实
+                this.el.on('click', '.guoshi', function() {
+                    $(this).hide();
+                })
+            },
+            getT() {
+                return parseInt(17 + Math.random() * 25)
+            },
+            getL() {
+                return parseInt(18 + Math.random() * 56)
+            },
+            render(num) {
+                var str = '';
+                for (var i = 0; i < num; i++) {
+                    str += '<div style="top:' + this.getT() + '%;left:' + this.getL() + '%;" class="guoshi"></div>'
+                }
+                this.el.append(str)
+            }
+        }
+        Guoshi.init();
         //植树
         var treelevel = JSON.parse('{$tree|json_encode}');
         console.log(treelevel);
@@ -434,6 +462,13 @@
             init: function() {
                 this.tree.eq(this.now).addClass('active').siblings().removeClass('active')
                 this.next = this.now - 1;
+                //初始化果实
+                if(treelevel&&treelevel.furit){
+                    //treelevel
+                    Guoshi.num = treelevel.furit.length;
+                    Guoshi.init();
+                    
+                }
                 // var data = {
                 //     url: '/prop?prop_type=' + (this.index + 1),
                 //     success: function(ref) {
@@ -733,34 +768,7 @@
             },
         }
         Lunbo.init();
-        var Guoshi = {
-            num: 0,
-            el: $('.old', '.tree'),
-            init: function() {
-                this.render(this.num);
-                this.bindEvent();
-            },
-            bindEvent() {
-                // 点击果实
-                this.el.on('click', '.guoshi', function() {
-                    $(this).hide();
-                })
-            },
-            getT() {
-                return parseInt(17 + Math.random() * 25)
-            },
-            getL() {
-                return parseInt(18 + Math.random() * 56)
-            },
-            render(num) {
-                var str = '';
-                for (var i = 0; i < num; i++) {
-                    str += '<div style="top:' + this.getT() + '%;left:' + this.getL() + '%;" class="guoshi"></div>'
-                }
-                this.el.append(str)
-            }
-        }
-        Guoshi.init();
+        
     })
     </script>
 </body>
