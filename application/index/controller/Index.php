@@ -223,7 +223,7 @@ class Index extends Home
             $map1['id'] = $member['id'];
             if(db('member')->where($map1)->setDec('share',$prop['cash'])){
                 $list['cash'] = $prop['cash'];
-                $data = ['status'=>'succ','msg'=>'','data'=>$list];
+                $data = ['status'=>'succ','msg'=>'','data'=>array('cash'=>$prop['cash'])];
             }else{
                 $data = ['status'=>'error','msg'=>'服务器错误'];
             }
