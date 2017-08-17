@@ -4,7 +4,7 @@ $('#back').on('click',function(){
 	window.history.back(-1)
 })
 //请求地址的域名
-var host = 'http://trees.com/index.php/index/index';
+var host = 'http://tree.com/index.php/index/index';
 var baseData = {
 
 }
