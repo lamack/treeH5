@@ -77,7 +77,8 @@
             <div class="gethudun"><img src="{$static_dir}home/img/hudun1.png" /></div>
             <div class="old tree-box"><img src="{$static_dir}home/img/oldtree.png"></div>
             <div class="grow tree-box"><img src="{$static_dir}home/img/growtree.png"></div>
-            <div class="child tree-box active"><img src="{$static_dir}home/img/childtree.png"></div>
+            <div class="child tree-box"><img src="{$static_dir}home/img/childtree.png"></div>
+            <div class="tree-box active"></div>
             <!-- <div class="qipao">
                 <div class="life-num">80</div>
                 <div class="chengzhang">成长值</div>
@@ -172,7 +173,9 @@
                 <div class="rank-box-item active">
                     <div class="self-type flex">
                         <div class="self-type-item flex-1">司机达人</div>
+                        <div class="self-type-item flex-1">乘客达人</div>
                         <div class="self-type-item flex-1">植树达人</div>
+                        <div class="self-type-item flex-1">红色寻访达人</div>
                     </div>
                     {notempty name="me_rank"}
                     <div class="self-type-box active">
@@ -192,22 +195,32 @@
                              <div class="self-num">{$me_rank.green_max}</div>
                          </div>
                     </div>
+                    <div class="self-type-box">
+                        <div class="rank-list flex self">
+                             <div class="rank-num">{$me_rank.rank}</div>
+                             <div class="self-icon"><img src="{$static_dir}home/img/self.png"></div>
+                             <div class="self-name flex-1">{$me_rank.name}</div>
+                             <div class="self-num">{$me_rank.green_max}</div>
+                         </div>
+                    </div>
+                    <div class="self-type-box">
+                        <div class="rank-list flex self">
+                             <div class="rank-num">{$me_rank.rank}</div>
+                             <div class="self-icon"><img src="{$static_dir}home/img/self.png"></div>
+                             <div class="self-name flex-1">{$me_rank.name}</div>
+                             <div class="self-num">{$me_rank.green_max}</div>
+                         </div>
+                    </div>
                     {/notempty}
                 </div>
                 <div class="rank-box-item">
-                   <div class="self-type flex">
-                        <div class="self-type-item flex-1 ranking-list">排行榜</div>
-                    </div>
-                    <div class="self-type-box active">
-                       
-                    </div>
-                </div>
-                <div class="rank-box-item">
                     <div class="self-type flex">
-                        <div class="self-type-item flex-1 ranking-list">排行榜</div>
+                        <div class="self-type-item flex-1">综合排名</div>
+                        <div class="self-type-item flex-1">绿色出行排名</div>
                     </div>
                     <div class="self-type-box active">
-                        
+                    </div>
+                    <div class="self-type-box">
                     </div>
                 </div>
                 <div class="rank-box-item">
@@ -352,8 +365,8 @@
                 console.log(this.company_rank,data)
                 this.render(Bottom.rankBoxs.eq(0),0,data,'true')
                 this.render(Bottom.rankBoxs.eq(1),0,this.class_rank)
-                this.render(Bottom.rankBoxs.eq(2),0,this.company_rank)
-                this.render(Bottom.rankBoxs.eq(3),0,this.area_rank)
+                // this.render(Bottom.rankBoxs.eq(2),0,this.company_rank)
+                this.render(Bottom.rankBoxs.eq(2),0,this.area_rank)
                 this.bindEvent();
             },
             bindEvent:function(){
@@ -402,15 +415,18 @@
            //植树
         var treelevel = JSON.parse('{$tree|json_encode}');
         var taiFengIsOver = false; // 台风是否结束
-           var treeindex = 2;
+           var treeindex = 3;
            switch(treelevel){
                case 1:
-               treeindex=2;
+               treeindex=3;
                break;
                case 2:
-               treeindex=1;
+               treeindex=2;
                break;
                case 3:
+               treeindex=1;
+               break;
+               case 4:
                treeindex=0;
                break;
            }
