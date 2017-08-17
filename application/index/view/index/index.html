@@ -413,7 +413,7 @@
                 this.bindEvent();
             },
             bindEvent() {
-                // 点击果实
+                // 点击果实 掉接口
                 this.el.on('click', '.guoshi', function() {
                     $(this).hide();
                 })
@@ -429,6 +429,8 @@
                 for (var i = 0; i < num; i++) {
                     str += '<div style="top:' + this.getT() + '%;left:' + this.getL() + '%;" class="guoshi"></div>'
                 }
+                console.log(this.getT());
+                console.log(this.getL());
                 this.el.append(str)
             }
         }
