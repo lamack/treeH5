@@ -155,7 +155,6 @@ class Index extends Home
 
         //当前用户 | 道具 
         $prop_type = (int)$params['prop_type'];
-        $disaster_id = (int)$params['disaster_id'];
         $propMap['user_id'] = $member['id'];
         $propMap['prop_type'] = $prop_type;
         $prop = db('my_prop')->where($propMap)->find();
@@ -167,15 +166,7 @@ class Index extends Home
                 return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
             }
             $data['trees_id'] = $trees_id;
-            if(db('my_prop')->where($propMap)->update($data)){
-                //抵御灾害处理
-                if ($prop_type==4) {
-                    $disaster['user_id'] = $member['id'];
-                    $disaster['prop_id'] = $$prop['id'];
-                    $disaster['disaster_id'] = $disaster_id;
-                    $disaster['create_time'] = time();
-                    db('prop_disaster')->insert($disaster);
-                }
+            if(db('my_prop')->where('id',$prop['id'])->update($data)){
                 
                 $data = ['status'=>'succ','msg'=>'成功'];
             }else{
@@ -196,7 +187,6 @@ class Index extends Home
         $request = Request::instance();
         $params = $request->param();
 
-
         //当前树苗阶段 3 或 <3
         $map['user_id'] = $member['id'];
         $map['status'] = array('lt',3);
@@ -215,6 +205,38 @@ class Index extends Home
         return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
     }
 
+    public function cash()
+    {
+        //取用户
+        $member = session('_MEMBER');
+        $c_member = db('member')->where('id',$member['id'])->find();
+        $request = Request::instance();
+        $params = $request->param();
+
+        //成长币
+        $growCoin =  (int)$c_member['share'];
+        //道具售价
+        $prop_type = (int)$params['prop_type'];
+        $map['position'] = $prop_type;
+        $prop = db('prop')->where($map)->find();
+        if ($prop&&($growCoin>$prop['cash'])) {
+            $map1['id'] = $member['id'];
+            if(db('member')->where($map1)->setDec('share',$prop['cash'])){
+                $data = ['status'=>'succ','msg'=>''];
+            }else{
+                $data = ['status'=>'error','msg'=>'服务器错误'];
+            }
+            //添加记录
+            $save['user_id'] = $member['id'];
+            $save['recode'] = '兑换道具，消耗成长币'.$prop['cash'];
+            $save['create_time'] = time();
+            db('growCoin')->insert($save);
+        }else{
+            $data = ['status'=>'error','msg'=>'成长币不够，快去红色寻访吧'];
+        }
+        
+        return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
+    }
     function _currentTree(){
         $member = session('_MEMBER');
 
