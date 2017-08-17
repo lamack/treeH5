@@ -261,7 +261,7 @@ class Index extends Home
         //更新状态
         $furit = db('furit')->where('trees_id',$trees_id)->find();
         $map['id']  = $furit['id'];
-        $map['status']  = 0;
+        $data['status']  = 0;
         db('furit')->where($map)->update($data);
         $reward = $this->_rewardSetting();
         if ($type==1) {
