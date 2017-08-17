@@ -279,10 +279,10 @@
             init: function() {},
             add: function(index) {
                 var that = this;
-                this.els.eq(index).find('.add1').addClass('active')
-                this.dom(index, add)
+                this.els.eq(index).find('.add1').addClass('active');
+                this.dom(index, add);
                 setTimeout(function() {
-                    that.els.eq(index).find('.add1').removeClass('active')
+                    that.els.eq(index).find('.add1').removeClass('active');
                 }, 1000)
             },
             minus: function(index) {
@@ -405,16 +405,38 @@
             },
         }
         Selfrank.init();
+
+
+         //植树
+        var treelevel = JSON.parse('{$tree|json_encode}');
+        console.log(treelevel);
+        var treeindex = 3;
+
         var Guoshi = {
             num: 0,
             el: $('.old', '.tree'),
             init: function() {
-                this.render(this.num);
+                this.render();
                 this.bindEvent();
             },
             bindEvent() {
                 // 点击果实 掉接口
-                this.el.on('click', '.guoshi', function() {
+                this.el.find('.guoshi').click(function(event) {
+                    var type = $(this).data('type');
+                    var data = {
+                        url: '/furit?type=' + type,
+                        success: function(ref) {
+                            console.log('ref')
+                            console.log(ref)
+                            var data = ref.data;
+                            if (data.status == 'error') {
+                                // alert(data.msg)
+                            } else {
+                                
+                            }
+                        }
+                    }
+                    getData(data)
                     $(this).hide();
                 })
             },
@@ -424,21 +446,19 @@
             getL() {
                 return parseInt(18 + Math.random() * 56)
             },
-            render(num) {
+            render() {
                 var str = '';
-                for (var i = 0; i < num; i++) {
-                    str += '<div style="top:' + this.getT() + '%;left:' + this.getL() + '%;" class="guoshi"></div>'
+                if (treelevel.furit) {
+                    for (var i = 0; i < treelevel.furit.length; i++) {
+                        str += '<div style="top:' + this.getT() + '%;left:' + this.getL() + '%;" class="guoshi" data-type="'+treelevel.furit[i].type+'"></div>'
+                    }
                 }
-                console.log(this.getT());
-                console.log(this.getL());
+                
                 this.el.append(str)
             }
         }
         Guoshi.init();
-        //植树
-        var treelevel = JSON.parse('{$tree|json_encode}');
-        console.log(treelevel);
-        var treeindex = 3;
+       
         if (treelevel) {
             switch (treelevel.level) {
                 case 1:
@@ -453,7 +473,8 @@
             }
         }
 
-        console.log(treeindex);
+        console.log('treelevel');
+        console.log(treelevel);
         var Tree = {
             tree: $('.tree').find('.tree-box'),
             tools: $('.planting').find('.item'),
@@ -465,40 +486,12 @@
                 this.tree.eq(this.now).addClass('active').siblings().removeClass('active')
                 this.next = this.now - 1;
                 //初始化果实
-                if(treelevel&&treelevel.furit){
-                    //treelevel
-                    Guoshi.num = treelevel.furit.length;
-                    Guoshi.init();
+                console.log(treelevel.furit.length);
+                if(treelevel && treelevel.furit){
+                    // Guoshi.num = treelevel.furit.length;
+                    // Guoshi.init();
                     
                 }
-                // var data = {
-                //     url: '/prop?prop_type=' + (this.index + 1),
-                //     success: function(ref) {
-                //         console.log('ref')
-                //         console.log(ref)
-                //         var data = ref.data;
-                //         if (data.status == 'error') {
-                //             // alert(data.msg)
-                //         } else {
-                //             getData({
-                //                 url: 'level',
-                //                 success: function(ref) {
-                //                     var data = ref.data;
-                //                     if (data.status == 'succ') {
-                //                         var list = data.list;
-                //                         if (list.status == 1) {
-                //                             $('.lunbo').show();
-                //                         } else if (list.status == 2) {
-                //                             Guoshi.num = 2;
-                //                             Guoshi.init();
-                //                         }
-                //                     }
-                //                 }
-                //             })
-                //         }
-                //     }
-                // }
-                // getData(data)
                 this.bindEvent();
             },
             bindEvent: function() {
@@ -613,12 +606,13 @@
                             $('.bomb-dialog').hide();
                         } else {
                             // 道具+1
-                            Handlecount.add(that.index)
-                            // var num = parseInt($('.planting').find('.item').eq(that.index).find('.num').text());
-                            //  num += 1;
-                            //  $('.planting').find('.item').eq(that.index).find('.num').text(num);
+                            // Handlecount.add(that.index)
+                            var num = parseInt($('.planting').find('.item').eq(that.index).find('.num').text());
+                             num += 1;
+                             $('.planting').find('.item').eq(that.index).find('.num').text(num);
                              // 金币数
                              var cashNum = parseInt($('.item-cash p').text()) - data.data.cash;
+                             if (cashNum < 0) {cashNum=0;}
                              $('.item-cash p').text(cashNum)
                             $('.bomb-dialog').hide();
                         }
