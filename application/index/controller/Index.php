@@ -57,6 +57,8 @@ class Index extends Home
         
         //果实
         if ($tree) {
+            $furitMap['trees_id'] = $tree['id'];
+            $furitMap['status'] = 0;
             $furit = db('furit')->where('trees_id',$tree['id'])->select();
             $tree['furit'] = $furit;
         }
