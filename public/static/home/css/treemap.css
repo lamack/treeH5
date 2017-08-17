@@ -13,7 +13,7 @@ div.tab-box:nth-child(5){background: url(../img/shanghaibg.png) no-repeat; backg
     width:90%;
     height:48%;
     position: relative;
-    margin:10px auto;
+    margin:8px auto 0px;
     background: url(../img/shanghai.png) no-repeat;background-size: 100% 100%;
 }
 .tab-box.quyu .qu{
