@@ -250,7 +250,7 @@ class Index extends Home
         return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
     }
     //果实领取
-    function furit(){
+    public function furit(){
         //取用户
         $member = session('_MEMBER');
         $request = Request::instance();
@@ -258,7 +258,6 @@ class Index extends Home
 
         $type = (int)$params['type'];//1为绿值
         $trees_id = $this->_currentTree()['id'];
-
         //更新状态
         $furit = db('furit')->where('trees_id',$trees_id)->find();
         $map['id']  = $furit['id'];
@@ -270,10 +269,13 @@ class Index extends Home
             $save['user_id'] = $member['id'];
             $save['green'] = $green;
             $save['create_time'] = time();
+
             if(db('green_record')->insert($save)){
                 $data = ['status'=>'succ','msg'=>'获得绿值'.$green.'点'];
+                return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
             }else{
                 $data = ['status'=>'error','msg'=>'服务器错误'];
+                return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
             }
             
         }else{//抽取优惠券
@@ -281,17 +283,24 @@ class Index extends Home
             $res = __get_rand($prize_arr);
             if ($res=='a') {
                $data = ['status'=>'succ','msg'=>'果实是坏的没有抽到优惠券'];
+               return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
             }else{
                //取一条没使用的优惠券
                $conpon =  db('conpon')->where('conpon_status','0')->find();
                if (!$conpon) {
                    $data = ['status'=>'error','msg'=>'果实是坏的没有抽到优惠券'];
+                   return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
                }
+               $save['user_id'] = $member['id'];
+               $save['conpon_id'] = $conpon['id'];
+               $save['create_time'] = time();
+               db('recode')->insert($save);
                $conpon_name = get_conpon($conpon['id']);
                $data = ['status'=>'succ','msg'=>'获得优惠券'.$conpon_name]; 
+               return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
             }
         }
-        return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
+        
         
     }
 
