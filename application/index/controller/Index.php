@@ -256,12 +256,42 @@ class Index extends Home
         $request = Request::instance();
         $params = $request->param();
 
-        $type = (int)$params['type'];
+        $type = (int)$params['type'];//1为绿值
         $trees_id = $this->_currentTree()['id'];
 
         //更新状态
-        
-        //抽取优惠券
+        $furit = db('furit')->where('trees_id',$trees_id)->find();
+        $map['id']  = $furit['id'];
+        $map['status']  = 0;
+        db('furit')->where($map)->update($data);
+        $reward = $this->_rewardSetting();
+        if ($type==1) {
+            $green = rand($reward['green_limit'],$reward['green_max']);
+            $save['user_id'] = $member['id'];
+            $save['green'] = $green;
+            $save['create_time'] = time();
+            if(db('green_record')->insert($save)){
+                $data = ['status'=>'succ','msg'=>'获得绿值'.$green.'点'];
+            }else{
+                $data = ['status'=>'error','msg'=>'服务器错误'];
+            }
+            
+        }else{//抽取优惠券
+            $prize_arr =array('a'=>30,'b'=>70);
+            $res = __get_rand($prize_arr);
+            if ($res=='a') {
+               $data = ['status'=>'succ','msg'=>'果实是坏的没有抽到优惠券'];
+            }else{
+               //取一条没使用的优惠券
+               $conpon =  db('conpon')->where('conpon_status','0')->find();
+               if (!$conpon) {
+                   $data = ['status'=>'error','msg'=>'果实是坏的没有抽到优惠券'];
+               }
+               $conpon_name = get_conpon($conpon['id']);
+               $data = ['status'=>'succ','msg'=>'获得优惠券'.$conpon_name]; 
+            }
+        }
+        return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
         
     }
 
@@ -279,6 +309,12 @@ class Index extends Home
 
         $develop = db('develop')->find();
         return $develop;
+    }
+
+    function _rewardSetting(){
+
+        $reward = db('reward_setting')->find();
+        return $reward;
     }
 
     function _hanldTree($tree){

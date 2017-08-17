@@ -70,5 +70,24 @@ if (!function_exists('is_mobile')) {
             
         return $text;
     }
+
+    function __get_rand($arr)
+    {
+        $pro_sum=array_sum($arr);
+        $rand_num=mt_rand(1,$pro_sum);
+        $tmp_num=0;
+        foreach($arr as $k=>$val)
+        {    
+            if($rand_num<=$val+$tmp_num)
+            {
+                $n=$k;
+                break;
+            }else
+            {
+                $tmp_num+=$val;
+            }
+        }
+        return $n;
+    }
 }
 
