@@ -71,6 +71,19 @@
                 </div>
             </div>
         </div>
+        <div class="bomb guoshi-bomb">
+            <div class="title">温馨提示</div>
+            <div class="close"></div>
+            <div class="bomb-box">
+                <div class="middle clearfix">
+                </div>
+                <div class="bottom">
+                    <div class="status">
+                        <div class="btn">确定</div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="tree">
             <div class="gethudun"><img src="{$static_dir}home/img/hudun1.png" /></div>
             <div class="old tree-box"><img src="{$static_dir}home/img/oldtree.png"></div>
@@ -428,6 +441,7 @@
         var Guoshi = {
             furit:furit,
             el: $('.old', '.tree'),
+            bomb:$('.guoshi-bomb'),
             init: function() {
                 if(this.furit){
                     this.render();
@@ -435,24 +449,32 @@
                 this.bindEvent();
             },
             bindEvent() {
+                var that =this;
                 // 点击果实 掉接口
                 this.el.find('.guoshi').click(function(event) {
                     var type = $(this).data('type');
                     var data = {
                         url: '/furit?type=' + type,
                         success: function(ref) {
-                            console.log('ref')
-                            console.log(ref)
                             var data = ref.data;
                             if (data.status == 'error') {
                                 // alert(data.msg)
                             } else {
-                                
+                                var str = type==1? '恭喜获得绿植果实':'恭喜获得优惠券果实';
+                                that.bomb.find('.middle').text(str)
+                                that.bomb.show();
                             }
                         }
                     }
                     getData(data)
                     $(this).hide();
+                })
+                //关闭按钮
+                this.bomb.find('.close').click(function(){
+                    that.bomb.hide();
+                })
+                this.bomb.find('.btn').click(function(){
+                    that.bomb.hide();
                 })
             },
             getT() {
@@ -482,13 +504,6 @@
             init: function() {
                 this.tree.eq(this.now).addClass('active').siblings().removeClass('active')
                 this.next = this.now - 1;
-                //初始化果实
-                console.log(treelevel.furit.length);
-                if(treelevel && treelevel.furit){
-                    // Guoshi.num = treelevel.furit.length;
-                    // Guoshi.init();
-                    
-                }
                 this.bindEvent();
             },
             bindEvent: function() {

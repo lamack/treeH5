@@ -181,7 +181,10 @@ body{width:100%;}
     margin-left: -130px;
     background: url(../img/bomb.png) no-repeat;
     background-size: 100% 100%;display: none;}
-
+.bomb.guoshi-bomb{
+    background: url(../img/bomb3.png) no-repeat;
+    background-size: 100% 100%;
+}
 .bomb-task {    width: 260px;
     height: 160px;
     position: fixed;
