@@ -410,9 +410,23 @@
          //植树
         var treelevel = JSON.parse('{$tree|json_encode}');
         var treeindex = 3;
-
+        var furit ;
+        if(treelevel){
+            furit = treelevel.furit;
+            switch (treelevel.level) {
+                case 1:
+                    treeindex = 2;
+                    break;
+                case 2:
+                    treeindex = 1;
+                    break;
+                case 3:
+                    treeindex = 0;
+                    break;
+            }
+        }
         var Guoshi = {
-            furit:treelevel.furit,
+            furit:furit,
             el: $('.old', '.tree'),
             init: function() {
                 if(this.furit){
@@ -458,22 +472,6 @@
         }
         Guoshi.init();
        
-        if (treelevel) {
-            switch (treelevel.level) {
-                case 1:
-                    treeindex = 2;
-                    break;
-                case 2:
-                    treeindex = 1;
-                    break;
-                case 3:
-                    treeindex = 0;
-                    break;
-            }
-        }
-
-        console.log('treelevel');
-        console.log(treelevel);
         var Tree = {
             tree: $('.tree').find('.tree-box'),
             tools: $('.planting').find('.item'),
