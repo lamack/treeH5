@@ -501,7 +501,7 @@
                     // 灾害结束后才可以使用道具
                     var isFlag = localStorage.getItem('tree_' + disasterArr.id);
                     console.log(isFlag)
-                    if (isFlag) {
+                    if (!isFlag) {
                         if ($(this).index() == 3) return;
                         that.index = $(this).index();
                         console.log(that.index);
