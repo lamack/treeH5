@@ -280,7 +280,7 @@
             add: function(index) {
                 var that = this;
                 this.els.eq(index).find('.add1').addClass('active');
-                this.dom(index, add);
+                this.dom(index, 1);
                 setTimeout(function() {
                     that.els.eq(index).find('.add1').removeClass('active');
                 }, 1000)
