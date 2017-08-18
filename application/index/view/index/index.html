@@ -409,14 +409,15 @@
 
          //植树
         var treelevel = JSON.parse('{$tree|json_encode}');
-        console.log(treelevel);
         var treeindex = 3;
 
         var Guoshi = {
-            num: 0,
+            furit:treelevel.furit,
             el: $('.old', '.tree'),
             init: function() {
-                this.render();
+                if(this.furit){
+                    this.render();
+                }
                 this.bindEvent();
             },
             bindEvent() {
@@ -448,10 +449,8 @@
             },
             render() {
                 var str = '';
-                if (treelevel.furit) {
-                    for (var i = 0; i < treelevel.furit.length; i++) {
-                        str += '<div style="top:' + this.getT() + '%;left:' + this.getL() + '%;" class="guoshi" data-type="'+treelevel.furit[i].type+'"></div>'
-                    }
+                for (var i = 0; i < this.furit.length; i++) {
+                    str += '<div style="top:' + this.getT() + '%;left:' + this.getL() + '%;" class="guoshi" data-type="'+this.furit[i].type+'"></div>'
                 }
                 
                 this.el.append(str)
@@ -538,7 +537,7 @@
                                                 if (list.status == 1) {
                                                     $('.lunbo').show();
                                                 } else if (list.status == 2) {
-                                                    Guoshi.num = 2;
+                                                    Guoshi.furit = data.furit;
                                                     Guoshi.init();
                                                 }
                                             }
