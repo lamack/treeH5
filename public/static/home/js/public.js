@@ -9,8 +9,8 @@ var baseData = {
 
 }
 var getData=function(data){
-    type = data.type ? 'get':data.type;
-    var datas = data.data? {}:data.data
+    type = data.type ? data.type :'get';
+    var datas = data.data? data.data: {};
     $.ajax({
         type:type,
         url:host+data.url,
