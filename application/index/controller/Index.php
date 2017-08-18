@@ -202,8 +202,15 @@ class Index extends Home
         if (db('trees')->where($map)->find()) {
             $tree = db('trees')->where($map)->find();
             //处理结果
-            if ($tree['status']<3) {
-                $tree = $this->_hanldTree($tree);
+            // if ($tree['status']<3) {
+            //     $tree = $this->_hanldTree($tree);
+            // }
+            //果实
+            if ($tree) {
+                $furitMap['trees_id'] = $tree['id'];
+                $furitMap['status'] = 0;
+                $furit = db('furit')->where('trees_id',$tree['id'])->select();
+                $tree['furit'] = $furit;
             }
             $data = ['status'=>'succ','msg'=>'','list'=>$tree];
         }else{
