@@ -133,14 +133,22 @@ class Index extends Home
                 }
             }
         }
+        //植树
+        $trees_rank = db('rank')->field('name as class,green as max')->where('type','2')->order('green DESC')->select();
+        //寻访
+        $vie_rank = db('rank')->field('name as class,green as max')->where('type','3')->order('green DESC')->select();
+
         //班组排名
-        $class_rank = db('rank')->field('name as class,green as max')->where('type','2')->order('green DESC')->select();
+        $class_rank = db('rank')->field('name as class,green as max')->where('type','4')->order('green DESC')->select();
+        //绿色出行
+        $green_rank = db('rank')->field('name as class,green as max')->where('type','5')->order('green DESC')->select();
         // $class_rank = db('member')->field('class,sum(green_max) as max')->order('sum(green_max) DESC')->group('class_no')->limit('100')->select();
         //企业排名
-        $company_rank = db('rank')->field('name as company,green as max')->where('type','3')->order('green DESC')->select();
+        $company_rank = db('rank')->field('name as company,green as max')->where('type','6')->order('green DESC')->select();
         // $company_rank = db('member')->field('company,sum(green_max) as max')->order('sum(green_max) DESC')->group('company_no')->limit('100')->select();
         //地区排名
-        $area_rank = db('rank')->field('name as area,green as max')->where('type','4')->order('green DESC')->select();
+        $area_rank = db('rank')->field('name as area,green as max')->where('type','7')->order('green DESC')->select();
+        $industry_rank = db('rank')->field('name as area,green as max')->where('type','8')->order('green DESC')->select();
         // $area_rank = db('member')->field('area,sum(green_max) as max')->order('sum(green_max) DESC')->group('area')->limit('100')->select();
         $this->assign('_MEMBER', $member);
         $this->assign('me_rank', $me_rank);

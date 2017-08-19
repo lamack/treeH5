@@ -11,7 +11,7 @@
  Target Server Version : 50622
  File Encoding         : utf-8
 
- Date: 08/14/2017 10:24:10 AM
+ Date: 08/17/2017 09:56:03 AM
 */
 
 SET NAMES utf8;
@@ -357,6 +357,26 @@ INSERT INTO `game_admin_user` VALUES ('1', 'admin', '超级管理员', '$2y$10$B
 COMMIT;
 
 -- ----------------------------
+--  Table structure for `game_adv_disaster`
+-- ----------------------------
+DROP TABLE IF EXISTS `game_adv_disaster`;
+CREATE TABLE `game_adv_disaster` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `disaster_id` int(11) unsigned NOT NULL COMMENT '树id',
+  `disaster_type` tinyint(1) DEFAULT '0' COMMENT '灾害类型 0 台风 1 洪水 2 干旱',
+  `disaster_value` varchar(255) DEFAULT NULL COMMENT '公告内容',
+  `start_time` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=258 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `game_adv_disaster`
+-- ----------------------------
+BEGIN;
+INSERT INTO `game_adv_disaster` VALUES ('257', '2', '0', null, '1502877300');
+COMMIT;
+
+-- ----------------------------
 --  Table structure for `game_adv_type`
 -- ----------------------------
 DROP TABLE IF EXISTS `game_adv_type`;
@@ -473,7 +493,25 @@ CREATE TABLE `game_disaster` (
 --  Records of `game_disaster`
 -- ----------------------------
 BEGIN;
-INSERT INTO `game_disaster` VALUES ('2', '0', '1502294400', '1504195200', '0', '1502208000', '<p>台风要来啦！</p>', '0');
+INSERT INTO `game_disaster` VALUES ('2', '0', '1502877300', '1502881200', '0', '1502896391', '<p>台风要来啦！</p>', '0');
+COMMIT;
+
+-- ----------------------------
+--  Table structure for `game_furit`
+-- ----------------------------
+DROP TABLE IF EXISTS `game_furit`;
+CREATE TABLE `game_furit` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `trees_id` int(11) unsigned NOT NULL COMMENT '树id',
+  `status` tinyint(1) DEFAULT '0' COMMENT '是否使用  1是  0为否',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `game_furit`
+-- ----------------------------
+BEGIN;
+INSERT INTO `game_furit` VALUES ('25', '1', '1'), ('26', '1', '1');
 COMMIT;
 
 -- ----------------------------
@@ -518,7 +556,29 @@ CREATE TABLE `game_member` (
 --  Records of `game_member`
 -- ----------------------------
 BEGIN;
-INSERT INTO `game_member` VALUES ('1', 'xxxxxxx', '上海市区', '企业名称', '班组名称', '110', null, '110', '11110', '110', '10', '13500000000', null, '1502165873', '00001', '1', '1', '0'), ('2', '1111', '嘉定', '企业名称', '班组名称', '110', null, '120', '12120', '110', '10', '18321730541', null, '1502165873', '00002', '1', '2', '0');
+INSERT INTO `game_member` VALUES ('1', 'xxxxxxx', '上海市区', '企业名称', '班组名称', '110', null, '110', '11110', '110', '10', '13500000000', null, '1502165873', '00001', '1', '1', '0'), ('2', '11112', '嘉定', '企业名称', '班组名称', '110', null, '120', '12120', '110', '10', '18321730541', null, '1502165873', '00002', '1', '2', '0');
+COMMIT;
+
+-- ----------------------------
+--  Table structure for `game_my_prop`
+-- ----------------------------
+DROP TABLE IF EXISTS `game_my_prop`;
+CREATE TABLE `game_my_prop` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) unsigned NOT NULL COMMENT '用户id',
+  `trees_id` int(11) unsigned NOT NULL COMMENT '树id',
+  `prop_id` int(11) unsigned NOT NULL COMMENT '道具id',
+  `status` tinyint(1) DEFAULT '0' COMMENT '是否使用  1是  0为否',
+  `create_time` int(11) unsigned NOT NULL COMMENT '创建时间',
+  `prop_type` tinyint(1) DEFAULT NULL COMMENT '道具类型',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `game_my_prop`
+-- ----------------------------
+BEGIN;
+INSERT INTO `game_my_prop` VALUES ('1', '1', '1', '1', '1', '0', '1'), ('2', '1', '1', '2', '1', '0', '2'), ('3', '1', '1', '3', '1', '0', '3'), ('5', '0', '1', '4', '1', '0', '1');
 COMMIT;
 
 -- ----------------------------
@@ -542,6 +602,41 @@ CREATE TABLE `game_prop` (
 -- ----------------------------
 BEGIN;
 INSERT INTO `game_prop` VALUES ('2', '浇水壶', '用于给树苗浇水', '10', '1', '10', '0', '1'), ('3', '小铲子', '用于给树苗除草', '12', '1', '12', '0', '2');
+COMMIT;
+
+-- ----------------------------
+--  Table structure for `game_prop_disaster`
+-- ----------------------------
+DROP TABLE IF EXISTS `game_prop_disaster`;
+CREATE TABLE `game_prop_disaster` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) unsigned NOT NULL COMMENT '用户id',
+  `trees_id` int(11) unsigned NOT NULL COMMENT '树id',
+  `prop_id` int(11) unsigned NOT NULL COMMENT '道具id',
+  `disaster_id` int(11) unsigned NOT NULL COMMENT '灾害id',
+  `create_time` int(11) unsigned NOT NULL COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `game_rank`
+-- ----------------------------
+DROP TABLE IF EXISTS `game_rank`;
+CREATE TABLE `game_rank` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `type` tinyint(1) DEFAULT '0' COMMENT '灾害类型 0 个人  1 司机 2 班组排名 3 企业排名 4 地区排名',
+  `name` varchar(255) DEFAULT NULL COMMENT '名称',
+  `rank` int(11) unsigned NOT NULL COMMENT '排名',
+  `green` varchar(255) DEFAULT NULL COMMENT '绿植',
+  `user_id` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1531 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `game_rank`
+-- ----------------------------
+BEGIN;
+INSERT INTO `game_rank` VALUES ('1521', '0', 'xxxxxxx', '0', '11110', '1'), ('1522', '0', '11112', '0', '12120', '2'), ('1524', '2', '班组名称', '0', '23230', null), ('1525', '3', '企业名称', '0', '11110', null), ('1526', '3', '企业名称', '0', '12120', null), ('1528', '4', '上海市区', '0', '11110', null), ('1529', '4', '嘉定', '0', '12120', null);
 COMMIT;
 
 -- ----------------------------
@@ -638,6 +733,23 @@ INSERT INTO `game_task_recode` VALUES ('1', '13500000000', '1', '10', '150216587
 COMMIT;
 
 -- ----------------------------
+--  Table structure for `game_test`
+-- ----------------------------
+DROP TABLE IF EXISTS `game_test`;
+CREATE TABLE `game_test` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `value` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+--  Records of `game_test`
+-- ----------------------------
+BEGIN;
+INSERT INTO `game_test` VALUES ('1', 'hello taskPHP'), ('2', 'hello taskPHP'), ('3', 'hello taskPHP'), ('4', 'hello taskPHP'), ('5', 'hello taskPHP'), ('6', 'hello taskPHP'), ('7', 'hello taskPHP'), ('8', 'hello taskPHP'), ('9', 'hello taskPHP'), ('10', 'hello taskPHP'), ('11', 'hello taskPHP'), ('12', 'hello taskPHP'), ('13', 'hello taskPHP'), ('14', 'hello taskPHP'), ('15', 'hello taskPHP'), ('16', 'hello taskPHP'), ('17', 'hello taskPHP'), ('18', 'hello taskPHP'), ('19', 'hello taskPHP'), ('20', 'hello taskPHP'), ('21', 'hello taskPHP'), ('22', 'hello taskPHP'), ('23', 'hello taskPHP'), ('24', 'hello taskPHP'), ('25', 'hello taskPHP'), ('26', 'hello taskPHP'), ('27', 'hello taskPHP'), ('28', 'hello taskPHP');
+COMMIT;
+
+-- ----------------------------
 --  Table structure for `game_trees`
 -- ----------------------------
 DROP TABLE IF EXISTS `game_trees`;
@@ -648,6 +760,7 @@ CREATE TABLE `game_trees` (
   `lifes` int(10) DEFAULT '0' COMMENT '当前成长值 总120点',
   `status` tinyint(1) DEFAULT '0' COMMENT '状态  0末成年树 1成年末结果实  2有果实 3果实已领取',
   `create_time` int(11) unsigned NOT NULL COMMENT '创建时间',
+  `prop_use` tinyint(1) DEFAULT '0' COMMENT '0没使用 1 使用',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
@@ -655,7 +768,16 @@ CREATE TABLE `game_trees` (
 --  Records of `game_trees`
 -- ----------------------------
 BEGIN;
-INSERT INTO `game_trees` VALUES ('1', '1', '1', '0', '0', '1502511300');
+INSERT INTO `game_trees` VALUES ('1', '1', '3', '120', '3', '1502511300', '1');
 COMMIT;
+
+-- ----------------------------
+--  Table structure for `game_user_login`
+-- ----------------------------
+DROP TABLE IF EXISTS `game_user_login`;
+CREATE TABLE `game_user_login` (
+  `PHONE` varchar(25) DEFAULT NULL COMMENT '用户手机号',
+  `LOGIN_DATETIME` varchar(25) DEFAULT NULL COMMENT '登录时间'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 SET FOREIGN_KEY_CHECKS = 1;

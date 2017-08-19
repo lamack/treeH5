@@ -22,7 +22,8 @@
         "topthink/think-image": "^1.0",
         "topthink/think-helper": "^1.0",
         "ezyang/htmlpurifier": "^4.9",
-        "taskphp/taskphp": "dev-master"
+        "taskphp/taskphp": "dev-master",
+        "topthink/think-worker": "^1.0"
     },
     "extra": {
         "think-path": "thinkphp"
