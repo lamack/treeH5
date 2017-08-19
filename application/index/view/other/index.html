@@ -20,22 +20,22 @@
                 <div class="item_row flex flex-justify-arround">
                     <div class="css/">
                         <img src="{$static_dir}home/img/self.png">
-                        <span class="">1000</span>
+                        <span class="">{$info.username}</span>
                     </div>
                     <div class="">
                         <img src="{$static_dir}home/img/green.png">
-                        <span class="">10</span>
+                        <span class="">{$info.green_max}</span>
                     </div>
                 </div>
             </div>
         </div>
         <div class="give">
-            <div class="givetree"></div>
-            <div class="givegreen"></div>
+            <!-- <div class="givetree"></div> -->
+            <!-- <div class="givegreen"></div> -->
         </div>
         <div class="belong">
-            <div class="belongto">所属单位：<span class="belongcomp">单位名称</span></div>
-            <div class="belongto">所属班组：<span class="belongban">班组名称</span></div>
+            <div class="belongto">所属单位：<span class="belongcomp">{$info.company}</span></div>
+            <div class="belongto">所属班组：<span class="belongban">{$info.class}</span></div>
         </div>
 
         <div class="bomb bomb1">

@@ -122,6 +122,7 @@ class Index extends Home
                     $me_rank['name'] = $value['username'];
                     $me_rank['green_max'] = $value['green_max'];
                     $me_rank['rank'] = $key;
+                    $me_rank['id'] = $member['id'];
                 }
             }
         }else{
@@ -130,13 +131,14 @@ class Index extends Home
                     $me_rank['name'] = $value['username'];
                     $me_rank['green_max'] = $value['green_max'];
                     $me_rank['rank'] = $key;
+                    $me_rank['id'] = $member['id'];
                 }
             }
         }
         //植树
-        $trees_rank = db('rank')->field('name as class,green as max')->where('type','2')->order('green DESC')->select();
+        $trees_rank = db('rank')->field('name as class,green as max,user_id as id')->where('type','2')->order('green DESC')->select();
         //寻访
-        $vie_rank = db('rank')->field('name as class,green as max')->where('type','3')->order('green DESC')->select();
+        $vie_rank = db('rank')->field('name as class,green as max,user_id as id')->where('type','3')->order('green DESC')->select();
 
         //班组排名
         $class_rank = db('rank')->field('name as class,green as max')->where('type','4')->order('green DESC')->select();
@@ -156,6 +158,10 @@ class Index extends Home
         $this->assign('driver_rank', $driver_rank);
         $this->assign('class_rank', $class_rank);
         $this->assign('company_rank', $company_rank);
+        $this->assign('trees_rank', $trees_rank);
+        $this->assign('vie_rank', $vie_rank);
+        $this->assign('green_rank', $green_rank);
+        $this->assign('industry_rank', $industry_rank);
         $this->assign('area_rank', $area_rank);
 
         return $this->fetch(); // 渲染模板
@@ -185,14 +191,17 @@ class Index extends Home
             if(db('my_prop')->where('id',$prop['id'])->update($data)){
                 
                 $data = ['status'=>'succ','msg'=>'成功'];
+                return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
             }else{
                 $data = ['status'=>'error','msg'=>'道具不在存或已使用'];
+                return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
             }
         }else{
             $data = ['status'=>'error','msg'=>'道具不在存或已使用'];
+            return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
             
         }
-        return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
+        
     }
 
     public function level()
@@ -318,6 +327,33 @@ class Index extends Home
             }
         }
         
+        
+    }
+    public function zan()
+    {
+        //取当前用户
+        $member = session('_MEMBER');
+
+        $request = Request::instance();
+        $params = $request->param();
+
+        //树
+        $map['user_id'] = $member['id'];
+        $map['type'] = $params['type'];//0 我的 1 班组 2为企业 
+
+        if (db('zan')->where($map)->find()) {
+            
+            $data = ['status'=>'error','msg'=>'不能重复点赞'];
+            return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
+        }else{
+            $insert['user_id'] = $member['id'];
+            $insert['trees_id'] = $member['trees_id'];
+            $insert['num'] = 1;
+            db('zan')->where($map)->insert($insert);
+            $data = ['status'=>'succ','msg'=>''];
+
+            return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
+        }
         
     }
 

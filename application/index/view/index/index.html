@@ -189,15 +189,7 @@
                     <div class="self-type-box active">
                         <div class="rank-list flex self">
                             <div class="rank-num"></div>
-                            <div class="self-icon"><img src="{$static_dir}home/img/self.png"></div>
-                            <div class="self-name flex-1">{$me_rank.name}1</div>
-                            <div class="self-num">{$me_rank.green_max}</div>
-                        </div>
-                    </div>
-                    <div class="self-type-box">
-                        <div class="rank-list flex self">
-                            <div class="rank-num">{$me_rank.rank}</div>
-                            <div class="self-icon"><img src="{$static_dir}home/img/self.png"></div>
+                            <div class="self-icon" mid="{$me_rank.id}"><img src="{$static_dir}home/img/self.png"></div>
                             <div class="self-name flex-1">{$me_rank.name}</div>
                             <div class="self-num">{$me_rank.green_max}</div>
                         </div>
@@ -205,7 +197,7 @@
                     <div class="self-type-box">
                         <div class="rank-list flex self">
                             <div class="rank-num">{$me_rank.rank}</div>
-                            <div class="self-icon"><img src="{$static_dir}home/img/self.png"></div>
+                            <div class="self-icon" mid="{$me_rank.id}"><img src="{$static_dir}home/img/self.png"></div>
                             <div class="self-name flex-1">{$me_rank.name}</div>
                             <div class="self-num">{$me_rank.green_max}</div>
                         </div>
@@ -213,7 +205,15 @@
                     <div class="self-type-box">
                         <div class="rank-list flex self">
                             <div class="rank-num">{$me_rank.rank}</div>
-                            <div class="self-icon"><img src="{$static_dir}home/img/self.png"></div>
+                            <div class="self-icon" mid="{$me_rank.id}"><img src="{$static_dir}home/img/self.png"></div>
+                            <div class="self-name flex-1">{$me_rank.name}</div>
+                            <div class="self-num">{$me_rank.green_max}</div>
+                        </div>
+                    </div>
+                    <div class="self-type-box">
+                        <div class="rank-list flex self">
+                            <div class="rank-num">{$me_rank.rank}</div>
+                            <div class="self-icon" mid="{$me_rank.id}"><img src="{$static_dir}home/img/self.png"></div>
                             <div class="self-name flex-1">{$me_rank.name}</div>
                             <div class="self-num">{$me_rank.green_max}</div>
                         </div>
@@ -383,7 +383,8 @@
                 });
                 //排行列表用户点击
                 $('.rank-box-item').eq(0).on('click', '.self-icon', function() {
-                    location.href = "{:url('other/index')}"
+                    var id = $(this).attr('mid');
+                    location.href = "{:url('other/index')}?id="+id;
                 })
             },
             render: function(current, index, data, flag) {
@@ -392,7 +393,7 @@
                     var rank = i + 1
                     var name = data[i].username ? data[i].username : (data[i].area ? data[i].area : (data[i].company ? data[i].company : data[i].class))
                     var max = data[i].green_max ? data[i].green_max : data[i].max;
-                    var strli = !flag ? '' : '<div class="self-icon"><img src="{$static_dir}home/img/self.png"></div>'
+                    var strli = !flag ? '' : '<div class="self-icon" mid="'+data[i].id+'"><img src="{$static_dir}home/img/self.png"></div>'
                     str += '<div class="rank-list flex">' +
                         '<div class="rank-num">' + this.switchicon(rank) + '</div>' +
                         strli +

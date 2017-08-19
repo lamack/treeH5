@@ -43,6 +43,8 @@ class TreesMap extends Home
         }
         $total = db('member')->count();
         $trees = db('trees')->count();
+
+        //
         // print_r($data);exit;
         $this->assign('profile_trees', $profile_trees);
         $this->assign('class_count', $class_count);
