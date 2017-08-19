@@ -18,7 +18,7 @@ div#header{color:#fff;}
 .blur_box .item_col a img{width:30px;height:30px;}
 .blur_box .item_row{padding:5px 0;font-size: 12px;color:#fff;box-sizing: border-box;height: 100%;}
 .blur_box .item_row .exchange{width:50px;}
-.blur_box .item_row img {width:30px;height:30px;vertical-align: middle;}
+.blur_box .item_row img {width:33px;height:30px;vertical-align: middle;}
 
 .give{height:45px;width:100%;position: absolute;bottom:25%;left:0;text-align: center;}
 .give>div{height:100%;width:114px;display: inline-block;}
