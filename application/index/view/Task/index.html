@@ -92,6 +92,14 @@
     <script type="text/javascript">
         $('.btn-options .btn-default').click(function(event) {
             $('.bomb').show();
+            var data = {
+                url: '/furit?type=1',
+                success: function(ref) {
+                    var data = ref.data;
+                    $('.bomb').find('.middle').text(data.msg)
+                }
+            }
+            getData(data)
         });
         $('.bomb .use,.close').click(function(event) {
             $('.bomb').hide();
