@@ -175,6 +175,8 @@ class Index extends Home
         $this->assign('person_rank', $person_rank);
         $this->assign('driver_rank', $driver_rank);
         $this->assign('class_rank', $class_rank);
+        $this->assign('me_trees_rank', $me_trees_rank);
+        $this->assign('me_vie_rank', $me_vie_rank);
         $this->assign('company_rank', $company_rank);
         $this->assign('trees_rank', $trees_rank);
         $this->assign('vie_rank', $vie_rank);
