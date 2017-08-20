@@ -3,6 +3,7 @@
 namespace app\index\controller;
 
 use \think\Request;
+use \think\Db;
 
 use app\user\model\Member as MemberModel;
 
@@ -46,7 +47,13 @@ class Index extends Home
 
     }
     public function index()
-    {
+    {   
+        $data = [
+            ['PHONE' => '18321730541', 'LOGIN_DATETIME' => '1111']
+        ];
+        print_r($data);exit;
+        $res = Db::connect('mysql://root:Innketek201306@139.196.20.81:3306/dolphin#utf8')->table('game_user_login')->select();
+        print_r($res);exit;
         //取用户
         $member = session('_MEMBER');
 
@@ -137,7 +144,7 @@ class Index extends Home
         }
         //植树
         $me_trees_rank = [];
-        $trees_rank = db('rank')->field('name as class,green as max,user_id as id')->where('type','2')->order('green DESC')->select();
+        $trees_rank = db('rank')->field('name as username,green as green_max,user_id as id')->where('type','2')->order('green DESC')->select();
 
         foreach ($trees_rank as $key => $value) {
             if ($value['id']==$member['id']) {
@@ -149,7 +156,7 @@ class Index extends Home
         }
         //寻访
         $me_vie_rank = [];
-        $vie_rank = db('rank')->field('name as class,green as max,user_id as id')->where('type','3')->order('green DESC')->select();
+        $vie_rank = db('rank')->field('name as username,green as green_max,user_id as id')->where('type','3')->order('green DESC')->select();
         foreach ($vie_rank as $key => $value) {
             if ($value['id']==$member['id']) {
                 $me_vie_rank['name'] = $value['username'];
@@ -349,33 +356,7 @@ class Index extends Home
         
         
     }
-    public function zan()
-    {
-        //取当前用户
-        $member = session('_MEMBER');
-
-        $request = Request::instance();
-        $params = $request->param();
-
-        //树
-        $map['user_id'] = $member['id'];
-        $map['type'] = $params['type'];//0 我的 1 班组 2为企业 
-
-        if (db('zan')->where($map)->find()) {
-            
-            $data = ['status'=>'error','msg'=>'不能重复点赞'];
-            return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
-        }else{
-            $insert['user_id'] = $member['id'];
-            $insert['trees_id'] = $member['trees_id'];
-            $insert['num'] = 1;
-            db('zan')->where($map)->insert($insert);
-            $data = ['status'=>'succ','msg'=>''];
-
-            return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
-        }
-        
-    }
+    
 
     function _currentTree(){
         $member = session('_MEMBER');
