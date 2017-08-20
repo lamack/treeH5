@@ -44,8 +44,12 @@ class TreesMap extends Home
         $total = db('member')->count();
         $trees = db('trees')->count();
 
-        //
-        // print_r($data);exit;
+        //分享url
+        $token = encrypt($member['id']);
+        $share_url = url('index/share/index','token='.$token,'html',true);
+
+        $this->assign('share_url', $share_url);
+        
         $this->assign('profile_trees', $profile_trees);
         $this->assign('class_count', $class_count);
         $this->assign('company_count', $company_count);

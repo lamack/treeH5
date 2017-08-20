@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>森林地图</title>
+    <link rel="stylesheet" type="text/css" href="{$static_dir}home/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="{$static_dir}home/css/treemap.css">
+</head>
+<body>
+    <div id="header">
+        <div id="back">返回</div>
+        {$info.username}的森林
+    </div>
+    <div id="container">
+        
+        <div class="tab-box active">
+            <div class="blur_container">
+                <div class="blur_bg"></div>
+                <div class="blur_box none">
+                    <div class="item_row flex flex-justify-arround">
+                        <div class="xxx">
+                            <img src="{$static_dir}home/img/bigtree.png">
+                            <span class="">树木总数：{$trees}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dianzan"><div class="add">+1</div>X<div style="display: inline-block;margin-left:3px;" class="num">{$zans}</div></div>
+            <div class="senlin xiaoshu"></div>
+        </div>
+        
+    </div>
+<script type="text/javascript" src="{$static_dir}home/js/zepto.js"></script>
+<script type="text/javascript" src="{$static_dir}home/js/public.js"></script>
+<script type="text/javascript">
+$(function(){
+    $('.tab-wrap').find('.tab-item').click(function(){
+        var index= $(this).index();
+        $(this).addClass('active').siblings().removeClass('active');
+        $('.tab-box').eq(index).addClass('active').siblings().removeClass('active')
+    })
+    
+    //点赞
+    $('.dianzan').click(function(){
+        var index = $(this).parent().index();
+        $(this).find('.add').show();
+        var num  = $(this).find('.num').html();
+        num++;
+        $(this).find('.num').html(num)
+        setTimeout(function(){
+            $('.dianzan').find('.add').hide();
+        },1000)
+
+    })
+})
+</script>
+</body>
+</html>
