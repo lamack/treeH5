@@ -136,10 +136,28 @@ class Index extends Home
             }
         }
         //植树
+        $me_trees_rank = [];
         $trees_rank = db('rank')->field('name as class,green as max,user_id as id')->where('type','2')->order('green DESC')->select();
-        //寻访
-        $vie_rank = db('rank')->field('name as class,green as max,user_id as id')->where('type','3')->order('green DESC')->select();
 
+        foreach ($trees_rank as $key => $value) {
+            if ($value['id']==$member['id']) {
+                $me_trees_rank['name'] = $value['username'];
+                $me_trees_rank['green_max'] = $value['green_max'];
+                $me_trees_rank['rank'] = $key;
+                $me_trees_rank['id'] = $member['id'];
+            }
+        }
+        //寻访
+        $me_vie_rank = [];
+        $vie_rank = db('rank')->field('name as class,green as max,user_id as id')->where('type','3')->order('green DESC')->select();
+        foreach ($vie_rank as $key => $value) {
+            if ($value['id']==$member['id']) {
+                $me_vie_rank['name'] = $value['username'];
+                $me_vie_rank['green_max'] = $value['green_max'];
+                $me_vie_rank['rank'] = $key;
+                $me_vie_rank['id'] = $member['id'];
+            }
+        }
         //班组排名
         $class_rank = db('rank')->field('name as class,green as max')->where('type','4')->order('green DESC')->select();
         //绿色出行
