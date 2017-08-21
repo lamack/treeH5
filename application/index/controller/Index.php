@@ -110,32 +110,33 @@ class Index extends Home
         $this->assign('disaster', $disaster);  
         //个人排名
         $me_rank = [];
-
+        $me_passenger_rank  = [];
+        $me_driver_rank  = [];
         $person_rank = db('rank')->field('name as username,green as green_max,user_id as id')->where('type','0')->order('green DESC')->select();
         $driver_rank = db('rank')->field('name as username,green as green_max,user_id as id')->where('type','1')->order('green DESC')->select();
 
 
         // $person_rank = db('member')->field('username,green_max,id')->where('type','0')->order('green_max DESC')->limit('100')->select();
         // $driver_rank = db('member')->field('username,green_max,id')->where('type','1')->order('green_max DESC')->limit('100')->select();
-        if ($member['type']==1) {
+        // if ($member['type']==1) {
             foreach ($driver_rank as $key => $value) {
                 if ($value['id']==$member['id']) {
-                    $me_rank['name'] = $value['username'];
-                    $me_rank['green_max'] = $value['green_max'];
-                    $me_rank['rank'] = $key;
-                    $me_rank['id'] = $member['id'];
+                    $me_driver_rank['name'] = $value['username'];
+                    $me_driver_rank['green_max'] = $value['green_max'];
+                    $me_driver_rank['rank'] = $key;
+                    $me_driver_rank['id'] = $member['id'];
                 }
             }
-        }else{
+        // }else{
             foreach ($person_rank as $key => $value) {
                 if ($value['id']==$member['id']) {
-                    $me_rank['name'] = $value['username'];
-                    $me_rank['green_max'] = $value['green_max'];
-                    $me_rank['rank'] = $key;
-                    $me_rank['id'] = $member['id'];
+                    $me_passenger_rank['name'] = $value['username'];
+                    $me_passenger_rank['green_max'] = $value['green_max'];
+                    $me_passenger_rank['rank'] = $key;
+                    $me_passenger_rank['id'] = $member['id'];
                 }
             }
-        }
+        // }
         //植树
         $me_trees_rank = [];
         $trees_rank = db('rank')->field('name as username,green as green_max,user_id as id')->where('type','2')->order('green DESC')->select();
@@ -176,6 +177,8 @@ class Index extends Home
         $this->assign('person_rank', $person_rank);
         $this->assign('driver_rank', $driver_rank);
         $this->assign('class_rank', $class_rank);
+        $this->assign('me_passenger_rank', $me_passenger_rank);
+        $this->assign('me_driver_rank', $me_driver_rank);
         $this->assign('me_trees_rank', $me_trees_rank);
         $this->assign('me_vie_rank', $me_vie_rank);
         $this->assign('company_rank', $company_rank);
