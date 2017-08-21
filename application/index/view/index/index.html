@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <div class="bomb">
+        <div class="bomb daoju-bomb">
             <div class="title">道具使用</div>
             <div class="close"></div>
             <div class="bomb-box">
@@ -286,18 +286,6 @@
             $('.bomb').hide();
             $('.bomb-dialog').hide();
         })
-        //webScoket
-        var wS = function(){
-            var ws = new WebSocket("ws://xxxx")
-            ws.onopen = function(){ws.send("工，连接成功")}
-            ws.onmessage = function(ref){
-                console.log(ref)
-            }
-            ws.close = function(ref){console.log('关闭',ref)}
-            ws.onerror = function(ref){
-                console.log('错误',ref)
-            }
-        }
         //操作+1和-1小图标
         var Handlecount = {
             els: $('.planting').find('.item'),
@@ -371,28 +359,20 @@
         // 个人排名
         var Selfrank = {
             els: $('.rank-box-item').find('.self-type-item'),
-            selfs:JSON.parse('{$me_trees_rank|json_encode}'),
-            person_rank:JSON.parse('{$person_rank|json_encode}'),
-            driver_rank:JSON.parse('{$driver_rank|json_encode}'),
-            trees_rank:JSON.parse('{$trees_rank|json_encode}'),
-            vie_rank:JSON.parse('{$vie_rank|json_encode}'),
             class_rank: JSON.parse('{$class_rank|json_encode}'),
-            green_rank: JSON.parse('{$green_rank|json_encode}'),
+            company_rank: JSON.parse('{$company_rank|json_encode}'),
             area_rank: JSON.parse('{$area_rank|json_encode}'),
-            industry_rank: JSON.parse('{$industry_rank|json_encode}'),
             init: function() {
                 var me = JSON.parse('{$me_rank.rank|json_encode}');
                 var box = $('.self-type-box ').eq(0);
                 $('.self', box).eq(0).find('.rank-num').html(this.switchicon(me))
-                //渲染排名
-                this.render(Bottom.rankBoxs.eq(0), 0, this.person_rank, 'true')
-                this.render(Bottom.rankBoxs.eq(0), 1, this.driver_rank, 'true')
-                this.render(Bottom.rankBoxs.eq(0), 2, this.trees_rank, 'true')
-                this.render(Bottom.rankBoxs.eq(0), 3, this.vie_rank, 'true')
+
+                var data = JSON.parse('{$person_rank|json_encode}')
+                console.log(this.company_rank, data)
+                this.render(Bottom.rankBoxs.eq(0), 0, data, 'true')
                 this.render(Bottom.rankBoxs.eq(1), 0, this.class_rank)
-                this.render(Bottom.rankBoxs.eq(1), 1, this.green_rank)
+                // this.render(Bottom.rankBoxs.eq(2),0,this.company_rank)
                 this.render(Bottom.rankBoxs.eq(2), 0, this.area_rank)
-                this.render(Bottom.rankBoxs.eq(2), 1, this.industry_rank)
                 this.bindEvent();
             },
             bindEvent: function() {
@@ -479,7 +459,8 @@
                         success: function(ref) {
                             var data = ref.data;
                             if (data.status == 'error') {
-                                // alert(data.msg)
+                                that.bomb.find('.middle').text(data.msg)
+                                that.bomb.show();
                             } else {
                                 var str = type==1? '恭喜获得绿植果实':'恭喜获得优惠券果实';
                                 that.bomb.find('.middle').text(str)
@@ -533,21 +514,26 @@
                 var disasterArr = '{$disaster|json_encode}';
                 disasterArr = JSON.parse(disasterArr);
                 //点击工具
-                this.tools.click(function() {
+                this.tools.click(function() { 
+                    // 如果点击盾牌不做操作
+                    if ($(this).index() == 3) return;
+                    that.index = $(this).index();
                     // 灾害结束后才可以使用道具
                     var isFlag = localStorage.getItem('tree_' + disasterArr.id);
-                    console.log(isFlag)
-                    if (!isFlag) {
-                        if ($(this).index() == 3) return;
-                        that.index = $(this).index();
-                        console.log(that.index);
-                        //兑换弹框显示
+                    if (typeof isFlag == 'object') {
+                        //如果没有道具 显示兑换弹框
                         if ($('.planting').find('.item').eq(that.index).find('.num').text() == 0) {
                             $('.bomb-dialog').show();
                             return;
                         }
-                        that.bomb.show()
-                        localStorage.setItem('tree_' + disasterArr.id, false);
+                        localStorage.setItem('tree_' + disasterArr.id, 'true');
+                    } else if(isFlag == 'true') {
+                        //如果没有道具 显示兑换弹框
+                        if ($('.planting').find('.item').eq(that.index).find('.num').text() == 0) {
+                            $('.bomb-dialog').show();
+                            return;
+                        }
+                        $('.daoju-bomb').show();
                     }
                 });
                 // 点击使用
@@ -559,7 +545,8 @@
                                 console.log(ref)
                                 var data = ref.data;
                                 if (data.status == 'error') {
-                                    // alert(data.msg)
+                                    that.bomb.find('.middle').text(data.msg)
+                                    that.bomb.show();
                                 } else {
                                     that.event(that.index);
                                     getData({
@@ -636,13 +623,15 @@
                         console.log(ref)
                         var data = ref.data;
                         if (data.status == 'error') {
-                            $('.bomb-dialog').hide();
+                            $('.bomb').hide();
+                            $('.guoshi-bomb').find('.middle').text(data.msg)
+                            $('.guoshi-bomb').show();
                         } else {
                             // 道具+1
-                            // Handlecount.add(that.index)
-                            var num = parseInt($('.planting').find('.item').eq(that.index).find('.num').text());
-                             num += 1;
-                             $('.planting').find('.item').eq(that.index).find('.num').text(num);
+                            Handlecount.add(that.index)
+                            // var num = parseInt($('.planting').find('.item').eq(that.index).find('.num').text());
+                            //  num += 1;
+                            //  $('.planting').find('.item').eq(that.index).find('.num').text(num);
                              // 金币数
                              var cashNum = parseInt($('.item-cash p').text()) - data.data.cash;
                              if (cashNum < 0) {cashNum=0;}
@@ -665,7 +654,6 @@
                 //api
                 var that = this;
                 var baseUrl = "{:url('Index/prop')}";
-                console.log(baseUrl);
                 var disasterArr = '{$disaster|json_encode}';
                 disasterArr = JSON.parse(disasterArr);
                 console.log(disasterArr);
