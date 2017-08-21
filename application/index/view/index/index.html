@@ -277,7 +277,7 @@
             <div class="lunbobg"></div>
             <div class="lunbobox">
                 <div class="lunbo-container">
-                    1.你好我符合双方计划来看2.还是减肥海景房hi3.武将半年时间考虑对4.方会我刘根据客户发生5.的风格留，的施肥hi厉害了
+                   
                 </div>
             </div>
         </div>
@@ -326,11 +326,11 @@
             lunboCon: $('.lunbo-container'),
             lunbo: $('.lunbobox'),
             top: 30,
-            hei: $('.lunbobox').height(),
+            hei: 0,
             init: function() {
-                this.isShow();
                 var that = this;
                 this.lunbo.append(this.lunboCon.clone())
+                this.hei = this.lunbo.height();
                 this.move()
                 setInterval(function() {
                     if (that.top <= -that.hei) {
@@ -354,33 +354,37 @@
                 var that = this;
                 var time = new Date().getTime();
                 var dif = starTime-parseInt(time/1000);
+                console.log(dif)
                 if(dif<3600 && dif>0){
                     var str = '';
                     switch(type){
                         case 0:
-                        str = '多少分钟后将会有强烈台风来袭，请做好防护措施，护盾会自动弹出，能有效抵抗台风，保证树的安全！';
+                        str = '分钟后将会有强烈台风来袭，请做好防护措施，护盾会自动弹出，能有效抵抗台风，保证树的安全！';
                         break;
                         case 1:
-                        str = '多少分钟后将会有强烈洪水来袭，请做好防护措施，护盾会自动弹出，能有效抵抗台风，保证树的安全！';
+                        str = '分钟后将会有强烈洪水来袭，请做好防护措施，护盾会自动弹出，能有效抵抗台风，保证树的安全！';
                         break;
                         case 2:
-                        str = '多少分钟后将会有强烈干旱来袭，请做好防护措施，护盾会自动弹出，能有效抵抗台风，保证树的安全！';
+                        str = '分钟后将会有强烈干旱来袭，请做好防护措施，护盾会自动弹出，能有效抵抗台风，保证树的安全！';
                         break;
                     };
-                    that.lunbo.text('60'+str); 
-                    var itmer = setInterval(function(){
+                    that.lunbo.text(Math.ceil(dif/60)+str); 
+                    var timer = setInterval(function(){
                         var timen = new Date().getTime();
-                        var dif2 = parseInt(starTime-parseInt(timen/1000)/60000);
-                        if(dif>=0){
-                            that.lunbo.text(dif+str); 
+                        var dif2 = parseInt((starTime-parseInt(timen/1000))/60);
+                        if(dif2>0){
+                            that.lunbo.text(dif2+str); 
                         }else{
                             clearInterval(timer);
                             $('.lunbo').hide();
                             callback();
-                            Disaster.hudun();
+                            if($('.planting').find('.item').eq(3).text().substr(1)>0){
+                                Disaster.hudun();
+                            }
                         }
                     },60000)
                     $('.lunbo').show();
+                    // this.init();
                 }
             },
         }
@@ -752,8 +756,6 @@
                 var baseUrl = "{:url('Index/prop')}";
                 var disasterArr = '{$disaster|json_encode}';
                 disasterArr = JSON.parse(disasterArr);
-                console.log(disasterArr);
-
                 if (disasterArr) {
                     var isFlag = localStorage.getItem('isFlag_' + disasterArr.id);
                     var starTime = disasterArr.start_time;
@@ -817,23 +819,23 @@
 
             },
             hongshuicom: function() {
-                this.hongshui.show();
-                this.cloud.show();
+                $('.hongshui').show();
+                $('.cloud').show();
                 //this.hudun();
             },
             ganhancom: function() {
                 var that = this;
-                this.ganhan.addClass('active')
+                $('.ganhan').addClass('active')
                 setTimeout(function() {
                     // that.hudun();
                 }, 4000)
             },
             taifengcom: function() {
                 var that = this;
-                this.taifeng.addClass('active')
+                $('.taifeng').addClass('active')
                 // that.hudun();
                 setTimeout(function() {
-                    that.taifeng.removeClass('active');
+                    $('.taifeng').removeClass('active');
                 }, 8000)
             },
             hudun: function() {
