@@ -639,8 +639,9 @@
                                 console.log(ref)
                                 var data = ref.data;
                                 if (data.status == 'error') {
-                                    that.bomb.find('.middle').text(data.msg)
-                                    that.bomb.show();
+                                    that.bomb.hide();
+                                    $('.guoshi-bomb').find('.middle').text(data.msg)
+                                    $('.guoshi-bomb').show();
                                 } else {
                                     that.event(that.index);
                                     getData({
@@ -663,14 +664,14 @@
                         }
                         getData(data)
 
-                        that.event(that.index);
-                        that.bomb.hide();
-                        //树苗成长
-                        setTimeout(function() {
-                            that.growing(that.now, that.next)
-                            that.now--;
-                            that.tools.find('.act').eq(that.index).removeClass('active')
-                        }, 4000)
+                        // that.event(that.index);
+                        // that.bomb.hide();
+                        // //树苗成长
+                        // setTimeout(function() {
+                        //     that.growing(that.now, that.next)
+                        //     that.now--;
+                        //     that.tools.find('.act').eq(that.index).removeClass('active')
+                        // }, 4000)
                     } else {
                         that.getTreeData(that);
                     }
