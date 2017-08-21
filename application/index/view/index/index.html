@@ -377,6 +377,7 @@
                             clearInterval(timer);
                             $('.lunbo').hide();
                             callback();
+                            Disaster.hudun();
                         }
                     },60000)
                     $('.lunbo').show();
@@ -759,15 +760,15 @@
                         switch (disasterArr.disaster_type) {
                             case 0:
                                 Lunbo.isShow(starTime,0,that.taifengcom);
-                                that.hudun();
+                                Lunbo.init();
                                 break;
                             case 1:
                                 Lunbo.isShow(starTime,1,that.hongshuicom);
-                                that.hudun();
+                                Lunbo.init();
                                 break;
                             case 2:
                                 Lunbo.isShow(starTime,2,that.ganhancom);
-                                that.hudun();
+                                Lunbo.init();
                                 break;
                         }
                         localStorage.setItem('isFlag_' + disasterArr.id, true);
