@@ -2,22 +2,40 @@
 
 
 namespace app\index\controller;
+
+use app\common\controller\Common;
+
 use \think\Request;
 
 /**
  * 前台首页控制器
  * @package app\index\controller
  */
-class Share extends Home
+class Share extends Common
 {
+
+    /**
+     * 初始化方法
+
+     */
+    protected function _initialize()
+    {
+        
+        //资源目录
+        $base_file = $this->request->baseFile();
+        $base_dir  = rtrim($base_file, 'index.php');
+        $this->assign('static_dir', $base_dir. 'public/static/');
+        
+    }
 
     public function index()
     {
         $request = Request::instance();
         $params = $request->param();
-
-        $token = $params['token'];
-        if ($token) {
+        
+        $token = null;
+        if ($params&&isset($params['token'])) {
+            $token = $params['token'];
             $uid = decrypt($token);
             //谁的
             $info = db('member')->where('id',$uid)->find();
@@ -26,6 +44,7 @@ class Share extends Home
             //获取赞
             $zans = db('zan')->where('user_id',$uid)->count();
         }
+        $this->assign('token', $token);
         $this->assign('info', $info);
         $this->assign('zans', $zans);
         $this->assign('trees', $trees); 
