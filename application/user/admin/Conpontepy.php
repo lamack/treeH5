@@ -11,7 +11,6 @@ use app\admin\model\Module as ModuleModel;
 use app\admin\model\Access as AccessModel;
 use util\Tree;
 use think\Db;
-
 /**
  * 优惠券类型默认控制器
  * @package app\user\admin
@@ -34,7 +33,12 @@ class Conpontepy extends Admin
 
         // 分页数据
         $page = $data_list->render();
-
+        $btn_1 = [
+                'title' => '导入',
+                'icon'  => 'fa fa-fw fa-copy',
+                // 'class' => 'ajax-post',
+                'href'  => url('import')
+            ];
         
         // 使用ZBuilder快速创建数据表格
         return ZBuilder::make('table')
@@ -47,6 +51,7 @@ class Conpontepy extends Admin
                 ['right_button', '操作', 'btn']
             ])
             ->addTopButtons('add') // 批量添加顶部按钮
+            ->addRightButton('custom', $btn_1) // 添加导入按钮
             ->addRightButtons('edit,delete') // 批量添加右侧按钮
             ->setRowList($data_list) // 设置表格数据
             ->setPages($page) // 设置分页数据
@@ -157,5 +162,39 @@ class Conpontepy extends Admin
         $type_name = ConpontepyModel::where('id', 'in', $ids)->column('conpon_name');
 
         return parent::setStatus($type, ['conpon_type_'.$type, 'conpon_type', 0, UID, implode('、', $type_name)]);
+    }
+
+    public function import(){
+        // 提交数据
+        if ($this->request->isPost()) {
+            // 接收附件 ID
+            $excel_file = $this->request->post('excel');
+            // 获取附件 ID 完整路径
+            $full_path = getcwd() . get_file_path($excel_file);
+            // 只导入的字段列表
+            $fields = [
+                'name' => '姓名',
+                'last_login_time' => '最后登录时间',
+                'last_login_ip' => '最后登陆IP'
+            ];
+            // // 调用插件('插件',[路径,导入表名,字段限制,类型,条件,重复数据检测字段])
+            // $import = plugin_action('Excel/Excel/import', [$full_path, 'vip_test', $fields, $type = 0, $where = null, $main_field = 'name']);
+            
+            // // 失败或无数据导入
+            // if ($import['error']){
+            //     $this->error($import['message']);
+            // }
+
+            // // 导入成功
+            // $this->success($import['message']);
+        }
+
+        // 创建演示用表单
+        return ZBuilder::make('form')
+            ->setPageTitle('导入Excel')
+            ->addFormItems([ // 添加上传 Excel
+                ['file', 'excel', '上传文件'],
+            ])
+            ->fetch();
     }
 }

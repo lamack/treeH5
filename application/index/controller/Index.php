@@ -48,12 +48,6 @@ class Index extends Home
     }
     public function index()
     {   
-        $data = [
-            ['PHONE' => '18321730541', 'LOGIN_DATETIME' => '1111']
-        ];
-        print_r($data);exit;
-        $res = Db::connect('mysql://root:Innketek201306@139.196.20.81:3306/dolphin#utf8')->table('game_user_login')->select();
-        print_r($res);exit;
         //取用户
         $member = session('_MEMBER');
 
