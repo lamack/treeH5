@@ -320,6 +320,70 @@
             }
         }
         Handlecount.init();
+
+        //轮播
+        var Lunbo = {
+            lunboCon: $('.lunbo-container'),
+            lunbo: $('.lunbobox'),
+            top: 30,
+            hei: $('.lunbobox').height(),
+            init: function() {
+                this.isShow();
+                var that = this;
+                this.lunbo.append(this.lunboCon.clone())
+                this.move()
+                setInterval(function() {
+                    if (that.top <= -that.hei) {
+                        that.lunbo.append($(that.lunbo.children()[0]))
+                        that.lunbo.css({
+                            transition: 'top 0s',
+                            top: '0px'
+                        })
+                        that.top = 0;
+                    }
+                    setTimeout(function() { that.move(); }, 1000)
+                }, 3000)
+            },
+            move() {
+                this.lunbo.css({ 'transition': 'top 1s' })
+                this.top -= 30;
+                this.lunbo.css({ top: this.top + 'px' });
+
+            },
+            isShow(starTime,type,callback){
+                var that = this;
+                var time = new Date().getTime();
+                var dif = starTime-parseInt(time/1000);
+                if(dif<3600 && dif>0){
+                    var str = '';
+                    switch(type){
+                        case 0:
+                        str = '多少分钟后将会有强烈台风来袭，请做好防护措施，护盾会自动弹出，能有效抵抗台风，保证树的安全！';
+                        break;
+                        case 1:
+                        str = '多少分钟后将会有强烈洪水来袭，请做好防护措施，护盾会自动弹出，能有效抵抗台风，保证树的安全！';
+                        break;
+                        case 2:
+                        str = '多少分钟后将会有强烈干旱来袭，请做好防护措施，护盾会自动弹出，能有效抵抗台风，保证树的安全！';
+                        break;
+                    };
+                    that.lunbo.text('60'+str); 
+                    var itmer = setInterval(function(){
+                        var timen = new Date().getTime();
+                        var dif2 = parseInt(starTime-parseInt(timen/1000)/60000);
+                        if(dif>=0){
+                            that.lunbo.text(dif+str); 
+                        }else{
+                            clearInterval(timer);
+                            $('.lunbo').hide();
+                            callback();
+                        }
+                    },60000)
+                    $('.lunbo').show();
+                }
+            },
+        }
+
         //排名分类
         var Bottom = {
             bottom: $('#bottom'),
@@ -690,18 +754,19 @@
 
                 if (disasterArr) {
                     var isFlag = localStorage.getItem('isFlag_' + disasterArr.id);
+                    var starTime = disasterArr.start_time;
                     if (!isFlag) {
                         switch (disasterArr.disaster_type) {
                             case 0:
-                                that.taifengcom();
+                                Lunbo.isShow(starTime,0,that.taifengcom);
                                 that.hudun();
                                 break;
                             case 1:
-                                that.hongshuicom();
+                                Lunbo.isShow(starTime,1,that.hongshuicom);
                                 that.hudun();
                                 break;
                             case 2:
-                                that.ganhancom();
+                                Lunbo.isShow(starTime,2,that.ganhancom);
                                 that.hudun();
                                 break;
                         }
@@ -786,36 +851,6 @@
             }
         }
         Disaster.init();
-        //轮播
-        var Lunbo = {
-            lunboCon: $('.lunbo-container'),
-            lunbo: $('.lunbobox'),
-            top: 30,
-            hei: $('.lunbobox').height(),
-            init: function() {
-                var that = this;
-                this.lunbo.append(this.lunboCon.clone())
-                this.move()
-                setInterval(function() {
-                    if (that.top <= -that.hei) {
-                        that.lunbo.append($(that.lunbo.children()[0]))
-                        that.lunbo.css({
-                            transition: 'top 0s',
-                            top: '0px'
-                        })
-                        that.top = 0;
-                    }
-                    setTimeout(function() { that.move(); }, 1000)
-                }, 3000)
-            },
-            move() {
-                this.lunbo.css({ 'transition': 'top 1s' })
-                this.top -= 30;
-                this.lunbo.css({ top: this.top + 'px' });
-
-            },
-        }
-        Lunbo.init();
         
     })
     </script>
