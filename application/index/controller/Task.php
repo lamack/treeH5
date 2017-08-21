@@ -14,7 +14,7 @@ class Task extends Home
     public function index()
     {
         $member = session('_MEMBER');
-
+// print_r(db('task')->Query('select * from game_task'));exit;
         //全局任务
         $info = db('task')->select();
         if ($info) {
@@ -86,6 +86,47 @@ class Task extends Home
         }
         
         return $info;
+    }
+
+    public function getaward(){
+        //取用户
+        $member = session('_MEMBER');
+        $c_member = db('member')->where('id',$member['id'])->find();
+        $request = Request::instance();
+        $params = $request->param();
+        if ($params&&$params['id']) {
+            //
+            $map['task_id'] = $params['id'];
+            $map['user_id'] = $member['id'];
+            if(!db('task_process')->where($map)->find()){
+                //更新
+                $insert['task_id'] = $params['id'];
+                $insert['user_id'] = $member['id'];
+                $insert['status'] = 1; 
+                $insert['create_time'] = time(); 
+                db('task_process')->insert($insert);
+                //获得奖励
+                $green = db('task_recode')->field('sum(green) as total')->find();
+                //更新用户绿值
+                $save['green_max'] +=$green['total'];
+                $save['green_nocash'] +=$green['total'];
+                $res = db('member')->where('id',$member['id'])->save($save);
+
+                if ($res) {
+                    $data = ['status'=>'succ','msg'=>'领取成功']; 
+                }
+                
+            }else{
+               $data = ['status'=>'error','msg'=>'已领取过了']; 
+            }
+            
+            return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
+        }else{
+            $data = ['status'=>'error','msg'=>'参数必填'];
+            return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
+        }
+        
+
     }
 
 }
