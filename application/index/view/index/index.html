@@ -359,20 +359,27 @@
         // 个人排名
         var Selfrank = {
             els: $('.rank-box-item').find('.self-type-item'),
+            person_rank:JSON.parse('{$person_rank|json_encode}'),
+            driver_rank:JSON.parse('{$driver_rank|json_encode}'),
+            trees_rank:JSON.parse('{$trees_rank|json_encode}'),
+            vie_rank:JSON.parse('{$vie_rank|json_encode}'),
             class_rank: JSON.parse('{$class_rank|json_encode}'),
-            company_rank: JSON.parse('{$company_rank|json_encode}'),
+            green_rank: JSON.parse('{$green_rank|json_encode}'),
             area_rank: JSON.parse('{$area_rank|json_encode}'),
+            industry_rank: JSON.parse('{$industry_rank|json_encode}'),
             init: function() {
                 var me = JSON.parse('{$me_rank.rank|json_encode}');
                 var box = $('.self-type-box ').eq(0);
                 $('.self', box).eq(0).find('.rank-num').html(this.switchicon(me))
-
-                var data = JSON.parse('{$person_rank|json_encode}')
-                console.log(this.company_rank, data)
-                this.render(Bottom.rankBoxs.eq(0), 0, data, 'true')
+                //渲染排名
+                this.render(Bottom.rankBoxs.eq(0), 0, this.person_rank, 'true')
+                this.render(Bottom.rankBoxs.eq(0), 1, this.driver_rank, 'true')
+                this.render(Bottom.rankBoxs.eq(0), 2, this.trees_rank, 'true')
+                this.render(Bottom.rankBoxs.eq(0), 3, this.vie_rank, 'true')
                 this.render(Bottom.rankBoxs.eq(1), 0, this.class_rank)
-                // this.render(Bottom.rankBoxs.eq(2),0,this.company_rank)
+                this.render(Bottom.rankBoxs.eq(1), 1, this.green_rank)
                 this.render(Bottom.rankBoxs.eq(2), 0, this.area_rank)
+                this.render(Bottom.rankBoxs.eq(2), 1, this.industry_rank)
                 this.bindEvent();
             },
             bindEvent: function() {
