@@ -120,7 +120,7 @@ class Excel extends Common
             return ["error" => 1, 'message' => '文件未找到!']; //file not found!
         }
 
-        $objReader = \PHPExcel_IOFactory::createReader('Excel5'); //需要在前面加反斜杠，因为命名空间
+        $objReader = \PHPExcel_IOFactory::createReader('Excel2007'); //需要在前面加反斜杠，因为命名空间
         try{
             $PHPReader = $objReader->load($file);
         }catch(\Exception $e){}
@@ -227,7 +227,7 @@ class Excel extends Common
         $exists_list = Db::name($table)->where($where)->group($main_field)->column($main_field);
 
         //整理数据
-        $fields    = array_flip($fields); //反转键值
+        // $fields    = array_flip($fields); //反转键值
         $data_list = [];
         $dataAdd['list']   = [];
         $dataCover['list'] = [];
@@ -237,11 +237,15 @@ class Excel extends Common
             foreach ($value['Content'] as $row => $col) { //循环每一行数据
                 $data = [];
                 if ($row == 1) { //处理excel表的第一行，即表头，用来获取表头与字段名的关系
+                    
                     foreach ($col as $index => $val) { //循环每一个单元格
+                        // return ["error" => 8, 'message' => json_encode($fields[$val])];
                         if (isset($fields[$val])) {
-                            $firstRow[$index] = $fields[$val];
+                            // $firstRow[$index] = $fields[$val];
+                            $firstRow[$index] = $val;
                         }
                     }
+                    // return ["error" => 8, 'message' => json_encode($firstRow)];
                 } else { //这里开始是真正需要的数据
                     if (empty($firstRow)) {
                         return ["error" => 8, 'message' => '没有表头数据，无法导入!'];

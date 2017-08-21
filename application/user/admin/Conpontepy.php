@@ -177,16 +177,16 @@ class Conpontepy extends Admin
                 'last_login_time' => '最后登录时间',
                 'last_login_ip' => '最后登陆IP'
             ];
-            // // 调用插件('插件',[路径,导入表名,字段限制,类型,条件,重复数据检测字段])
-            // $import = plugin_action('Excel/Excel/import', [$full_path, 'vip_test', $fields, $type = 0, $where = null, $main_field = 'name']);
+            // 调用插件('插件',[路径,导入表名,字段限制,类型,条件,重复数据检测字段])
+            $import = plugin_action('Excel/Excel/import', [$full_path, 'vip_test', $fields, $type = 0, $where = null, $main_field = 'name']);
             
-            // // 失败或无数据导入
-            // if ($import['error']){
-            //     $this->error($import['message']);
-            // }
+            // 失败或无数据导入
+            if ($import['error']){
+                $this->error($import['message']);
+            }
 
-            // // 导入成功
-            // $this->success($import['message']);
+            // 导入成功
+            $this->success($import['message']);
         }
 
         // 创建演示用表单
