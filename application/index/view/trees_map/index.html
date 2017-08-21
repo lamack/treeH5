@@ -107,22 +107,23 @@ $(function(){
         el:$('.quyu'),
         init:function(){
             //模拟上海市植树数据 arr arr2;
-           var arr2=[
-              {name:'putuo',
-                num:0},
-              {name:'changning',
-                num:90},
-              {name:'xuhui',
-                num:7},
-              {name:'jingan',
-                num:88},
-              {name:'hongkou',
-                num:733},
-              {name:'yangpu',
-                num:23},
-              {name:'huangpu',
-                num:2},
-           ];
+           // var arr2=[
+           //    {name:'putuo',
+           //      num:0},
+           //    {name:'changning',
+           //      num:90},
+           //    {name:'xuhui',
+           //      num:7},
+           //    {name:'jingan',
+           //      num:88},
+           //    {name:'hongkou',
+           //      num:733},
+           //    {name:'yangpu',
+           //      num:23},
+           //    {name:'huangpu',
+           //      num:2},
+           // ];
+           var arr2 = {$area};
            var arr = {$quyu};
            this.el.find('.city').html(this.rendercity(arr));
            this.el.find('.qu').html(this.rendercity(arr2));

@@ -41,6 +41,25 @@ class TreesMap extends Home
             $data[$i]['num'] = db('trees')->alias('a')->join(' member b',' b.id = a.user_id','LEFT')->where('b.area',$value)->count();;
             $i++;
         }
+
+        //区域
+        $areaArr1 = array(
+            'putuo'=>'普陀',
+            'changning'=>'长宁',
+            'xuhui'=>'徐汇',
+            'jingan'=>'静安',
+            'hongkou'=>'虹口',
+            'yangpu'=>'杨浦',
+            'huangpu'=>'黄埔'
+        );
+        $data1 = [];
+        $m = 0;
+        foreach ($areaArr1 as $key => $value) {
+            $data1[$m]['name'] = $key;
+            $data1[$m]['num'] = db('trees')->alias('a')->join(' member b',' b.id = a.user_id','LEFT')->where('b.area',$value)->count();;
+            $m++;
+        }
+
         $total = db('member')->count();
         $trees = db('trees')->count();
 
@@ -56,6 +75,7 @@ class TreesMap extends Home
         $this->assign('total', $total);
         $this->assign('trees', $trees);
         $this->assign('quyu', json_encode($data));
+        $this->assign('area', json_encode($data1));
         return $this->fetch(); // 渲染模板
     }
 

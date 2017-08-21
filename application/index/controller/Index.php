@@ -19,19 +19,19 @@ class Index extends Home
         //获得当前登录用户
         $request = Request::instance();
         $params = $request->param();
-        if (!$params||!$params['sign']) {
+        if (!$params||!$params['uid']) {
             session('_MEMBER',null);//每次启动游戏检测用户标识 不存在去本地session
             $data = ['msg'=>'用户sign丢失','status'=>'error'];
             return json($data);
         }
         //获取用户信息
-        $info = db('member')->where('sign',$params['sign'])->find();
+        $info = db('member')->where('sign',$params['uid'])->find();
         if (!$info) {
             session('_MEMBER',null);//
             $data = ['msg'=>'用户不存在','status'=>'error'];
             return json($data);
         }
-        
+        $info['sign'] = $params['sign'];
         session('_MEMBER',$info);
 
         //初始化一棵树苗
@@ -94,6 +94,11 @@ class Index extends Home
         $hudunprop = db('my_prop')->where($hudunMap)->count();
         $this->assign('hudunprop', $hudunprop);
 
+        //lunbo
+        $lunboMap['adv_status'] = '1';
+        $lunbo = db('announcement')->where($lunboMap)->select();
+        $this->assign('lunbo', $lunbo);
+        
         //灾害
         // $now = time();
         // $disasterMap['start_time'] = array('lt',$now);
