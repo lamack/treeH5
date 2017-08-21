@@ -538,7 +538,7 @@
                 });
                 // 点击使用
                 this.bomb.find('.use').click(function(event) {
-                    if ($(this).parents('.bomb').hasClass('.bomb-dialog')) {
+                    if ($(this).text() == '使用') {
                         var data = {
                             url: '/prop?prop_type=' + (that.index + 1),
                             success: function(ref) {
@@ -584,11 +584,12 @@
                 });
                 // 点击兑换
                 this.bomb.find('.exchange').click(function(event) {
+                    var that = $(this);
                     // 点击取消
-                    if (!$(this).parents('.bomb').hasClass('.bomb-dialog')) {
-                        $('.bomb-dialog').hide();
-                    } else {
+                    if (that.text() == '兑换') {
                         that.getTreeData(that);
+                    } else {
+                        that.parents('.bomb').hide();
                     }
                 });
             },
@@ -617,6 +618,7 @@
                 }, 1000)
             },
             getTreeData: function(that) {
+                // 兑换道具接口
                 var data = {
                     url: '/cash?prop_type=' + (that.index + 1),
                     success: function(ref) {
@@ -628,7 +630,7 @@
                             $('.guoshi-bomb').show();
                         } else {
                             // 道具+1
-                            Handlecount.add(that.index)
+                            Handlecount.add(that.index);
                             // var num = parseInt($('.planting').find('.item').eq(that.index).find('.num').text());
                             //  num += 1;
                             //  $('.planting').find('.item').eq(that.index).find('.num').text(num);
