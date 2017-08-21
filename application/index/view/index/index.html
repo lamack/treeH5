@@ -286,6 +286,18 @@
             $('.bomb').hide();
             $('.bomb-dialog').hide();
         })
+        //webScoket
+        var wS = function(){
+            var ws = new WebSocket("ws://xxxx")
+            ws.onopen = function(){ws.send("工，连接成功")}
+            ws.onmessage = function(ref){
+                console.log(ref)
+            }
+            ws.close = function(ref){console.log('关闭',ref)}
+            ws.onerror = function(ref){
+                console.log('错误',ref)
+            }
+        }
         //操作+1和-1小图标
         var Handlecount = {
             els: $('.planting').find('.item'),
@@ -359,6 +371,7 @@
         // 个人排名
         var Selfrank = {
             els: $('.rank-box-item').find('.self-type-item'),
+            selfs:JSON.parse('{$me_trees_rank|json_encode}'),
             person_rank:JSON.parse('{$person_rank|json_encode}'),
             driver_rank:JSON.parse('{$driver_rank|json_encode}'),
             trees_rank:JSON.parse('{$trees_rank|json_encode}'),
