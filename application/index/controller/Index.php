@@ -111,7 +111,8 @@ class Index extends Home
         // }
         
         $disaster = db('adv_disaster')->order('id DESC')->find();
-        $disaster['start_time'] = __mdate($disaster['start_time']);
+        $disaster['start_time'] = $disaster['start_time'];
+        $disaster['mdate'] = __mdate($disaster['start_time']);
         $this->assign('disaster', $disaster);  
         //个人排名
         $me_rank = [];
