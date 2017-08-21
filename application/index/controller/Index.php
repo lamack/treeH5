@@ -360,7 +360,49 @@ class Index extends Home
         
     }
     
+    public function getaward(){
+        //取用户
+        $member = session('_MEMBER');
+        $c_member = db('member')->where('id',$member['id'])->find();
+        $request = Request::instance();
+        $params = $request->param();
+        if ($params&&$params['id']) {
+            //
+            $map['task_id'] = $params['id'];
+            $map['user_id'] = $member['id'];
+            if(db('task')->where('id',$params['id'])->find()&&!db('task_process')->where($map)->find()){
+                
+                //更新
+                $insert['task_id'] = $params['id'];
+                $insert['user_id'] = $member['id'];
+                $insert['status'] = 1; 
+                $insert['create_time'] = time(); 
+                db('task_process')->insert($insert);
+                //获得奖励
+                $green = db('task_recode')->field('sum(green) as total')->find();
+                //更新用户绿值
+                $save['green_nocash'] = array('exp', 'green_nocash+'.$green['total']);
+                $save['green_max'] = array('exp', 'green_max+'.$green['total']);
+                
+                $res = db('member')->where('id',$member['id'])->update($save);
 
+                if ($res) {
+                    $data = ['status'=>'succ','msg'=>'领取成功']; 
+                }
+                
+            }else{
+               $data = ['status'=>'error','msg'=>'已领取过了']; 
+            }
+            
+            return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
+        }else{
+            $data = ['status'=>'error','msg'=>'参数必填'];
+            return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
+        }
+        
+
+    }
+    
     function _currentTree(){
         $member = session('_MEMBER');
 
