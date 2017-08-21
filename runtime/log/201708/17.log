@@ -1,0 +1,3637 @@
+---------------------------------------------------------------
+[ 2017-08-17T16:45:48+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/prop/index.html
+[ info ] zg.trees.com/admin.php/user/prop/index.html [运行时间：2.432507s][吞吐率：0.41req/s] [内存消耗：1,363.73kb] [文件加载：78]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'prop',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/disaster/edit/id/2.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fdisaster%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.177955s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.064341s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\user\admin\Prop->index[ /data/httpd/treeGame/application/user/admin/Prop.php ]
+[ info ] [ VIEW ] /data/httpd/treeGame/application/common/builder/table/layout.html [ array (
+  0 => '_admin_base_layout',
+  1 => 'system_color',
+  2 => '_top_menus',
+  3 => '_top_menus_all',
+  4 => '_sidebar_menus',
+  5 => '_location',
+  6 => 'aside',
+  7 => '_pop',
+  8 => 'page_title',
+  9 => 'page_tips',
+  10 => 'tips_type',
+  11 => 'tab_nav',
+  12 => 'hide_checkbox',
+  13 => 'extra_html',
+  14 => 'extra_js',
+  15 => 'extra_css',
+  16 => 'order_columns',
+  17 => 'filter_columns',
+  18 => 'filter_map',
+  19 => '_field_display',
+  20 => '_filter_content',
+  21 => '_filter',
+  22 => 'top_buttons',
+  23 => 'right_buttons',
+  24 => 'search',
+  25 => 'columns',
+  26 => 'pages',
+  27 => 'row_list',
+  28 => '_page_info',
+  29 => 'primary_key',
+  30 => '_table',
+  31 => 'js_list',
+  32 => 'css_list',
+  33 => 'validate',
+  34 => '_js_files',
+  35 => '_css_files',
+  36 => '_select_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013776s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.004089s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000423s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.001430s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000349s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.003597s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000390s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.000940s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000445s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.001278s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000786s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_menu` [ RunTime:0.001211s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id LIMIT 10 [ RunTime:0.001506s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id [ RunTime:0.000321s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/prop/index' LIMIT 1 [ RunTime:0.001036s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.006672s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `module` = 'user' ORDER BY sort,id [ RunTime:0.000576s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/prop/index' LIMIT 1 [ RunTime:0.000315s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.000372s ]
+[ sql ] [ SQL ] SELECT `value` FROM `game_admin_config` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.011356s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_prop` [ RunTime:0.001080s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_prop` LIMIT 1 [ RunTime:0.000197s ]
+[ sql ] [ SQL ] SELECT * FROM `game_prop` ORDER BY id desc LIMIT 0,20 [ RunTime:0.000177s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_user` [ RunTime:0.004385s ]
+[ sql ] [ SQL ] SELECT `avatar` FROM `game_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000242s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_attachment` [ RunTime:0.001013s ]
+[ sql ] [ SQL ] SELECT `path` FROM `game_admin_attachment` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000239s ]
+---------------------------------------------------------------
+[ 2017-08-17T16:45:54+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/prop/setting/group/2.html
+[ info ] zg.trees.com/admin.php/user/prop/setting/group/2.html [运行时间：1.726336s][吞吐率：0.58req/s] [内存消耗：1,572.09kb] [文件加载：76]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'prop',
+    2 => 'setting',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/prop/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'group' => '2',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.142353s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.048393s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\user\admin\Prop->setting[ /data/httpd/treeGame/application/user/admin/Prop.php ]
+[ info ] [ VIEW ] /data/httpd/treeGame/application/common/builder/form/layout.html [ array (
+  0 => '_admin_base_layout',
+  1 => 'system_color',
+  2 => '_top_menus',
+  3 => '_top_menus_all',
+  4 => '_sidebar_menus',
+  5 => '_location',
+  6 => 'aside',
+  7 => '_pop',
+  8 => 'page_title',
+  9 => 'page_tips',
+  10 => 'tips_type',
+  11 => 'btn_hide',
+  12 => 'btn_title',
+  13 => 'form_items',
+  14 => 'tab_nav',
+  15 => 'post_url',
+  16 => 'form_data',
+  17 => 'extra_html',
+  18 => 'extra_js',
+  19 => 'extra_css',
+  20 => 'ajax_submit',
+  21 => 'hide_header',
+  22 => 'header_title',
+  23 => 'js_list',
+  24 => 'css_list',
+  25 => 'field_triggers',
+  26 => 'field_hide',
+  27 => 'field_values',
+  28 => '_js_files',
+  29 => '_js_init',
+  30 => '_css_files',
+  31 => '_layout',
+  32 => 'btn_extra',
+  33 => 'submit_confirm',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007363s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.004277s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000287s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.000838s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000341s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.000998s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000330s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001136s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000325s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.004496s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000345s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_menu` [ RunTime:0.001096s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id LIMIT 10 [ RunTime:0.000473s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id [ RunTime:0.000448s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/prop/setting' LIMIT 1 [ RunTime:0.000324s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.002610s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `module` = 'user' ORDER BY sort,id [ RunTime:0.001667s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/prop/setting' LIMIT 1 [ RunTime:0.000346s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.000326s ]
+[ sql ] [ SQL ] SELECT `value` FROM `game_admin_config` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000304s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_prop` [ RunTime:0.001477s ]
+[ sql ] [ SQL ] SELECT * FROM `game_prop` WHERE  `position` = 2 LIMIT 1 [ RunTime:0.000308s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_user` [ RunTime:0.006288s ]
+[ sql ] [ SQL ] SELECT `avatar` FROM `game_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000981s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_attachment` [ RunTime:0.001351s ]
+[ sql ] [ SQL ] SELECT `path` FROM `game_admin_attachment` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000287s ]
+---------------------------------------------------------------
+[ 2017-08-17T17:34:55+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/prop/setting/group/3.html
+[ info ] zg.trees.com/admin.php/user/prop/setting/group/3.html [运行时间：0.724506s][吞吐率：1.38req/s] [内存消耗：571.17kb] [文件加载：54]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'prop',
+    2 => 'setting',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/prop/setting/group/2.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'group' => '3',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003036s ] mysql:dbname=trees;host=127.0.0.1;port=3306;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'trees.game_admin_config' doesn't exist[/data/httpd/treeGame/thinkphp/library/think/db/Connection.php:388]
+---------------------------------------------------------------
+[ 2017-08-17T17:35:05+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/prop/setting/group/3.html
+[ info ] zg.trees.com/admin.php/user/prop/setting/group/3.html [运行时间：0.646294s][吞吐率：1.55req/s] [内存消耗：570.79kb] [文件加载：54]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'prop',
+    2 => 'setting',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/prop/setting/group/2.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'group' => '3',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002199s ] mysql:dbname=trees;host=127.0.0.1;port=3306;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'trees.game_admin_config' doesn't exist[/data/httpd/treeGame/thinkphp/library/think/db/Connection.php:388]
+---------------------------------------------------------------
+[ 2017-08-17T17:35:21+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/prop/setting/group/2.html
+[ info ] zg.trees.com/admin.php/user/prop/setting/group/2.html [运行时间：0.590812s][吞吐率：1.69req/s] [内存消耗：570.63kb] [文件加载：54]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'prop',
+    2 => 'setting',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/prop/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'group' => '2',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006001s ] mysql:dbname=trees;host=127.0.0.1;port=3306;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'trees.game_admin_config' doesn't exist[/data/httpd/treeGame/thinkphp/library/think/db/Connection.php:388]
+---------------------------------------------------------------
+[ 2017-08-17T17:35:23+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/prop/index.html
+[ info ] zg.trees.com/admin.php/user/prop/index.html [运行时间：0.382147s][吞吐率：2.62req/s] [内存消耗：569.99kb] [文件加载：54]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'prop',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/disaster/edit/id/2.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006782s ] mysql:dbname=trees;host=127.0.0.1;port=3306;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'trees.game_admin_config' doesn't exist[/data/httpd/treeGame/thinkphp/library/think/db/Connection.php:388]
+---------------------------------------------------------------
+[ 2017-08-17T17:35:24+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/disaster/edit/id/2.html
+[ info ] zg.trees.com/admin.php/user/disaster/edit/id/2.html [运行时间：0.429497s][吞吐率：2.33req/s] [内存消耗：570.62kb] [文件加载：54]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'disaster',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/disaster/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011258s ] mysql:dbname=trees;host=127.0.0.1;port=3306;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'trees.game_admin_config' doesn't exist[/data/httpd/treeGame/thinkphp/library/think/db/Connection.php:388]
+---------------------------------------------------------------
+[ 2017-08-17T17:35:26+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/disaster/edit/id/2.html
+[ info ] zg.trees.com/admin.php/user/disaster/edit/id/2.html [运行时间：0.363983s][吞吐率：2.75req/s] [内存消耗：570.77kb] [文件加载：54]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'disaster',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/disaster/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003702s ] mysql:dbname=trees;host=127.0.0.1;port=3306;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'trees.game_admin_config' doesn't exist[/data/httpd/treeGame/thinkphp/library/think/db/Connection.php:388]
+---------------------------------------------------------------
+[ 2017-08-17T17:36:57+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/disaster/edit/id/2.html
+[ info ] zg.trees.com/admin.php/user/disaster/edit/id/2.html [运行时间：0.676999s][吞吐率：1.48req/s] [内存消耗：570.77kb] [文件加载：54]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'disaster',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/disaster/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007216s ] mysql:dbname=trees;host=127.0.0.1;port=3306;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'trees.game_admin_config' doesn't exist[/data/httpd/treeGame/thinkphp/library/think/db/Connection.php:388]
+---------------------------------------------------------------
+[ 2017-08-17T17:37:20+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/disaster/edit/id/2.html
+[ info ] zg.trees.com/admin.php/user/disaster/edit/id/2.html [运行时间：0.663167s][吞吐率：1.51req/s] [内存消耗：570.77kb] [文件加载：54]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'disaster',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/disaster/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007639s ] mysql:dbname=trees;host=127.0.0.1;port=3306;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'trees.game_admin_config' doesn't exist[/data/httpd/treeGame/thinkphp/library/think/db/Connection.php:388]
+---------------------------------------------------------------
+[ 2017-08-17T17:37:44+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/disaster/edit/id/2.html
+[ info ] zg.trees.com/admin.php/user/disaster/edit/id/2.html [运行时间：0.658938s][吞吐率：1.52req/s] [内存消耗：570.77kb] [文件加载：54]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'disaster',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/disaster/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006213s ] mysql:dbname=trees;host=127.0.0.1;port=3306;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'trees.game_admin_config' doesn't exist[/data/httpd/treeGame/thinkphp/library/think/db/Connection.php:388]
+---------------------------------------------------------------
+[ 2017-08-17T17:37:55+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/disaster/edit/id/2.html
+[ info ] zg.trees.com/admin.php/user/disaster/edit/id/2.html [运行时间：0.451637s][吞吐率：2.21req/s] [内存消耗：570.35kb] [文件加载：54]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'disaster',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011003s ] mysql:dbname=trees;host=127.0.0.1;port=3306;charset=utf8
+[ error ] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'trees.game_admin_config' doesn't exist[/data/httpd/treeGame/thinkphp/library/think/db/Connection.php:388]
+---------------------------------------------------------------
+[ 2017-08-17T17:38:30+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/disaster/edit/id/2.html
+[ info ] zg.trees.com/admin.php/user/disaster/edit/id/2.html [运行时间：1.238504s][吞吐率：0.81req/s] [内存消耗：1,314.09kb] [文件加载：74]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'disaster',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.117944s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.077881s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\user\admin\Disaster->edit[ /data/httpd/treeGame/application/user/admin/Disaster.php ]
+[ info ] [ VIEW ] /data/httpd/treeGame/application/common/builder/form/layout.html [ array (
+  0 => '_admin_base_layout',
+  1 => 'system_color',
+  2 => '_top_menus',
+  3 => '_top_menus_all',
+  4 => '_sidebar_menus',
+  5 => '_location',
+  6 => 'aside',
+  7 => '_pop',
+  8 => 'page_title',
+  9 => 'page_tips',
+  10 => 'tips_type',
+  11 => 'btn_hide',
+  12 => 'btn_title',
+  13 => 'form_items',
+  14 => 'tab_nav',
+  15 => 'post_url',
+  16 => 'form_data',
+  17 => 'extra_html',
+  18 => 'extra_js',
+  19 => 'extra_css',
+  20 => 'ajax_submit',
+  21 => 'hide_header',
+  22 => 'header_title',
+  23 => 'js_list',
+  24 => 'css_list',
+  25 => 'field_triggers',
+  26 => 'field_hide',
+  27 => 'field_values',
+  28 => '_js_files',
+  29 => '_js_init',
+  30 => '_css_files',
+  31 => '_layout',
+  32 => 'btn_extra',
+  33 => 'submit_confirm',
+  34 => '_ueditor',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007316s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.002445s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.006821s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.001857s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000295s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.000861s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000284s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001854s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000370s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.004373s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000263s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_menu` [ RunTime:0.001691s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id LIMIT 10 [ RunTime:0.000361s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id [ RunTime:0.000413s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/disaster/edit' LIMIT 1 [ RunTime:0.000150s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.001786s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `module` = 'user' ORDER BY sort,id [ RunTime:0.000542s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/disaster/edit' LIMIT 1 [ RunTime:0.000373s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.000252s ]
+[ sql ] [ SQL ] SELECT `value` FROM `game_admin_config` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000238s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_disaster` [ RunTime:0.000928s ]
+[ sql ] [ SQL ] SELECT * FROM `game_disaster` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000331s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_user` [ RunTime:0.002343s ]
+[ sql ] [ SQL ] SELECT `avatar` FROM `game_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000175s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_attachment` [ RunTime:0.000942s ]
+[ sql ] [ SQL ] SELECT `path` FROM `game_admin_attachment` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000192s ]
+---------------------------------------------------------------
+[ 2017-08-17T17:38:32+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/admin/attachment/upload/dir/images/from/ueditor/module/user.html?action=config&&noCache=1502963378953
+[ info ] zg.trees.com/admin.php/admin/attachment/upload/dir/images/from/ueditor/module/user.html?action=config&&noCache=1502963378953 [运行时间：0.745248s][吞吐率：1.34req/s] [内存消耗：1,115.22kb] [文件加载：71]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'attachment',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://zg.trees.com/admin.php/user/disaster/edit/id/2.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'config',
+  'noCache' => '1502963378953',
+  'dir' => 'images',
+  'from' => 'ueditor',
+  'module' => 'user',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.181265s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.072170s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007210s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.007448s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.003157s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.002083s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000372s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001489s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.006670s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001115s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000354s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.003193s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.001108s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_menu` [ RunTime:0.005570s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id LIMIT 10 [ RunTime:0.000439s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id [ RunTime:0.000272s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'admin/attachment/upload' LIMIT 1 [ RunTime:0.000455s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.003257s ]
+[ error ] [9001]获取不到当前节点地址，可能未添加节点[/data/httpd/treeGame/application/admin/model/Menu.php:217]
+---------------------------------------------------------------
+[ 2017-08-17T17:38:34+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/prop/index.html
+[ info ] zg.trees.com/admin.php/user/prop/index.html [运行时间：0.786216s][吞吐率：1.27req/s] [内存消耗：1,363.94kb] [文件加载：78]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'prop',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/disaster/edit/id/2.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.194173s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.049696s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\user\admin\Prop->index[ /data/httpd/treeGame/application/user/admin/Prop.php ]
+[ info ] [ VIEW ] /data/httpd/treeGame/application/common/builder/table/layout.html [ array (
+  0 => '_admin_base_layout',
+  1 => 'system_color',
+  2 => '_top_menus',
+  3 => '_top_menus_all',
+  4 => '_sidebar_menus',
+  5 => '_location',
+  6 => 'aside',
+  7 => '_pop',
+  8 => 'page_title',
+  9 => 'page_tips',
+  10 => 'tips_type',
+  11 => 'tab_nav',
+  12 => 'hide_checkbox',
+  13 => 'extra_html',
+  14 => 'extra_js',
+  15 => 'extra_css',
+  16 => 'order_columns',
+  17 => 'filter_columns',
+  18 => 'filter_map',
+  19 => '_field_display',
+  20 => '_filter_content',
+  21 => '_filter',
+  22 => 'top_buttons',
+  23 => 'right_buttons',
+  24 => 'search',
+  25 => 'columns',
+  26 => 'pages',
+  27 => 'row_list',
+  28 => '_page_info',
+  29 => 'primary_key',
+  30 => '_table',
+  31 => 'js_list',
+  32 => 'css_list',
+  33 => 'validate',
+  34 => '_js_files',
+  35 => '_css_files',
+  36 => '_select_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009927s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.016688s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000952s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.009992s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000316s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001121s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000902s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001670s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000482s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.000881s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000292s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_menu` [ RunTime:0.005173s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id LIMIT 10 [ RunTime:0.000421s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id [ RunTime:0.001086s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/prop/index' LIMIT 1 [ RunTime:0.000385s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.003857s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `module` = 'user' ORDER BY sort,id [ RunTime:0.000857s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/prop/index' LIMIT 1 [ RunTime:0.000463s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.000327s ]
+[ sql ] [ SQL ] SELECT `value` FROM `game_admin_config` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000399s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_prop` [ RunTime:0.002069s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_prop` LIMIT 1 [ RunTime:0.000335s ]
+[ sql ] [ SQL ] SELECT * FROM `game_prop` ORDER BY id desc LIMIT 0,20 [ RunTime:0.000261s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_user` [ RunTime:0.002271s ]
+[ sql ] [ SQL ] SELECT `avatar` FROM `game_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000311s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_attachment` [ RunTime:0.001199s ]
+[ sql ] [ SQL ] SELECT `path` FROM `game_admin_attachment` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000232s ]
+---------------------------------------------------------------
+[ 2017-08-17T17:38:37+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/prop/setting/group/1.html
+[ info ] zg.trees.com/admin.php/user/prop/setting/group/1.html [运行时间：0.707390s][吞吐率：1.41req/s] [内存消耗：1,311.00kb] [文件加载：74]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'prop',
+    2 => 'setting',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/prop/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'group' => '1',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.103216s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.046094s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\user\admin\Prop->setting[ /data/httpd/treeGame/application/user/admin/Prop.php ]
+[ info ] [ VIEW ] /data/httpd/treeGame/application/common/builder/form/layout.html [ array (
+  0 => '_admin_base_layout',
+  1 => 'system_color',
+  2 => '_top_menus',
+  3 => '_top_menus_all',
+  4 => '_sidebar_menus',
+  5 => '_location',
+  6 => 'aside',
+  7 => '_pop',
+  8 => 'page_title',
+  9 => 'page_tips',
+  10 => 'tips_type',
+  11 => 'btn_hide',
+  12 => 'btn_title',
+  13 => 'form_items',
+  14 => 'tab_nav',
+  15 => 'post_url',
+  16 => 'form_data',
+  17 => 'extra_html',
+  18 => 'extra_js',
+  19 => 'extra_css',
+  20 => 'ajax_submit',
+  21 => 'hide_header',
+  22 => 'header_title',
+  23 => 'js_list',
+  24 => 'css_list',
+  25 => 'field_triggers',
+  26 => 'field_hide',
+  27 => 'field_values',
+  28 => '_js_files',
+  29 => '_js_init',
+  30 => '_css_files',
+  31 => '_layout',
+  32 => 'btn_extra',
+  33 => 'submit_confirm',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006550s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.004914s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000379s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.001139s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000337s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001125s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000172s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.004210s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000176s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.001788s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000504s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_menu` [ RunTime:0.000925s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id LIMIT 10 [ RunTime:0.000560s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id [ RunTime:0.000365s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/prop/setting' LIMIT 1 [ RunTime:0.000400s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.000426s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `module` = 'user' ORDER BY sort,id [ RunTime:0.001185s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/prop/setting' LIMIT 1 [ RunTime:0.001020s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.000257s ]
+[ sql ] [ SQL ] SELECT `value` FROM `game_admin_config` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000280s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_prop` [ RunTime:0.009173s ]
+[ sql ] [ SQL ] SELECT * FROM `game_prop` WHERE  `position` = 1 LIMIT 1 [ RunTime:0.000312s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_user` [ RunTime:0.001154s ]
+[ sql ] [ SQL ] SELECT `avatar` FROM `game_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000259s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_attachment` [ RunTime:0.003876s ]
+[ sql ] [ SQL ] SELECT `path` FROM `game_admin_attachment` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000237s ]
+---------------------------------------------------------------
+[ 2017-08-17T17:38:40+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/prop/setting/group/3.html
+[ info ] zg.trees.com/admin.php/user/prop/setting/group/3.html [运行时间：0.606941s][吞吐率：1.65req/s] [内存消耗：1,307.87kb] [文件加载：74]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'prop',
+    2 => 'setting',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/prop/setting/group/1.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'group' => '3',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.104058s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.055210s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\user\admin\Prop->setting[ /data/httpd/treeGame/application/user/admin/Prop.php ]
+[ info ] [ VIEW ] /data/httpd/treeGame/application/common/builder/form/layout.html [ array (
+  0 => '_admin_base_layout',
+  1 => 'system_color',
+  2 => '_top_menus',
+  3 => '_top_menus_all',
+  4 => '_sidebar_menus',
+  5 => '_location',
+  6 => 'aside',
+  7 => '_pop',
+  8 => 'page_title',
+  9 => 'page_tips',
+  10 => 'tips_type',
+  11 => 'btn_hide',
+  12 => 'btn_title',
+  13 => 'form_items',
+  14 => 'tab_nav',
+  15 => 'post_url',
+  16 => 'form_data',
+  17 => 'extra_html',
+  18 => 'extra_js',
+  19 => 'extra_css',
+  20 => 'ajax_submit',
+  21 => 'hide_header',
+  22 => 'header_title',
+  23 => 'js_list',
+  24 => 'css_list',
+  25 => 'field_triggers',
+  26 => 'field_hide',
+  27 => 'field_values',
+  28 => '_js_files',
+  29 => '_js_init',
+  30 => '_css_files',
+  31 => '_layout',
+  32 => 'btn_extra',
+  33 => 'submit_confirm',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.015699s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.002466s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000298s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.002397s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000326s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.000900s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000286s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.004013s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000783s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.001642s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000250s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_menu` [ RunTime:0.001812s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id LIMIT 10 [ RunTime:0.000549s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id [ RunTime:0.000414s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/prop/setting' LIMIT 1 [ RunTime:0.000461s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.003888s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `module` = 'user' ORDER BY sort,id [ RunTime:0.000865s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/prop/setting' LIMIT 1 [ RunTime:0.001116s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.000260s ]
+[ sql ] [ SQL ] SELECT `value` FROM `game_admin_config` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000214s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_prop` [ RunTime:0.001593s ]
+[ sql ] [ SQL ] SELECT * FROM `game_prop` WHERE  `position` = 3 LIMIT 1 [ RunTime:0.000305s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_user` [ RunTime:0.001002s ]
+[ sql ] [ SQL ] SELECT `avatar` FROM `game_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000214s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_attachment` [ RunTime:0.002506s ]
+[ sql ] [ SQL ] SELECT `path` FROM `game_admin_attachment` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000203s ]
+---------------------------------------------------------------
+[ 2017-08-17T17:38:51+08:00 ] 10.0.2.15 10.0.2.2 POST /admin.php/user/prop/setting/group/3.html
+[ info ] zg.trees.com/admin.php/user/prop/setting/group/3.html [运行时间：0.589842s][吞吐率：1.70req/s] [内存消耗：1,057.05kb] [文件加载：69]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'prop',
+    2 => 'setting',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'content-length' => '28',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://zg.trees.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://zg.trees.com/admin.php/user/prop/setting/group/3.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+)
+[ info ] [ PARAM ] array (
+  'cash' => '10',
+  'use_limit' => '1',
+  'lives' => '10',
+  'group' => '3',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.138530s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.054064s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\user\admin\Prop->setting[ /data/httpd/treeGame/application/user/admin/Prop.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007566s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.015356s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000383s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.001122s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000411s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001254s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000416s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.003626s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000205s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.004667s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.002709s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_prop` [ RunTime:0.001054s ]
+[ sql ] [ SQL ] SELECT * FROM `game_prop` WHERE  `position` = 3 LIMIT 1 [ RunTime:0.000281s ]
+[ sql ] [ SQL ] INSERT INTO `game_prop` (`cash` , `use_limit` , `lives` , `prop_name` , `prop_affect` , `position`) VALUES (10 , 1 , 10 , '化肥' , '用于给树苗施肥' , 3) [ RunTime:0.009663s ]
+---------------------------------------------------------------
+[ 2017-08-17T17:38:53+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/prop/setting/group/4.html
+[ info ] zg.trees.com/admin.php/user/prop/setting/group/4.html [运行时间：0.632407s][吞吐率：1.58req/s] [内存消耗：1,410.12kb] [文件加载：74]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'prop',
+    2 => 'setting',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/prop/setting/group/3.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'group' => '4',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.135727s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.063534s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\user\admin\Prop->setting[ /data/httpd/treeGame/application/user/admin/Prop.php ]
+[ info ] [ VIEW ] /data/httpd/treeGame/application/common/builder/form/layout.html [ array (
+  0 => '_admin_base_layout',
+  1 => 'system_color',
+  2 => '_top_menus',
+  3 => '_top_menus_all',
+  4 => '_sidebar_menus',
+  5 => '_location',
+  6 => 'aside',
+  7 => '_pop',
+  8 => 'page_title',
+  9 => 'page_tips',
+  10 => 'tips_type',
+  11 => 'btn_hide',
+  12 => 'btn_title',
+  13 => 'form_items',
+  14 => 'tab_nav',
+  15 => 'post_url',
+  16 => 'form_data',
+  17 => 'extra_html',
+  18 => 'extra_js',
+  19 => 'extra_css',
+  20 => 'ajax_submit',
+  21 => 'hide_header',
+  22 => 'header_title',
+  23 => 'js_list',
+  24 => 'css_list',
+  25 => 'field_triggers',
+  26 => 'field_hide',
+  27 => 'field_values',
+  28 => '_js_files',
+  29 => '_js_init',
+  30 => '_css_files',
+  31 => '_layout',
+  32 => 'btn_extra',
+  33 => 'submit_confirm',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004233s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.011988s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000434s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.003023s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000437s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.003415s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.001263s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.004138s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000929s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.001599s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000504s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_menu` [ RunTime:0.005445s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id LIMIT 10 [ RunTime:0.000392s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id [ RunTime:0.001118s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/prop/setting' LIMIT 1 [ RunTime:0.000373s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.000467s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `module` = 'user' ORDER BY sort,id [ RunTime:0.000947s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/prop/setting' LIMIT 1 [ RunTime:0.000472s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.001013s ]
+[ sql ] [ SQL ] SELECT `value` FROM `game_admin_config` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000337s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_prop` [ RunTime:0.004492s ]
+[ sql ] [ SQL ] SELECT * FROM `game_prop` WHERE  `position` = 4 LIMIT 1 [ RunTime:0.000328s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_user` [ RunTime:0.007536s ]
+[ sql ] [ SQL ] SELECT `avatar` FROM `game_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000223s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_attachment` [ RunTime:0.001076s ]
+[ sql ] [ SQL ] SELECT `path` FROM `game_admin_attachment` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000243s ]
+---------------------------------------------------------------
+[ 2017-08-17T17:38:53+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/prop/setting/group/3.html
+[ info ] zg.trees.com/admin.php/user/prop/setting/group/3.html [运行时间：0.644860s][吞吐率：1.55req/s] [内存消耗：1,311.04kb] [文件加载：74]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'prop',
+    2 => 'setting',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/prop/setting/group/3.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'group' => '3',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.135229s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.041679s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\user\admin\Prop->setting[ /data/httpd/treeGame/application/user/admin/Prop.php ]
+[ info ] [ VIEW ] /data/httpd/treeGame/application/common/builder/form/layout.html [ array (
+  0 => '_admin_base_layout',
+  1 => 'system_color',
+  2 => '_top_menus',
+  3 => '_top_menus_all',
+  4 => '_sidebar_menus',
+  5 => '_location',
+  6 => 'aside',
+  7 => '_pop',
+  8 => 'page_title',
+  9 => 'page_tips',
+  10 => 'tips_type',
+  11 => 'btn_hide',
+  12 => 'btn_title',
+  13 => 'form_items',
+  14 => 'tab_nav',
+  15 => 'post_url',
+  16 => 'form_data',
+  17 => 'extra_html',
+  18 => 'extra_js',
+  19 => 'extra_css',
+  20 => 'ajax_submit',
+  21 => 'hide_header',
+  22 => 'header_title',
+  23 => 'js_list',
+  24 => 'css_list',
+  25 => 'field_triggers',
+  26 => 'field_hide',
+  27 => 'field_values',
+  28 => '_js_files',
+  29 => '_js_init',
+  30 => '_css_files',
+  31 => '_layout',
+  32 => 'btn_extra',
+  33 => 'submit_confirm',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006398s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.008042s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000322s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.003261s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000995s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.004385s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000636s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.003408s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.001145s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.002683s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000461s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_menu` [ RunTime:0.000940s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id LIMIT 10 [ RunTime:0.000864s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id [ RunTime:0.000426s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/prop/setting' LIMIT 1 [ RunTime:0.000336s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.000339s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `module` = 'user' ORDER BY sort,id [ RunTime:0.000859s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/prop/setting' LIMIT 1 [ RunTime:0.000332s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.000254s ]
+[ sql ] [ SQL ] SELECT `value` FROM `game_admin_config` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000210s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_prop` [ RunTime:0.004713s ]
+[ sql ] [ SQL ] SELECT * FROM `game_prop` WHERE  `position` = 3 LIMIT 1 [ RunTime:0.000291s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_user` [ RunTime:0.000872s ]
+[ sql ] [ SQL ] SELECT `avatar` FROM `game_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000691s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_attachment` [ RunTime:0.001226s ]
+[ sql ] [ SQL ] SELECT `path` FROM `game_admin_attachment` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000183s ]
+---------------------------------------------------------------
+[ 2017-08-17T17:38:55+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/prop/setting/group/4.html
+[ info ] zg.trees.com/admin.php/user/prop/setting/group/4.html [运行时间：0.589489s][吞吐率：1.70req/s] [内存消耗：1,306.08kb] [文件加载：74]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'prop',
+    2 => 'setting',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/prop/setting/group/3.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'group' => '4',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.116138s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.052207s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\user\admin\Prop->setting[ /data/httpd/treeGame/application/user/admin/Prop.php ]
+[ info ] [ VIEW ] /data/httpd/treeGame/application/common/builder/form/layout.html [ array (
+  0 => '_admin_base_layout',
+  1 => 'system_color',
+  2 => '_top_menus',
+  3 => '_top_menus_all',
+  4 => '_sidebar_menus',
+  5 => '_location',
+  6 => 'aside',
+  7 => '_pop',
+  8 => 'page_title',
+  9 => 'page_tips',
+  10 => 'tips_type',
+  11 => 'btn_hide',
+  12 => 'btn_title',
+  13 => 'form_items',
+  14 => 'tab_nav',
+  15 => 'post_url',
+  16 => 'form_data',
+  17 => 'extra_html',
+  18 => 'extra_js',
+  19 => 'extra_css',
+  20 => 'ajax_submit',
+  21 => 'hide_header',
+  22 => 'header_title',
+  23 => 'js_list',
+  24 => 'css_list',
+  25 => 'field_triggers',
+  26 => 'field_hide',
+  27 => 'field_values',
+  28 => '_js_files',
+  29 => '_js_init',
+  30 => '_css_files',
+  31 => '_layout',
+  32 => 'btn_extra',
+  33 => 'submit_confirm',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010509s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.003955s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000491s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.003207s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000244s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001105s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000279s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.003685s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000472s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.001354s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000251s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_menu` [ RunTime:0.001383s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id LIMIT 10 [ RunTime:0.000746s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id [ RunTime:0.000369s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/prop/setting' LIMIT 1 [ RunTime:0.000335s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.002370s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `module` = 'user' ORDER BY sort,id [ RunTime:0.000606s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/prop/setting' LIMIT 1 [ RunTime:0.000315s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.000261s ]
+[ sql ] [ SQL ] SELECT `value` FROM `game_admin_config` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000200s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_prop` [ RunTime:0.001114s ]
+[ sql ] [ SQL ] SELECT * FROM `game_prop` WHERE  `position` = 4 LIMIT 1 [ RunTime:0.000295s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_user` [ RunTime:0.001746s ]
+[ sql ] [ SQL ] SELECT `avatar` FROM `game_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000268s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_attachment` [ RunTime:0.001592s ]
+[ sql ] [ SQL ] SELECT `path` FROM `game_admin_attachment` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000201s ]
+---------------------------------------------------------------
+[ 2017-08-17T17:39:05+08:00 ] 10.0.2.15 10.0.2.2 POST /admin.php/user/prop/setting/group/4.html
+[ info ] zg.trees.com/admin.php/user/prop/setting/group/4.html [运行时间：0.558186s][吞吐率：1.79req/s] [内存消耗：1,055.65kb] [文件加载：69]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'prop',
+    2 => 'setting',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'content-length' => '19',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://zg.trees.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://zg.trees.com/admin.php/user/prop/setting/group/4.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+)
+[ info ] [ PARAM ] array (
+  'cash' => '20',
+  'use_limit' => '1',
+  'group' => '4',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.128658s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.062780s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\user\admin\Prop->setting[ /data/httpd/treeGame/application/user/admin/Prop.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005085s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.007807s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000371s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.004094s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000356s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001160s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000222s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.003515s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000104s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.003910s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.003727s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_prop` [ RunTime:0.001403s ]
+[ sql ] [ SQL ] SELECT * FROM `game_prop` WHERE  `position` = 4 LIMIT 1 [ RunTime:0.000355s ]
+[ sql ] [ SQL ] INSERT INTO `game_prop` (`cash` , `use_limit` , `prop_name` , `prop_affect` , `position`) VALUES (20 , 1 , '保护罩' , '可以抵御一次自然灾害' , 4) [ RunTime:0.000216s ]
+---------------------------------------------------------------
+[ 2017-08-17T17:39:07+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/prop/setting/group/4.html
+[ info ] zg.trees.com/admin.php/user/prop/setting/group/4.html [运行时间：0.608282s][吞吐率：1.64req/s] [内存消耗：1,309.30kb] [文件加载：74]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'prop',
+    2 => 'setting',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/prop/setting/group/4.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'group' => '4',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.125843s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.047709s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\user\admin\Prop->setting[ /data/httpd/treeGame/application/user/admin/Prop.php ]
+[ info ] [ VIEW ] /data/httpd/treeGame/application/common/builder/form/layout.html [ array (
+  0 => '_admin_base_layout',
+  1 => 'system_color',
+  2 => '_top_menus',
+  3 => '_top_menus_all',
+  4 => '_sidebar_menus',
+  5 => '_location',
+  6 => 'aside',
+  7 => '_pop',
+  8 => 'page_title',
+  9 => 'page_tips',
+  10 => 'tips_type',
+  11 => 'btn_hide',
+  12 => 'btn_title',
+  13 => 'form_items',
+  14 => 'tab_nav',
+  15 => 'post_url',
+  16 => 'form_data',
+  17 => 'extra_html',
+  18 => 'extra_js',
+  19 => 'extra_css',
+  20 => 'ajax_submit',
+  21 => 'hide_header',
+  22 => 'header_title',
+  23 => 'js_list',
+  24 => 'css_list',
+  25 => 'field_triggers',
+  26 => 'field_hide',
+  27 => 'field_values',
+  28 => '_js_files',
+  29 => '_js_init',
+  30 => '_css_files',
+  31 => '_layout',
+  32 => 'btn_extra',
+  33 => 'submit_confirm',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005190s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.003611s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000294s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.003199s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.001478s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001605s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000511s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001501s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000470s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.004252s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.003035s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_menu` [ RunTime:0.001124s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id LIMIT 10 [ RunTime:0.000319s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id [ RunTime:0.000160s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/prop/setting' LIMIT 1 [ RunTime:0.000324s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.000335s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `module` = 'user' ORDER BY sort,id [ RunTime:0.000392s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/prop/setting' LIMIT 1 [ RunTime:0.000479s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.000271s ]
+[ sql ] [ SQL ] SELECT `value` FROM `game_admin_config` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000134s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_prop` [ RunTime:0.001013s ]
+[ sql ] [ SQL ] SELECT * FROM `game_prop` WHERE  `position` = 4 LIMIT 1 [ RunTime:0.000378s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_user` [ RunTime:0.001581s ]
+[ sql ] [ SQL ] SELECT `avatar` FROM `game_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_attachment` [ RunTime:0.001698s ]
+[ sql ] [ SQL ] SELECT `path` FROM `game_admin_attachment` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000247s ]
+---------------------------------------------------------------
+[ 2017-08-17T17:39:10+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/prop/index.html
+[ info ] zg.trees.com/admin.php/user/prop/index.html [运行时间：0.623304s][吞吐率：1.60req/s] [内存消耗：1,372.28kb] [文件加载：78]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'prop',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/prop/setting/group/4.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.103675s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.035083s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\user\admin\Prop->index[ /data/httpd/treeGame/application/user/admin/Prop.php ]
+[ info ] [ VIEW ] /data/httpd/treeGame/application/common/builder/table/layout.html [ array (
+  0 => '_admin_base_layout',
+  1 => 'system_color',
+  2 => '_top_menus',
+  3 => '_top_menus_all',
+  4 => '_sidebar_menus',
+  5 => '_location',
+  6 => 'aside',
+  7 => '_pop',
+  8 => 'page_title',
+  9 => 'page_tips',
+  10 => 'tips_type',
+  11 => 'tab_nav',
+  12 => 'hide_checkbox',
+  13 => 'extra_html',
+  14 => 'extra_js',
+  15 => 'extra_css',
+  16 => 'order_columns',
+  17 => 'filter_columns',
+  18 => 'filter_map',
+  19 => '_field_display',
+  20 => '_filter_content',
+  21 => '_filter',
+  22 => 'top_buttons',
+  23 => 'right_buttons',
+  24 => 'search',
+  25 => 'columns',
+  26 => 'pages',
+  27 => 'row_list',
+  28 => '_page_info',
+  29 => 'primary_key',
+  30 => '_table',
+  31 => 'js_list',
+  32 => 'css_list',
+  33 => 'validate',
+  34 => '_js_files',
+  35 => '_css_files',
+  36 => '_select_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003001s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.005633s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.001566s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.000925s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000279s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.000898s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000217s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.000948s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000487s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.001516s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000364s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_menu` [ RunTime:0.000985s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id LIMIT 10 [ RunTime:0.003342s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id [ RunTime:0.001210s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/prop/index' LIMIT 1 [ RunTime:0.001042s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.006834s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `module` = 'user' ORDER BY sort,id [ RunTime:0.000573s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/prop/index' LIMIT 1 [ RunTime:0.001428s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SELECT `value` FROM `game_admin_config` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000491s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_prop` [ RunTime:0.004477s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_prop` LIMIT 1 [ RunTime:0.000709s ]
+[ sql ] [ SQL ] SELECT * FROM `game_prop` ORDER BY id desc LIMIT 0,20 [ RunTime:0.000744s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_user` [ RunTime:0.000741s ]
+[ sql ] [ SQL ] SELECT `avatar` FROM `game_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000791s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_attachment` [ RunTime:0.003591s ]
+[ sql ] [ SQL ] SELECT `path` FROM `game_admin_attachment` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000264s ]
+---------------------------------------------------------------
+[ 2017-08-17T17:48:21+08:00 ] 10.0.2.15 10.0.2.2 GET /index.php/index/index/launch?sign=00001
+[ info ] zg.trees.com/index.php/index/index/launch?sign=00001 [运行时间：0.773716s][吞吐率：1.29req/s] [内存消耗：1,031.20kb] [文件加载：68]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'launch',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'sign' => '00001',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.176654s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.067653s ]
+[ info ] [ RUN ] app\index\controller\Index->launch[ /data/httpd/treeGame/application/index/controller/Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /data/httpd/treeGame/application/index/view/index/launch.html [ array (
+  0 => 'static_dir',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016525s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.001211s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000360s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.001796s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000328s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.003982s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000303s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001004s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000228s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000390s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_member` [ RunTime:0.001175s ]
+[ sql ] [ SQL ] SELECT * FROM `game_member` WHERE  `sign` = '00001' LIMIT 1 [ RunTime:0.001206s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_trees` [ RunTime:0.005447s ]
+[ sql ] [ SQL ] SELECT * FROM `game_trees` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.000310s ]
+---------------------------------------------------------------
+[ 2017-08-17T17:48:27+08:00 ] 10.0.2.15 10.0.2.2 GET /index.php/index/index/index.html
+[ info ] zg.trees.com/index.php/index/index/index.html [运行时间：0.664614s][吞吐率：1.50req/s] [内存消耗：1,166.91kb] [文件加载：70]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/index.php/index/index/launch?sign=00001',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.124488s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.060430s ]
+[ info ] [ RUN ] app\index\controller\Index->index[ /data/httpd/treeGame/application/index/controller/Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /data/httpd/treeGame/application/index/view/index/index.html [ array (
+  0 => 'static_dir',
+  1 => 'tree',
+  2 => 'count',
+  3 => 'waterprop',
+  4 => 'cutprop',
+  5 => 'shifeiprop',
+  6 => 'hudunprop',
+  7 => 'disaster',
+  8 => '_MEMBER',
+  9 => 'me_rank',
+  10 => 'person_rank',
+  11 => 'driver_rank',
+  12 => 'class_rank',
+  13 => 'company_rank',
+  14 => 'area_rank',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013470s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.007924s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000434s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.001890s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000286s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.000926s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000384s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.003740s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000290s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.007491s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000406s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_trees` [ RunTime:0.002441s ]
+[ sql ] [ SQL ] SELECT * FROM `game_trees` WHERE  `user_id` = 1  AND `status` < 3 LIMIT 1 [ RunTime:0.001464s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_trees` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.000215s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_my_prop` [ RunTime:0.000902s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_my_prop` WHERE  `user_id` = 1  AND `status` = 0  AND `prop_type` = 0 LIMIT 1 [ RunTime:0.004418s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_my_prop` WHERE  `user_id` = 1  AND `status` = 0  AND `prop_type` = 1 LIMIT 1 [ RunTime:0.000186s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_my_prop` WHERE  `user_id` = 1  AND `status` = 0  AND `prop_type` = 2 LIMIT 1 [ RunTime:0.000267s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_my_prop` WHERE  `user_id` = 1  AND `status` = 0  AND `prop_type` = 3 LIMIT 1 [ RunTime:0.000232s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_adv_disaster` [ RunTime:0.000707s ]
+[ sql ] [ SQL ] SELECT * FROM `game_adv_disaster` ORDER BY id DESC LIMIT 1 [ RunTime:0.000208s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_rank` [ RunTime:0.000747s ]
+[ sql ] [ SQL ] SELECT name as username,green as green_max,user_id as id FROM `game_rank` WHERE  `type` = 0 ORDER BY green DESC [ RunTime:0.000284s ]
+[ sql ] [ SQL ] SELECT name as username,green as green_max,user_id as id FROM `game_rank` WHERE  `type` = 1 ORDER BY green DESC [ RunTime:0.000218s ]
+[ sql ] [ SQL ] SELECT name as class,green as max FROM `game_rank` WHERE  `type` = 2 ORDER BY green DESC [ RunTime:0.000235s ]
+[ sql ] [ SQL ] SELECT name as company,green as max FROM `game_rank` WHERE  `type` = 3 ORDER BY green DESC [ RunTime:0.000216s ]
+[ sql ] [ SQL ] SELECT name as area,green as max FROM `game_rank` WHERE  `type` = 4 ORDER BY green DESC [ RunTime:0.000224s ]
+---------------------------------------------------------------
+[ 2017-08-17T17:49:07+08:00 ] 10.0.2.15 10.0.2.2 GET /index.php/index/index/cash?prop_type=1
+[ info ] zg.trees.com/index.php/index/index/cash?prop_type=1 [运行时间：0.520155s][吞吐率：1.92req/s] [内存消耗：1,050.51kb] [文件加载：67]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'cash',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'prop_type' => '1',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.129374s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.052331s ]
+[ info ] [ RUN ] app\index\controller\Index->cash[ /data/httpd/treeGame/application/index/controller/Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003247s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.007929s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000739s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.004382s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000353s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.003249s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000326s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.005069s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000405s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.007034s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000440s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_member` [ RunTime:0.002708s ]
+[ sql ] [ SQL ] SELECT * FROM `game_member` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000431s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_prop` [ RunTime:0.001774s ]
+[ sql ] [ SQL ] SELECT * FROM `game_prop` WHERE  `position` = 1 LIMIT 1 [ RunTime:0.000303s ]
+[ sql ] [ SQL ] UPDATE `game_member`  SET `share`=share-10  WHERE  `id` = 1 [ RunTime:0.013334s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_grow_coin` [ RunTime:0.004230s ]
+[ sql ] [ SQL ] INSERT INTO `game_grow_coin` (`user_id` , `recode` , `create_time`) VALUES (1 , '兑换道具，消耗成长币10' , 1502963347) [ RunTime:0.003072s ]
+[ sql ] [ SQL ] SELECT * FROM `game_member` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000399s ]
+---------------------------------------------------------------
+[ 2017-08-17T21:43:57+08:00 ] 10.0.2.15 10.0.2.2 GET /index.php/index/index/index.html
+[ info ] zg.trees.com/index.php/index/index/index.html [运行时间：0.878605s][吞吐率：1.14req/s] [内存消耗：1,173.91kb] [文件加载：70]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/index.php/index/index/launch?sign=00001',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.178331s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.075047s ]
+[ info ] [ RUN ] app\index\controller\Index->index[ /data/httpd/treeGame/application/index/controller/Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /data/httpd/treeGame/application/index/view/index/index.html [ array (
+  0 => 'static_dir',
+  1 => 'tree',
+  2 => 'count',
+  3 => 'waterprop',
+  4 => 'cutprop',
+  5 => 'shifeiprop',
+  6 => 'hudunprop',
+  7 => 'disaster',
+  8 => '_MEMBER',
+  9 => 'me_rank',
+  10 => 'person_rank',
+  11 => 'driver_rank',
+  12 => 'class_rank',
+  13 => 'company_rank',
+  14 => 'area_rank',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003195s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.004391s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000426s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.000983s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000219s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001813s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000530s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.003232s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000499s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.001836s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000252s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_trees` [ RunTime:0.000829s ]
+[ sql ] [ SQL ] SELECT * FROM `game_trees` WHERE  `user_id` = 1  AND `status` < 3 LIMIT 1 [ RunTime:0.000267s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_trees` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.000185s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_my_prop` [ RunTime:0.003369s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_my_prop` WHERE  `user_id` = 1  AND `status` = 0  AND `prop_type` = 0 LIMIT 1 [ RunTime:0.000201s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_my_prop` WHERE  `user_id` = 1  AND `status` = 0  AND `prop_type` = 1 LIMIT 1 [ RunTime:0.000285s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_my_prop` WHERE  `user_id` = 1  AND `status` = 0  AND `prop_type` = 2 LIMIT 1 [ RunTime:0.000272s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_my_prop` WHERE  `user_id` = 1  AND `status` = 0  AND `prop_type` = 3 LIMIT 1 [ RunTime:0.000466s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_adv_disaster` [ RunTime:0.000771s ]
+[ sql ] [ SQL ] SELECT * FROM `game_adv_disaster` ORDER BY id DESC LIMIT 1 [ RunTime:0.000198s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_rank` [ RunTime:0.001034s ]
+[ sql ] [ SQL ] SELECT name as username,green as green_max,user_id as id FROM `game_rank` WHERE  `type` = 0 ORDER BY green DESC [ RunTime:0.000351s ]
+[ sql ] [ SQL ] SELECT name as username,green as green_max,user_id as id FROM `game_rank` WHERE  `type` = 1 ORDER BY green DESC [ RunTime:0.000466s ]
+[ sql ] [ SQL ] SELECT name as class,green as max FROM `game_rank` WHERE  `type` = 2 ORDER BY green DESC [ RunTime:0.000292s ]
+[ sql ] [ SQL ] SELECT name as company,green as max FROM `game_rank` WHERE  `type` = 3 ORDER BY green DESC [ RunTime:0.000410s ]
+[ sql ] [ SQL ] SELECT name as area,green as max FROM `game_rank` WHERE  `type` = 4 ORDER BY green DESC [ RunTime:0.000369s ]
+---------------------------------------------------------------
+[ 2017-08-17T21:45:15+08:00 ] 10.0.2.15 10.0.2.2 GET /index.php/index/index/index.html
+[ info ] zg.trees.com/index.php/index/index/index.html [运行时间：0.763579s][吞吐率：1.31req/s] [内存消耗：1,071.31kb] [文件加载：68]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/index.php/index/index/launch?sign=00001',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.191280s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.060127s ]
+[ info ] [ RUN ] app\index\controller\Index->index[ /data/httpd/treeGame/application/index/controller/Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /data/httpd/treeGame/application/index/view/index/index.html [ array (
+  0 => 'static_dir',
+  1 => 'tree',
+  2 => 'count',
+  3 => 'waterprop',
+  4 => 'cutprop',
+  5 => 'shifeiprop',
+  6 => 'hudunprop',
+  7 => 'disaster',
+  8 => '_MEMBER',
+  9 => 'me_rank',
+  10 => 'person_rank',
+  11 => 'driver_rank',
+  12 => 'class_rank',
+  13 => 'company_rank',
+  14 => 'area_rank',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006730s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.004435s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000419s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.003572s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.001214s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001118s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000327s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.004338s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000286s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.001090s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000355s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_trees` [ RunTime:0.001727s ]
+[ sql ] [ SQL ] SELECT * FROM `game_trees` WHERE  `user_id` = 1  AND `status` < 3 LIMIT 1 [ RunTime:0.000571s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_furit` [ RunTime:0.004113s ]
+[ sql ] [ SQL ] SELECT * FROM `game_furit` WHERE  `trees_id` = 1 [ RunTime:0.000401s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_trees` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.000263s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_my_prop` [ RunTime:0.000871s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_my_prop` WHERE  `user_id` = 1  AND `status` = 0  AND `prop_type` = 0 LIMIT 1 [ RunTime:0.000273s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_my_prop` WHERE  `user_id` = 1  AND `status` = 0  AND `prop_type` = 1 LIMIT 1 [ RunTime:0.000224s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_my_prop` WHERE  `user_id` = 1  AND `status` = 0  AND `prop_type` = 2 LIMIT 1 [ RunTime:0.000214s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_my_prop` WHERE  `user_id` = 1  AND `status` = 0  AND `prop_type` = 3 LIMIT 1 [ RunTime:0.000206s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_adv_disaster` [ RunTime:0.001058s ]
+[ sql ] [ SQL ] SELECT * FROM `game_adv_disaster` ORDER BY id DESC LIMIT 1 [ RunTime:0.000392s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_rank` [ RunTime:0.006868s ]
+[ sql ] [ SQL ] SELECT name as username,green as green_max,user_id as id FROM `game_rank` WHERE  `type` = 0 ORDER BY green DESC [ RunTime:0.000434s ]
+[ sql ] [ SQL ] SELECT name as username,green as green_max,user_id as id FROM `game_rank` WHERE  `type` = 1 ORDER BY green DESC [ RunTime:0.000579s ]
+[ sql ] [ SQL ] SELECT name as class,green as max FROM `game_rank` WHERE  `type` = 2 ORDER BY green DESC [ RunTime:0.000335s ]
+[ sql ] [ SQL ] SELECT name as company,green as max FROM `game_rank` WHERE  `type` = 3 ORDER BY green DESC [ RunTime:0.000286s ]
+[ sql ] [ SQL ] SELECT name as area,green as max FROM `game_rank` WHERE  `type` = 4 ORDER BY green DESC [ RunTime:0.000913s ]
+---------------------------------------------------------------
+[ 2017-08-17T21:45:28+08:00 ] 10.0.2.15 10.0.2.2 GET /index.php/index/index/index.html
+[ info ] zg.trees.com/index.php/index/index/index.html [运行时间：0.616286s][吞吐率：1.62req/s] [内存消耗：963.37kb] [文件加载：68]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/index.php/index/index/launch?sign=00001',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.134235s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.050192s ]
+[ info ] [ RUN ] app\index\controller\Index->index[ /data/httpd/treeGame/application/index/controller/Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /data/httpd/treeGame/application/index/view/index/index.html [ array (
+  0 => 'static_dir',
+  1 => 'tree',
+  2 => 'count',
+  3 => 'waterprop',
+  4 => 'cutprop',
+  5 => 'shifeiprop',
+  6 => 'hudunprop',
+  7 => 'disaster',
+  8 => '_MEMBER',
+  9 => 'me_rank',
+  10 => 'person_rank',
+  11 => 'driver_rank',
+  12 => 'class_rank',
+  13 => 'company_rank',
+  14 => 'area_rank',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010334s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.008067s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.003061s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.001576s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000227s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001711s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000301s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.000757s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000263s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.000905s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000806s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_trees` [ RunTime:0.003686s ]
+[ sql ] [ SQL ] SELECT * FROM `game_trees` WHERE  `user_id` = 1  AND `status` < 3 LIMIT 1 [ RunTime:0.000260s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_furit` [ RunTime:0.004780s ]
+[ sql ] [ SQL ] SELECT * FROM `game_furit` WHERE  `trees_id` = 1 [ RunTime:0.000284s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_trees` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.000203s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_my_prop` [ RunTime:0.000706s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_my_prop` WHERE  `user_id` = 1  AND `status` = 0  AND `prop_type` = 0 LIMIT 1 [ RunTime:0.000891s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_my_prop` WHERE  `user_id` = 1  AND `status` = 0  AND `prop_type` = 1 LIMIT 1 [ RunTime:0.000225s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_my_prop` WHERE  `user_id` = 1  AND `status` = 0  AND `prop_type` = 2 LIMIT 1 [ RunTime:0.000210s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_my_prop` WHERE  `user_id` = 1  AND `status` = 0  AND `prop_type` = 3 LIMIT 1 [ RunTime:0.000208s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_adv_disaster` [ RunTime:0.001977s ]
+[ sql ] [ SQL ] SELECT * FROM `game_adv_disaster` ORDER BY id DESC LIMIT 1 [ RunTime:0.000260s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_rank` [ RunTime:0.004499s ]
+[ sql ] [ SQL ] SELECT name as username,green as green_max,user_id as id FROM `game_rank` WHERE  `type` = 0 ORDER BY green DESC [ RunTime:0.000455s ]
+[ sql ] [ SQL ] SELECT name as username,green as green_max,user_id as id FROM `game_rank` WHERE  `type` = 1 ORDER BY green DESC [ RunTime:0.000274s ]
+[ sql ] [ SQL ] SELECT name as class,green as max FROM `game_rank` WHERE  `type` = 2 ORDER BY green DESC [ RunTime:0.001075s ]
+[ sql ] [ SQL ] SELECT name as company,green as max FROM `game_rank` WHERE  `type` = 3 ORDER BY green DESC [ RunTime:0.000365s ]
+[ sql ] [ SQL ] SELECT name as area,green as max FROM `game_rank` WHERE  `type` = 4 ORDER BY green DESC [ RunTime:0.000186s ]
+---------------------------------------------------------------
+[ 2017-08-17T21:49:20+08:00 ] 10.0.2.15 10.0.2.2 GET /index.php/index/index/index.html
+[ info ] zg.trees.com/index.php/index/index/index.html [运行时间：0.662698s][吞吐率：1.51req/s] [内存消耗：960.08kb] [文件加载：68]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/index.php/index/index/launch?sign=00001',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.181921s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.051589s ]
+[ info ] [ RUN ] app\index\controller\Index->index[ /data/httpd/treeGame/application/index/controller/Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /data/httpd/treeGame/application/index/view/index/index.html [ array (
+  0 => 'static_dir',
+  1 => 'tree',
+  2 => 'count',
+  3 => 'waterprop',
+  4 => 'cutprop',
+  5 => 'shifeiprop',
+  6 => 'hudunprop',
+  7 => 'disaster',
+  8 => '_MEMBER',
+  9 => 'me_rank',
+  10 => 'person_rank',
+  11 => 'driver_rank',
+  12 => 'class_rank',
+  13 => 'company_rank',
+  14 => 'area_rank',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006824s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.004685s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000331s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.004527s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000431s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.000919s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000223s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001373s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000113s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.001844s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000316s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_trees` [ RunTime:0.001262s ]
+[ sql ] [ SQL ] SELECT * FROM `game_trees` WHERE  `user_id` = 1  AND `status` < 3 LIMIT 1 [ RunTime:0.000391s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_furit` [ RunTime:0.003347s ]
+[ sql ] [ SQL ] SELECT * FROM `game_furit` WHERE  `trees_id` = 1 [ RunTime:0.000294s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_trees` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.000244s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_my_prop` [ RunTime:0.000846s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_my_prop` WHERE  `user_id` = 1  AND `status` = 0  AND `prop_type` = 0 LIMIT 1 [ RunTime:0.000297s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_my_prop` WHERE  `user_id` = 1  AND `status` = 0  AND `prop_type` = 1 LIMIT 1 [ RunTime:0.000221s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_my_prop` WHERE  `user_id` = 1  AND `status` = 0  AND `prop_type` = 2 LIMIT 1 [ RunTime:0.000201s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_my_prop` WHERE  `user_id` = 1  AND `status` = 0  AND `prop_type` = 3 LIMIT 1 [ RunTime:0.000199s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_adv_disaster` [ RunTime:0.001487s ]
+[ sql ] [ SQL ] SELECT * FROM `game_adv_disaster` ORDER BY id DESC LIMIT 1 [ RunTime:0.000114s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_rank` [ RunTime:0.001290s ]
+[ sql ] [ SQL ] SELECT name as username,green as green_max,user_id as id FROM `game_rank` WHERE  `type` = 0 ORDER BY green DESC [ RunTime:0.000348s ]
+[ sql ] [ SQL ] SELECT name as username,green as green_max,user_id as id FROM `game_rank` WHERE  `type` = 1 ORDER BY green DESC [ RunTime:0.000204s ]
+[ sql ] [ SQL ] SELECT name as class,green as max FROM `game_rank` WHERE  `type` = 2 ORDER BY green DESC [ RunTime:0.000196s ]
+[ sql ] [ SQL ] SELECT name as company,green as max FROM `game_rank` WHERE  `type` = 3 ORDER BY green DESC [ RunTime:0.000202s ]
+[ sql ] [ SQL ] SELECT name as area,green as max FROM `game_rank` WHERE  `type` = 4 ORDER BY green DESC [ RunTime:0.000234s ]
+---------------------------------------------------------------
+[ 2017-08-17T21:49:22+08:00 ] 10.0.2.15 10.0.2.2 GET /index.php/index/index/index.html
+[ info ] zg.trees.com/index.php/index/index/index.html [运行时间：0.622718s][吞吐率：1.61req/s] [内存消耗：960.08kb] [文件加载：68]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/index.php/index/index/launch?sign=00001',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.216074s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.048028s ]
+[ info ] [ RUN ] app\index\controller\Index->index[ /data/httpd/treeGame/application/index/controller/Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /data/httpd/treeGame/application/index/view/index/index.html [ array (
+  0 => 'static_dir',
+  1 => 'tree',
+  2 => 'count',
+  3 => 'waterprop',
+  4 => 'cutprop',
+  5 => 'shifeiprop',
+  6 => 'hudunprop',
+  7 => 'disaster',
+  8 => '_MEMBER',
+  9 => 'me_rank',
+  10 => 'person_rank',
+  11 => 'driver_rank',
+  12 => 'class_rank',
+  13 => 'company_rank',
+  14 => 'area_rank',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007364s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.012138s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000446s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.004670s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000579s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.004558s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000002s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001146s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000285s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.004859s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000303s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_trees` [ RunTime:0.001401s ]
+[ sql ] [ SQL ] SELECT * FROM `game_trees` WHERE  `user_id` = 1  AND `status` < 3 LIMIT 1 [ RunTime:0.000307s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_furit` [ RunTime:0.000916s ]
+[ sql ] [ SQL ] SELECT * FROM `game_furit` WHERE  `trees_id` = 1 [ RunTime:0.000693s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_trees` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.000299s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_my_prop` [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_my_prop` WHERE  `user_id` = 1  AND `status` = 0  AND `prop_type` = 0 LIMIT 1 [ RunTime:0.000259s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_my_prop` WHERE  `user_id` = 1  AND `status` = 0  AND `prop_type` = 1 LIMIT 1 [ RunTime:0.001066s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_my_prop` WHERE  `user_id` = 1  AND `status` = 0  AND `prop_type` = 2 LIMIT 1 [ RunTime:0.000246s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_my_prop` WHERE  `user_id` = 1  AND `status` = 0  AND `prop_type` = 3 LIMIT 1 [ RunTime:0.000216s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_adv_disaster` [ RunTime:0.000768s ]
+[ sql ] [ SQL ] SELECT * FROM `game_adv_disaster` ORDER BY id DESC LIMIT 1 [ RunTime:0.000271s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_rank` [ RunTime:0.001346s ]
+[ sql ] [ SQL ] SELECT name as username,green as green_max,user_id as id FROM `game_rank` WHERE  `type` = 0 ORDER BY green DESC [ RunTime:0.000289s ]
+[ sql ] [ SQL ] SELECT name as username,green as green_max,user_id as id FROM `game_rank` WHERE  `type` = 1 ORDER BY green DESC [ RunTime:0.000232s ]
+[ sql ] [ SQL ] SELECT name as class,green as max FROM `game_rank` WHERE  `type` = 2 ORDER BY green DESC [ RunTime:0.000253s ]
+[ sql ] [ SQL ] SELECT name as company,green as max FROM `game_rank` WHERE  `type` = 3 ORDER BY green DESC [ RunTime:0.000214s ]
+[ sql ] [ SQL ] SELECT name as area,green as max FROM `game_rank` WHERE  `type` = 4 ORDER BY green DESC [ RunTime:0.000521s ]
+---------------------------------------------------------------
+[ 2017-08-17T21:57:46+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/reward/index.html
+[ info ] zg.trees.com/admin.php/user/reward/index.html [运行时间：0.991106s][吞吐率：1.01req/s] [内存消耗：1,300.80kb] [文件加载：74]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'reward',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/prop/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.147874s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.058792s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\user\admin\Reward->index[ /data/httpd/treeGame/application/user/admin/Reward.php ]
+[ info ] [ VIEW ] /data/httpd/treeGame/application/common/builder/form/layout.html [ array (
+  0 => '_admin_base_layout',
+  1 => 'system_color',
+  2 => '_top_menus',
+  3 => '_top_menus_all',
+  4 => '_sidebar_menus',
+  5 => '_location',
+  6 => 'aside',
+  7 => '_pop',
+  8 => 'page_title',
+  9 => 'page_tips',
+  10 => 'tips_type',
+  11 => 'btn_hide',
+  12 => 'btn_title',
+  13 => 'form_items',
+  14 => 'tab_nav',
+  15 => 'post_url',
+  16 => 'form_data',
+  17 => 'extra_html',
+  18 => 'extra_js',
+  19 => 'extra_css',
+  20 => 'ajax_submit',
+  21 => 'hide_header',
+  22 => 'header_title',
+  23 => 'js_list',
+  24 => 'css_list',
+  25 => 'field_triggers',
+  26 => 'field_hide',
+  27 => 'field_values',
+  28 => '_js_files',
+  29 => '_js_init',
+  30 => '_css_files',
+  31 => '_layout',
+  32 => 'btn_extra',
+  33 => 'submit_confirm',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003718s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.011546s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000428s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.000914s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000409s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.004330s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000287s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001568s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000884s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.004161s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000299s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_menu` [ RunTime:0.000936s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id LIMIT 10 [ RunTime:0.000512s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id [ RunTime:0.000363s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/reward/index' LIMIT 1 [ RunTime:0.000427s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.002797s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `module` = 'user' ORDER BY sort,id [ RunTime:0.000788s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/reward/index' LIMIT 1 [ RunTime:0.000395s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.000252s ]
+[ sql ] [ SQL ] SELECT `value` FROM `game_admin_config` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000691s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_reward_setting` [ RunTime:0.001230s ]
+[ sql ] [ SQL ] SELECT * FROM `game_reward_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000349s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_user` [ RunTime:0.003369s ]
+[ sql ] [ SQL ] SELECT `avatar` FROM `game_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000258s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_attachment` [ RunTime:0.003787s ]
+[ sql ] [ SQL ] SELECT `path` FROM `game_admin_attachment` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000340s ]
+---------------------------------------------------------------
+[ 2017-08-17T21:58:43+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/prize/index.html
+[ info ] zg.trees.com/admin.php/user/prize/index.html [运行时间：0.701942s][吞吐率：1.42req/s] [内存消耗：1,351.33kb] [文件加载：78]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'prize',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/reward/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprop%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.151043s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.046333s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\user\admin\Prize->index[ /data/httpd/treeGame/application/user/admin/Prize.php ]
+[ info ] [ VIEW ] /data/httpd/treeGame/application/common/builder/table/layout.html [ array (
+  0 => '_admin_base_layout',
+  1 => 'system_color',
+  2 => '_top_menus',
+  3 => '_top_menus_all',
+  4 => '_sidebar_menus',
+  5 => '_location',
+  6 => 'aside',
+  7 => '_pop',
+  8 => 'page_title',
+  9 => 'page_tips',
+  10 => 'tips_type',
+  11 => 'tab_nav',
+  12 => 'hide_checkbox',
+  13 => 'extra_html',
+  14 => 'extra_js',
+  15 => 'extra_css',
+  16 => 'order_columns',
+  17 => 'filter_columns',
+  18 => 'filter_map',
+  19 => '_field_display',
+  20 => '_filter_content',
+  21 => '_filter',
+  22 => 'top_buttons',
+  23 => 'right_buttons',
+  24 => 'search',
+  25 => 'columns',
+  26 => 'pages',
+  27 => 'row_list',
+  28 => '_page_info',
+  29 => 'primary_key',
+  30 => '_table',
+  31 => 'js_list',
+  32 => 'css_list',
+  33 => 'validate',
+  34 => '_js_files',
+  35 => '_css_files',
+  36 => '_select_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.014045s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.005653s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.001318s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.003196s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000432s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001408s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000099s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001322s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000344s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.001354s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000386s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_menu` [ RunTime:0.002895s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id LIMIT 10 [ RunTime:0.000447s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id [ RunTime:0.000572s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/prize/index' LIMIT 1 [ RunTime:0.000317s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.003567s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `module` = 'user' ORDER BY sort,id [ RunTime:0.000508s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/prize/index' LIMIT 1 [ RunTime:0.000367s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.000380s ]
+[ sql ] [ SQL ] SELECT `value` FROM `game_admin_config` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000327s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_recode` [ RunTime:0.002199s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_recode` LIMIT 1 [ RunTime:0.000349s ]
+[ sql ] [ SQL ] SELECT * FROM `game_recode` ORDER BY id desc LIMIT 0,20 [ RunTime:0.000193s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_user` [ RunTime:0.004274s ]
+[ sql ] [ SQL ] SELECT `avatar` FROM `game_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000216s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_attachment` [ RunTime:0.002552s ]
+[ sql ] [ SQL ] SELECT `path` FROM `game_admin_attachment` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000192s ]
+---------------------------------------------------------------
+[ 2017-08-17T21:58:47+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/conpon/index.html
+[ info ] zg.trees.com/admin.php/user/conpon/index.html [运行时间：0.657105s][吞吐率：1.52req/s] [内存消耗：1,355.30kb] [文件加载：78]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'conpon',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/prize/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fprize%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.130919s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.047201s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\user\admin\Conpon->index[ /data/httpd/treeGame/application/user/admin/Conpon.php ]
+[ info ] [ VIEW ] /data/httpd/treeGame/application/common/builder/table/layout.html [ array (
+  0 => '_admin_base_layout',
+  1 => 'system_color',
+  2 => '_top_menus',
+  3 => '_top_menus_all',
+  4 => '_sidebar_menus',
+  5 => '_location',
+  6 => 'aside',
+  7 => '_pop',
+  8 => 'page_title',
+  9 => 'page_tips',
+  10 => 'tips_type',
+  11 => 'tab_nav',
+  12 => 'hide_checkbox',
+  13 => 'extra_html',
+  14 => 'extra_js',
+  15 => 'extra_css',
+  16 => 'order_columns',
+  17 => 'filter_columns',
+  18 => 'filter_map',
+  19 => '_field_display',
+  20 => '_filter_content',
+  21 => '_filter',
+  22 => 'top_buttons',
+  23 => 'right_buttons',
+  24 => 'search',
+  25 => 'columns',
+  26 => 'pages',
+  27 => 'row_list',
+  28 => '_page_info',
+  29 => 'primary_key',
+  30 => '_table',
+  31 => 'js_list',
+  32 => 'css_list',
+  33 => 'validate',
+  34 => '_js_files',
+  35 => '_css_files',
+  36 => '_select_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011437s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.010682s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000425s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.001572s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000381s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001044s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000408s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001674s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000380s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.000885s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000245s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_menu` [ RunTime:0.003112s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id LIMIT 10 [ RunTime:0.000495s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id [ RunTime:0.000375s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/conpon/index' LIMIT 1 [ RunTime:0.000425s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.000343s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `module` = 'user' ORDER BY sort,id [ RunTime:0.001383s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/conpon/index' LIMIT 1 [ RunTime:0.000262s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.000268s ]
+[ sql ] [ SQL ] SELECT `value` FROM `game_admin_config` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000389s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_conpon` [ RunTime:0.000714s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_conpon` LIMIT 1 [ RunTime:0.000213s ]
+[ sql ] [ SQL ] SELECT * FROM `game_conpon` ORDER BY id desc LIMIT 0,20 [ RunTime:0.000219s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_user` [ RunTime:0.001976s ]
+[ sql ] [ SQL ] SELECT `avatar` FROM `game_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000209s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_attachment` [ RunTime:0.001072s ]
+[ sql ] [ SQL ] SELECT `path` FROM `game_admin_attachment` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000285s ]
+---------------------------------------------------------------
+[ 2017-08-17T21:58:50+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/conpontepy/index.html
+[ info ] zg.trees.com/admin.php/user/conpontepy/index.html [运行时间：0.882129s][吞吐率：1.13req/s] [内存消耗：1,360.08kb] [文件加载：78]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'conpontepy',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/conpon/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fconpon%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.134634s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.064198s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\user\admin\Conpontepy->index[ /data/httpd/treeGame/application/user/admin/Conpontepy.php ]
+[ info ] [ VIEW ] /data/httpd/treeGame/application/common/builder/table/layout.html [ array (
+  0 => '_admin_base_layout',
+  1 => 'system_color',
+  2 => '_top_menus',
+  3 => '_top_menus_all',
+  4 => '_sidebar_menus',
+  5 => '_location',
+  6 => 'aside',
+  7 => '_pop',
+  8 => 'page_title',
+  9 => 'page_tips',
+  10 => 'tips_type',
+  11 => 'tab_nav',
+  12 => 'hide_checkbox',
+  13 => 'extra_html',
+  14 => 'extra_js',
+  15 => 'extra_css',
+  16 => 'order_columns',
+  17 => 'filter_columns',
+  18 => 'filter_map',
+  19 => '_field_display',
+  20 => '_filter_content',
+  21 => '_filter',
+  22 => 'top_buttons',
+  23 => 'right_buttons',
+  24 => 'search',
+  25 => 'columns',
+  26 => 'pages',
+  27 => 'row_list',
+  28 => '_page_info',
+  29 => 'primary_key',
+  30 => '_table',
+  31 => 'js_list',
+  32 => 'css_list',
+  33 => 'validate',
+  34 => '_js_files',
+  35 => '_css_files',
+  36 => '_select_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013658s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.009466s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000626s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.000989s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000326s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.003964s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.001134s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.007384s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000341s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.001766s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.002841s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_menu` [ RunTime:0.003727s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id LIMIT 10 [ RunTime:0.000670s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id [ RunTime:0.000370s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/conpontepy/index' LIMIT 1 [ RunTime:0.000344s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.000343s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `module` = 'user' ORDER BY sort,id [ RunTime:0.000841s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/conpontepy/index' LIMIT 1 [ RunTime:0.000471s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.000269s ]
+[ sql ] [ SQL ] SELECT `value` FROM `game_admin_config` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000408s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_conpon_type` [ RunTime:0.001175s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_conpon_type` LIMIT 1 [ RunTime:0.000646s ]
+[ sql ] [ SQL ] SELECT * FROM `game_conpon_type` ORDER BY id desc LIMIT 0,20 [ RunTime:0.005578s ]
+[ sql ] [ SQL ] SELECT `url_type` FROM `game_admin_menu` WHERE  `url_value` = 'user/conpontepy/add' LIMIT 1 [ RunTime:0.000544s ]
+[ sql ] [ SQL ] SELECT `url_type` FROM `game_admin_menu` WHERE  `url_value` = 'user/conpontepy/edit' LIMIT 1 [ RunTime:0.001371s ]
+[ sql ] [ SQL ] SELECT `url_type` FROM `game_admin_menu` WHERE  `url_value` = 'user/conpontepy/delete' LIMIT 1 [ RunTime:0.000563s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_user` [ RunTime:0.001428s ]
+[ sql ] [ SQL ] SELECT `avatar` FROM `game_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000290s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_attachment` [ RunTime:0.003994s ]
+[ sql ] [ SQL ] SELECT `path` FROM `game_admin_attachment` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000339s ]
+---------------------------------------------------------------
+[ 2017-08-17T21:58:52+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/conpon/index.html
+[ info ] zg.trees.com/admin.php/user/conpon/index.html [运行时间：0.490016s][吞吐率：2.04req/s] [内存消耗：1,355.33kb] [文件加载：78]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'conpon',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/conpontepy/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fconpontepy%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.112780s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.041324s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\user\admin\Conpon->index[ /data/httpd/treeGame/application/user/admin/Conpon.php ]
+[ info ] [ VIEW ] /data/httpd/treeGame/application/common/builder/table/layout.html [ array (
+  0 => '_admin_base_layout',
+  1 => 'system_color',
+  2 => '_top_menus',
+  3 => '_top_menus_all',
+  4 => '_sidebar_menus',
+  5 => '_location',
+  6 => 'aside',
+  7 => '_pop',
+  8 => 'page_title',
+  9 => 'page_tips',
+  10 => 'tips_type',
+  11 => 'tab_nav',
+  12 => 'hide_checkbox',
+  13 => 'extra_html',
+  14 => 'extra_js',
+  15 => 'extra_css',
+  16 => 'order_columns',
+  17 => 'filter_columns',
+  18 => 'filter_map',
+  19 => '_field_display',
+  20 => '_filter_content',
+  21 => '_filter',
+  22 => 'top_buttons',
+  23 => 'right_buttons',
+  24 => 'search',
+  25 => 'columns',
+  26 => 'pages',
+  27 => 'row_list',
+  28 => '_page_info',
+  29 => 'primary_key',
+  30 => '_table',
+  31 => 'js_list',
+  32 => 'css_list',
+  33 => 'validate',
+  34 => '_js_files',
+  35 => '_css_files',
+  36 => '_select_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008086s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.012340s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000309s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.001168s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000280s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001495s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000279s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.006546s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000284s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.004093s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000280s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_menu` [ RunTime:0.000723s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id LIMIT 10 [ RunTime:0.000384s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id [ RunTime:0.000857s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/conpon/index' LIMIT 1 [ RunTime:0.000245s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.002695s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `module` = 'user' ORDER BY sort,id [ RunTime:0.000477s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/conpon/index' LIMIT 1 [ RunTime:0.000312s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.000364s ]
+[ sql ] [ SQL ] SELECT `value` FROM `game_admin_config` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000277s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_conpon` [ RunTime:0.003816s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `game_conpon` LIMIT 1 [ RunTime:0.001043s ]
+[ sql ] [ SQL ] SELECT * FROM `game_conpon` ORDER BY id desc LIMIT 0,20 [ RunTime:0.000324s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_user` [ RunTime:0.001732s ]
+[ sql ] [ SQL ] SELECT `avatar` FROM `game_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000228s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_attachment` [ RunTime:0.000981s ]
+[ sql ] [ SQL ] SELECT `path` FROM `game_admin_attachment` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000227s ]
+---------------------------------------------------------------
+[ 2017-08-17T22:01:47+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/develop/index.html
+[ info ] zg.trees.com/admin.php/user/develop/index.html [运行时间：0.937486s][吞吐率：1.07req/s] [内存消耗：1,413.31kb] [文件加载：74]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'develop',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/conpon/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fconpon%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.186179s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.079056s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\user\admin\Develop->index[ /data/httpd/treeGame/application/user/admin/Develop.php ]
+[ info ] [ VIEW ] /data/httpd/treeGame/application/common/builder/form/layout.html [ array (
+  0 => '_admin_base_layout',
+  1 => 'system_color',
+  2 => '_top_menus',
+  3 => '_top_menus_all',
+  4 => '_sidebar_menus',
+  5 => '_location',
+  6 => 'aside',
+  7 => '_pop',
+  8 => 'page_title',
+  9 => 'page_tips',
+  10 => 'tips_type',
+  11 => 'btn_hide',
+  12 => 'btn_title',
+  13 => 'form_items',
+  14 => 'tab_nav',
+  15 => 'post_url',
+  16 => 'form_data',
+  17 => 'extra_html',
+  18 => 'extra_js',
+  19 => 'extra_css',
+  20 => 'ajax_submit',
+  21 => 'hide_header',
+  22 => 'header_title',
+  23 => 'js_list',
+  24 => 'css_list',
+  25 => 'field_triggers',
+  26 => 'field_hide',
+  27 => 'field_values',
+  28 => '_js_files',
+  29 => '_js_init',
+  30 => '_css_files',
+  31 => '_layout',
+  32 => 'btn_extra',
+  33 => 'submit_confirm',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000723s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.011440s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000997s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.006557s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000901s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.000926s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000209s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.003347s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.001196s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.004154s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000374s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_menu` [ RunTime:0.001673s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id LIMIT 10 [ RunTime:0.000480s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id [ RunTime:0.000899s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/develop/index' LIMIT 1 [ RunTime:0.000318s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.008951s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `module` = 'user' ORDER BY sort,id [ RunTime:0.000991s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/develop/index' LIMIT 1 [ RunTime:0.000160s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.001350s ]
+[ sql ] [ SQL ] SELECT `value` FROM `game_admin_config` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000330s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_develop` [ RunTime:0.002102s ]
+[ sql ] [ SQL ] SELECT * FROM `game_develop` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000751s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_user` [ RunTime:0.003059s ]
+[ sql ] [ SQL ] SELECT `avatar` FROM `game_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000295s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_attachment` [ RunTime:0.005951s ]
+[ sql ] [ SQL ] SELECT `path` FROM `game_admin_attachment` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000638s ]
+---------------------------------------------------------------
+[ 2017-08-17T22:01:48+08:00 ] 10.0.2.15 10.0.2.2 GET /admin.php/user/reward/index.html
+[ info ] zg.trees.com/admin.php/user/reward/index.html [运行时间：0.906858s][吞吐率：1.10req/s] [内存消耗：1,300.81kb] [文件加载：74]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'reward',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://zg.trees.com/admin.php/user/conpon/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fconpon%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.197404s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.033619s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\user\admin\Reward->index[ /data/httpd/treeGame/application/user/admin/Reward.php ]
+[ info ] [ VIEW ] /data/httpd/treeGame/application/common/builder/form/layout.html [ array (
+  0 => '_admin_base_layout',
+  1 => 'system_color',
+  2 => '_top_menus',
+  3 => '_top_menus_all',
+  4 => '_sidebar_menus',
+  5 => '_location',
+  6 => 'aside',
+  7 => '_pop',
+  8 => 'page_title',
+  9 => 'page_tips',
+  10 => 'tips_type',
+  11 => 'btn_hide',
+  12 => 'btn_title',
+  13 => 'form_items',
+  14 => 'tab_nav',
+  15 => 'post_url',
+  16 => 'form_data',
+  17 => 'extra_html',
+  18 => 'extra_js',
+  19 => 'extra_css',
+  20 => 'ajax_submit',
+  21 => 'hide_header',
+  22 => 'header_title',
+  23 => 'js_list',
+  24 => 'css_list',
+  25 => 'field_triggers',
+  26 => 'field_hide',
+  27 => 'field_values',
+  28 => '_js_files',
+  29 => '_js_init',
+  30 => '_css_files',
+  31 => '_layout',
+  32 => 'btn_extra',
+  33 => 'submit_confirm',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012769s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.020913s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.001089s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.004280s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000299s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.003855s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000258s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.000961s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000222s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.000951s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000080s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_menu` [ RunTime:0.001416s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id LIMIT 10 [ RunTime:0.000456s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `pid` = 0 ORDER BY sort,id [ RunTime:0.000497s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/reward/index' LIMIT 1 [ RunTime:0.000432s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.000511s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`title`,`url_value`,`url_type`,`url_target`,`icon` FROM `game_admin_menu` WHERE  `status` = 1  AND `module` = 'user' ORDER BY sort,id [ RunTime:0.002309s ]
+[ sql ] [ SQL ] SELECT `id` FROM `game_admin_menu` WHERE  `pid` <> 0  AND `url_value` = 'user/reward/index' LIMIT 1 [ RunTime:0.000320s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`title`,`url_value` FROM `game_admin_menu` [ RunTime:0.001140s ]
+[ sql ] [ SQL ] SELECT `value` FROM `game_admin_config` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000219s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_reward_setting` [ RunTime:0.001026s ]
+[ sql ] [ SQL ] SELECT * FROM `game_reward_setting` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000234s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_user` [ RunTime:0.004932s ]
+[ sql ] [ SQL ] SELECT `avatar` FROM `game_admin_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000041s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_attachment` [ RunTime:0.001514s ]
+[ sql ] [ SQL ] SELECT `path` FROM `game_admin_attachment` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000499s ]
+---------------------------------------------------------------
+[ 2017-08-17T22:29:28+08:00 ] 10.0.2.15 10.0.2.2 GET /index.php/index/index/furit?type=1
+[ info ] zg.trees.com/index.php/index/index/furit?type=1 [运行时间：0.705702s][吞吐率：1.42req/s] [内存消耗：908.38kb] [文件加载：66]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'furit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fconpon%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'type' => '1',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.164009s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.061745s ]
+[ info ] [ RUN ] app\index\controller\Index->furit[ /data/httpd/treeGame/application/index/controller/Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011339s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.011052s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000623s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.003441s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000282s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.003718s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000235s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001562s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000230s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.003786s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000356s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_trees` [ RunTime:0.001072s ]
+[ sql ] [ SQL ] SELECT * FROM `game_trees` WHERE  `user_id` = 1  AND `status` < 3 LIMIT 1 [ RunTime:0.003605s ]
+---------------------------------------------------------------
+[ 2017-08-17T22:29:41+08:00 ] 10.0.2.15 10.0.2.2 GET /index.php/index/index/furit?type=1
+[ info ] zg.trees.com/index.php/index/index/furit?type=1 [运行时间：0.784194s][吞吐率：1.28req/s] [内存消耗：942.52kb] [文件加载：70]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'furit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fconpon%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'type' => '1',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.172689s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.054110s ]
+[ info ] [ RUN ] app\index\controller\Index->furit[ /data/httpd/treeGame/application/index/controller/Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006739s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.008301s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000352s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.004202s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000231s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001273s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000281s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001812s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000328s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.001072s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000317s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_trees` [ RunTime:0.001049s ]
+[ sql ] [ SQL ] SELECT * FROM `game_trees` WHERE  `user_id` = 1  AND `status` < 3 LIMIT 1 [ RunTime:0.000826s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_furit` [ RunTime:0.001238s ]
+[ sql ] [ SQL ] SELECT * FROM `game_furit` WHERE  `trees_id` = 1 LIMIT 1 [ RunTime:0.000314s ]
+[ error ] [8]未定义变量: data[/data/httpd/treeGame/application/index/controller/Index.php:266]
+---------------------------------------------------------------
+[ 2017-08-17T22:31:32+08:00 ] 10.0.2.15 10.0.2.2 GET /index.php/index/index/furit?type=1
+[ info ] zg.trees.com/index.php/index/index/furit?type=1 [运行时间：0.650149s][吞吐率：1.54req/s] [内存消耗：1,051.12kb] [文件加载：65]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'furit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fconpon%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'type' => '1',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.160848s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.057829s ]
+[ info ] [ RUN ] app\index\controller\Index->furit[ /data/httpd/treeGame/application/index/controller/Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008038s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.002806s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000788s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.000969s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000357s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001102s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000385s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.003794s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000559s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.001309s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000323s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_trees` [ RunTime:0.000868s ]
+[ sql ] [ SQL ] SELECT * FROM `game_trees` WHERE  `user_id` = 1  AND `status` < 3 LIMIT 1 [ RunTime:0.000306s ]
+---------------------------------------------------------------
+[ 2017-08-17T22:31:57+08:00 ] 10.0.2.15 10.0.2.2 GET /index.php/index/index/furit?type=1
+[ info ] zg.trees.com/index.php/index/index/furit?type=1 [运行时间：0.682853s][吞吐率：1.46req/s] [内存消耗：1,058.09kb] [文件加载：65]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'furit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fconpon%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'type' => '1',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.149732s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.063448s ]
+[ info ] [ RUN ] app\index\controller\Index->furit[ /data/httpd/treeGame/application/index/controller/Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003447s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.004349s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000306s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.003279s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000247s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.000979s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000255s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.002163s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000720s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.004706s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000598s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_trees` [ RunTime:0.001773s ]
+[ sql ] [ SQL ] SELECT * FROM `game_trees` WHERE  `user_id` = 1  AND `status` < 3 LIMIT 1 [ RunTime:0.000479s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_furit` [ RunTime:0.001182s ]
+[ sql ] [ SQL ] SELECT * FROM `game_furit` WHERE  `trees_id` = 1 LIMIT 1 [ RunTime:0.000571s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_reward_setting` [ RunTime:0.003202s ]
+[ sql ] [ SQL ] SELECT * FROM `game_reward_setting` LIMIT 1 [ RunTime:0.000285s ]
+---------------------------------------------------------------
+[ 2017-08-17T22:32:37+08:00 ] 10.0.2.15 10.0.2.2 GET /index.php/index/index/furit?type=2
+[ info ] zg.trees.com/index.php/index/index/furit?type=2 [运行时间：0.657257s][吞吐率：1.52req/s] [内存消耗：1,063.43kb] [文件加载：65]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'furit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fconpon%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'type' => '2',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.149161s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.056263s ]
+[ info ] [ RUN ] app\index\controller\Index->furit[ /data/httpd/treeGame/application/index/controller/Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007601s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.004461s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000422s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.000998s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000210s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001668s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000284s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001363s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000283s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.000807s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000243s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_trees` [ RunTime:0.003667s ]
+[ sql ] [ SQL ] SELECT * FROM `game_trees` WHERE  `user_id` = 1  AND `status` < 3 LIMIT 1 [ RunTime:0.000205s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_furit` [ RunTime:0.001135s ]
+[ sql ] [ SQL ] SELECT * FROM `game_furit` WHERE  `trees_id` = 1 LIMIT 1 [ RunTime:0.000381s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_reward_setting` [ RunTime:0.001062s ]
+[ sql ] [ SQL ] SELECT * FROM `game_reward_setting` LIMIT 1 [ RunTime:0.000193s ]
+---------------------------------------------------------------
+[ 2017-08-17T22:32:43+08:00 ] 10.0.2.15 10.0.2.2 GET /index.php/index/index/furit?type=2
+[ info ] zg.trees.com/index.php/index/index/furit?type=2 [运行时间：0.579236s][吞吐率：1.73req/s] [内存消耗：1,063.63kb] [文件加载：65]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'furit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fconpon%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'type' => '2',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.132066s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.057327s ]
+[ info ] [ RUN ] app\index\controller\Index->furit[ /data/httpd/treeGame/application/index/controller/Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005228s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.004922s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000311s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.003188s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000866s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001873s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000548s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.004691s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000518s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.003978s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000294s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_trees` [ RunTime:0.000717s ]
+[ sql ] [ SQL ] SELECT * FROM `game_trees` WHERE  `user_id` = 1  AND `status` < 3 LIMIT 1 [ RunTime:0.000261s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_furit` [ RunTime:0.001112s ]
+[ sql ] [ SQL ] SELECT * FROM `game_furit` WHERE  `trees_id` = 1 LIMIT 1 [ RunTime:0.000286s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_reward_setting` [ RunTime:0.001347s ]
+[ sql ] [ SQL ] SELECT * FROM `game_reward_setting` LIMIT 1 [ RunTime:0.000287s ]
+---------------------------------------------------------------
+[ 2017-08-17T22:32:45+08:00 ] 10.0.2.15 10.0.2.2 GET /index.php/index/index/furit?type=2
+[ info ] zg.trees.com/index.php/index/index/furit?type=2 [运行时间：0.427763s][吞吐率：2.34req/s] [内存消耗：939.98kb] [文件加载：65]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'furit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fconpon%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'type' => '2',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.104055s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.050306s ]
+[ info ] [ RUN ] app\index\controller\Index->furit[ /data/httpd/treeGame/application/index/controller/Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005160s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.004001s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000350s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.000916s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000406s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.003749s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000363s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.000899s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000335s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.002145s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000459s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_trees` [ RunTime:0.004579s ]
+[ sql ] [ SQL ] SELECT * FROM `game_trees` WHERE  `user_id` = 1  AND `status` < 3 LIMIT 1 [ RunTime:0.001013s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_furit` [ RunTime:0.000928s ]
+[ sql ] [ SQL ] SELECT * FROM `game_furit` WHERE  `trees_id` = 1 LIMIT 1 [ RunTime:0.000228s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_reward_setting` [ RunTime:0.000851s ]
+[ sql ] [ SQL ] SELECT * FROM `game_reward_setting` LIMIT 1 [ RunTime:0.000189s ]
+---------------------------------------------------------------
+[ 2017-08-17T22:32:47+08:00 ] 10.0.2.15 10.0.2.2 GET /index.php/index/index/furit?type=2
+[ info ] zg.trees.com/index.php/index/index/furit?type=2 [运行时间：0.362702s][吞吐率：2.76req/s] [内存消耗：936.84kb] [文件加载：65]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'furit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fconpon%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'type' => '2',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.091585s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.041636s ]
+[ info ] [ RUN ] app\index\controller\Index->furit[ /data/httpd/treeGame/application/index/controller/Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004491s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.003417s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.001043s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.001294s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000336s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001636s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000263s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.003777s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000286s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.004371s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000338s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_trees` [ RunTime:0.001682s ]
+[ sql ] [ SQL ] SELECT * FROM `game_trees` WHERE  `user_id` = 1  AND `status` < 3 LIMIT 1 [ RunTime:0.000370s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_furit` [ RunTime:0.000786s ]
+[ sql ] [ SQL ] SELECT * FROM `game_furit` WHERE  `trees_id` = 1 LIMIT 1 [ RunTime:0.000681s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_reward_setting` [ RunTime:0.003739s ]
+[ sql ] [ SQL ] SELECT * FROM `game_reward_setting` LIMIT 1 [ RunTime:0.000236s ]
+---------------------------------------------------------------
+[ 2017-08-17T22:32:49+08:00 ] 10.0.2.15 10.0.2.2 GET /index.php/index/index/furit?type=2
+[ info ] zg.trees.com/index.php/index/index/furit?type=2 [运行时间：0.471436s][吞吐率：2.12req/s] [内存消耗：936.84kb] [文件加载：65]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'furit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fconpon%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'type' => '2',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.134039s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.050975s ]
+[ info ] [ RUN ] app\index\controller\Index->furit[ /data/httpd/treeGame/application/index/controller/Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006641s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.005459s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000422s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.001108s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000345s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.000911s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000212s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001631s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000478s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.001037s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000264s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_trees` [ RunTime:0.003854s ]
+[ sql ] [ SQL ] SELECT * FROM `game_trees` WHERE  `user_id` = 1  AND `status` < 3 LIMIT 1 [ RunTime:0.000390s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_furit` [ RunTime:0.000708s ]
+[ sql ] [ SQL ] SELECT * FROM `game_furit` WHERE  `trees_id` = 1 LIMIT 1 [ RunTime:0.000269s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_reward_setting` [ RunTime:0.001079s ]
+[ sql ] [ SQL ] SELECT * FROM `game_reward_setting` LIMIT 1 [ RunTime:0.003292s ]
+---------------------------------------------------------------
+[ 2017-08-17T22:44:13+08:00 ] 10.0.2.15 10.0.2.2 GET /index.php/index/index/furit?type=2
+[ info ] zg.trees.com/index.php/index/index/furit?type=2 [运行时间：0.764466s][吞吐率：1.31req/s] [内存消耗：942.46kb] [文件加载：70]
+[ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'furit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'zg.trees.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=ni3hgkbd28n8nulsrlnanln602; ZSS_ID1=0:0; dolphin_home___forward__=%2Fadmin.php%2Fuser%2Fconpon%2Findex.html',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'type' => '2',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.151999s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.051821s ]
+[ info ] [ RUN ] app\index\controller\Index->furit[ /data/httpd/treeGame/application/index/controller/Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'dolphin_admin_',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011248s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.002443s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000389s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.000971s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000321s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001432s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000463s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.000810s ]
+[ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000181s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.004319s ]
+[ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000621s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_trees` [ RunTime:0.001222s ]
+[ sql ] [ SQL ] SELECT * FROM `game_trees` WHERE  `user_id` = 1  AND `status` < 3 LIMIT 1 [ RunTime:0.000264s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `game_furit` [ RunTime:0.000839s ]
+[ sql ] [ SQL ] SELECT * FROM `game_furit` WHERE  `trees_id` = 1 LIMIT 1 [ RunTime:0.000230s ]
+[ error ] [8]未定义变量: data[/data/httpd/treeGame/application/index/controller/Index.php:265]

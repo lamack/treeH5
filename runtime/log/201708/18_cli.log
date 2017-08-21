@@ -1,0 +1,615 @@
+[ 2017-08-18T17:22:04+08:00 ][ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ LOG ] INIT File
+[ 2017-08-18T17:22:04+08:00 ][ info ] [ BIND ] 'push/Worker'
+[ 2017-08-18T17:22:04+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'push',
+    1 => 'Worker',
+    2 => NULL,
+  ),
+)
+[ 2017-08-18T17:22:04+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2017-08-18T17:22:04+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2017-08-18T17:22:04+08:00 ][ info ] [ CACHE ] INIT File
+[ 2017-08-18T17:22:04+08:00 ][ info ] [ DB ] INIT mysql
+[ 2017-08-18T17:22:04+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.030618s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ 2017-08-18T17:22:04+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.033899s ]
+[ 2017-08-18T17:22:04+08:00 ][ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000285s ]
+[ 2017-08-18T17:22:04+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.001556s ]
+[ 2017-08-18T17:22:05+08:00 ][ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.002462s ]
+[ 2017-08-18T17:22:05+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.252025s ]
+[ 2017-08-18T17:22:05+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001014s ]
+[ 2017-08-18T17:22:05+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000282s ]
+[ 2017-08-18T17:22:05+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001920s ]
+[ 2017-08-18T17:22:05+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000302s ]
+[ 2017-08-18T17:22:05+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.003765s ]
+[ 2017-08-18T17:22:05+08:00 ][ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000312s ]
+[ 2017-08-18T17:22:05+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.069173s ]
+[ 2017-08-18T17:23:46+08:00 ][ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ LOG ] INIT File
+[ 2017-08-18T17:23:46+08:00 ][ info ] [ BIND ] 'index/Worker'
+[ 2017-08-18T17:23:46+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Worker',
+    2 => NULL,
+  ),
+)
+[ 2017-08-18T17:23:46+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2017-08-18T17:23:46+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2017-08-18T17:23:46+08:00 ][ info ] [ CACHE ] INIT File
+[ 2017-08-18T17:23:46+08:00 ][ info ] [ DB ] INIT mysql
+[ 2017-08-18T17:23:47+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.007393s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ 2017-08-18T17:23:47+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.001169s ]
+[ 2017-08-18T17:23:47+08:00 ][ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000287s ]
+[ 2017-08-18T17:23:47+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.000921s ]
+[ 2017-08-18T17:23:47+08:00 ][ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000275s ]
+[ 2017-08-18T17:23:47+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.203030s ]
+[ 2017-08-18T17:23:47+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001390s ]
+[ 2017-08-18T17:23:47+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000595s ]
+[ 2017-08-18T17:23:47+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001351s ]
+[ 2017-08-18T17:23:47+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.002498s ]
+[ 2017-08-18T17:23:47+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.000536s ]
+[ 2017-08-18T17:23:47+08:00 ][ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.001950s ]
+[ 2017-08-18T17:23:47+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.110812s ]
+[ 2017-08-18T17:23:53+08:00 ][ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ LOG ] INIT File
+[ 2017-08-18T17:23:53+08:00 ][ info ] [ BIND ] 'index/Worker'
+[ 2017-08-18T17:23:53+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Worker',
+    2 => 'start',
+  ),
+)
+[ 2017-08-18T17:23:53+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2017-08-18T17:23:53+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2017-08-18T17:23:53+08:00 ][ info ] [ CACHE ] INIT File
+[ 2017-08-18T17:23:53+08:00 ][ info ] [ DB ] INIT mysql
+[ 2017-08-18T17:23:53+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.003863s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ 2017-08-18T17:23:53+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.001199s ]
+[ 2017-08-18T17:23:53+08:00 ][ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000400s ]
+[ 2017-08-18T17:23:53+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.001246s ]
+[ 2017-08-18T17:23:53+08:00 ][ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000317s ]
+[ 2017-08-18T17:23:53+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.100272s ]
+[ 2017-08-18T17:23:53+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.000706s ]
+[ 2017-08-18T17:23:53+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000268s ]
+[ 2017-08-18T17:23:53+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.000976s ]
+[ 2017-08-18T17:23:53+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000273s ]
+[ 2017-08-18T17:23:53+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.000672s ]
+[ 2017-08-18T17:23:53+08:00 ][ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000332s ]
+[ 2017-08-18T17:23:53+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.039572s ]
+[ 2017-08-18T17:23:54+08:00 ][ error ] [2]stream_socket_server(): unable to connect to tcp://zg.trees.com:2346 (Cannot assign requested address)[/data/httpd/treeGame/vendor/workerman/workerman/Worker.php:1482]
+[ 2017-08-18T17:31:26+08:00 ][ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ LOG ] INIT File
+[ 2017-08-18T17:31:26+08:00 ][ info ] [ BIND ] 'index/Worker'
+[ 2017-08-18T17:31:26+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Worker',
+    2 => 'start',
+  ),
+)
+[ 2017-08-18T17:31:26+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2017-08-18T17:31:26+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2017-08-18T17:31:26+08:00 ][ info ] [ CACHE ] INIT File
+[ 2017-08-18T17:31:26+08:00 ][ info ] [ DB ] INIT mysql
+[ 2017-08-18T17:31:26+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.004128s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ 2017-08-18T17:31:26+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.001013s ]
+[ 2017-08-18T17:31:26+08:00 ][ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000445s ]
+[ 2017-08-18T17:31:26+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.001300s ]
+[ 2017-08-18T17:31:26+08:00 ][ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000269s ]
+[ 2017-08-18T17:31:26+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.184405s ]
+[ 2017-08-18T17:31:26+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001157s ]
+[ 2017-08-18T17:31:26+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000665s ]
+[ 2017-08-18T17:31:26+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.002144s ]
+[ 2017-08-18T17:31:26+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000271s ]
+[ 2017-08-18T17:31:26+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.003995s ]
+[ 2017-08-18T17:31:26+08:00 ][ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000301s ]
+[ 2017-08-18T17:31:26+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.069176s ]
+[ 2017-08-18T17:31:27+08:00 ][ error ] [2]stream_socket_server(): unable to connect to tcp://zg.trees.com:12580 (Cannot assign requested address)[/data/httpd/treeGame/vendor/workerman/workerman/Worker.php:1482]
+[ 2017-08-18T17:31:39+08:00 ][ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ LOG ] INIT File
+[ 2017-08-18T17:31:39+08:00 ][ info ] [ BIND ] 'index/Worker'
+[ 2017-08-18T17:31:39+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Worker',
+    2 => NULL,
+  ),
+)
+[ 2017-08-18T17:31:39+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2017-08-18T17:31:39+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2017-08-18T17:31:39+08:00 ][ info ] [ CACHE ] INIT File
+[ 2017-08-18T17:31:39+08:00 ][ info ] [ DB ] INIT mysql
+[ 2017-08-18T17:31:39+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.014838s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ 2017-08-18T17:31:39+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.001052s ]
+[ 2017-08-18T17:31:39+08:00 ][ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000282s ]
+[ 2017-08-18T17:31:39+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.001676s ]
+[ 2017-08-18T17:31:39+08:00 ][ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000268s ]
+[ 2017-08-18T17:31:39+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.114708s ]
+[ 2017-08-18T17:31:39+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001374s ]
+[ 2017-08-18T17:31:39+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000307s ]
+[ 2017-08-18T17:31:39+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.003169s ]
+[ 2017-08-18T17:31:39+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000362s ]
+[ 2017-08-18T17:31:39+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.003377s ]
+[ 2017-08-18T17:31:39+08:00 ][ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.001007s ]
+[ 2017-08-18T17:31:39+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.054650s ]
+[ 2017-08-18T17:31:44+08:00 ][ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ LOG ] INIT File
+[ 2017-08-18T17:31:44+08:00 ][ info ] [ BIND ] 'index/Worker'
+[ 2017-08-18T17:31:44+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Worker',
+    2 => 'status',
+  ),
+)
+[ 2017-08-18T17:31:44+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2017-08-18T17:31:44+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2017-08-18T17:31:44+08:00 ][ info ] [ CACHE ] INIT File
+[ 2017-08-18T17:31:44+08:00 ][ info ] [ DB ] INIT mysql
+[ 2017-08-18T17:31:44+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.002473s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ 2017-08-18T17:31:44+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.001819s ]
+[ 2017-08-18T17:31:44+08:00 ][ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000287s ]
+[ 2017-08-18T17:31:44+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.001256s ]
+[ 2017-08-18T17:31:44+08:00 ][ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000538s ]
+[ 2017-08-18T17:31:44+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.106023s ]
+[ 2017-08-18T17:31:45+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001135s ]
+[ 2017-08-18T17:31:45+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000274s ]
+[ 2017-08-18T17:31:45+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.000962s ]
+[ 2017-08-18T17:31:45+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000299s ]
+[ 2017-08-18T17:31:45+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.000896s ]
+[ 2017-08-18T17:31:45+08:00 ][ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000321s ]
+[ 2017-08-18T17:31:45+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.040207s ]
+[ 2017-08-18T17:32:23+08:00 ][ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ LOG ] INIT File
+[ 2017-08-18T17:32:23+08:00 ][ info ] [ BIND ] 'index/Worker'
+[ 2017-08-18T17:32:23+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Worker',
+    2 => 'status',
+  ),
+)
+[ 2017-08-18T17:32:23+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2017-08-18T17:32:23+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2017-08-18T17:32:23+08:00 ][ info ] [ CACHE ] INIT File
+[ 2017-08-18T17:32:23+08:00 ][ info ] [ DB ] INIT mysql
+[ 2017-08-18T17:32:23+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.008495s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ 2017-08-18T17:32:23+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.002727s ]
+[ 2017-08-18T17:32:23+08:00 ][ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000285s ]
+[ 2017-08-18T17:32:23+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.001008s ]
+[ 2017-08-18T17:32:23+08:00 ][ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000297s ]
+[ 2017-08-18T17:32:23+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.212208s ]
+[ 2017-08-18T17:32:23+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.000839s ]
+[ 2017-08-18T17:32:23+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000267s ]
+[ 2017-08-18T17:32:23+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001924s ]
+[ 2017-08-18T17:32:23+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000274s ]
+[ 2017-08-18T17:32:23+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.001704s ]
+[ 2017-08-18T17:32:23+08:00 ][ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000303s ]
+[ 2017-08-18T17:32:23+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.056930s ]
+[ 2017-08-18T17:32:27+08:00 ][ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ LOG ] INIT File
+[ 2017-08-18T17:32:27+08:00 ][ info ] [ BIND ] 'index/Worker'
+[ 2017-08-18T17:32:27+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Worker',
+    2 => 'start',
+  ),
+)
+[ 2017-08-18T17:32:27+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2017-08-18T17:32:27+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2017-08-18T17:32:27+08:00 ][ info ] [ CACHE ] INIT File
+[ 2017-08-18T17:32:27+08:00 ][ info ] [ DB ] INIT mysql
+[ 2017-08-18T17:32:27+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.006477s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ 2017-08-18T17:32:27+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.003703s ]
+[ 2017-08-18T17:32:27+08:00 ][ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000268s ]
+[ 2017-08-18T17:32:27+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.001037s ]
+[ 2017-08-18T17:32:27+08:00 ][ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000270s ]
+[ 2017-08-18T17:32:27+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.100864s ]
+[ 2017-08-18T17:32:27+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.000798s ]
+[ 2017-08-18T17:32:27+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000294s ]
+[ 2017-08-18T17:32:27+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001276s ]
+[ 2017-08-18T17:32:27+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000266s ]
+[ 2017-08-18T17:32:27+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.003235s ]
+[ 2017-08-18T17:32:27+08:00 ][ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000325s ]
+[ 2017-08-18T17:32:27+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.046076s ]
+[ 2017-08-18T17:32:28+08:00 ][ error ] [2]stream_socket_server(): unable to connect to tcp://zg.trees.com:15672 (Cannot assign requested address)[/data/httpd/treeGame/vendor/workerman/workerman/Worker.php:1482]
+[ 2017-08-18T17:34:02+08:00 ][ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ LOG ] INIT File
+[ 2017-08-18T17:34:02+08:00 ][ info ] [ BIND ] 'index/Worker'
+[ 2017-08-18T17:34:02+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Worker',
+    2 => 'start',
+  ),
+)
+[ 2017-08-18T17:34:02+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2017-08-18T17:34:02+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2017-08-18T17:34:02+08:00 ][ info ] [ CACHE ] INIT File
+[ 2017-08-18T17:34:02+08:00 ][ info ] [ DB ] INIT mysql
+[ 2017-08-18T17:34:02+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.003976s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ 2017-08-18T17:34:02+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.001002s ]
+[ 2017-08-18T17:34:02+08:00 ][ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000281s ]
+[ 2017-08-18T17:34:02+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.000818s ]
+[ 2017-08-18T17:34:02+08:00 ][ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.001199s ]
+[ 2017-08-18T17:34:02+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.190086s ]
+[ 2017-08-18T17:34:02+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001191s ]
+[ 2017-08-18T17:34:02+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000270s ]
+[ 2017-08-18T17:34:02+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.002504s ]
+[ 2017-08-18T17:34:02+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000267s ]
+[ 2017-08-18T17:34:02+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.001759s ]
+[ 2017-08-18T17:34:02+08:00 ][ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000301s ]
+[ 2017-08-18T17:34:02+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.068196s ]
+[ 2017-08-18T17:34:06+08:00 ][ error ] [2]stream_socket_server(): unable to connect to tcp://zg.trees.com:8080 (Cannot assign requested address)[/data/httpd/treeGame/vendor/workerman/workerman/Worker.php:1482]
+[ 2017-08-18T17:37:26+08:00 ][ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ LOG ] INIT File
+[ 2017-08-18T17:37:26+08:00 ][ info ] [ BIND ] 'index/Worker'
+[ 2017-08-18T17:37:26+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Worker',
+    2 => 'start',
+  ),
+)
+[ 2017-08-18T17:37:26+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2017-08-18T17:37:26+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2017-08-18T17:37:26+08:00 ][ info ] [ CACHE ] INIT File
+[ 2017-08-18T17:37:26+08:00 ][ info ] [ DB ] INIT mysql
+[ 2017-08-18T17:37:26+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.011653s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ 2017-08-18T17:37:26+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.001303s ]
+[ 2017-08-18T17:37:26+08:00 ][ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.001162s ]
+[ 2017-08-18T17:37:26+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.001291s ]
+[ 2017-08-18T17:37:26+08:00 ][ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000409s ]
+[ 2017-08-18T17:37:26+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.216990s ]
+[ 2017-08-18T17:37:26+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.000920s ]
+[ 2017-08-18T17:37:26+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000270s ]
+[ 2017-08-18T17:37:26+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001213s ]
+[ 2017-08-18T17:37:26+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000292s ]
+[ 2017-08-18T17:37:26+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.001103s ]
+[ 2017-08-18T17:37:26+08:00 ][ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000609s ]
+[ 2017-08-18T17:37:26+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.069755s ]
+[ 2017-08-18T17:48:57+08:00 ][ error ] [2]stream_select(): unable to select [4]: Interrupted system call (max_fd=6)[/data/httpd/treeGame/vendor/workerman/workerman/Events/Select.php:271]
+[ 2017-08-18T17:48:57+08:00 ][ error ] [2]stream_select(): unable to select [4]: Interrupted system call (max_fd=6)[/data/httpd/treeGame/vendor/workerman/workerman/Events/Select.php:271]
+[ 2017-08-18T17:48:57+08:00 ][ error ] [2]stream_select(): unable to select [4]: Interrupted system call (max_fd=6)[/data/httpd/treeGame/vendor/workerman/workerman/Events/Select.php:271]
+[ 2017-08-18T17:48:57+08:00 ][ error ] [2]stream_select(): unable to select [4]: Interrupted system call (max_fd=6)[/data/httpd/treeGame/vendor/workerman/workerman/Events/Select.php:271]
+[ 2017-08-18T17:48:57+08:00 ][ error ] [8]think\db\Connection::free(): send of 9 bytes failed with errno=32 Broken pipe[/data/httpd/treeGame/thinkphp/library/think/db/Connection.php:316]
+[ 2017-08-18T17:48:57+08:00 ][ error ] [8]think\db\Connection::free(): send of 9 bytes failed with errno=32 Broken pipe[/data/httpd/treeGame/thinkphp/library/think/db/Connection.php:316]
+[ 2017-08-18T17:48:57+08:00 ][ error ] [8]think\db\Connection::close(): send of 5 bytes failed with errno=32 Broken pipe[/data/httpd/treeGame/thinkphp/library/think/db/Connection.php:778]
+[ 2017-08-18T17:48:57+08:00 ][ error ] [8]think\db\Connection::free(): send of 9 bytes failed with errno=32 Broken pipe[/data/httpd/treeGame/thinkphp/library/think/db/Connection.php:316]
+[ 2017-08-18T17:58:09+08:00 ][ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ LOG ] INIT File
+[ 2017-08-18T17:58:09+08:00 ][ info ] [ BIND ] 'index/Worker'
+[ 2017-08-18T17:58:09+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Worker',
+    2 => 'status',
+  ),
+)
+[ 2017-08-18T17:58:09+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2017-08-18T17:58:09+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2017-08-18T17:58:09+08:00 ][ info ] [ CACHE ] INIT File
+[ 2017-08-18T17:58:10+08:00 ][ info ] [ DB ] INIT mysql
+[ 2017-08-18T17:58:10+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.007588s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ 2017-08-18T17:58:10+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.002031s ]
+[ 2017-08-18T17:58:10+08:00 ][ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000319s ]
+[ 2017-08-18T17:58:10+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.001043s ]
+[ 2017-08-18T17:58:10+08:00 ][ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000284s ]
+[ 2017-08-18T17:58:10+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.211075s ]
+[ 2017-08-18T17:58:10+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.003286s ]
+[ 2017-08-18T17:58:10+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000270s ]
+[ 2017-08-18T17:58:10+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001973s ]
+[ 2017-08-18T17:58:10+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000270s ]
+[ 2017-08-18T17:58:10+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.003195s ]
+[ 2017-08-18T17:58:10+08:00 ][ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000307s ]
+[ 2017-08-18T17:58:10+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.070539s ]
+[ 2017-08-18T17:58:17+08:00 ][ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ LOG ] INIT File
+[ 2017-08-18T17:58:17+08:00 ][ info ] [ BIND ] 'index/Worker'
+[ 2017-08-18T17:58:17+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Worker',
+    2 => 'start',
+  ),
+)
+[ 2017-08-18T17:58:17+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2017-08-18T17:58:17+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2017-08-18T17:58:17+08:00 ][ info ] [ CACHE ] INIT File
+[ 2017-08-18T17:58:17+08:00 ][ info ] [ DB ] INIT mysql
+[ 2017-08-18T17:58:17+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.007404s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ 2017-08-18T17:58:17+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.001175s ]
+[ 2017-08-18T17:58:17+08:00 ][ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000287s ]
+[ 2017-08-18T17:58:17+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.000908s ]
+[ 2017-08-18T17:58:17+08:00 ][ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000270s ]
+[ 2017-08-18T17:58:17+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.107237s ]
+[ 2017-08-18T17:58:17+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001706s ]
+[ 2017-08-18T17:58:17+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000446s ]
+[ 2017-08-18T17:58:17+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.000989s ]
+[ 2017-08-18T17:58:17+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000270s ]
+[ 2017-08-18T17:58:17+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.004404s ]
+[ 2017-08-18T17:58:17+08:00 ][ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000305s ]
+[ 2017-08-18T17:58:17+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.053456s ]
+[ 2017-08-18T21:23:34+08:00 ][ error ] [2]stream_select(): unable to select [4]: Interrupted system call (max_fd=6)[/data/httpd/treeGame/vendor/workerman/workerman/Events/Select.php:271]
+[ 2017-08-18T21:23:34+08:00 ][ error ] [2]stream_select(): unable to select [4]: Interrupted system call (max_fd=6)[/data/httpd/treeGame/vendor/workerman/workerman/Events/Select.php:271]
+[ 2017-08-18T21:23:34+08:00 ][ error ] [2]stream_select(): unable to select [4]: Interrupted system call (max_fd=6)[/data/httpd/treeGame/vendor/workerman/workerman/Events/Select.php:271]
+[ 2017-08-18T21:23:34+08:00 ][ error ] [8]think\db\Connection::close(): send of 5 bytes failed with errno=32 Broken pipe[/data/httpd/treeGame/thinkphp/library/think/db/Connection.php:778]
+[ 2017-08-18T21:23:34+08:00 ][ error ] [2]stream_select(): unable to select [4]: Interrupted system call (max_fd=6)[/data/httpd/treeGame/vendor/workerman/workerman/Events/Select.php:271]
+[ 2017-08-18T21:23:34+08:00 ][ error ] [8]think\db\Connection::free(): send of 9 bytes failed with errno=32 Broken pipe[/data/httpd/treeGame/thinkphp/library/think/db/Connection.php:316]
+[ 2017-08-18T21:23:34+08:00 ][ error ] [8]think\db\Connection::free(): send of 9 bytes failed with errno=32 Broken pipe[/data/httpd/treeGame/thinkphp/library/think/db/Connection.php:316]
+[ 2017-08-18T21:23:34+08:00 ][ error ] [8]think\db\Connection::free(): send of 9 bytes failed with errno=32 Broken pipe[/data/httpd/treeGame/thinkphp/library/think/db/Connection.php:316]
+[ 2017-08-18T21:23:36+08:00 ][ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ LOG ] INIT File
+[ 2017-08-18T21:23:37+08:00 ][ info ] [ BIND ] 'index/Worker'
+[ 2017-08-18T21:23:37+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Worker',
+    2 => 'start',
+  ),
+)
+[ 2017-08-18T21:23:37+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2017-08-18T21:23:37+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2017-08-18T21:23:37+08:00 ][ info ] [ CACHE ] INIT File
+[ 2017-08-18T21:23:37+08:00 ][ info ] [ DB ] INIT mysql
+[ 2017-08-18T21:23:37+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.007082s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ 2017-08-18T21:23:37+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.000945s ]
+[ 2017-08-18T21:23:37+08:00 ][ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000288s ]
+[ 2017-08-18T21:23:37+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.002324s ]
+[ 2017-08-18T21:23:37+08:00 ][ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000293s ]
+[ 2017-08-18T21:23:37+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.199887s ]
+[ 2017-08-18T21:23:37+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001655s ]
+[ 2017-08-18T21:23:37+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000268s ]
+[ 2017-08-18T21:23:37+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001100s ]
+[ 2017-08-18T21:23:37+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000267s ]
+[ 2017-08-18T21:23:37+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.000928s ]
+[ 2017-08-18T21:23:37+08:00 ][ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000304s ]
+[ 2017-08-18T21:23:37+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.061006s ]
+[ 2017-08-18T21:23:37+08:00 ][ error ] [2]stream_socket_server(): unable to connect to tcp://127.0.0.1 (Failed to parse address "127.0.0.1")[/data/httpd/treeGame/vendor/workerman/workerman/Worker.php:1482]
+[ 2017-08-18T21:23:56+08:00 ][ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ LOG ] INIT File
+[ 2017-08-18T21:23:56+08:00 ][ info ] [ BIND ] 'index/Worker'
+[ 2017-08-18T21:23:56+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Worker',
+    2 => 'start',
+  ),
+)
+[ 2017-08-18T21:23:56+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2017-08-18T21:23:56+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2017-08-18T21:23:56+08:00 ][ info ] [ CACHE ] INIT File
+[ 2017-08-18T21:23:56+08:00 ][ info ] [ DB ] INIT mysql
+[ 2017-08-18T21:23:56+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.002487s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ 2017-08-18T21:23:56+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.001373s ]
+[ 2017-08-18T21:23:56+08:00 ][ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000298s ]
+[ 2017-08-18T21:23:56+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.000895s ]
+[ 2017-08-18T21:23:56+08:00 ][ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000329s ]
+[ 2017-08-18T21:23:56+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.162537s ]
+[ 2017-08-18T21:23:56+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.004142s ]
+[ 2017-08-18T21:23:56+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000282s ]
+[ 2017-08-18T21:23:56+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001362s ]
+[ 2017-08-18T21:23:56+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000283s ]
+[ 2017-08-18T21:23:56+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.001113s ]
+[ 2017-08-18T21:23:56+08:00 ][ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000995s ]
+[ 2017-08-18T21:23:56+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.054039s ]
+[ 2017-08-18T21:23:56+08:00 ][ error ] [2]stream_socket_server(): unable to connect to tcp://zg.trees.com (Failed to parse address "zg.trees.com")[/data/httpd/treeGame/vendor/workerman/workerman/Worker.php:1482]
+[ 2017-08-18T21:24:04+08:00 ][ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ LOG ] INIT File
+[ 2017-08-18T21:24:04+08:00 ][ info ] [ BIND ] 'index/Worker'
+[ 2017-08-18T21:24:04+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Worker',
+    2 => 'start',
+  ),
+)
+[ 2017-08-18T21:24:04+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2017-08-18T21:24:04+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2017-08-18T21:24:04+08:00 ][ info ] [ CACHE ] INIT File
+[ 2017-08-18T21:24:04+08:00 ][ info ] [ DB ] INIT mysql
+[ 2017-08-18T21:24:04+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.002642s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ 2017-08-18T21:24:04+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.001277s ]
+[ 2017-08-18T21:24:04+08:00 ][ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000324s ]
+[ 2017-08-18T21:24:04+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.001034s ]
+[ 2017-08-18T21:24:04+08:00 ][ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000287s ]
+[ 2017-08-18T21:24:04+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.125321s ]
+[ 2017-08-18T21:24:04+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.003653s ]
+[ 2017-08-18T21:24:04+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000286s ]
+[ 2017-08-18T21:24:04+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001183s ]
+[ 2017-08-18T21:24:04+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000118s ]
+[ 2017-08-18T21:24:04+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.000953s ]
+[ 2017-08-18T21:24:04+08:00 ][ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000325s ]
+[ 2017-08-18T21:24:04+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.043767s ]
+[ 2017-08-18T21:24:05+08:00 ][ error ] [2]stream_socket_server(): unable to connect to tcp://zg.trees.com:80 (Cannot assign requested address)[/data/httpd/treeGame/vendor/workerman/workerman/Worker.php:1482]
+[ 2017-08-18T21:24:13+08:00 ][ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ LOG ] INIT File
+[ 2017-08-18T21:24:13+08:00 ][ info ] [ BIND ] 'index/Worker'
+[ 2017-08-18T21:24:13+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Worker',
+    2 => 'start',
+  ),
+)
+[ 2017-08-18T21:24:13+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2017-08-18T21:24:13+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2017-08-18T21:24:13+08:00 ][ info ] [ CACHE ] INIT File
+[ 2017-08-18T21:24:13+08:00 ][ info ] [ DB ] INIT mysql
+[ 2017-08-18T21:24:14+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.006675s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ 2017-08-18T21:24:14+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.002896s ]
+[ 2017-08-18T21:24:14+08:00 ][ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000405s ]
+[ 2017-08-18T21:24:14+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.001454s ]
+[ 2017-08-18T21:24:14+08:00 ][ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000410s ]
+[ 2017-08-18T21:24:14+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.123545s ]
+[ 2017-08-18T21:24:14+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.000985s ]
+[ 2017-08-18T21:24:14+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000262s ]
+[ 2017-08-18T21:24:14+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.003266s ]
+[ 2017-08-18T21:24:14+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000297s ]
+[ 2017-08-18T21:24:14+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.001072s ]
+[ 2017-08-18T21:24:14+08:00 ][ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000466s ]
+[ 2017-08-18T21:24:14+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.048829s ]
+[ 2017-08-18T21:24:14+08:00 ][ error ] [2]stream_socket_server(): unable to connect to tcp://zg.trees.com:8080 (Cannot assign requested address)[/data/httpd/treeGame/vendor/workerman/workerman/Worker.php:1482]
+[ 2017-08-18T21:24:27+08:00 ][ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ LOG ] INIT File
+[ 2017-08-18T21:24:27+08:00 ][ info ] [ BIND ] 'index/Worker'
+[ 2017-08-18T21:24:27+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Worker',
+    2 => 'start',
+  ),
+)
+[ 2017-08-18T21:24:27+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2017-08-18T21:24:27+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2017-08-18T21:24:27+08:00 ][ info ] [ CACHE ] INIT File
+[ 2017-08-18T21:24:27+08:00 ][ info ] [ DB ] INIT mysql
+[ 2017-08-18T21:24:27+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.008551s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ 2017-08-18T21:24:27+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.001501s ]
+[ 2017-08-18T21:24:27+08:00 ][ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000300s ]
+[ 2017-08-18T21:24:27+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.002274s ]
+[ 2017-08-18T21:24:28+08:00 ][ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000126s ]
+[ 2017-08-18T21:24:28+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.185152s ]
+[ 2017-08-18T21:24:28+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001096s ]
+[ 2017-08-18T21:24:28+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000520s ]
+[ 2017-08-18T21:24:28+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001095s ]
+[ 2017-08-18T21:24:28+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000336s ]
+[ 2017-08-18T21:24:28+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.003625s ]
+[ 2017-08-18T21:24:28+08:00 ][ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000116s ]
+[ 2017-08-18T21:24:28+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.056726s ]
+[ 2017-08-18T21:24:28+08:00 ][ error ] [2]stream_socket_server(): unable to connect to tcp://zg.trees.com:2346 (Cannot assign requested address)[/data/httpd/treeGame/vendor/workerman/workerman/Worker.php:1482]
+[ 2017-08-18T21:25:09+08:00 ][ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ LOG ] INIT File
+[ 2017-08-18T21:25:09+08:00 ][ info ] [ BIND ] 'index/Worker'
+[ 2017-08-18T21:25:09+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Worker',
+    2 => 'start',
+  ),
+)
+[ 2017-08-18T21:25:09+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2017-08-18T21:25:09+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2017-08-18T21:25:09+08:00 ][ info ] [ CACHE ] INIT File
+[ 2017-08-18T21:25:09+08:00 ][ info ] [ DB ] INIT mysql
+[ 2017-08-18T21:25:10+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.002995s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ 2017-08-18T21:25:10+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.001184s ]
+[ 2017-08-18T21:25:10+08:00 ][ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000325s ]
+[ 2017-08-18T21:25:10+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.001774s ]
+[ 2017-08-18T21:25:10+08:00 ][ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000282s ]
+[ 2017-08-18T21:25:10+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.175006s ]
+[ 2017-08-18T21:25:10+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.000848s ]
+[ 2017-08-18T21:25:10+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000292s ]
+[ 2017-08-18T21:25:10+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.001074s ]
+[ 2017-08-18T21:25:10+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000330s ]
+[ 2017-08-18T21:25:10+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.001154s ]
+[ 2017-08-18T21:25:10+08:00 ][ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000361s ]
+[ 2017-08-18T21:25:10+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.054972s ]
+[ 2017-08-18T21:25:10+08:00 ][ error ] [2]stream_socket_server(): unable to connect to tcp://139.196.20.81:2346 (Cannot assign requested address)[/data/httpd/treeGame/vendor/workerman/workerman/Worker.php:1482]
+[ 2017-08-18T21:25:35+08:00 ][ info ] [ LANG ] /data/httpd/treeGame/thinkphp/lang/zh-cn.php
+[ info ] [ LOG ] INIT File
+[ 2017-08-18T21:25:35+08:00 ][ info ] [ BIND ] 'index/Worker'
+[ 2017-08-18T21:25:35+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Worker',
+    2 => 'start',
+  ),
+)
+[ 2017-08-18T21:25:35+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2017-08-18T21:25:35+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2017-08-18T21:25:35+08:00 ][ info ] [ CACHE ] INIT File
+[ 2017-08-18T21:25:35+08:00 ][ info ] [ DB ] INIT mysql
+[ 2017-08-18T21:25:35+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.003903s ] mysql:dbname=dolphin;host=127.0.0.1;port=3306;charset=utf8
+[ 2017-08-18T21:25:35+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_config` [ RunTime:0.003015s ]
+[ 2017-08-18T21:25:35+08:00 ][ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `game_admin_config` [ RunTime:0.000306s ]
+[ 2017-08-18T21:25:35+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_module` [ RunTime:0.003670s ]
+[ 2017-08-18T21:25:35+08:00 ][ sql ] [ SQL ] SELECT `name`,`config` FROM `game_admin_module` WHERE  `config` <> '' [ RunTime:0.000412s ]
+[ 2017-08-18T21:25:35+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.097113s ]
+[ 2017-08-18T21:25:35+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook` [ RunTime:0.001685s ]
+[ 2017-08-18T21:25:35+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_hook` WHERE  `status` = 1 [ RunTime:0.000255s ]
+[ 2017-08-18T21:25:35+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_plugin` [ RunTime:0.000783s ]
+[ 2017-08-18T21:25:35+08:00 ][ sql ] [ SQL ] SELECT `name`,`status` FROM `game_admin_plugin` WHERE  `status` = 1 [ RunTime:0.000266s ]
+[ 2017-08-18T21:25:35+08:00 ][ sql ] [ SQL ] SHOW COLUMNS FROM `game_admin_hook_plugin` [ RunTime:0.003937s ]
+[ 2017-08-18T21:25:35+08:00 ][ sql ] [ SQL ] SELECT * FROM `game_admin_hook_plugin` WHERE  `status` = 1 ORDER BY hook,sort [ RunTime:0.000299s ]
+[ 2017-08-18T21:25:35+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Hook @app_begin [ RunTime:0.044530s ]

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fad077cda5dc4b70d75c82a628ba29bf",
-    "content-hash": "0f280881b9bc71a491fa9bb49e9e8024",
+    "hash": "c0155766d7280820776367c6f40f07b2",
+    "content-hash": "c02abc886019bd433b73c5123cd9f5cf",
     "packages": [
         {
             "name": "ezyang/htmlpurifier",
@@ -55,6 +55,63 @@
             "time": "2017-06-03 02:28:16"
         },
         {
+            "name": "phpoffice/phpexcel",
+            "version": "1.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPOffice/PHPExcel.git",
+                "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPOffice/PHPExcel/zipball/372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
+                "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
+                "shasum": ""
+            },
+            "require": {
+                "ext-xml": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=5.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PHPExcel": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Maarten Balliauw",
+                    "homepage": "http://blog.maartenballiauw.be"
+                },
+                {
+                    "name": "Mark Baker"
+                },
+                {
+                    "name": "Franck Lefevre",
+                    "homepage": "http://blog.rootslabs.net"
+                },
+                {
+                    "name": "Erik Tilt"
+                }
+            ],
+            "description": "PHPExcel - OpenXML - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine",
+            "homepage": "http://phpexcel.codeplex.com",
+            "keywords": [
+                "OpenXML",
+                "excel",
+                "php",
+                "spreadsheet",
+                "xls",
+                "xlsx"
+            ],
+            "time": "2015-05-01 07:00:55"
+        },
+        {
             "name": "taskphp/taskphp",
             "version": "dev-master",
             "source": {
@@ -64,7 +121,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/qq8044023/taskPHP/zipball/17814a2564a64117fdb2e3ff3f82b721d3ef1982",
+                "url": "https://api.github.com/repos/qq8044023/taskPHP/zipball/b0005ad0b6fc915133651d5b8d9d971d9dcc1ccf",
                 "reference": "17814a2564a64117fdb2e3ff3f82b721d3ef1982",
                 "shasum": ""
             },

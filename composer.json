@@ -23,7 +23,8 @@
         "topthink/think-helper": "^1.0",
         "ezyang/htmlpurifier": "^4.9",
         "taskphp/taskphp": "dev-master",
-        "topthink/think-worker": "^1.0"
+        "topthink/think-worker": "^1.0",
+        "phpoffice/phpexcel": "^1.8"
     },
     "extra": {
         "think-path": "thinkphp"

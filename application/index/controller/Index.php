@@ -16,6 +16,7 @@ class Index extends Home
 
     public function launch()
     {
+        echo phpinfo();exit;
         //获得当前登录用户
         $request = Request::instance();
         $params = $request->param();

@@ -1,0 +1,27 @@
+2017-08-18 17:23:53 pid:6810 Workerman[server.php] start in DEBUG mode
+2017-08-18 17:31:26 pid:6823 Workerman[server.php] start in DEBUG mode
+2017-08-18 17:31:45 pid:6831 Workerman[server.php] status 
+2017-08-18 17:31:45 pid:6831 Workerman[server.php] not run
+2017-08-18 17:32:23 pid:6832 Workerman[server.php] status 
+2017-08-18 17:32:23 pid:6832 Workerman[server.php] not run
+2017-08-18 17:32:28 pid:6833 Workerman[server.php] start in DEBUG mode
+2017-08-18 17:34:02 pid:6840 Workerman[server.php] start in DEBUG mode
+2017-08-18 17:37:26 pid:6849 Workerman[server.php] start in DEBUG mode
+2017-08-18 17:48:57 pid:6849 Workerman[server.php] Stopping ...
+2017-08-18 17:48:57 pid:6849 worker[none:6853] exit with status 65280
+2017-08-18 17:48:57 pid:6849 worker[none:6852] exit with status 65280
+2017-08-18 17:48:57 pid:6849 Workerman[server.php] has been stopped
+2017-08-18 17:58:10 pid:6901 Workerman[server.php] status 
+2017-08-18 17:58:10 pid:6901 Workerman[server.php] not run
+2017-08-18 17:58:17 pid:6902 Workerman[server.php] start in DEBUG mode
+2017-08-18 21:23:34 pid:6902 Workerman[server.php] Stopping ...
+2017-08-18 21:23:34 pid:6902 worker[none:6905] exit with status 65280
+2017-08-18 21:23:34 pid:6902 worker[none:6904] exit with status 65280
+2017-08-18 21:23:34 pid:6902 Workerman[server.php] has been stopped
+2017-08-18 21:23:37 pid:6931 Workerman[server.php] start in DEBUG mode
+2017-08-18 21:23:56 pid:6938 Workerman[server.php] start in DEBUG mode
+2017-08-18 21:24:04 pid:6945 Workerman[server.php] start in DEBUG mode
+2017-08-18 21:24:14 pid:6952 Workerman[server.php] start in DEBUG mode
+2017-08-18 21:24:28 pid:6959 Workerman[server.php] start in DEBUG mode
+2017-08-18 21:25:10 pid:6966 Workerman[server.php] start in DEBUG mode
+2017-08-18 21:25:35 pid:6973 Workerman[server.php] start in DEBUG mode
