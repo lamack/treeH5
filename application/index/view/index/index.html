@@ -647,9 +647,10 @@
                                     $('.guoshi-bomb').find('.middle').text(data.msg)
                                     $('.guoshi-bomb').show();
                                 } else {
+                                    that.bomb.hide();
                                     that.event(that.index);
                                     getData({
-                                        url: 'level',
+                                        url: '/level',
                                         success: function(ref) {
                                             var data = ref.data;
                                             if (data.status == 'succ') {
