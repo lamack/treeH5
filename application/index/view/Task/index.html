@@ -23,7 +23,7 @@
                                 {case value="2"}
                                     class="active" 
                                 {/case}
-                            {/switch} class="clearfix">
+                            {/switch} class="clearfix task_{$item.id}">
                 <div class="thumbnail clearfix">
                     <div class="thumb-img">
                         {switch name="item.status" }
@@ -46,7 +46,7 @@
                         {switch name="item.status" }
                             {case value="1"}
                             
-                                <div class="btn btn-default" >
+                                <div class="btn btn-default" data-taskId="{$item.id}">
                                     领取
                                 </div>
                             {/case}
@@ -90,20 +90,28 @@
     <script type="text/javascript" src="{$static_dir}home/js/zepto.js"></script>
     <script type="text/javascript" src="{$static_dir}home/js/public.js"></script>
     <script type="text/javascript">
+        var taskId;
         $('.btn-options .btn-default').click(function(event) {
-            $('.bomb').show();
+            taskId = $(this).attr('data-taskId');
             var data = {
-                url: '/furit?type=1',
+                url: '/getaward?id=' + taskId,
                 success: function(ref) {
                     var data = ref.data;
-                    $('.bomb').find('.middle').text(data.msg)
+                    $('.bomb').show();
+                    $('.bomb').find('.middle').text(data.msg);
                 }
             }
             getData(data)
         });
-        $('.bomb .use,.close').click(function(event) {
+        $('.bomb .use').click(function(event) {
             $('.bomb').hide();
+            $('.task_'+ taskId).addClass('active');
+            $('.btn-default').removeClass('btn-default').addClass('btn-done').text('已完成');
         });
+        $('.bomb .close').click(function(event) {
+            $('.bomb').hide(); 
+        });
+        
     </script>
 </body>
 

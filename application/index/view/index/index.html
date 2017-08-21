@@ -613,12 +613,11 @@
                 });
                 // 点击兑换
                 this.bomb.find('.exchange').click(function(event) {
-                    var that = $(this);
                     // 点击取消
-                    if (that.text() == '兑换') {
+                    if ($(this).text() == '兑换') {
                         that.getTreeData(that);
                     } else {
-                        that.parents('.bomb').hide();
+                        $(this).parents('.bomb').hide();
                     }
                 });
             },
