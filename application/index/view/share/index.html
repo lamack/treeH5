@@ -42,12 +42,13 @@ $(function(){
     })
     
     //点赞
+    var token = '{$token|json_encode}';
     var flag = true;
     $('.dianzan').click(function(){
         if(!flag) return;
         flag = false;
         getData({
-            url:'share/zan?token=',
+            url:"{:url('share/zan')}?token="+token,
             success:function(ref){
                 console.log(ref)
             }

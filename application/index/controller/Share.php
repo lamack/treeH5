@@ -56,10 +56,9 @@ class Share extends Common
         
         $request = Request::instance();
         $params = $request->param();
-
         //树
         if ($params['token']) {
-            $token = decrypt($params['token']);
+            $token = $params['token'];
             $map['user_id'] = decrypt($token);;
             $map['ip'] = $_SERVER["REMOTE_ADDR"];//ip
 

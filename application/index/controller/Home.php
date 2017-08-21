@@ -5,6 +5,7 @@ namespace app\index\controller;
 
 use app\common\controller\Common;
 
+use \think\Request;
 /**
  * 前台公共控制器
  * @package app\index\controller
@@ -25,6 +26,18 @@ class Home extends Common
         $base_file = $this->request->baseFile();
         $base_dir  = rtrim($base_file, 'index.php');
         $this->assign('static_dir', $base_dir. 'public/static/');
+        
+        //处理分享出去链接
+        $request = Request::instance();
+        $params = $request->param();
+
+        // session('_MEMBER',null);
+        $member = session('_MEMBER');
+        
+        if (!$member&&$params&&isset($params['token'])) {
+
+            $this->redirect('share/index',array('token'=>$params['token']));
+        }
         
     }
 }
