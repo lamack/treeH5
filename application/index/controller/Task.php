@@ -98,19 +98,21 @@ class Task extends Home
             //
             $map['task_id'] = $params['id'];
             $map['user_id'] = $member['id'];
-            if(!db('task_process')->where($map)->find()){
+            if(db('task')->where('id',$params['id'])->find()&&!db('task_process')->where($map)->find()){
+                
                 //更新
                 $insert['task_id'] = $params['id'];
                 $insert['user_id'] = $member['id'];
                 $insert['status'] = 1; 
                 $insert['create_time'] = time(); 
-                db('task_process')->insert($insert);
+                // db('task_process')->insert($insert);
                 //获得奖励
                 $green = db('task_recode')->field('sum(green) as total')->find();
                 //更新用户绿值
-                $save['green_max'] +=$green['total'];
-                $save['green_nocash'] +=$green['total'];
-                $res = db('member')->where('id',$member['id'])->save($save);
+                $save['green_nocash'] = array('exp', 'green_nocash+'.$green['total']);
+                $save['green_max'] = array('exp', 'green_max+'.$green['total']);
+                
+                $res = db('member')->where('id',$member['id'])->update($save);
 
                 if ($res) {
                     $data = ['status'=>'succ','msg'=>'领取成功']; 
