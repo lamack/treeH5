@@ -615,28 +615,17 @@
                 disasterArr = JSON.parse(disasterArr);
                 //点击工具
                 this.tools.click(function() { 
-                    //灾难来临时
+                    //灾难结束时才能使用道具
                     if(!that.isClick) return;
                     // 如果点击盾牌不做操作
                     if ($(this).index() == 3) return;
                     that.index = $(this).index();
-                    // 灾害结束后才可以使用道具
-                    var isFlag = localStorage.getItem('tree_' + disasterArr.id);
-                    if (typeof isFlag == 'object') {
-                        //如果没有道具 显示兑换弹框
-                        if ($('.planting').find('.item').eq(that.index).find('.num').text() == 0) {
-                            $('.bomb-dialog').show();
-                            return;
-                        }
-                        localStorage.setItem('tree_' + disasterArr.id, 'true');
-                    } else if(isFlag == 'true') {
-                        //如果没有道具 显示兑换弹框
-                        if ($('.planting').find('.item').eq(that.index).find('.num').text() == 0) {
-                            $('.bomb-dialog').show();
-                            return;
-                        }
-                        $('.daoju-bomb').show();
+                    //如果没有道具 显示兑换弹框
+                    if ($('.planting').find('.item').eq(that.index).find('.num').text() == 0) {
+                        $('.bomb-dialog').show();
+                        return;
                     }
+                    $('.daoju-bomb').show();
                 });
                 // 点击使用
                 this.bomb.find('.use').click(function(event) {
