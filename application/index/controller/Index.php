@@ -36,7 +36,7 @@ class Index extends Home
 
         //页面添加token
         if (session('_MEMBER')) {
-            $this->assign('_TOKEN_', encrypt($member['id']));
+            $this->assign('_TOKEN_', encrypt($info['id']));
         }
         
         //初始化一棵树苗
