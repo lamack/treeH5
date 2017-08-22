@@ -56,7 +56,7 @@
                                 </div>
                             {/case}
                             {default /}
-                            <a href="{:url('Task/detail',['id' => $item['id']])}">
+                            <a href="{:url('Task/detail',['id' => $item['id'],'token'=>$_TOKEN_])}">
                                 <div class="btn btn-default" >
                                     详细
                                 </div>

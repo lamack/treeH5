@@ -84,7 +84,7 @@
             <ul class="task-list">
             {volist name="award" id="item"}
             {notempty name="award"}
-            <a href="{:url('Me/award',['id' => $item['id']])}">
+            <a href="{:url('Me/award',['id' => $item['id'],'token'=>$_TOKEN_])}">
 	            <li >
 	                <div class="thumbnail flex">
 	                    <div class="thumb-img">

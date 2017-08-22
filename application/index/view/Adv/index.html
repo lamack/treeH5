@@ -33,7 +33,7 @@
             {volist name="adv" id="item"}
             {notempty name="adv"}
             <li>
-                <a href="{:url('Adv/detail',['id' => $item['id']])}">
+                <a href="{:url('Adv/detail',['id' => $item['id'],'token'=>$_TOKEN_])}">
                 <div class="thumbnail flex">
                     <div class="caption flex">
                         <p class="task-title">{$item.adv_title}</p>
@@ -56,7 +56,7 @@
             {volist name="in" id="item"}
             {notempty name="in"}
             <li>
-                <a href="{:url('Adv/detail',['id' => $item['id']])}">
+                <a href="{:url('Adv/detail',['id' => $item['id'],'token'=>$_TOKEN_])}">
                 <div class="thumbnail flex">
                     <div class="caption flex">
                         <p class="task-title">{$item.adv_title}</p>

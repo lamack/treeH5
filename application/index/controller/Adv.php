@@ -9,15 +9,7 @@ use \think\Request;
  */
 class Adv extends Home
 {
-     /**
-     * 获取入口目录
-
-     */
-    protected function _initialize() {
-        $base_file = $this->request->baseFile();
-        $base_dir  = rtrim($base_file, 'index.php');
-        $this->assign('static_dir', $base_dir. 'public/static/');
-    }      
+        
 
     public function index()
     {

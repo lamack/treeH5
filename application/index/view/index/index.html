@@ -101,21 +101,21 @@
             <div class="blur_bg"></div>
             <div class="blur_box flex flex-col flex-justify-arround">
                 <div class="item_col flex-1">
-                    <a href="{:url('Adv/index')}" class="flex flex-align">
+                    <a href="{:url('Adv/index',['token'=>$_TOKEN_])}" class="flex flex-align">
                         <div class="center">
                             <img src="{$static_dir}home/img/notice.png"> 公告
                         </div>
                     </a>
                 </div>
                 <div class="item_col flex-1">
-                    <a href="{:url('TreesMap/index')}" class="flex flex-align">
+                    <a href="{:url('TreesMap/index',['token'=>$_TOKEN_])}" class="flex flex-align">
                         <div class="center">
                             <img src="{$static_dir}home/img/mapicon.png"> 地图
                         </div>
                     </a>
                 </div>
                 <div class="item_col flex-1">
-                    <a href="{:url('Task/index')}" class="flex flex-align">
+                    <a href="{:url('Task/index',['token'=>$_TOKEN_])}" class="flex flex-align">
                         <div class="center">
                             <img src="{$static_dir}home/img/taskicon.png"> 赚绿值
                         </div>
@@ -254,7 +254,7 @@
          </a>
         </div>
         <div class="me">
-            <a href="{:url('Me/index')}" class="">
+            <a href="{:url('Me/index',['token'=>$_TOKEN_])}" class="">
                 <img src="{$static_dir}home/img/self.png">
                 <p>{$_MEMBER.username}</p>
          </a>
@@ -482,7 +482,8 @@
                 //排行列表用户点击
                 $('.rank-box-item').eq(0).on('click', '.self-icon', function() {
                     var id = $(this).attr('mid');
-                    location.href = "{:url('other/index')}?id="+id;
+                    var token = '{$token|json_encode}';
+                    location.href = "{:url('other/index')}?id="+id+"&token="+token;
                 })
             },
             render: function(current, index, data, flag) {

@@ -317,7 +317,7 @@ class Index extends Home
         //更新状态
         $furit = db('furit')->where('trees_id',$trees_id)->find();
         $map['id']  = $furit['id'];
-        $data['status']  = 0;
+        $data['status']  = 1;
         db('furit')->where($map)->update($data);
         $reward = $this->_rewardSetting();
         if ($type==1) {
@@ -327,6 +327,13 @@ class Index extends Home
             $save['create_time'] = time();
 
             if(db('green_record')->insert($save)){
+                //查询是否已领取完 自动兑换小树苗
+                $furitMap['id'] = $furit['id'];
+                $furitMap['status'] = 0;
+                if (!db('furit')->where($furitMap)->find()) {
+                    $this->__handleTrees();
+                }
+                
                 $data = ['status'=>'succ','msg'=>'获得绿值'.$green.'点'];
                 return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
             }else{
@@ -352,6 +359,12 @@ class Index extends Home
                $save['create_time'] = time();
                db('recode')->insert($save);
                $conpon_name = get_conpon($conpon['id']);
+               //查询是否已领取完 自动兑换小树苗
+                $furitMap['id'] = $furit['id'];
+                $furitMap['status'] = 0;
+                if (!db('furit')->where($furitMap)->find()) {
+                    $this->__handleTrees();
+                }
                $data = ['status'=>'succ','msg'=>'获得优惠券'.$conpon_name]; 
                return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
             }
@@ -402,7 +415,7 @@ class Index extends Home
         
 
     }
-    
+
     function _currentTree(){
         $member = session('_MEMBER');
 
@@ -425,6 +438,24 @@ class Index extends Home
         return $reward;
     }
 
+    function __handleTrees(){
+        $member = session('_MEMBER');
+        $delvop = $this->_maxLiveTree();
+        $data['user_id'] = $member['id'];
+        if ($delvop['cash_trees']<=$member['green']) {
+           if(db('trees')->insert($data)){
+                $save['green'] = array('exp', 'green-'.$delvop['cash_trees']);
+                $save['green_max'] = array('exp', 'green_max-'.$delvop['cash_trees']);
+                
+                $res = db('member')->where('id',$member['id'])->update($save);
+                if ($res) {
+                    $info = db('member')->where('id',$member['id'])->find();
+                    session('_MEMBER',$info);
+                }
+           } 
+        }
+        
+    }
     function _hanldTree($tree){
         if (!$tree) {
             return null;

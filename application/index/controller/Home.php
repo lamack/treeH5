@@ -34,6 +34,11 @@ class Home extends Common
         // session('_MEMBER',null);
         $member = session('_MEMBER');
         
+        //页面添加token
+        if (session('_MEMBER')) {
+            $this->assign('_TOKEN_', encrypt($member['id']));
+        }
+        
         if (!$member&&$params&&isset($params['token'])) {
 
             $this->redirect('share/index',array('token'=>$params['token']));
