@@ -180,7 +180,7 @@
             <div class="rank-box">
                 <div class="rank-box-item active">
                     <div class="self-type flex">
-                        <div class="self-type-item flex-1">司机达人</div>
+                        <div class="self-type-item active flex-1">司机达人</div>
                         <div class="self-type-item flex-1">乘客达人</div>
                         <div class="self-type-item flex-1">植树达人</div>
                         <div class="self-type-item" style="padding: 0 8px;">红色寻访达人</div>
@@ -228,7 +228,7 @@
                 </div>
                 <div class="rank-box-item">
                     <div class="self-type flex">
-                        <div class="self-type-item flex-1">综合排名</div>
+                        <div class="self-type-item active flex-1">综合排名</div>
                         <div class="self-type-item flex-1">绿色出行排名</div>
                     </div>
                     <div class="self-type-box active">
@@ -238,7 +238,7 @@
                 </div>
                 <div class="rank-box-item">
                     <div class="self-type flex">
-                        <div class="self-type-item flex-1">区域</div>
+                        <div class="self-type-item active flex-1">区域</div>
                         <div class="self-type-item flex-1">产业局</div>
                     </div>
                     <div class="self-type-box active">
@@ -480,6 +480,7 @@
                 var that = this;
                 this.els.click(function(event) {
                     var index = $(this).index();
+                    $(this).addClass('active').siblings().removeClass('active')
                     $(this).parents('.rank-box-item').find('.self-type-box').eq(index).addClass('active').siblings().removeClass('active');
                 });
                 //排行列表用户点击
@@ -564,7 +565,7 @@
                                 that.bomb.find('.middle').text(data.msg)
                                 that.bomb.show();
                             } else {
-                                var str = type==1? '恭喜获得绿植果实':'恭喜获得优惠券果实';
+                                var str = type==1? '恭喜获得绿值果实':'恭喜获得优惠券果实';
                                 that.bomb.find('.middle').text(str)
                                 that.bomb.show();
                             }
