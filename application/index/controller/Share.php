@@ -54,6 +54,7 @@ class Share extends Common
     public function zan()
     {
         
+
         $request = Request::instance();
         $params = $request->param();
         //树
@@ -61,7 +62,7 @@ class Share extends Common
             $token = $params['token'];
             $map['user_id'] = decrypt($token);;
             $map['ip'] = $_SERVER["REMOTE_ADDR"];//ip
-
+            $member = db('member')->where('id',$map['user_id'])->find();
             if (db('zan')->where($map)->find()) {
                 
                 $data = ['status'=>'error','msg'=>'不能重复点赞'];
