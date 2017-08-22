@@ -60,7 +60,7 @@ class Index extends Home
         if (session('_MEMBER')) {
             $this->assign('_TOKEN_', encrypt($member['id']));
         }
-        
+
         //当前树苗阶段 3 或 <3
         $map['user_id'] = $member['id'];
         $map['status'] = array('lt',3);
@@ -70,10 +70,9 @@ class Index extends Home
         if ($tree) {
             $furitMap['trees_id'] = $tree['id'];
             $furitMap['status'] = 0;
-            $furit = db('furit')->where('trees_id',$tree['id'])->select();
+            $furit = db('furit')->where($furitMap)->select();
             $tree['furit'] = $furit;
         }
-
         $this->assign('tree', $tree);
         $count = db('trees')->where('user_id',$member['id'])->count();
         $this->assign('count', $count);
@@ -211,7 +210,7 @@ class Index extends Home
     {
         //取用户
         $member = session('_MEMBER');
-        
+
         $request = Request::instance();
         $params = $request->param();
 
