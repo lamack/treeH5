@@ -38,7 +38,7 @@ class Index extends Home
         if (session('_MEMBER')) {
             $this->assign('_TOKEN_', encrypt($info['id']));
         }
-        
+
         //初始化一棵树苗
         $tree = db('trees')->where('user_id',$info['id'])->find();
         if (!$tree) {
@@ -56,6 +56,11 @@ class Index extends Home
         //取用户
         $member = session('_MEMBER');
 
+        //页面添加token
+        if (session('_MEMBER')) {
+            $this->assign('_TOKEN_', encrypt($member['id']));
+        }
+        
         //当前树苗阶段 3 或 <3
         $map['user_id'] = $member['id'];
         $map['status'] = array('lt',3);
@@ -206,7 +211,7 @@ class Index extends Home
     {
         //取用户
         $member = session('_MEMBER');
-
+        
         $request = Request::instance();
         $params = $request->param();
 

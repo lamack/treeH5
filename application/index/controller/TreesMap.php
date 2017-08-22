@@ -14,6 +14,10 @@ class TreesMap extends Home
     {
         //取用户
         $member = session('_MEMBER');
+        //页面添加token
+        if (session('_MEMBER')) {
+            $this->assign('_TOKEN_', encrypt(session('_MEMBER')['id']));
+        }
         $profile_trees = db('trees')->where('user_id',$member['id'])->count();
 
         //班级

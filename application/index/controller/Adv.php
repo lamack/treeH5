@@ -13,6 +13,11 @@ class Adv extends Home
 
     public function index()
     {
+        //页面添加token
+        if (session('_MEMBER')) {
+            $this->assign('_TOKEN_', encrypt(session('_MEMBER')['id']));
+        }
+
         $info = db('announcement')->where('adv_status','1')->select();
         $adv = [];
         $in = [];
@@ -30,6 +35,10 @@ class Adv extends Home
 
     public function detail()
     {
+        //页面添加token
+        if (session('_MEMBER')) {
+            $this->assign('_TOKEN_', encrypt(session('_MEMBER')['id']));
+        }
         $request = Request::instance();
         $params = $request->param();
         $info = db('announcement')->where('id',$params['id'])->find();

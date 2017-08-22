@@ -14,6 +14,10 @@ class Task extends Home
     public function index()
     {
         $member = session('_MEMBER');
+        //页面添加token
+        if (session('_MEMBER')) {
+            $this->assign('_TOKEN_', encrypt(session('_MEMBER')['id']));
+        }
 // print_r(db('task')->Query('select * from game_task'));exit;
         //全局任务
         $info = db('task')->select();
@@ -54,6 +58,10 @@ class Task extends Home
 
     public function detail()
     {
+        //页面添加token
+        if (session('_MEMBER')) {
+            $this->assign('_TOKEN_', encrypt(session('_MEMBER')['id']));
+        }
         $request = Request::instance();
         $params = $request->param();
         $info = db('task')->where('id',$params['id'])->find();
@@ -88,6 +96,6 @@ class Task extends Home
         return $info;
     }
 
-    
+
 
 }

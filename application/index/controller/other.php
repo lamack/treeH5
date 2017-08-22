@@ -14,6 +14,10 @@ class other extends Home
 
     public function index()
     {
+        //页面添加token
+        if (session('_MEMBER')) {
+            $this->assign('_TOKEN_', encrypt(session('_MEMBER')['id']));
+        }
         $request = Request::instance();
         $params = $request->param();
         //获得用户id
