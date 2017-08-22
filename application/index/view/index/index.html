@@ -288,8 +288,11 @@
     <!-- <script type="text/javascript" src="{$static_dir}home/js/index.js"></script> -->
     <script type="text/javascript">
     $(function() {
-        $('.close', '.bomb', '.bomb-dialog').click(function() {
+        $('.close', '.bomb').click(function() {
             $('.bomb').hide();
+            $('.bomb-dialog').hide();
+        })
+        $('.exchange','.bomb-dialog').click(function(){
             $('.bomb-dialog').hide();
         })
         //操作+1和-1小图标
@@ -599,6 +602,7 @@
             tree: $('.tree').find('.tree-box'),
             tools: $('.planting').find('.item'),
             bomb: $('.daoju-bomb'),
+            bombdialog :$('.bomb-dialog'),
             now: treeindex,
             next: null,
             index: 0,
@@ -629,60 +633,57 @@
                 });
                 // 点击使用
                 this.bomb.find('.use').click(function(event) {
-                    if ($(this).text() == '使用') {
-                        var data = {
-                            url: '/prop?prop_type=' + (that.index + 1),
-                            success: function(ref) {
-                                console.log(ref)
-                                var data = ref.data;
-                                if (data.status == 'error') {
-                                    that.bomb.hide();
-                                    $('.guoshi-bomb').find('.middle').text(data.msg)
-                                    $('.guoshi-bomb').show();
-                                } else {
-                                    that.bomb.hide();
-                                    that.event(that.index);
-                                    getData({
-                                        url: '/level',
-                                        success: function(ref) {
-                                            var data = ref.data;
-                                            if (data.status == 'succ') {
-                                                var list = data.list;
-                                                if (list.status == 1) {
-                                                    $('.lunbo').show();
-                                                } else if (list.status == 2) {
-                                                    Guoshi.furit = data.furit;
-                                                    Guoshi.init();
-                                                }
+                    var data = {
+                        url: '/prop?prop_type=' + (that.index + 1),
+                        success: function(ref) {
+                            console.log(ref)
+                            var data = ref.data;
+                            if (data.status == 'error') {
+                                that.bomb.hide();
+                                $('.guoshi-bomb').find('.middle').text(data.msg)
+                                $('.guoshi-bomb').show();
+                            } else {
+                                that.bomb.hide();
+                                that.event(that.index);
+                                getData({
+                                    url: '/level',
+                                    success: function(ref) {
+                                        var data = ref.data;
+                                        if (data.status == 'succ') {
+                                            var list = data.list;
+                                            if (list.status == 1) {
+                                                $('.lunbo').show();
+                                            } else if (list.status == 2) {
+                                                Guoshi.furit = data.furit;
+                                                Guoshi.init();
                                             }
                                         }
-                                    })
-                                }
+                                    }
+                                })
                             }
                         }
-                        getData(data)
-
-                        // that.event(that.index);
-                        // that.bomb.hide();
-                        // //树苗成长
-                        // setTimeout(function() {
-                        //     that.growing(that.now, that.next)
-                        //     that.now--;
-                        //     that.tools.find('.act').eq(that.index).removeClass('active')
-                        // }, 4000)
-                    } else {
-                        that.getTreeData(that);
                     }
+                    getData(data)
+
+                    // that.event(that.index);
+                    // that.bomb.hide();
+                    // //树苗成长
+                    // setTimeout(function() {
+                    //     that.growing(that.now, that.next)
+                    //     that.now--;
+                    //     that.tools.find('.act').eq(that.index).removeClass('active')
+                    // }, 4000)
+                    that.bomb.hide();
 
                 });
                 // 点击兑换
                 this.bomb.find('.exchange').click(function(event) {
-                    // 点击取消
-                    if ($(this).text() == '兑换') {
-                        that.getTreeData(that);
-                    } else {
-                        $(this).parents('.bomb').hide();
-                    }
+                     that.getTreeData(that);
+                      that.bomb.hide();
+                });
+                this.bombdialog.find('.use').click(function(event) {
+                     that.getTreeData(that);
+                      that.bombdialog.hide();
                 });
             },
             //植树效果
