@@ -560,19 +560,17 @@
                     var data = {
                         url: '/furit?type=' + type,
                         success: function(ref) {
+                            that.bomb.find('.middle').text(data.msg)
+                            that.bomb.show();
                             var data = ref.data;
                             if (data.status == 'error') {
-                                that.bomb.find('.middle').text(data.msg)
-                                that.bomb.show();
+                                
                             } else {
-                                var str = type==1? '恭喜获得绿值果实':'恭喜获得优惠券果实';
-                                that.bomb.find('.middle').text(str)
-                                that.bomb.show();
+                                $(this).hide();
                             }
                         }
                     }
                     getData(data)
-                    $(this).hide();
                 })
                 //关闭按钮
                 this.bomb.find('.close').click(function(){
