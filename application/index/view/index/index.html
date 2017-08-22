@@ -686,21 +686,23 @@
                             } else {
                                 that.bomb.hide();
                                 that.event(that.index);
-                                getData({
-                                    url: '/level',
-                                    success: function(ref) {
-                                        var data = ref.data;
-                                        if (data.status == 'succ') {
-                                            var list = data.list;
-                                            if (list.status == 1) {
-                                                $('.lunbo').show();
-                                            } else if (list.status == 2) {
-                                                Guoshi.furit = data.furit;
-                                                Guoshi.init();
+                                setTimeout(function(){
+                                    getData({
+                                        url: '/level',
+                                        success: function(ref) {
+                                            var data = ref.data;
+                                            if (data.status == 'succ') {
+                                                var list = data.list;
+                                                if (list.status == 1) {
+                                                    $('.lunbo').show();
+                                                } else if (list.status == 2) {
+                                                    Guoshi.furit = data.furit;
+                                                    Guoshi.init();
+                                                }
                                             }
                                         }
-                                    }
-                                })
+                                    })
+                                },4000)
                             }
                         }
                     }
@@ -737,11 +739,13 @@
             },
             //植树效果
             event: function(i) {
+                this.isClick = false;
                 var that = this;
                 this.tools.find('.act').eq(i).addClass('active')
                 Handlecount.minus(i)
                 setTimeout(function(){
                     that.tools.find('.act').eq(i).removeClass('active')
+                    that.isClick = true;
                 },4000)
             },
             growing: function(now, next) {
