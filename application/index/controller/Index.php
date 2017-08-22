@@ -34,6 +34,11 @@ class Index extends Home
         $info['sign'] = $params['sign'];
         session('_MEMBER',$info);
 
+        //页面添加token
+        if (session('_MEMBER')) {
+            $this->assign('_TOKEN_', encrypt($member['id']));
+        }
+        
         //初始化一棵树苗
         $tree = db('trees')->where('user_id',$info['id'])->find();
         if (!$tree) {
