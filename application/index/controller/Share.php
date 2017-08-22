@@ -69,7 +69,7 @@ class Share extends Common
                 return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
             }else{
                 $insert['user_id'] = $member['id'];
-                $insert['trees_id'] = $member['trees_id'];
+                $insert['ip'] = $_SERVER["REMOTE_ADDR"];
                 $insert['num'] = 1;
                 db('zan')->where($map)->insert($insert);
                 $data = ['status'=>'succ','msg'=>''];
