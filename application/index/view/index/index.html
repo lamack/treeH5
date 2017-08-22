@@ -598,10 +598,11 @@
         var Tree = {
             tree: $('.tree').find('.tree-box'),
             tools: $('.planting').find('.item'),
-            bomb: $('.bomb'),
+            bomb: $('.daoju-bomb'),
             now: treeindex,
             next: null,
             index: 0,
+            isClick:true,
             init: function() {
                 this.tree.eq(this.now).addClass('active').siblings().removeClass('active')
                 this.next = this.now - 1;
@@ -614,6 +615,8 @@
                 disasterArr = JSON.parse(disasterArr);
                 //点击工具
                 this.tools.click(function() { 
+                    //灾难来临时
+                    if(!that.isClick) return;
                     // 如果点击盾牌不做操作
                     if ($(this).index() == 3) return;
                     that.index = $(this).index();
@@ -698,6 +701,9 @@
                 var that = this;
                 this.tools.find('.act').eq(i).addClass('active')
                 Handlecount.minus(i)
+                setTimeout(function(){
+                    that.tools.find('.act').eq(i).removeClass('active')
+                },4000)
             },
             growing: function(now, next) {
                 var that = this;
@@ -731,9 +737,6 @@
                         } else {
                             // 道具+1
                             Handlecount.add(that.index);
-                            // var num = parseInt($('.planting').find('.item').eq(that.index).find('.num').text());
-                            //  num += 1;
-                            //  $('.planting').find('.item').eq(that.index).find('.num').text(num);
                              // 金币数
                              var cashNum = parseInt($('.item-cash p').text()) - data.data.cash;
                              if (cashNum < 0) {cashNum=0;}
@@ -761,83 +764,51 @@
                 if (disasterArr) {
                     var isFlag = localStorage.getItem('isFlag_' + disasterArr.id);
                     var starTime = disasterArr.start_time;
-                    if (!isFlag) {
-                        switch (disasterArr.disaster_type) {
-                            case 0:
-                                Lunbo.isShow(starTime,0,that.taifengcom);
-                                Lunbo.init();
-                                break;
-                            case 1:
-                                Lunbo.isShow(starTime,1,that.hongshuicom);
-                                Lunbo.init();
-                                break;
-                            case 2:
-                                Lunbo.isShow(starTime,2,that.ganhancom);
-                                Lunbo.init();
-                                break;
-                        }
-                        localStorage.setItem('isFlag_' + disasterArr.id, true);
+                    switch (disasterArr.disaster_type) {
+                        case 0:
+                            Lunbo.isShow(starTime,0,that.taifengcom);
+                            Lunbo.init();
+                            break;
+                        case 1:
+                            Lunbo.isShow(starTime,1,that.hongshuicom);
+                            Lunbo.init();
+                            break;
+                        case 2:
+                            Lunbo.isShow(starTime,2,that.ganhancom);
+                            Lunbo.init();
+                            break;
                     }
-
-                    //     $.get(baseUrl,{'prop_type':'4','disaster_id':disasterArr.id},function(rs){
-                    //         if (rs.data.status=='succ') {
-                    //            var isFlag = localStorage.getItem('isFlag');
-                    //             if (isFlag) {
-                    //                localStorage.setItem('isFlag',true);  
-                    //             }
-                    //             switch (disasterArr.disaster_type){
-                    //                 case 0:
-                    //                 that.taifengcom();
-
-                    //                 that.hudun();
-                    //                 break;
-                    //                 case 1:
-                    //                 that.hongshuicom();
-                    //                 that.hudun();
-                    //                 break;
-                    //                 case 2:
-                    //                 that.ganhancom();
-                    //                 that.hudun();
-                    //                 break;
-                    //             }
-
-                    //         } else {
-                    //             switch (disasterArr.disaster_type){
-                    //                 case 0:
-                    //                 that.taifengcom();
-                    //                 break;
-                    //                 case 1:
-                    //                 that.hongshuicom();
-                    //                 break;
-                    //                 case 2:
-                    //                 that.ganhancom();
-                    //                 break;
-                    //             }
-
-                    //         }
-                    //     })
 
                 }
 
             },
             hongshuicom: function() {
+                Tree.isClick = false;
                 $('.hongshui').show();
                 $('.cloud').show();
+                setTimeout(function(){
+                    Tree.isClick = true;
+                    $('.hongshui').hide();
+                    $('.cloud').hide();
+                },4000)
                 //this.hudun();
             },
             ganhancom: function() {
+                Tree.isClick = false;
                 var that = this;
                 $('.ganhan').addClass('active')
-                setTimeout(function() {
-                    // that.hudun();
-                }, 4000)
+                setTimeout(function(){
+                    Tree.isClick = true;
+                },8000)
             },
             taifengcom: function() {
+                Tree.isClick = false;
                 var that = this;
                 $('.taifeng').addClass('active')
                 // that.hudun();
                 setTimeout(function() {
                     $('.taifeng').removeClass('active');
+                    Tree.isClick = true;
                 }, 8000)
             },
             hudun: function() {
