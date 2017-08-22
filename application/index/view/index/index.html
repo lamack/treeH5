@@ -482,7 +482,7 @@
                 //排行列表用户点击
                 $('.rank-box-item').eq(0).on('click', '.self-icon', function() {
                     var id = $(this).attr('mid');
-                    var token = '{$token|json_encode}';
+                    var token = '{$_TOKEN_|json_encode}';
                     location.href = "{:url('other/index')}?id="+id+"&token="+token;
                 })
             },

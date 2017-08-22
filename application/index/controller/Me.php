@@ -15,7 +15,10 @@ class Me extends Home
     {
         //取用户
         $member = session('_MEMBER');
-
+        //页面添加token
+        if (session('_MEMBER')) {
+            $this->assign('_TOKEN_', encrypt(session('_MEMBER')['id']));
+        }
         //奖品
         $award = db('recode')->where('user_id',$member['id'])->select();
         $this->assign('award', $award);
@@ -26,6 +29,11 @@ class Me extends Home
 
     public function award()
     {
+        //页面添加token
+        if (session('_MEMBER')) {
+            $this->assign('_TOKEN_', encrypt(session('_MEMBER')['id']));
+        }
+        
         $request = Request::instance();
         $params = $request->param();
         if (!$params||!$params['id']) {
