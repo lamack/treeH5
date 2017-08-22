@@ -560,11 +560,11 @@
                     var data = {
                         url: '/furit?type=' + type,
                         success: function(ref) {
-                            that.bomb.find('.middle').text(data.msg)
+                            var datas = ref.datas;
+                            that.bomb.find('.middle').text(datas.msg)
                             that.bomb.show();
-                            var data = ref.data;
-                            if (data.status == 'error') {
-                                
+                            if (datas.status == 'error') {
+
                             } else {
                                 $(this).hide();
                             }
