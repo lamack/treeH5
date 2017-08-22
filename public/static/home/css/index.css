@@ -37,7 +37,7 @@ body{width:100%;}
     top:80px;left:10px;
 }
 #bottom{
-    position: absolute;left:0;height:100%;width:100%;transition:all 1s;z-index: 9999;
+    position: absolute;left:0;height:100%;width:100%;transition:all 1s;z-index: 20;
 }
 #bottom.active{transform: translateY(-500px);}
 #bottom .topbg{
