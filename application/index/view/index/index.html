@@ -84,6 +84,21 @@
                 </div>
             </div>
         </div>
+        <div class="bomb hudun-bomb">
+            <div class="title">温馨提示</div>
+            <div class="close"></div>
+            <div class="bomb-box">
+                <div class="middle clearfix">
+                    是否需要兑换护盾？
+                </div>
+                <div class="bottom">
+                    <div class="status">
+                        <div class="use btn">兑换</div>
+                        <div class="exchange btn">取消</div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="tree">
             <div class="gethudun"><img src="{$static_dir}home/img/hudun1.png" /></div>
             <div class="old tree-box"><img src="{$static_dir}home/img/oldtree.png"></div>
@@ -644,15 +659,18 @@
                 this.tools.click(function() { 
                     //灾难结束时才能使用道具
                     if(!that.isClick) return;
-                    // 如果点击盾牌不做操作
-                    if ($(this).index() == 3) return;
                     that.index = $(this).index();
-                    //如果没有道具 显示兑换弹框
-                    if ($('.planting').find('.item').eq(that.index).find('.num').text() == 0) {
-                        $('.bomb-dialog').show();
-                        return;
+                    // 如果点击盾牌
+                    if ($(this).index() == 3){
+                        $('.hudun-bomb').show();
+                    }else{
+                        //如果没有道具 显示兑换弹框
+                        if ($('.planting').find('.item').eq(that.index).find('.num').text() == 0) {
+                            $('.bomb-dialog').show();
+                            return;
+                        }
+                        $('.daoju-bomb').show();
                     }
-                    $('.daoju-bomb').show();
                 });
                 // 点击使用
                 this.bomb.find('.use').click(function(event) {
@@ -699,6 +717,14 @@
                     that.bomb.hide();
 
                 });
+                //点击兑换护盾
+                $('.hudun-bomb').find('.use').click(function(){
+                    that.getTreeData(that);
+                    $(this).hide();
+                })
+                $('.hudun-bomb').find('.exchange').click(function(){
+                    $(this).hide();
+                })
                 // 点击兑换
                 this.bomb.find('.exchange').click(function(event) {
                      that.getTreeData(that);
