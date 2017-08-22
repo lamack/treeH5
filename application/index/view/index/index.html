@@ -548,7 +548,7 @@
                 var that =this;
                 // 点击果实 掉接口
                 this.el.find('.guoshi').click(function(event) {
-                    var that = this;
+                    var _this = this;
                     var type = $(this).data('type');
                     var data = {
                         url: '/furit?type=' + type,
@@ -559,8 +559,8 @@
                             if (datas.status == 'error') {
 
                             } else {
-                                var i = $(that).index();
-                                $(that).hide();
+                                var i = $(_this).index();
+                                $(_this).hide();
                                 var l = JSON.parse(localStorage.getItem('l'));
                                 var t = JSON.parse(localStorage.getItem('t'));
                                 if(i==0){
