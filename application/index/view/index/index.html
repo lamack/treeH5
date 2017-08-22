@@ -566,7 +566,19 @@
                             if (datas.status == 'error') {
 
                             } else {
+                                var i = $(this).index();
                                 $(this).hide();
+                                var l = JSON.parse(localStorage.getItem('l'));
+                                var t = JSON.parse(localStorage.getItem('t'));
+                                if(i==0){
+                                    l.shift()
+                                    l.shift()
+                                }else{
+                                    l.pop()
+                                    t.pop()
+                                }
+                                localStorage.setItem('l',JSON.stringify(l))
+                                localStorage.setItem('t',JSON.stringify(t))
                             }
                         }
                     }
@@ -587,9 +599,21 @@
                 return parseInt(18 + Math.random() * 56)
             },
             render() {
+                var l = localStorage.getItem('l') || '[]';
+                var t = localStorage.getItem('t') || '[]';
+                var l = JSON.parse(l);
+                var t = JSON.parse(t);
+                if(l.length==0){
+                    for (var i = 0; i < this.furit.length; i++) {
+                        l.push(this.getL());
+                        t.push(this.getT());
+                    }
+                    localStorage.setItem('l',JSON.stringify(l))
+                    localStorage.setItem('t',JSON.stringify(t))
+                }
                 var str = '';
                 for (var i = 0; i < this.furit.length; i++) {
-                    str += '<div style="top:' + this.getT() + '%;left:' + this.getL() + '%;" class="guoshi" data-type="'+this.furit[i].type+'"></div>'
+                    str += '<div style="top:' + t[i] + '%;left:' + l[i] + '%;" class="guoshi" data-type="'+this.furit[i].type+'"></div>'
                 }
                 
                 this.el.append(str)
