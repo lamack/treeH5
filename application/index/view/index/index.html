@@ -291,9 +291,7 @@
         <div class="lunbo">
             <div class="lunbobg"></div>
             <div class="lunbobox">
-                <div class="lunbo-container">
-                   
-                </div>
+                <marquee id="marq" width=100%  direction=left align=middle></marquee>
             </div>
         </div>
     </div>
@@ -346,27 +344,6 @@
             top: 30,
             hei: 0,
             init: function() {
-                var that = this;
-                this.lunbo.append(this.lunboCon.clone())
-                this.hei = this.lunbo.height();
-                this.move()
-                setInterval(function() {
-                    if (that.top <= -that.hei) {
-                        that.lunbo.append($(that.lunbo.children()[0]))
-                        that.lunbo.css({
-                            transition: 'top 0s',
-                            top: '0px'
-                        })
-                        that.top = 0;
-                    }
-                    setTimeout(function() { that.move(); }, 1000)
-                }, 3000)
-            },
-            move() {
-                this.lunbo.css({ 'transition': 'top 1s' })
-                this.top -= 30;
-                this.lunbo.css({ top: this.top + 'px' });
-
             },
             isShow(starTime,type,callback){
                 var that = this;
@@ -386,12 +363,12 @@
                         str = '分钟后将会有强烈干旱来袭，请做好防护措施，护盾会自动弹出，能有效抵抗干旱，保证树的安全！';
                         break;
                     };
-                    that.lunbo.text(Math.ceil(dif/60)+str); 
+                    that.lunbo.find('#marq').text(Math.ceil(dif/60)+str); 
                     var timer = setInterval(function(){
                         var timen = new Date().getTime();
                         var dif2 = parseInt((starTime-parseInt(timen/1000))/60);
                         if(dif2>0){
-                            that.lunbo.text(dif2+str); 
+                            that.lunbo.find('#marq').text(dif2+str); 
                         }else{
                             clearInterval(timer);
                             $('.lunbo').hide();

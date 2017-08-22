@@ -423,5 +423,4 @@ body{width:100%;}
     width:calc(100% - 20px);
     height:auto;
     color:rgb(240,187,0);
-    transition:top 1s;
 }
