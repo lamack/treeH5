@@ -218,6 +218,7 @@ class Index extends Home
         $prop_type = (int)$params['prop_type'];
         $propMap['user_id'] = $member['id'];
         $propMap['prop_type'] = $prop_type;
+        $propMap['status'] = 0;
         $prop = db('my_prop')->where($propMap)->find();
         if ($prop) {
             $data['status'] = 1;
@@ -290,7 +291,7 @@ class Index extends Home
         $prop_type = (int)$params['prop_type'];
         $map['position'] = $prop_type;
         $prop = db('prop')->where($map)->find();
-        if ($prop&&($growCoin>$prop['cash'])) {
+        if ($prop&&($growCoin>=$prop['cash'])) {
             $map1['id'] = $member['id'];
             if(db('member')->where($map1)->setDec('share',$prop['cash'])){
                 $save['user_id'] = $member['id'];
