@@ -19,23 +19,23 @@
             <div class="blur_box none">
                 <div class="item_row flex flex-justify-arround">
                     <div class="">
-                        <img src="{$static_dir}home/img/green.png">
+                        <div class="jingling green_png"></div>
                         <p class="">{$_MEMBER.green_max|default=0}</p>
                     </div>
                     <div class="">
-                        <img src="{$static_dir}home/img/dui.png">
+                        <div class="jingling duihuan_png"></div>
                         <p class="">{$_MEMBER.green|default=0}</p>
                     </div>
                     <div class="">
-                        <img src="{$static_dir}home/img/budui.png">
+                        <div class="jingling budui_png"></div>
                         <p class="">{$_MEMBER.green_nocash|default=0}</p>
                     </div>
                     <div class="item-cash">
-                        <img src="{$static_dir}home/img/hsf2.png">
+                        <div class="jingling hsf2_png"></div>
                         <p class="">{$_MEMBER.share|default=0}</p>
                     </div>
                     <div class="">
-                        <img src="{$static_dir}home/img/bigtree.png">
+                        <div class="jingling bigtree_png"></div>
                         <p class="">{$count|default=1}</p>
                     </div>
                 </div>
@@ -126,21 +126,21 @@
                 <div class="item_col flex-1">
                     <a href="{:url('Adv/index',['token'=>$_TOKEN_])}" class="flex flex-align">
                         <div class="center">
-                            <img src="{$static_dir}home/img/notice.png"> 公告
+                            <div class="jingling notice_png"></div> 公告
                         </div>
                     </a>
                 </div>
                 <div class="item_col flex-1">
                     <a href="{:url('TreesMap/index',['token'=>$_TOKEN_])}" class="flex flex-align">
                         <div class="center">
-                            <img src="{$static_dir}home/img/mapicon.png"> 地图
+                            <div class="jingling mapicon_png"></div> 地图
                         </div>
                     </a>
                 </div>
                 <div class="item_col flex-1">
                     <a href="{:url('Task/index',['token'=>$_TOKEN_])}" class="flex flex-align">
                         <div class="center">
-                            <img src="{$static_dir}home/img/taskicon.png"> 赚绿值
+                            <div class="jingling taskicon_png"></div> 赚绿值
                         </div>
                     </a>
                 </div>
@@ -211,7 +211,7 @@
                         {notempty name="me_driver_rank"}
                         <div class="rank-list flex self">
                             <div class="rank-num"></div>
-                            <div class="self-icon" mid="{$me_driver_rank.id}"><img src="{$static_dir}home/img/self.png"></div>
+                            <div class="self-icon" mid="{$me_driver_rank.id}"><div class="jingling self1_png"></div></div>
                             <div class="self-name flex-1">{$me_driver_rank.name}</div>
                             <div class="self-num">{$me_driver_rank.green_max}</div>
                         </div>
@@ -221,7 +221,7 @@
                         {notempty name="me_passenger_rank"}
                         <div class="rank-list flex self">
                             <div class="rank-num"></div>
-                            <div class="self-icon" mid="{$me_passenger_rank.id}"><img src="{$static_dir}home/img/self.png"></div>
+                            <div class="self-icon" mid="{$me_passenger_rank.id}"><div class="jingling self1_png"></div></div>
                             <div class="self-name flex-1">{$me_passenger_rank.name}</div>
                             <div class="self-num">{$me_passenger_rank.green_max}</div>
                         </div>
@@ -231,7 +231,7 @@
                         {notempty name="me_trees_rank"}
                         <div class="rank-list flex self">
                             <div class="rank-num"></div>
-                            <div class="self-icon" mid="{$me_trees_rank.id}"><img src="{$static_dir}home/img/self.png"></div>
+                            <div class="self-icon" mid="{$me_trees_rank.id}"><div class="jingling self1_png"></div></div>
                             <div class="self-name flex-1">{$me_trees_rank.name}</div>
                             <div class="self-num">{$me_trees_rank.green_max}</div>
                         </div>
@@ -241,7 +241,7 @@
                         {notempty name="me_vie_rank"}
                         <div class="rank-list flex self">
                             <div class="rank-num"></div>
-                            <div class="self-icon" mid="{$me_vie_rank.id}"><img src="{$static_dir}home/img/self.png"></div>
+                            <div class="self-icon" mid="{$me_vie_rank.id}"><div class="jingling self1_png"></div></div>
                             <div class="self-name flex-1">{$me_vie_rank.name}</div>
                             <div class="self-num">{$me_vie_rank.green_max}</div>
                         </div>
@@ -271,13 +271,13 @@
         </div>
         <div class="hsf">
             <a href="javascript:;" class="">
-                <img src="{$static_dir}home/img/hsf1.png">
+                <div class="jingling hsf1_png "></div>
                 红色寻访
          </a>
         </div>
         <div class="me">
             <a href="{:url('Me/index',['token'=>$_TOKEN_])}" class="">
-                <img src="{$static_dir}home/img/self.png">
+                <div class="jingling self_png"></div>
                 <p>{$_MEMBER.username}</p>
          </a>
         </div>
@@ -488,7 +488,7 @@
                     var rank = i + 1
                     var name = data[i].username ? data[i].username : (data[i].area ? data[i].area : (data[i].company ? data[i].company : data[i].class))
                     var max = data[i].green_max ? data[i].green_max : data[i].max;
-                    var strli = !flag ? '' : '<div class="self-icon" mid="'+data[i].id+'"><img src="{$static_dir}home/img/self.png"></div>'
+                    var strli = !flag ? '' : '<div class="self-icon" mid="'+data[i].id+'"><div class="jingling self1_png"></div></div>'
                     str += '<div class="rank-list flex">' +
                         '<div class="rank-num">' + this.switchicon(rank) + '</div>' +
                         strli +
@@ -501,13 +501,13 @@
             switchicon(d) {
                 switch (d) {
                     case 1:
-                        d = '<img src="{$static_dir}home/img/jin.png">';
+                        d = '<div class="jingling jin_png"></div>';
                         break;
                     case 2:
-                        d = '<img src="{$static_dir}home/img/yin.png">';
+                        d = '<div class="jingling yin_png"></div>';
                         break;
                     case 3:
-                        d = '<img src="{$static_dir}home/img/tong.png">';
+                        d = '<div class="jingling tong_png"></div>';
                         break;
                 }
                 return d

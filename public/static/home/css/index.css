@@ -26,10 +26,18 @@ body{width:100%;}
 .blur_box .item_col{width:100%;}
 .blur_box .item_col a{height:100%;width:100%;padding:3px;color:#fff;font-size:11px;text-align:center;box-sizing: border-box;}
 
-.blur_box .item_col a img{width:34px;}
+.blur_box .item_col a .jingling{width:34px;height:34px;background-size: 450px 450px;}
+.blur_box .item_col a .jingling.notice_png{background-position: -46px -45px ;}
+.blur_box .item_col a .jingling.mapicon_png{background-position: -91px -46px;}
+.blur_box .item_col a .jingling.taskicon_png{background-position:-180px -92px;}
 .blur_box .item_row{padding:5px 0;font-size: 12px;color:#fff;box-sizing: border-box;height: 100%;}
 .blur_box .item_row .exchange{width:50px;}
-.blur_box .item_row img {width:36px;height:30px;vertical-align: middle;}
+.blur_box .item_row .jingling {width:36px;height:30px;vertical-align: middle;display: inline-block;}
+.blur_box .item_row .jingling.green_png {background-position: 0 0 ;}
+.blur_box .item_row .jingling.duihuan_png {background-position: -100px 0 ;}
+.blur_box .item_row .jingling.budui_png {background-position: -150px 0 ;}
+.blur_box .item_row .jingling.hsf2_png {background-position: -45px 0 ;}
+.blur_box .item_row .jingling.bigtree_png {background-position: -200px 0 ;}
 .blur_container.col{
     width:40px;position: absolute;height: 40%;
     border-radius: 20px;
@@ -53,7 +61,11 @@ body{width:100%;}
 .rank-box .rank-box-item .self-type-box .rank-list.self .rank-num{color:#ff8400;}
 .rank-box .rank-box-item .self-type-box .rank-list .rank-num{width:17px;height:100%;font-weight: bold;color:#999;margin-right: 10px;text-align: center;vertical-align: middle;}
 .rank-box .rank-box-item .self-type-box .rank-list .self-icon{width:23px;height:100%;margin-right:10px;vertical-align: middle;}
-.rank-box .rank-box-item .self-type-box .rank-list img{width:100%;height:20px;margin-top:5px;}
+.rank-box .rank-box-item .self-type-box .rank-list .jingling{width:100%;height:20px;margin-top:5px;display: inline-block;}
+.rank-box .rank-box-item .self-type-box .rank-list .jingling.jin_png{background-position:-151px -101px;}
+.rank-box .rank-box-item .self-type-box .rank-list .jingling.yin_png{background-position:-52px -101px}
+.rank-box .rank-box-item .self-type-box .rank-list .jingling.tong_png{background-position:-1px -101px;}
+.rank-box .rank-box-item .self-type-box .rank-list .jingling.self1_png{ background-position: 0 -32px;background-size: 300px 300px;}
 .rank-box .rank-box-item .self-type-box .rank-list .self-num{color:#ff8400;}
 .rank-box .rank-box-item .self-type .self-type-item {height:100%;position: relative;}
 .rank-box .rank-box-item .self-type .self-type-item.active{font-weight: bold;}
@@ -237,7 +249,7 @@ body{width:100%;}
 .tree .tree-box.active{opacity: 1;}
 .tree .tree-box img{width:100%;height:100%;;}
 .tree .tree-box.old {width:100%;height:100%;left:0;position: absolute;}
-.tree .tree-box.old .guoshi{position: absolute;height:40px;width:40px;background:url(../img/guoshi1.png) no-repeat;background-size: 100% 100%;
+.tree .tree-box.old .guoshi{position: absolute;height:40px;width:40px;background:url(../img/jingling.png) no-repeat -200px -50px;background-size: 500px 500px;
     opacity: 1;
     z-index: 10;
     animation:guoshi 2s;
@@ -300,10 +312,11 @@ body{width:100%;}
         color:#fff;
     font-size:14px;
 }
-.hsf a img{
+.hsf a .hsf1_png{
     width:100%;
-    height:auto;
+    height:39px;
     display: block;
+    background-position: -440px -460px;;
 }
 .me{
     position: absolute;
@@ -324,10 +337,15 @@ body{width:100%;}
 .me a p{
     margin-top:-5px;
 }
-.me a img{
+.me a .self_png{
+    display: inline-block;
     width:40px;
     height:35px;
-
+   background-position: 0 -50px;
+}
+.jingling {
+    background:url(../img/jingling.png) no-repeat;
+   background-size: 500px 500px;
 }
 .hongshui{
     position: absolute;
