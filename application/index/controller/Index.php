@@ -220,7 +220,18 @@ class Index extends Home
         $propMap['prop_type'] = $prop_type;
         $propMap['status'] = 0;
         $prop = db('my_prop')->where($propMap)->find();
+        
         if ($prop) {
+            //是否今日已用
+            $propSetting = db('prop')->where('position',$prop_type)->find();
+            $findMap['user_id'] = $member['id'];
+            $findMap['prop_type'] = $prop_type;
+            $findMap['status'] = 1;
+            $propTd = db('my_prop')->field('count(*) as count')->where($findMap)->->whereTime('create_time', 'today')->find();
+            if ($propSetting&&$propTd&&($propTd['count']>=$propSetting['use_limit'])) {
+                $data = ['status'=>'error','msg'=>'不能超过道具今日使用限制'];
+                return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
+            }
             $data['status'] = 1;
             $trees_id = $this->_currentTree()['id'];
             if (!$trees_id) {
@@ -228,6 +239,7 @@ class Index extends Home
                 return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
             }
             $data['trees_id'] = $trees_id;
+            $data['create_time'] = time();
             if(db('my_prop')->where('id',$prop['id'])->update($data)){
                 
                 $data = ['status'=>'succ','msg'=>'成功'];
