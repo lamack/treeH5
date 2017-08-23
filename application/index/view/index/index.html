@@ -309,16 +309,16 @@
     <!-- <script type="text/javascript" src="{$static_dir}home/js/index.js"></script> -->
     <script type="text/javascript">
     $(function() {
-        window.onscroll=function(e){
-            $('.bomb').each(function(){
+        document.addEventListener("touchmove", function (e) {
+             $('.bomb').each(function(){
                 if($(this).css('display')=='block'){
-                    console.log($(this))
-                    e = e || window.event;
                     e.preventDefault();
+                    e.stopPropagation();
                     return;
                 }
             })
-        }
+        }, false);
+       
         $('.close', '.bomb').click(function() {
             $('.bomb').hide();
             $('.bomb-dialog').hide();
