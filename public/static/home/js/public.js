@@ -4,7 +4,7 @@ $('#back').on('click',function(){
 	window.history.back(-1)
 })
 //请求地址的域名
-var host = 'http://zg.trees.com/index.php/index/index';
+var host = 'http://tree.com/index.php/index/index';
 var baseData = {
 
 }
@@ -15,7 +15,7 @@ var getData=function(data){
     var datas = data.data? data.data: {};
     var baseUrl = host+data.url;
     if (data.url.indexOf('index.php')!=-1) {
-        baseUrl = 'http://zg.trees.com'+data.url;
+        baseUrl = 'http://tree.com'+data.url;
     }
     $.ajax({
         type:type,
