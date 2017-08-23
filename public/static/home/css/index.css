@@ -37,7 +37,7 @@ body{width:100%;}
     top:80px;left:10px;
 }
 #bottom{
-    position: absolute;left:0;height:100%;width:100%;transition:all 1s;z-index: 20;
+    position: absolute;left:0;height:100%;width:100%;transition:all 1s;z-index: 20;display: none;
 }
 #bottom.active{transform: translateY(-500px);}
 #bottom .topbg{
@@ -181,6 +181,22 @@ body{width:100%;}
     margin-left: -130px;
     background: url(../img/bomb.png) no-repeat;
     background-size: 100% 100%;display: none;}
+.bomb .bomb-po{
+    position: absolute;
+    height:100%;
+    width:100%;
+}
+.bomb::before{
+    content:"";
+    display: block;
+    position: fixed;
+    background:#000;
+    opacity: 0.3;
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+}
 .bomb.guoshi-bomb{
     background: url(../img/bomb3.png) no-repeat;
     background-size: 100% 100%;

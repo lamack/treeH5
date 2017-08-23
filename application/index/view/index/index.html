@@ -42,59 +42,67 @@
             </div>
         </div>
         <div class="bomb daoju-bomb">
-            <div class="title">道具使用</div>
-            <div class="close"></div>
-            <div class="bomb-box">
-                <div class="middle clearfix">
-                    请选择使用或者兑换工具
-                </div>
-                <div class="bottom">
-                    <div class="status">
-                        <div class="use btn">使用</div>
-                        <div class="exchange btn">兑换</div>
+            <div class="bomb-po">
+                <div class="title">道具使用</div>
+                <div class="close"></div>
+                <div class="bomb-box">
+                    <div class="middle clearfix">
+                        请选择使用或者兑换工具
+                    </div>
+                    <div class="bottom">
+                        <div class="status">
+                            <div class="use btn">使用</div>
+                            <div class="exchange btn">兑换</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="bomb bomb-dialog">
-            <div class="title">温馨提示</div>
-            <div class="close"></div>
-            <div class="bomb-box">
-                <div class="middle clearfix">
-                    请先去兑换工具
-                </div>
-                <div class="bottom">
-                    <div class="status">
-                        <div class="use btn">确定</div>
-                        <div class="exchange btn">取消</div>
-                    </div>
-                </div>
-            </div>
+           <div class="bomb-po">
+               <div class="title">温馨提示</div>
+               <div class="close"></div>
+               <div class="bomb-box">
+                   <div class="middle clearfix">
+                       请先去兑换工具
+                   </div>
+                   <div class="bottom">
+                       <div class="status">
+                           <div class="use btn">确定</div>
+                           <div class="exchange btn">取消</div>
+                       </div>
+                   </div>
+               </div>
+           </div>
         </div>
         <div class="bomb guoshi-bomb">
-            <div class="title">温馨提示</div>
-            <div class="close"></div>
-            <div class="bomb-box">
-                <div class="middle clearfix">
-                </div>
-                <div class="bottom">
-                    <div class="status">
-                        <div class="btn">确定</div>
+            <div class="bomb-po">
+                <div class="title">温馨提示</div>
+                <div class="close"></div>
+                <div class="bomb-box">
+                    <div class="middle clearfix">
+                    </div>
+                    <div class="bottom">
+                        <div class="status">
+                            <div class="btn">确定</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="bomb hudun-bomb">
-            <div class="title">温馨提示</div>
-            <div class="close"></div>
-            <div class="bomb-box">
-                <div class="middle clearfix">
-                    是否需要兑换护盾？
-                </div>
-                <div class="bottom">
-                    <div class="status">
-                        <div class="use btn">兑换</div>
-                        <div class="exchange btn">取消</div>
+            <div class="bomb-po">
+                <div class="title">温馨提示</div>
+                <div class="close"></div>
+                <div class="bomb-box">
+                    <div class="middle clearfix">
+                        是否需要兑换护盾？
+                    </div>
+                    <div class="bottom">
+                        <div class="status">
+                            <div class="use btn">兑换</div>
+                            <div class="exchange btn">取消</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -301,6 +309,15 @@
     <!-- <script type="text/javascript" src="{$static_dir}home/js/index.js"></script> -->
     <script type="text/javascript">
     $(function() {
+        window.on('scroll',function(e){
+            $('.bomb').each(function(){
+                if($(this).css('display')=='block'){
+                    e = e || window.event;
+                    e.preventDefault();
+                    return;
+                }
+            })
+        })
         $('.close', '.bomb').click(function() {
             $('.bomb').hide();
             $('.bomb-dialog').hide();
@@ -373,7 +390,7 @@
                             clearInterval(timer);
                             $('.lunbo').hide();
                             callback();
-                            if($('.planting').find('.item').eq(3).text().substr(1)>0){
+                            if($('.planting').find('.item').eq(3).find('.num').text().substr(1)>0){
                                 Disaster.hudun();
                             }
                         }
@@ -393,6 +410,7 @@
             current: $('.rank-box').find('.rank-box-item').eq(0),
             init: function() {
                 this.bottom.css('bottom', -this.low + 'px');
+                this.bottom.show();
                 this.bindEvent();
             },
             bindEvent: function() {
@@ -700,10 +718,10 @@
                 //点击兑换护盾
                 $('.hudun-bomb').find('.use').click(function(){
                     that.getTreeData(that);
-                    $(this).hide();
+                     $('.hudun-bomb').hide();
                 })
                 $('.hudun-bomb').find('.exchange').click(function(){
-                    $(this).hide();
+                     $('.hudun-bomb').hide();
                 })
                 // 点击兑换
                 this.bomb.find('.exchange').click(function(event) {
