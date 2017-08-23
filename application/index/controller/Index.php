@@ -227,7 +227,7 @@ class Index extends Home
             $findMap['user_id'] = $member['id'];
             $findMap['prop_type'] = $prop_type;
             $findMap['status'] = 1;
-            $propTd = db('my_prop')->field('count(*) as count')->where($findMap)->->whereTime('create_time', 'today')->find();
+            $propTd = db('my_prop')->field('count(*) as count')->where($findMap)->whereTime('create_time', 'today')->find();
             if ($propSetting&&$propTd&&($propTd['count']>=$propSetting['use_limit'])) {
                 $data = ['status'=>'error','msg'=>'不能超过道具今日使用限制'];
                 return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
