@@ -202,7 +202,7 @@ input {
     display: block;
 }
 /*按钮*/
-.btn-default {
+.btn-default,.btn-detail {
     color: #fff;
     background: url(../img/taskbtn.png) no-repeat;
     background-size: 100% 100%;
