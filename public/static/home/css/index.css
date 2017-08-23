@@ -172,19 +172,25 @@ body{width:100%;}
     .planting .planting-item .item .act{width:55px;height:50px;}
 }
 .planting .planting-item .item span {}
-.bomb,.bomb-dialog {    width: 260px;
+.bomb{
+    display: none;
+    width: 260px;
     height: 160px;
     position: fixed;
     z-index: 1000;
     top: 40%;
     left: 50%;
-    margin-left: -130px;
-    background: url(../img/bomb.png) no-repeat;
-    background-size: 100% 100%;display: none;}
+    margin-left: -130px;}
 .bomb .bomb-po{
     position: absolute;
     height:100%;
     width:100%;
+    background: url(../img/bomb.png) no-repeat;
+    background-size: 100% 100%;
+}
+.bomb.bomb-dialog  .bomb-po {
+    background: url(../img/bomb.png) no-repeat;
+    background-size: 100% 100%;
 }
 .bomb::before{
     content:"";
@@ -197,7 +203,7 @@ body{width:100%;}
     top:0;
     left:0;
 }
-.bomb.guoshi-bomb{
+.bomb.guoshi-bomb .bomb-po {
     background: url(../img/bomb3.png) no-repeat;
     background-size: 100% 100%;
 }
