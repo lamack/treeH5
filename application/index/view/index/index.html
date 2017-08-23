@@ -188,7 +188,6 @@
             </div>
         </div>
         <div id="bottom">
-            <div class="topbg"></div>
             <div class="ranking flex">
                 <div class="ranking-item active flex-1 self">
                     个人排名
@@ -427,24 +426,6 @@
         Bottom.init();
 
         var flaginit = true;
-        /*touch.on('#bottom','swipeup',function(){
-            $('.container').css('transform','translateY('+(-Bottom.low)+'px)')
-            $('#bottom').find('.topbg').css({
-                height:'40%',
-                marginBottom: '-44px',
-            })
-            if(flaginit){
-                Selfrank.init();
-                flaginit = false;
-            }
-        })
-        touch.on('#bottom','swipedown',function(){
-            $('.container').css('transform','translateY(0px)')
-            $('#bottom').find('.topbg').css({
-                height:'0px',
-                marginBottom: '0px',
-            })
-        })*/
         // 个人排名
         var Selfrank = {
             els: $('.rank-box-item').find('.self-type-item'),
