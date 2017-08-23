@@ -325,7 +325,9 @@ class Index extends Home
         $type = (int)$params['type'];//1为绿值
         $trees_id = $this->_currentTree()['id'];
         //更新状态
-        $furit = db('furit')->where('trees_id',$trees_id)->find();
+        $furitmap['trees_id']  = $trees_id;
+        $furitmap['status']  = 0;
+        $furit = db('furit')->where($furitmap)->find();
         $map['id']  = $furit['id'];
         $data['status']  = 1;
         db('furit')->where($map)->update($data);
