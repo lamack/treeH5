@@ -39,13 +39,13 @@ body{width:100%;}
 .blur_box .item_row .jingling.hsf2_png {background-position: -45px 0 ;}
 .blur_box .item_row .jingling.bigtree_png {background-position: -200px 0 ;}
 .blur_container.col{
-    width:40px;position: absolute;height: 40%;
+    width:40px;position: absolute;height: 60%;
     border-radius: 20px;
     overflow: hidden;
     top:80px;left:10px;
 }
 #bottom{
-    position:absolute;left:0;height:100%;width:100%;z-index: 20;display: none;
+   height:100%;width:100%;
 }
 .ranking{
     height:40px;width:100%; 

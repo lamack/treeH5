@@ -7,7 +7,7 @@ div.tab-box{
     position: absolute;
     width:100%;
 }
-div.tab-box:nth-child(5){background: url(../img/shanghaibg.png) no-repeat; background-size:100% 102%;}
+div.tab-box:nth-child(4){background: url(../img/shanghaibg.png) no-repeat; background-size:100% 102%;}
 .tab-box.quyu .title{color:#288e01;text-align:center;font-size: 12px;padding: 5px 0;}
 .tab-box.quyu .city{
     width:90%;
