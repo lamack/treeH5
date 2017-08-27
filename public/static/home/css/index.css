@@ -39,7 +39,7 @@ body{width:100%;}
 .blur_box .item_row .jingling.hsf2_png {background-position: -45px 0 ;}
 .blur_box .item_row .jingling.bigtree_png {background-position: -200px 0 ;}
 .blur_container.col{
-    width:40px;position: absolute;height: 60%;
+    width:42px;position: absolute;height: 60%;
     border-radius: 20px;
     overflow: hidden;
     top:80px;left:10px;
