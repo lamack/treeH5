@@ -44,45 +44,19 @@ body{width:100%;}
     overflow: hidden;
     top:80px;left:10px;
 }
-#bottom{
-   height:100%;width:100%;
-}
-.ranking{
-    height:40px;width:100%; 
-}
-.rank-box{height:calc(100% - 40px);width:100%;background: #fff;}
-.rank-box .rank-box-item{height:100%;width:100%;display: none;}
-.rank-box .rank-box-item.active{display: block;}
-.rank-box .rank-box-item .self-type{border-bottom:1px solid #37ae15;color:#37ae15;height:39px;line-height: 39px;text-align: center;background: #fbfff5;font-size: 14px;}
-.rank-box .rank-box-item .self-type-box {padding:0 10px;display: none;}
-.rank-box .rank-box-item .self-type-box.active{display: block;}
-.rank-box .rank-box-item .self-type-box .rank-list{height:30px;border-bottom: 1px dashed #37ae15;line-height: 30px;}
-.rank-box .rank-box-item .self-type-box .rank-list.self{color:#ff8400;}
-.rank-box .rank-box-item .self-type-box .rank-list.self .rank-num{color:#ff8400;}
-.rank-box .rank-box-item .self-type-box .rank-list .rank-num{width:17px;height:100%;font-weight: bold;color:#999;margin-right: 10px;text-align: center;vertical-align: middle;}
-.rank-box .rank-box-item .self-type-box .rank-list .self-icon{width:23px;height:100%;margin-right:10px;vertical-align: middle;}
-.rank-box .rank-box-item .self-type-box .rank-list .jingling{width:100%;height:20px;margin-top:5px;display: inline-block;}
-.rank-box .rank-box-item .self-type-box .rank-list .jingling.jin_png{background-position:-151px -101px;}
-.rank-box .rank-box-item .self-type-box .rank-list .jingling.yin_png{background-position:-52px -101px}
-.rank-box .rank-box-item .self-type-box .rank-list .jingling.tong_png{background-position:-1px -101px;}
-.rank-box .rank-box-item .self-type-box .rank-list .jingling.self1_png{ background-position: 0 -32px;background-size: 300px 300px;}
-.rank-box .rank-box-item .self-type-box .rank-list .self-num{color:#ff8400;}
-.rank-box .rank-box-item .self-type .self-type-item {height:100%;position: relative;}
-.rank-box .rank-box-item .self-type .self-type-item.active{font-weight: bold;}
-.rank-box .rank-box-item .self-type .self-type-item::after {
-    position: absolute;
-    border-left:1px solid #37ae15;
-    height:50%;
-    width:0;
-    left:0;top:25%;
-    content:"";
-    display: block;
-}
-.rank-box .rank-box-item .self-type .self-type-item:nth-child(1)::after{display: none;}
-.rank-box .rank-box-item .self-type .ranking-list {text-align: left;margin-left: 1rem;}
-.ranking-item {height:100%;text-align:center;color:#fff;background:url(../img/tap2.png) no-repeat;background-size:100% 100%;font-size:14px;line-height: 40px;}
-.ranking-item.active{color:#37ae15;background:url(../img/tap1.png) no-repeat;background-size:100% 100%;}
-.planting{position: absolute;bottom: 80px;left:0;height:70px;width:100%;z-index: 9;}
+ .self-type-box {padding:0 10px;}
+ .self-type-box .rank-list{height:30px;border-bottom: 1px dashed #37ae15;line-height: 30px;}
+ .self-type-box .rank-list.self{color:#ff8400;}
+ .self-type-box .rank-list.self .rank-num{color:#ff8400;}
+ .self-type-box .rank-list .rank-num{width:17px;height:100%;font-weight: bold;color:#999;margin-right: 10px;text-align: center;vertical-align: middle;}
+ .self-type-box .rank-list .self-icon{width:23px;height:100%;margin-right:10px;vertical-align: middle;}
+ .self-type-box .rank-list .jingling{width:100%;height:20px;margin-top:5px;display: inline-block;}
+ .self-type-box .rank-list .jingling.jin_png{background-position:-151px -101px;}
+ .self-type-box .rank-list .jingling.yin_png{background-position:-52px -101px}
+ .self-type-box .rank-list .jingling.tong_png{background-position:-1px -101px;}
+ .self-type-box .rank-list .jingling.self1_png{ background-position: 0 -32px;background-size: 300px 300px;}
+ .self-type-box .rank-list .self-num{color:#ff8400;}
+.planting{position: absolute;bottom: 10px;left:0;height:70px;width:100%;z-index: 9;}
 .planting .planting-item{height:100%;}
 .planting .planting-item .item{height:42px;font-size:8px;color:#fff;position: relative;}
 .planting .planting-item .item .act{
@@ -136,23 +110,23 @@ body{width:100%;}
 }
 @keyframes shifei{
     0%{top:0;left:0;}
-    25%{top:-300%;left:-30%;}
-    50%{top:-300%;left:-30%;transform:translateY(30px)}
-    75%{top:-300%;left:-30%;transform:translateY(0px)}
+    25%{top:-550%;left:-30%;}
+    50%{top:-550%;left:-30%;transform:translateY(30px)}
+    75%{top:-550%;left:-30%;transform:translateY(0px)}
     100%{top:0;left:0;}
 }
 @keyframes cut{
     0%{top:0;left:0;}
-    25%{top:-250%;left:100%;transform: rotate(-45deg)}
-    50%{transform: rotate(-45deg) translateY(30px);top:-250%;left:60%;}
-    75%{transform: rotate(0deg);translateY(0px);top:-250%;left:100%;}
+    25%{top:-500%;left:100%;transform: rotate(-45deg)}
+    50%{transform: rotate(-45deg) translateY(30px);top:-500%;left:60%;}
+    75%{transform: rotate(0deg);translateY(0px);top:-500%;left:100%;}
     100%{transform: rotate(0deg);top:0;left:0;}
 }
 @keyframes water{
     0%{top:0;left:0;}
-    25%{top:-200%;left:300%;}
-    50%{transform: rotate(-45deg);top:-250%;left:300%;}
-    75%{transform: rotate(0deg);top:-250%;left:300%;}
+    25%{top:-450%;left:300%;}
+    50%{transform: rotate(-45deg);top:-500%;left:300%;}
+    75%{transform: rotate(0deg);top:-500%;left:300%;}
     100%{transform: rotate(0deg);top:0;left:0;}
 }
 @keyframes water2{
@@ -175,7 +149,7 @@ body{width:100%;}
 .planting .planting-item .item img{width:45px;height:40px;}
 @media screen and (min-width:350px) {
     .planting .planting-item .item img{width:55px;height:50px;}
-    .planting {bottom:88px;}
+    .planting {bottom:20px;}
     .planting .planting-item .item .act{width:55px;height:50px;}
 }
 .planting .planting-item .item span {}

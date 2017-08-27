@@ -8,191 +8,66 @@
     <link rel="stylesheet" type="text/css" href="{$static_dir}home/css/reset.css">
     <link rel="stylesheet" type="text/css" href="{$static_dir}home/css/index.css">
     <style type="text/css">
-    body {}
+    body {
+    	background: #fff;
+    }
     </style>
 </head>
 
 <body>
-<div id="bottom">
-	<div class="ranking flex">
-	    <div class="ranking-item active flex-1 self">
-	        个人排名
-	    </div>
-	    <div class="ranking-item flex-1 banzu">
-	        班组排名
-	    </div>
-	    <div class="ranking-item flex-1 area">
-	        地区排名
-	    </div>
-	</div>
-	<div class="rank-box">
-	    <div class="rank-box-item active">
-	        <div class="self-type flex">
-	            <div class="self-type-item active flex-1">司机达人</div>
-	            <div class="self-type-item flex-1">乘客达人</div>
-	            <div class="self-type-item flex-1">植树达人</div>
-	            <div class="self-type-item" style="padding: 0 8px;">红色寻访达人</div>
-	        </div>
-	       <div class="self-type-box active">
-	            {notempty name="me_driver_rank"}
-	            <div class="rank-list flex self">
-	                <div class="rank-num"></div>
-	                <div class="self-icon" mid="{$me_driver_rank.id}"><div class="jingling self1_png"></div></div>
-	                <div class="self-name flex-1">{$me_driver_rank.name}</div>
-	                <div class="self-num">{$me_driver_rank.green_max}</div>
-	            </div>
-	            {/notempty}
-	        </div>
-	        <div class="self-type-box">
-	            {notempty name="me_passenger_rank"}
-	            <div class="rank-list flex self">
-	                <div class="rank-num"></div>
-	                <div class="self-icon" mid="{$me_passenger_rank.id}"><div class="jingling self1_png"></div></div>
-	                <div class="self-name flex-1">{$me_passenger_rank.name}</div>
-	                <div class="self-num">{$me_passenger_rank.green_max}</div>
-	            </div>
-	            {/notempty}
-	        </div>
-	        <div class="self-type-box">
-	            {notempty name="me_trees_rank"}
-	            <div class="rank-list flex self">
-	                <div class="rank-num"></div>
-	                <div class="self-icon" mid="{$me_trees_rank.id}"><div class="jingling self1_png"></div></div>
-	                <div class="self-name flex-1">{$me_trees_rank.name}</div>
-	                <div class="self-num">{$me_trees_rank.green_max}</div>
-	            </div>
-	            {/notempty}
-	        </div>
-	        <div class="self-type-box">
-	            {notempty name="me_vie_rank"}
-	            <div class="rank-list flex self">
-	                <div class="rank-num"></div>
-	                <div class="self-icon" mid="{$me_vie_rank.id}"><div class="jingling self1_png"></div></div>
-	                <div class="self-name flex-1">{$me_vie_rank.name}</div>
-	                <div class="self-num">{$me_vie_rank.green_max}</div>
-	            </div>
-	            {/notempty}
-	        </div>
-	    </div>
-	    <div class="rank-box-item">
-	        <div class="self-type flex">
-	            <div class="self-type-item active flex-1">综合排名</div>
-	            <div class="self-type-item flex-1">绿色出行排名</div>
-	        </div>
-	        <div class="self-type-box active">
-	        </div>
-	        <div class="self-type-box">
-	        </div>
-	    </div>
-	    <div class="rank-box-item">
-	        <div class="self-type flex">
-	            <div class="self-type-item active flex-1">区域</div>
-	            <div class="self-type-item flex-1">产业局</div>
-	        </div>
-	        <div class="self-type-box active">
-	        </div>
-	        <div class="self-type-box"></div>
-	    </div>
-	</div>
-	</div>
-
+<div id="header" style="background: rgb(66,172,250)">
+    <div id="back" >返回</div>
+    植树任务
+</div>
+   <div class="self-type-box active">
+        {notempty name="me_trees_rank"}
+        <div class="rank-list flex self">
+            <div class="rank-num"></div>
+            <div class="self-icon" mid="{$me_trees_rank.user_id}"><div class="jingling self1_png"></div></div>
+            <div class="self-name flex-1">{$me_trees_rank.name}</div>
+            <div class="self-num">{$me_trees_rank.green}</div>
+        </div>
+        {/notempty}
+    </div>
+<script type="text/javascript" src="{$static_dir}home/js/zepto.js"></script>
+<script type="text/javascript" src="{$static_dir}home/js/public.js"></script>
 <script type="text/javascript">
-	 //排名分类
-	var Bottom = {
-	    bottom: $('#bottom'),
-	    low: window.innerHeight - 80,
-	    taps: $('.ranking').find('.ranking-item'),
-	    rankBoxs: $('.rank-box').find('.rank-box-item'),
-	    current: $('.rank-box').find('.rank-box-item').eq(0),
-	    init: function() {
-	        this.bottom.css('bottom', -this.low + 'px');
-	        this.bottom.show();
-	        this.bindEvent();
-	    },
-	    bindEvent: function() {
-	        var that = this;
-	        this.taps.on('click', function() {
-	            var index = $(this).index()
-	            $(this).addClass('active').siblings().removeClass('active');
-	            that.rankBoxs.eq(index).addClass('active').siblings().removeClass('active');
-	            that.current = that.rankBoxs.eq(index);
-	        })
-	    }
-	}
-	Bottom.init();
 
 	var flaginit = true;
 	// 个人排名
 	var Selfrank = {
-	    els: $('.rank-box-item').find('.self-type-item'),
-	    selfs:JSON.parse('{$me_trees_rank|json_encode}'),
-	    person_rank:JSON.parse('{$person_rank|json_encode}'),
-	    driver_rank:JSON.parse('{$driver_rank|json_encode}'),
-	    trees_rank:JSON.parse('{$trees_rank|json_encode}'),
-	    vie_rank:JSON.parse('{$vie_rank|json_encode}'),
-	    class_rank: JSON.parse('{$class_rank|json_encode}'),
-	    green_rank: JSON.parse('{$green_rank|json_encode}'),
-	    area_rank: JSON.parse('{$area_rank|json_encode}'),
-	    industry_rank: JSON.parse('{$industry_rank|json_encode}'),
+	    selfs:JSON.parse('{$trees_rank|json_encode}'),
 	    init: function() {
-	        var box = $('.rank-box-item').find('.self-type-box');
-	        if (JSON.parse('{$me_driver_rank|json_encode}').length != 0) {
-	            var me1 = JSON.parse('{$me_driver_rank|json_encode}');
+	        var box = $('.rank-list');
+	        if (JSON.parse('{$me_trees_rank|json_encode}').length != 0) {
+	            var me1 = JSON.parse('{$me_trees_rank|json_encode}');
 	            me1 = me1.rank;
 	            box.eq(0).find('.rank-num').html(this.switchicon(me1))
 	        }
-	        if(JSON.parse('{$me_passenger_rank.rank|json_encode}').length !=0){
-	            var me2 = JSON.parse('{$me_passenger_rank|json_encode}');
-	            me2 = me2.rank
-	            box.eq(1).find('.rank-num').html(this.switchicon(me2))
-	        }
-	        var me3 = JSON.parse('{$me_trees_rank|json_encode}');
-	        me3 = me3.rank
-	        var me4 = JSON.parse('{$me_vie_rank|json_encode}');
-	        me4 = me4.rank
-	        
-	        box.eq(2).find('.rank-num').html(this.switchicon(me3))
-	        box.eq(3).find('.rank-num').html(this.switchicon(me4))
 	        //渲染排名
-	        this.render(Bottom.rankBoxs.eq(0), 0, this.person_rank, 'true')
-	        this.render(Bottom.rankBoxs.eq(0), 1, this.driver_rank, 'true')
-	        this.render(Bottom.rankBoxs.eq(0), 2, this.trees_rank, 'true')
-	        this.render(Bottom.rankBoxs.eq(0), 3, this.vie_rank, 'true')
-	        this.render(Bottom.rankBoxs.eq(1), 0, this.class_rank)
-	        this.render(Bottom.rankBoxs.eq(1), 1, this.green_rank)
-	        this.render(Bottom.rankBoxs.eq(2), 0, this.area_rank)
-	        this.render(Bottom.rankBoxs.eq(2), 1, this.industry_rank)
-	        this.bindEvent();
+	        this.render(this.selfs)
 	    },
 	    bindEvent: function() {
 	        var that = this;
-	        this.els.click(function(event) {
-	            var index = $(this).index();
-	            $(this).addClass('active').siblings().removeClass('active')
-	            $(this).parents('.rank-box-item').find('.self-type-box').eq(index).addClass('active').siblings().removeClass('active');
-	        });
 	        //排行列表用户点击
-	        $('.rank-box-item').eq(0).on('click', '.self-icon', function() {
+	        $('.self-type-box').on('click', '.self-icon', function() {
 	            var id = $(this).attr('mid');
 	            var token = '{$_TOKEN_|json_encode}';
 	            location.href = "{:url('other/index')}?id="+id+"&token="+token;
 	        })
 	    },
-	    render: function(current, index, data, flag) {
+	    render: function(data) {
 	        var str = ''
 	        for (var i = 0; i < data.length; i++) {
 	            var rank = i + 1
-	            var name = data[i].username ? data[i].username : (data[i].area ? data[i].area : (data[i].company ? data[i].company : data[i].class))
-	            var max = data[i].green_max ? data[i].green_max : data[i].max;
-	            var strli = !flag ? '' : '<div class="self-icon" mid="'+data[i].id+'"><div class="jingling self1_png"></div></div>'
 	            str += '<div class="rank-list flex">' +
 	                '<div class="rank-num">' + this.switchicon(rank) + '</div>' +
-	                strli +
-	                '<div class="self-name flex-1">' + name + '</div>' +
-	                '<div class="self-num">' + max + '</div>' +
+	                '<div class="self-icon" mid="'+data[i].user_id+'"><div class="jingling self1_png"></div></div>' +
+	                '<div class="self-name flex-1">' + data[i].name + '</div>' +
+	                '<div class="self-num">' + data[i].green + '</div>' +
 	                '</div>'
 	        }
-	        current.find('.self-type-box').eq(index).append(str);
+	        $('.self-type-box').append(str);
 	    },
 	    switchicon(d) {
 	        switch (d) {

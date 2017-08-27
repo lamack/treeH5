@@ -234,6 +234,21 @@
     <!-- <script type="text/javascript" src="{$static_dir}home/js/index.js"></script> -->
     <script type="text/javascript">
     $(function() {
+        var adv = JSON.parse('{$tips_adv|json_encode}');
+        var lunboadv = JSON.parse('{$lunbo|json_encode}');
+
+        var lstr = '';
+        if(adv.length!=0||lunboadv.length!=0){
+            for(var i=0;i<adv.length;i++){
+                lstr+=adv[i]+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+            }
+            for(var i=0;i<lunboadv.length;i++){
+                lstr+=lunboadv[i].adv_title+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+            }
+            $('.lunbobox').find('#marq').html(lstr);
+            $('.lunbo').show();
+        }
+        console.log(adv,'44',lunboadv)
         document.addEventListener("touchmove", function (e) {
              $('.bomb').each(function(){
                 if($(this).css('display')=='block'){
@@ -319,6 +334,16 @@
                             if($('.planting').find('.item').eq(3).find('.num').text().substr(1)>0){
                                 Disaster.hudun();
                             }
+                            getData({
+                                url: '/level',
+                                success: function(ref) {
+                                    var data = ref.data;
+                                    console.log(data)
+                                    if(data.list.level!=treeindex){
+                                        Tree.growing(data.list.level,data.list.level++)
+                                    }
+                                }
+                            })
                         }
                     },60000)
                     $('.lunbo').show();
@@ -483,6 +508,7 @@
                                         url: '/level',
                                         success: function(ref) {
                                             var data = ref.data;
+                                            console.log(data)
                                             if (data.status == 'succ') {
                                                 var list = data.list;
                                                 if (list.status == 1) {
