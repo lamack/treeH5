@@ -35,15 +35,19 @@ class Adv extends Admin
         // 分页数据
         $page = $data_list->render();
 
+        // $list_role = Db::name('admin_role')->column('id,name');
 
         // 使用ZBuilder快速创建数据表格
         return ZBuilder::make('table')
             ->setPageTitle('公告管理') // 设置页面标题
             ->setTableName('announcement') // 设置数据表名
+            ->addTimeFilter('create_time') // 添加时间段筛选
+            ->addTopSelect('adv_type', '公告类型', [0 => '游戏介绍', 1 => '游戏公告'])
             ->setSearch([ 'adv_title' => '标题']) // 设置搜索参数
+            ->addFilter('adv_title') // 添加筛选
             ->addColumns([ // 批量添加列
                 ['id', '编号'],
-                ['adv_type', '公告类型'],
+                ['adv_type', '公告类型','','', [0 => '游戏介绍', 1 => '游戏公告']],
                 ['adv_title', '标题'],
                 ['adv_content', '内容'],
                 ['create_time', '创建时间', 'datetime'],
@@ -124,6 +128,7 @@ class Adv extends Admin
         return ZBuilder::make('form')
             ->setPageTitle('编辑') // 设置页面标题
             ->addFormItems([ // 批量添加表单项
+                ['hidden', 'id'],
                 ['select', 'adv_type', '公告类型', '' ,['游戏介绍', '游戏公告']],
                 ['text', 'adv_title', '公告标题'],
                 ['radio', 'adv_status', '状态', '', ['停用', '启用'], 1]

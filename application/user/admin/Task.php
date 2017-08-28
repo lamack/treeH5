@@ -39,13 +39,14 @@ class Task extends Admin
         $btn_1 = [
             'title' => '数据导入',
             'icon'  => 'fa fa-fw fa-cloud-download',
-            'href'  => url('edit', ['id' => '__id__'])
+            'href'  => url('import')
         ];
 
         // 使用ZBuilder快速创建数据表格
         return ZBuilder::make('table')
             ->setPageTitle('任务管理') // 设置页面标题
             ->setTableName('task') // 设置数据表名
+            ->hideCheckbox()
             ->addColumns([ // 批量添加列
                 ['id', '编号'],
                 ['task_name', '任务名称'],
@@ -128,6 +129,7 @@ class Task extends Admin
         return ZBuilder::make('form')
             ->setPageTitle('编辑') // 设置页面标题
             ->addFormItems([ // 批量添加表单项
+                ['hidden', 'id'],
                 ['text', 'task_name', '任务名'],
                 ['text', 'task_introduce', '奖品说明']
             ])
@@ -164,4 +166,37 @@ class Task extends Admin
         return parent::setStatus($type, ['task_'.$type, 'task', 0, UID, implode('、', $type_name)]);
     }
 
+    public function import(){
+        // 提交数据
+        if ($this->request->isPost()) {
+            // 接收附件 ID
+            $excel_file = $this->request->post('excel');
+            // 获取附件 ID 完整路径
+            $full_path = getcwd() . get_file_path($excel_file);
+            // 只导入的字段列表
+            $fields = [
+                'name' => '姓名',
+                'last_login_time' => '最后登录时间',
+                'last_login_ip' => '最后登陆IP'
+            ];
+            // 调用插件('插件',[路径,导入表名,字段限制,类型,条件,重复数据检测字段])
+            $import = plugin_action('Excel/Excel/import', [$full_path, 'vip_test', $fields, $type = 0, $where = null, $main_field = 'name']);
+            
+            // 失败或无数据导入
+            if ($import['error']){
+                $this->error($import['message']);
+            }
+
+            // 导入成功
+            $this->success($import['message']);
+        }
+
+        // 创建演示用表单
+        return ZBuilder::make('form')
+            ->setPageTitle('导入Excel')
+            ->addFormItems([ // 添加上传 Excel
+                ['file', 'excel', '上传文件'],
+            ])
+            ->fetch();
+    }
 }

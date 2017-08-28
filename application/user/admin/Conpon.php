@@ -6,6 +6,7 @@ namespace app\user\admin;
 use app\admin\controller\Admin;
 use app\common\builder\ZBuilder;
 use app\user\model\Conpon as ConponModel;
+use app\user\model\Conpontepy as ConpontepyModel;
 use app\user\model\Role as RoleModel;
 use app\admin\model\Module as ModuleModel;
 use app\admin\model\Access as AccessModel;
@@ -41,17 +42,20 @@ class Conpon extends Admin
                 'class' => 'btn btn-primary ajax-post',
                 'href'  => url('import')
             ];
+
+        $list_module = ConpontepyModel::where(1)->order('id desc')->column('id,conpon_name');
         // 使用ZBuilder快速创建数据表格
         return ZBuilder::make('table')
             ->setPageTitle('优惠券列表') // 设置页面标题
             ->setTableName('Conpon') // 设置数据表名
+            ->hideCheckbox()
             ->addColumns([ // 批量添加列
-                ['conpon_type', '类型'],
+                ['conpon_type', '类型','','',$list_module],
                 ['conpon_no', '券号'],
                 ['conpon_password', '密码'],
-                ['conpon_status', '状态'],
+                ['conpon_status', '状态','','',[0 => '未分配', 1 => '分配']],
             ])
-            ->addTopButton('custom', $btn_1) // 批量添加顶部按钮
+            // ->addTopButton('custom', $btn_1) // 批量添加顶部按钮
             ->setRowList($data_list) // 设置表格数据
             ->setPages($page) // 设置分页数据
             ->fetch(); // 渲染页面

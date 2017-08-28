@@ -34,12 +34,12 @@ class Prop extends Admin
 
         // 分页数据
         $page = $data_list->render();
-        $btn_1 = [
-                'title' => '设置',
-                'icon'  => 'fa fa-fw fa-copy',
-                'class' => 'btn btn-primary ',
-                'href'  => url('setting', ['group' => '1'])
-            ];
+        // $btn_1 = [
+        //         'title' => '设置',
+        //         'icon'  => 'fa fa-fw fa-copy',
+        //         'class' => 'btn btn-primary ',
+        //         'href'  => url('setting', ['group' => '1'])
+        //     ];
         $btn_2 = [
                 'title' => '编辑',
                 'icon'  => 'fa fa-fw fa-copy',
@@ -50,6 +50,7 @@ class Prop extends Admin
         return ZBuilder::make('table')
             ->setPageTitle('道具管理') // 设置页面标题
             ->setTableName('prop') // 设置数据表名
+            ->hideCheckbox()
             ->addColumns([ // 批量添加列
                 ['id', '编号'],
                 ['prop_name', '名称'],
@@ -57,7 +58,7 @@ class Prop extends Admin
                 ['cash', '售价'],
                 ['right_button', '操作', 'btn']
             ])
-            ->addTopButton('custom', $btn_1) // 批量添加顶部按钮
+            // ->addTopButton('custom', $btn_1) // 批量添加顶部按钮
             ->addRightButton('custom', $btn_2) // 添加授权按钮
             ->setRowList($data_list) // 设置表格数据
             ->setPages($page) // 设置分页数据

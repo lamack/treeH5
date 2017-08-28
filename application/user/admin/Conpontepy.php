@@ -37,7 +37,7 @@ class Conpontepy extends Admin
                 'title' => '导入',
                 'icon'  => 'fa fa-fw fa-copy',
                 // 'class' => 'ajax-post',
-                'href'  => url('import')
+                'href'  => url('import', ['id' => '__id__'])
             ];
         
         // 使用ZBuilder快速创建数据表格

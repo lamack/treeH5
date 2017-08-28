@@ -56,11 +56,12 @@ class Develop extends Admin
         return ZBuilder::make('form')
             ->setPageTitle('养成设置') // 设置页面标题
             ->addText('cash_trees', '', '', '', ['每棵树苗兑换需要', '点绿值'])
-            ->addText('lives_tree', '', '', '', ['树苗长成果实树需要', '点生命值'])
-            ->addText('develop_day', '', '', '', ['每天自然生长增加', '点生命值'])
-            ->addText('lives_drought', '', '', '', ['发生干旱时，没有保护罩道具减掉', '点生命值'])
-            ->addText('lives_flood', '', '', '', ['发生洪水时，没有保护罩道具减掉', '点生命值'])
-            ->addText('lives_typhoon', '', '', '', ['发生台风时，没有保护罩道具减掉', '点生命值'])
+            ->addText('cash_share', '', '', '', ['每一成长币兑换需要', '正确答题数'])
+            // ->addText('lives_tree', '', '', '', ['树苗长成果实树需要', '点生命值'])
+            // ->addText('develop_day', '', '', '', ['每天自然生长增加', '点生命值'])
+            // ->addText('lives_drought', '', '', '', ['发生干旱时，没有保护罩道具减掉', '点生命值'])
+            // ->addText('lives_flood', '', '', '', ['发生洪水时，没有保护罩道具减掉', '点生命值'])
+            // ->addText('lives_typhoon', '', '', '', ['发生台风时，没有保护罩道具减掉', '点生命值'])
             ->setFormData($info) // 设置表单数据
             ->fetch();
     }

@@ -50,7 +50,9 @@ class Member extends Admin
         $btn_3 = [
             'title' => '同步',
             'icon'  => 'fa fa-fw fa-copy',
-            'class' => 'btn btn-primary ajax-post',
+            'class' => 'btn btn-primary ajax-get confirm',
+            'data-title' => '确定同步会员数据吗？',
+            'data-tips' => '同步数据量非常大，确认在网络不拥挤下执行操作',
             'href'  => url('synchro')
         ];
 
@@ -59,6 +61,10 @@ class Member extends Admin
             ->setPageTitle('会员管理') // 设置页面标题
             ->setTableName('member') // 设置数据表名
             ->setSearch(['username' => '用户名', 'contact' => '手机号']) // 设置搜索参数
+            ->addFilter('area') // 添加筛选
+            ->addFilter('company') // 添加筛选
+            ->addFilter('class') // 添加筛选
+            ->hideCheckbox()
             ->addColumns([ // 批量添加列
                 ['id', 'ID'],
                 ['username', '用户名'],
@@ -185,6 +191,6 @@ class Member extends Admin
     }
 
     public function synchro(){
-        exit('synchro');
+        echo 'hre';exit;
     }
 }

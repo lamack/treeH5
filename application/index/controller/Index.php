@@ -24,6 +24,7 @@ class Index extends Home
             $data = ['msg'=>'用户sign丢失','status'=>'error'];
             return json($data);
         }
+        
         //获取用户信息
         $info = db('member')->where('sign',$params['uid'])->find();
         if (!$info) {

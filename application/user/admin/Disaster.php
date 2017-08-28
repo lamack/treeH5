@@ -46,9 +46,10 @@ class Disaster extends Admin
         return ZBuilder::make('table')
             ->setPageTitle('灾害管理') // 设置页面标题
             ->setTableName('disaster') // 设置数据表名
+            ->hideCheckbox()
             ->addColumns([ // 批量添加列
                 ['id', '序列'],
-                ['disaster_type', '灾害类型','',['台风', '洪水', '干旱']],
+                ['disaster_type', '灾害类型','','',[0=>'台风', 1=>'洪水', 2=>'干旱']],
                 ['start_time', '灾害触发时间','date'],
                 ['push_flish_time', '公告发布时间','date'],
                 ['status', '状态'],
