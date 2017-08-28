@@ -224,7 +224,7 @@
         <div class="lunbo">
             <div class="lunbobg"></div>
             <div class="lunbobox">
-                <marquee id="marq" width=100%  direction=left align=middle></marquee>
+                <div class="xx"><div class="x"><div class="x-move"><span id="marq"> </span></div></div></div>
             </div>
         </div>
     </div>
@@ -246,7 +246,11 @@
                 lstr+=lunboadv[i].adv_title+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
             }
             $('.lunbobox').find('#marq').html(lstr);
-            $('.lunbo').show();
+            $('#marq').ready(function(){
+                 $('.lunbo').show();
+                 var w= document.querySelector('#marq').offsetWidth;
+                 document.querySelector('.x').style.width = w+'px'
+            })
         }
         console.log(adv,'44',lunboadv)
         document.addEventListener("touchmove", function (e) {
@@ -326,7 +330,7 @@
                         var timen = new Date().getTime();
                         var dif2 = parseInt((starTime-parseInt(timen/1000))/60);
                         if(dif2>0){
-                            that.lunbo.find('#marq').text(dif2+str); 
+                            that.lunbo.find('#marq').text(dif2+str);
                         }else{
                             clearInterval(timer);
                             $('.lunbo').hide();
@@ -346,7 +350,11 @@
                             })
                         }
                     },60000)
-                    $('.lunbo').show();
+                    $('#marq').ready(function(){
+                         $('.lunbo').show();
+                         var w= document.querySelector('#marq').offsetWidth;
+                         document.querySelector('.x').style.width = w+'px'
+                    })
                     // this.init();
                 }
             },

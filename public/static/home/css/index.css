@@ -44,6 +44,30 @@ body{width:100%;}
     overflow: hidden;
     top:80px;left:10px;
 }
+.xx{
+  width:100%;
+  height:30px;
+  line-height: 30px;
+  overflow: hidden;
+}
+.x{
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+.x .x-move{
+  left:255px;
+  position: absolute;
+  width:100%;
+  height:100%;
+  line-height: 30px;
+    white-space: nowrap;
+  animation: xmove 8s linear infinite;
+}
+@keyframes xmove{
+  0%{left:255px;}
+  100%{left:-100%;}
+}
  .self-type-box {padding:0 10px;}
  .self-type-box .rank-list{height:30px;border-bottom: 1px dashed #37ae15;line-height: 30px;}
  .self-type-box .rank-list.self{color:#ff8400;}
