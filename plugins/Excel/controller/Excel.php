@@ -114,7 +114,7 @@ class Excel extends Common
      * @alter 蔡伟明 <314013107@qq.com>
      * @return array
      */
-    public function import($file, $table = null, $fields = null, $type = 0, $where = null, $main_field = null)
+    public function import($file, $table = null, $fields = null, $type = 0, $where = null, $main_field = null, $extra = null)
     {
         if(!file_exists($file)){
             return ["error" => 1, 'message' => '文件未找到!']; //file not found!
@@ -224,7 +224,11 @@ class Excel extends Common
         }
 
         //查询已经存在的数据，用于判断导入模式做对比
-        $exists_list = Db::name($table)->where($where)->group($main_field)->column($main_field);
+        $exists_list = [];
+        if ($main_field!='_skip') {
+            $exists_list = Db::name($table)->where($where)->group($main_field)->column($main_field);
+        }
+        
 
         //整理数据
         // $fields    = array_flip($fields); //反转键值
@@ -253,26 +257,42 @@ class Excel extends Common
                     foreach ($col as $index => $val) { //循环每一个单元格
                         if (isset($firstRow[$index])) {
                             $data[$firstRow[$index]] = trim($val);
+                            //额外处理参数
+                            if ($extra) {
+                                if (isset($extra[$firstRow[$index]])) {
+                                    $data[$firstRow[$index]] = $extra[$firstRow[$index]];
+                                }
+                                
+                            }
+                            
                         }
                     }
-
+                    // return ["error" => 8, 'message' => json_encode($data)];
+                    
                     // 判断导入模式
-                    if ($type == 0) {//增量导入
-                        if (in_array($data[$main_field], $exists_list)) {
-                            $dataSkip['list'][] = $data[$main_field]; //记录跳过的数据
-                            continue;//跳过已存在的考生
-                        } else {
-                            $dataAdd['list'][] = $data[$main_field]; //记录新增的数据
-                        }
-                    } else {//覆盖导入
-                        if (in_array($data[$main_field], $exists_list)) {
-                            $dataCover['list'][] = $data[$main_field]; //记录覆盖的数据
-                            $map[$main_field]    = $data[$main_field];
-                            Db::name($table)->where($where)->where($map)->delete();//删除已存在的数据
-                        } else {
-                            $dataAdd['list'][] = $data[$main_field]; //记录新增的数据
+                    if ($main_field=='_skip') {
+                        $dataAdd['list'] = $data; //记录新增的数据
+                        $dataSkip['list'] = [];
+                        $dataCover['list'] = [];
+                    }else{
+                        if ($type == 0) {//增量导入
+                            if (in_array($data[$main_field], $exists_list)) {
+                                $dataSkip['list'][] = $data[$main_field]; //记录跳过的数据
+                                continue;//跳过已存在的考生
+                            } else {
+                                $dataAdd['list'][] = $data[$main_field]; //记录新增的数据
+                            }
+                        } else {//覆盖导入
+                            if (in_array($data[$main_field], $exists_list)) {
+                                $dataCover['list'][] = $data[$main_field]; //记录覆盖的数据
+                                $map[$main_field]    = $data[$main_field];
+                                Db::name($table)->where($where)->where($map)->delete();//删除已存在的数据
+                            } else {
+                                $dataAdd['list'][] = $data[$main_field]; //记录新增的数据
+                            }
                         }
                     }
+                    
 
                     $data_list[] = $data;
                 }

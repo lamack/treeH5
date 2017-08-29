@@ -164,7 +164,8 @@ class Conpontepy extends Admin
         return parent::setStatus($type, ['conpon_type_'.$type, 'conpon_type', 0, UID, implode('、', $type_name)]);
     }
 
-    public function import(){
+    public function import($id = null){
+        if ($id === null) $this->error('缺少参数');
         // 提交数据
         if ($this->request->isPost()) {
             // 接收附件 ID
@@ -173,12 +174,15 @@ class Conpontepy extends Admin
             $full_path = getcwd() . get_file_path($excel_file);
             // 只导入的字段列表
             $fields = [
-                'name' => '姓名',
-                'last_login_time' => '最后登录时间',
-                'last_login_ip' => '最后登陆IP'
+                'conpon_no' => '代号',
+                'conpon_password' => '密码',
+                'conpon_type' => '优惠券类型'
+            ];
+            $extra = [
+                'conpon_type' => $id
             ];
             // 调用插件('插件',[路径,导入表名,字段限制,类型,条件,重复数据检测字段])
-            $import = plugin_action('Excel/Excel/import', [$full_path, 'vip_test', $fields, $type = 0, $where = null, $main_field = 'name']);
+            $import = plugin_action('Excel/Excel/import', [$full_path, 'conpon', $fields, $type = 0, $where = null, $main_field = 'conpon_no', $extra]);
             
             // 失败或无数据导入
             if ($import['error']){
@@ -189,9 +193,11 @@ class Conpontepy extends Admin
             $this->success($import['message']);
         }
 
+        $excel_url = '/data/conpon.xlsx';
         // 创建演示用表单
         return ZBuilder::make('form')
             ->setPageTitle('导入Excel')
+            ->setPageTips('<a href="'.$excel_url.'">点击下载示例excel</a>', 'danger')
             ->addFormItems([ // 添加上传 Excel
                 ['file', 'excel', '上传文件'],
             ])

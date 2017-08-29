@@ -39,7 +39,7 @@ class Task extends Admin
         $btn_1 = [
             'title' => '数据导入',
             'icon'  => 'fa fa-fw fa-cloud-download',
-            'href'  => url('import')
+            'href'  => url('import', ['id' => '__id__'])
         ];
 
         // 使用ZBuilder快速创建数据表格
@@ -166,7 +166,8 @@ class Task extends Admin
         return parent::setStatus($type, ['task_'.$type, 'task', 0, UID, implode('、', $type_name)]);
     }
 
-    public function import(){
+    public function import($id = null){
+        if ($id === null) $this->error('缺少参数');
         // 提交数据
         if ($this->request->isPost()) {
             // 接收附件 ID
@@ -175,12 +176,15 @@ class Task extends Admin
             $full_path = getcwd() . get_file_path($excel_file);
             // 只导入的字段列表
             $fields = [
-                'name' => '姓名',
-                'last_login_time' => '最后登录时间',
-                'last_login_ip' => '最后登陆IP'
+                'mobile' => '用户手机号',
+                'task_id' => '任务id',
+                'green' => '奖励的绿植数量'
+            ];
+            $extra = [
+                'task_id' => $id
             ];
             // 调用插件('插件',[路径,导入表名,字段限制,类型,条件,重复数据检测字段])
-            $import = plugin_action('Excel/Excel/import', [$full_path, 'vip_test', $fields, $type = 0, $where = null, $main_field = 'name']);
+            $import = plugin_action('Excel/Excel/import', [$full_path, 'task_recode', $fields, $type = 0, $where = null, $main_field = '_skip', $extra]);
             
             // 失败或无数据导入
             if ($import['error']){
@@ -190,10 +194,11 @@ class Task extends Admin
             // 导入成功
             $this->success($import['message']);
         }
-
+        $excel_url = '/data/task.xlsx';
         // 创建演示用表单
         return ZBuilder::make('form')
             ->setPageTitle('导入Excel')
+            ->setPageTips('<a href="'.$excel_url.'">点击下载示例excel</a>', 'danger')
             ->addFormItems([ // 添加上传 Excel
                 ['file', 'excel', '上传文件'],
             ])
