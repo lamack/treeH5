@@ -46,12 +46,14 @@ class Task extends Admin
         return ZBuilder::make('table')
             ->setPageTitle('任务管理') // 设置页面标题
             ->setTableName('task') // 设置数据表名
+            ->setPageTips('登录任务只有一个，设置后请不要修改。登录任务不需要导入数据', 'danger')
             ->hideCheckbox()
             ->addColumns([ // 批量添加列
                 ['id', '编号'],
                 ['task_name', '任务名称'],
                 ['task_describe', '任务描述'],
                 ['create_time', '创建时间', 'datetime'],
+                ['type', '是否为登录任务', 'switch'],
                 ['right_button', '操作', 'btn']
             ])
             ->addTopButtons('add') // 批量添加顶部按钮
@@ -90,7 +92,8 @@ class Task extends Admin
             ->addFormItems([ // 批量添加表单项
                 ['hidden', 'id'],
                 ['text', 'task_name', '任务名'],
-                ['text', 'task_introduce', '奖品说明']
+                ['text', 'task_introduce', '奖品说明'],
+                ['radio', 'type', '是否为登录任务', '', ['否', '是'], 0]
             ])
             ->addUeditor('task_describe', '任务描述')
             ->fetch();
@@ -131,7 +134,8 @@ class Task extends Admin
             ->addFormItems([ // 批量添加表单项
                 ['hidden', 'id'],
                 ['text', 'task_name', '任务名'],
-                ['text', 'task_introduce', '奖品说明']
+                ['text', 'task_introduce', '奖品说明'],
+                ['radio', 'type', '是否为登录任务', '', ['否', '是'], 0]
             ])
             ->addUeditor('task_describe', '任务描述')
             ->setFormData($info) // 设置表单数据
@@ -178,7 +182,8 @@ class Task extends Admin
             $fields = [
                 'mobile' => '用户手机号',
                 'task_id' => '任务id',
-                'green' => '奖励的绿植数量'
+                'green' => '奖励的绿植数量',
+                'coupon_no' => '优惠券码'
             ];
             $extra = [
                 'task_id' => $id
