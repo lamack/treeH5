@@ -12,7 +12,6 @@ use app\admin\model\Module as ModuleModel;
 use app\admin\model\Access as AccessModel;
 use util\Tree;
 use think\Db;
-
 /**
  * 会员默认控制器
  * @package app\user\admin
@@ -191,6 +190,20 @@ class Member extends Admin
     }
 
     public function synchro(){
-        echo 'hre';exit;
+        //获得今天新增会员 
+        $db = Db::connect('mysql://root:Innketek201306@139.196.20.81:3306/dolphin#utf8');
+        $res = $db->name('game_user_info')->whereTime('create_time','today')->select();
+        //同步今天会员
+        if ($res) {
+             Db::connect('mysql://root:@127.0.0.1:3306/dolphin#utf8')->name('game_user_info')->insertAll($res,true);
+        }
+        
+        //更新会员表字段
+        $sql = 'replace into game_member (username,company,class,contact,sign,class_no,company_no,industry,industry_no) 
+SELECT user_name,company,team_name,phone,uid,team_code,company,county,county FROM game_user_info a 
+where not exists(select * from game_member where contact = a.phone ) AND TO_DAYS(a.create_time) = TO_DAYS(NOW())';
+       $is = Db::connect('mysql://root:@127.0.0.1:3306/dolphin#utf8')->name("member")->execute($sql);
+       $this->success('同步成功');
+
     }
 }

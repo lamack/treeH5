@@ -19,9 +19,20 @@ class Index extends Home
         //获得当前登录用户
         $request = Request::instance();
         $params = $request->param();
-        if (!$params||!$params['uid']) {
+
+            $advmap['adv_status'] = 1;
+            $advmap['adv_type'] = 1;
+            $adv = db('announcement')->where($advmap)->find();
+            if ($adv) {
+                $adv['type'] = '游戏介绍';
+            }
+            $this->assign('adv', $adv);
+
+        if (!$params||!isset($params['uid'])) {
             session('_MEMBER',null);//每次启动游戏检测用户标识 不存在去本地session
             $data = ['msg'=>'用户sign丢失','status'=>'error'];
+
+            return $this->fetch('error'); // 渲染模板
             return json($data);
         }
         
@@ -29,6 +40,7 @@ class Index extends Home
         $info = db('member')->where('sign',$params['uid'])->find();
         if (!$info) {
             session('_MEMBER',null);//
+            return $this->fetch('error'); // 渲染模板
             $data = ['msg'=>'用户不存在','status'=>'error'];
             return json($data);
         }
