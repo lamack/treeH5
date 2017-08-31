@@ -22,7 +22,7 @@ class Adv extends Home
         $adv = [];
         $in = [];
         foreach ($info as $key => $value) {
-            if ($value['adv_type']=='0') {
+            if ($value['adv_type']=='1') {
                 array_push($adv, $value);
             }else{
                 array_push($in, $value);
