@@ -34,7 +34,7 @@ class Ranklist extends Common
         $request = Request::instance();
         $params = $request->param();
             $advmap['adv_status'] = 1;
-            $advmap['adv_type'] = 1;
+            $advmap['adv_type'] = 0;
             $adv = db('announcement')->where($advmap)->find();
             if ($adv) {
                 $adv['type'] = '游戏介绍';
