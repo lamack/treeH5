@@ -51,10 +51,11 @@
     <script type="text/javascript">
     $(function() {
         // tab-item选中效果
-        $('.tab-item').click(function() {
-            $(this).addClass('active').siblings().removeClass('active');
-            var index = $(this).index();
-            $('.tab-box').eq(index).addClass('active').siblings().removeClass('active');
+        $('.back-btn-wrap').click(function() {
+            // $(this).addClass('active').siblings().removeClass('active');
+            // var index = $(this).index();
+            // $('.tab-box').eq(index).addClass('active').siblings().removeClass('active');
+            windows.location.href = 'http://activity.cluster.shengongshe.org/bzds2/index.php?s=/addon/ActivityTeam/Wap/home/publicid/2/open_type/app.html';
         })
         
     })
