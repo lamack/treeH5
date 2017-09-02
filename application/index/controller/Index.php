@@ -29,6 +29,7 @@ class Index extends Home
             $this->assign('adv', $adv);
 
         if (!$params||!isset($params['uid'])) {
+            
             session('_MEMBER',null);//每次启动游戏检测用户标识 不存在去本地session
             $data = ['msg'=>'用户sign丢失','status'=>'error'];
 
@@ -40,6 +41,16 @@ class Index extends Home
         $info = db('member')->where('sign',$params['uid'])->find();
         if (!$info) {
             session('_MEMBER',null);//
+            //获得中间库用户信息
+            $db = Db::connect('mysql://root:Innketek201306@139.196.20.81:3306/dolphin#utf8');
+            $res = $db->name('game_user_info')->where('uid',$params['uid'])->find();
+
+            if ($res) {
+                $data['username'] = $res['user_name'];
+                $data['sign'] = $res['uid'];
+                db('member')->insert($data);
+                $this ->redirect('index/launch',array('uid' => $params['uid'],'sign' => $params['sign']),1, '会员同步登录中...');
+            }
             return $this->fetch('error'); // 渲染模板
             $data = ['msg'=>'用户不存在','status'=>'error'];
             return json($data);
