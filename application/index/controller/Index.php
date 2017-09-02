@@ -42,7 +42,8 @@ class Index extends Home
         if (!$info) {
             session('_MEMBER',null);//
             //获得中间库用户信息
-            $db = Db::connect('mysql://root:Innketek201306@139.196.20.81:3306/dolphin#utf8');
+            $db = Db::connect('mysql://root:Tripshare2017@rm-bp1c7jlz0045ph079o.mysql.rds.aliyuncs.com:3366/sgs_bzds#utf8');//正式
+            // $db = Db::connect('mysql://root:Innketek201306@139.196.20.81:3306/dolphin#utf8');
             $res = $db->name('game_user_info')->where('uid',$params['uid'])->find();
 
             if ($res) {
@@ -129,7 +130,7 @@ class Index extends Home
 
         //lunbo
         $lunboMap['adv_status'] = '1';
-        $lunbo = db('announcement')->where($lunboMap)->select();
+        $lunbo = db('announcement')->field('id,adv_type,adv_title,adv_status,create_time')->where($lunboMap)->select();
         $this->assign('lunbo', $lunbo);
         
         //互动提示
