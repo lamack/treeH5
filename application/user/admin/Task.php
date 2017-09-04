@@ -41,19 +41,20 @@ class Task extends Admin
             'icon'  => 'fa fa-fw fa-cloud-download',
             'href'  => url('import', ['id' => '__id__'])
         ];
-
+        $typelist = array('普通任务','登录任务','绑定“申工社”APP','绑定“88共享”出行APP','“88共享出行”APP支付渠道');
         // 使用ZBuilder快速创建数据表格
         return ZBuilder::make('table')
             ->setPageTitle('任务管理') // 设置页面标题
             ->setTableName('task') // 设置数据表名
-            ->setPageTips('登录任务只有一个，设置后请不要修改。登录任务不需要导入数据', 'danger')
+            ->setPageTips('普通任务有多个，其他类型任务只能有一个，设置后请不要修改', 'danger')
             ->hideCheckbox()
             ->addColumns([ // 批量添加列
                 ['id', '编号'],
                 ['task_name', '任务名称'],
                 ['task_describe', '任务描述'],
                 ['create_time', '创建时间', 'datetime'],
-                ['type', '是否为登录任务', 'switch'],
+                ['type', '类型', 'select', $typelist],
+                // ['type', '是否为登录任务', 'switch'],
                 ['right_button', '操作', 'btn']
             ])
             ->addTopButtons('add') // 批量添加顶部按钮
@@ -85,15 +86,15 @@ class Task extends Admin
                 $this->error('新增失败');
             }
         }
-
+$typelist = array('普通任务','登录任务','绑定“申工社”APP','绑定“88共享”出行APP','“88共享出行”APP支付渠道');
         // 使用ZBuilder快速创建表单
         return ZBuilder::make('form')
             ->setPageTitle('新增') // 设置页面标题
+            ->addSelect('type', '类型', '', $typelist)
             ->addFormItems([ // 批量添加表单项
                 ['hidden', 'id'],
                 ['text', 'task_name', '任务名'],
-                ['text', 'task_introduce', '奖品说明'],
-                ['radio', 'type', '是否为登录任务', '', ['否', '是'], 0]
+                ['text', 'task_introduce', '奖品说明']
             ])
             ->addUeditor('task_describe', '任务描述')
             ->fetch();
@@ -127,15 +128,16 @@ class Task extends Admin
 
         // 获取数据
         $info = TaskModel::where('id', $id)->find();
-
+$typelist = array('普通任务','登录任务','绑定“申工社”APP','绑定“88共享”出行APP','“88共享出行”APP支付渠道');
         // 使用ZBuilder快速创建表单
         return ZBuilder::make('form')
             ->setPageTitle('编辑') // 设置页面标题
+            ->addSelect('type', '类型', '', $typelist)
             ->addFormItems([ // 批量添加表单项
                 ['hidden', 'id'],
                 ['text', 'task_name', '任务名'],
                 ['text', 'task_introduce', '奖品说明'],
-                ['radio', 'type', '是否为登录任务', '', ['否', '是'], 0]
+                // ['radio', 'type', '是否为登录任务', '', ['否', '是'], 0]
             ])
             ->addUeditor('task_describe', '任务描述')
             ->setFormData($info) // 设置表单数据

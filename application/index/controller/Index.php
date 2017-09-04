@@ -44,7 +44,8 @@ class Index extends Home
             //获得中间库用户信息
             $db = Db::connect('mysql://root:Tripshare2017@rm-bp1c7jlz0045ph079o.mysql.rds.aliyuncs.com:3366/sgs_bzds#utf8');//正式
             // $db = Db::connect('mysql://root:Innketek201306@139.196.20.81:3306/dolphin#utf8');
-            $res = $db->name('game_user_info')->where('uid',$params['uid'])->find();
+            //$res = $db->name('game_user_info')->where('uid',$params['uid'])->find();
+            $res = $db->name('user_info')->where('uid',$params['uid'])->find();
 
             if ($res) {
                 $data['username'] = $res['user_name'];
@@ -513,6 +514,11 @@ class Index extends Home
                 
                 $res = db('member')->where('id',$member['id'])->update($save);
                 if ($res) {
+                    $s['user_id'] = $member['id'];
+                    $s['green'] = $delvop['cash_trees'];
+                    $s['create_time'] = time();
+                    $s['type'] = 1;
+                    db('green_record')->insert($s)
                     $info = db('member')->where('id',$member['id'])->find();
                     session('_MEMBER',$info);
                 }
