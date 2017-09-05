@@ -17,61 +17,61 @@ class Index extends Home
     public function launch()
     {
         //获得当前登录用户
-        $request = Request::instance();
-        $params = $request->param();
+        // $request = Request::instance();
+        // $params = $request->param();
 
-            $advmap['adv_status'] = 1;
-            $advmap['adv_type'] = 0;
-            $adv = db('announcement')->where($advmap)->find();
-            if ($adv) {
-                $adv['type'] = '游戏介绍';
-            }
-            $this->assign('adv', $adv);
+        //     $advmap['adv_status'] = 1;
+        //     $advmap['adv_type'] = 0;
+        //     $adv = db('announcement')->where($advmap)->find();
+        //     if ($adv) {
+        //         $adv['type'] = '游戏介绍';
+        //     }
+        //     $this->assign('adv', $adv);
 
-        if (!$params||!isset($params['uid'])) {
+        // if (!$params||!isset($params['uid'])) {
             
-            session('_MEMBER',null);//每次启动游戏检测用户标识 不存在去本地session
-            $data = ['msg'=>'用户sign丢失','status'=>'error'];
+        //     session('_MEMBER',null);//每次启动游戏检测用户标识 不存在去本地session
+        //     $data = ['msg'=>'用户sign丢失','status'=>'error'];
 
-            return $this->fetch('error'); // 渲染模板
-            return json($data);
-        }
+        //     return $this->fetch('error'); // 渲染模板
+        //     return json($data);
+        // }
         
-        //获取用户信息
-        $info = db('member')->where('sign',$params['uid'])->find();
-        if (!$info) {
-            session('_MEMBER',null);//
-            //获得中间库用户信息
-            $db = Db::connect('mysql://root:Tripshare2017@rm-bp1c7jlz0045ph079o.mysql.rds.aliyuncs.com:3366/sgs_bzds#utf8');//正式
-            // $db = Db::connect('mysql://root:Innketek201306@139.196.20.81:3306/dolphin#utf8');
-            //$res = $db->name('game_user_info')->where('uid',$params['uid'])->find();
-            $res = $db->name('user_info')->where('uid',$params['uid'])->find();
+        // //获取用户信息
+        // $info = db('member')->where('sign',$params['uid'])->find();
+        // if (!$info) {
+        //     session('_MEMBER',null);//
+        //     //获得中间库用户信息
+        //     $db = Db::connect('mysql://root:Tripshare2017@rm-bp1c7jlz0045ph079o.mysql.rds.aliyuncs.com:3366/sgs_bzds#utf8');//正式
+        //     // $db = Db::connect('mysql://root:Innketek201306@139.196.20.81:3306/dolphin#utf8');
+        //     //$res = $db->name('game_user_info')->where('uid',$params['uid'])->find();
+        //     $res = $db->name('user_info')->where('uid',$params['uid'])->find();
 
-            if ($res) {
-                $data['username'] = $res['user_name'];
-                $data['sign'] = $res['uid'];
-                db('member')->insert($data);
-                $this ->redirect('index/launch',array('uid' => $params['uid'],'sign' => $params['sign']),1, '会员同步登录中...');
-            }
-            return $this->fetch('error'); // 渲染模板
-            $data = ['msg'=>'用户不存在','status'=>'error'];
-            return json($data);
-        }
-        $info['sign'] = $params['sign'];
-        session('_MEMBER',$info);
+        //     if ($res) {
+        //         $data['username'] = $res['user_name'];
+        //         $data['sign'] = $res['uid'];
+        //         db('member')->insert($data);
+        //         $this ->redirect('index/launch',array('uid' => $params['uid'],'sign' => $params['sign']),1, '会员同步登录中...');
+        //     }
+        //     return $this->fetch('error'); // 渲染模板
+        //     $data = ['msg'=>'用户不存在','status'=>'error'];
+        //     return json($data);
+        // }
+        // $info['sign'] = $params['sign'];
+        // session('_MEMBER',$info);
 
-        //页面添加token
-        if (session('_MEMBER')) {
-            $this->assign('_TOKEN_', encrypt($info['id']));
-        }
+        // //页面添加token
+        // if (session('_MEMBER')) {
+        //     $this->assign('_TOKEN_', encrypt($info['id']));
+        // }
 
-        //初始化一棵树苗
-        $tree = db('trees')->where('user_id',$info['id'])->find();
-        if (!$tree) {
-            $data['user_id'] = $info['id'];
-            $data['create_time'] = time();
-            db('trees')->insert($data);
-        }
+        // //初始化一棵树苗
+        // $tree = db('trees')->where('user_id',$info['id'])->find();
+        // if (!$tree) {
+        //     $data['user_id'] = $info['id'];
+        //     $data['create_time'] = time();
+        //     db('trees')->insert($data);
+        // }
         // $this->redirect('index/index');
 
         return $this->fetch(); // 渲染模板
@@ -518,7 +518,7 @@ class Index extends Home
                     $s['green'] = $delvop['cash_trees'];
                     $s['create_time'] = time();
                     $s['type'] = 1;
-                    db('green_record')->insert($s)
+                    db('green_record')->insert($s);
                     $info = db('member')->where('id',$member['id'])->find();
                     session('_MEMBER',$info);
                 }

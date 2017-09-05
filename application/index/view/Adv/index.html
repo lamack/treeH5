@@ -20,18 +20,17 @@
 </head>
 
 <body>
-    <div id="header">
+    <!-- <div id="header">
         <div id="back">返回</div>
         上汽植树
-    </div>
+    </div> -->
     <div id="container">
         <div class="tab-wrap flex">
             <p class="tab-item active">游戏公告</p>
             <p class="tab-item ">游戏介绍</p>
         </div>
         <ul class="task-list show">
-            {volist name="adv" id="item"}
-            {notempty name="adv"}
+            {volist name="adv" id="item" empty="暂无公告"}
             <li>
                 <a href="{:url('Adv/detail',['id' => $item['id'],'token'=>$_TOKEN_])}">
                 <div class="thumbnail flex">
@@ -45,16 +44,10 @@
                 </div>
                 </a>
             </li>
-            {else/}
-            <li>
-                暂无公告
-            </li>
-            {/notempty}
             {/volist} 
         </ul>
         <ul class="task-list hide">
-            {volist name="in" id="item"}
-            {notempty name="in"}
+            {volist name="in" id="item" empty="暂无介绍"}
             <li>
                 <a href="{:url('Adv/detail',['id' => $item['id'],'token'=>$_TOKEN_])}">
                 <div class="thumbnail flex">
@@ -68,11 +61,6 @@
                 </div>
                 </a>
             </li>
-            {else/}
-            <li>
-                暂无公告
-            </li>
-            {/notempty}
             {/volist} 
         </ul>
     </div>

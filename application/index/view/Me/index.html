@@ -82,8 +82,7 @@
         </div>
         <div class="tab-box my-award">
             <ul class="task-list">
-            {volist name="award" id="item"}
-            {notempty name="award"}
+            {volist name="award" id="item" empty="暂无奖品"}
             <a href="{:url('Me/award',['id' => $item['id'],'token'=>$_TOKEN_])}">
 	            <li >
 	                <div class="thumbnail flex">
@@ -102,11 +101,6 @@
 	                </div>
 	            </li>
             </a>
-            {else/}
-            <li>
-                暂无奖品
-            </li>
-            {/notempty}
             {/volist} 
         </ul>
         </div>
