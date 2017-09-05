@@ -22,7 +22,17 @@
         z-index: 10;
         height: 100%;
     }
-
+    .launch p{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        margin-top: -1.5rem;
+        height: 3rem;
+        line-height: 3rem;
+        text-align: center;
+        z-index: 10;
+    }
     .launch img {
         width: 100%;
         height: 100%;
@@ -32,13 +42,14 @@
 
 <body>
     <div class="launch">
+        <p>加载中...</p>
         <img src="{$static_dir}home/img/start.png">
     </div>
     <script type="text/javascript" src="{$static_dir}home/js/zepto.js"></script>
     <script type="text/javascript">
         // 启动页
         setTimeout(function() {
-            location.href = "{:url('Index/index')}";
+            // location.href = "{:url('Index/index')}";
         }, 5000);
     </script>
 </body>
