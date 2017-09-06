@@ -312,7 +312,8 @@
                 var time = new Date().getTime();
                 var dif = starTime-parseInt(time/1000);
                 console.log(dif)
-                if(dif<3600 && dif>0){
+                // if(dif<3600 && dif>0){
+                if(dif<600 && dif>0){    
                     var str = '';
                     switch(type){
                         case 0:
@@ -631,6 +632,7 @@
                 var disasterArr = '{$disaster|json_encode}';
                 disasterArr = JSON.parse(disasterArr);
                 if (disasterArr) {
+                    console.log(disasterArr)
                     var isFlag = localStorage.getItem('isFlag_' + disasterArr.id);
                     var starTime = disasterArr.start_time;
                     switch (disasterArr.disaster_type) {

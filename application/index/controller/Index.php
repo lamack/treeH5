@@ -142,12 +142,23 @@ class Index extends Home
         );
         //获得当前树状态
         $tips_adv = [];
+        $disaster = [];
         if ($tree) {
             if ($tree['level']==1) {
                 array_push($tips_adv, $tips[1]);
             }
             if ($tree['level']==2) {
-                array_push($tips_adv, $tips[2]);
+                if ($tree['disaster']==1&&$tree['is_show']==0) {
+                    $disaster['disaster_id'] = 1;
+                    $disaster['id'] = 1;
+                    $disaster['disaster_type'] = rand(0,2);
+                    $disaster['disaster_value'] = null;
+                    $disaster['start_time'] = time()+500;
+                    $disaster['mdate'] = __mdate($disaster['start_time']);
+                    $ts['is_show'] = 1; 
+                    db('trees')->where('id',$tree['id'])->update($ts);
+                    array_push($tips_adv, $tips[2]);
+                }
             }
         }else{
              array_push($tips_adv, $tips[3]);
@@ -164,9 +175,9 @@ class Index extends Home
         //     $disaster = array();//已经历过
         // }
         
-        $disaster = db('adv_disaster')->order('id DESC')->find();
-        $disaster['start_time'] = $disaster['start_time'];
-        $disaster['mdate'] = __mdate($disaster['start_time']);
+        // $disaster = db('adv_disaster')->order('id DESC')->find();
+        // $disaster['start_time'] = $disaster['start_time'];
+        // $disaster['mdate'] = __mdate($disaster['start_time']);
         $this->assign('disaster', $disaster);  
         //个人排名
         $me_rank = [];
