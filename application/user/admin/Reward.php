@@ -58,8 +58,8 @@ class Reward extends Admin
             ->addFormItems([ // 批量添加表单项
                 ['text', 'green_limit', '绿值最小值', ''],
                 ['text', 'green_max', '绿值最大值', ''],
-                ['text', 'share_limit', '成长币最小值', ''],
-                ['text', 'share_max', '成长币最大值', ''],
+                // ['text', 'share_limit', '成长币最小值', ''],
+                // ['text', 'share_max', '成长币最大值', ''],
             ])
             ->setFormData($info) // 设置表单数据
             ->fetch();

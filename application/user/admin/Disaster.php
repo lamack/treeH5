@@ -92,10 +92,10 @@ class Disaster extends Admin
             ->addFormItems([ // 批量添加表单项
                 ['select', 'disaster_type', '灾害类型', '', ['台风', '洪水', '干旱']],
             ])
-            ->addDatetime('start_time', '触发开始时间', '', '', 'yyyy/mm/dd')
-            ->addDatetime('end_time', '触发结束时间', '', '', 'yyyy/mm/dd')
+            ->addDatetime('start_time', '触发开始时间', '', '', 'YYYY-MM-DD HH:mm')
+            ->addDatetime('end_time', '触发结束时间', '', '', 'YYYY-MM-DD HH:mm')
             ->addUeditor('push_content', '公告内容')
-            ->addDatetime('push_flish_time', '公告发布时间', '', '', 'yyyy/mm/dd')
+            ->addDatetime('push_flish_time', '公告发布时间', '', '', 'YYYY-MM-DD HH:mm')
             ->fetch();
     }
 

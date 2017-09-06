@@ -32,11 +32,14 @@ class Prize extends Admin
         // 获取查询条件
         $map = $this->getMap();
         if ($map) {
-            $map['a.create_time'] = $map['create_time'];
-            unset($map['create_time']);
+            if (isset($map['create_time'])) {
+                $map['a.create_time'] = $map['create_time'];
+                unset($map['create_time']);
+            }
+            
         }
         // 数据列表
-        $data_list = db('recode')->alias('a')->join('game_conpon ct','a.conpon_id = ct.id')->where($map)->field('a.*,ct.conpon_no,ct.conpon_password')->order('id desc')->paginate();
+        $data_list = db('recode')->alias('a')->join('game_conpon ct','a.conpon_id = ct.id')->join('game_member m','a.user_id = m.id')->where($map)->field('a.*,ct.conpon_no,ct.conpon_password,m.username,m.contact')->order('id desc')->paginate();
 
         // 分页数据
         $page = $data_list->render();
@@ -52,6 +55,7 @@ class Prize extends Admin
             ->setTableName('Prize') // 设置数据表名
             ->hideCheckbox()
             ->addTimeFilter('create_time') // 添加时间段筛选
+            ->setSearch(['username' => '用户名', 'contact' => '手机号']) // 设置搜索参数
             ->addColumns([ // 批量添加列
                 ['user_id', '会员名称','','',$list_module],
                 ['create_time', '获奖时间','datetime'],
