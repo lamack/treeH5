@@ -20,7 +20,7 @@ class wxsportTask extends Task{
         
        
 
-      $res = Utils::model("vip_test",'','mysql://root:Innketek201306@139.196.20.81:3306/dolphin#utf8')->select();
+      $res = Utils::model("wxsport",'','mysql://root:Tripshare2017@rm-bp1c7jlz0045ph079o.mysql.rds.aliyuncs.com:3366/trees#utf8')->select();
        Utils::Log($res);
       // //切换数据库
       // if ($res) {
