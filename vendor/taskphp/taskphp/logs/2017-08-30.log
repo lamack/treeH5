@@ -1,0 +1,801 @@
+[2017-08-30 14:28:53.15327400][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:28:53.18431200][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:28:53.27358200][ERROR]:SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dolphin.user_info' doesn't exist in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 186
+[2017-08-30 14:28:53.27381100][CORE_WARNING]:PHP Startup: Unable to load dynamic library '/usr/local/php56/lib/php/extensions/no-debug-non-zts-20131226/php_fileinfo.dll' - /usr/local/php56/lib/php/extensions/no-debug-non-zts-20131226/php_fileinfo.dll: cannot open shared object file: No such file or directory in Unknown on line 0
+[2017-08-30 14:29:33.48907100][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:29:33.51911500][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:29:33.62279800][DEBUG]:tasks\userinfo\userinfoTask [--END--][RunTime:0.141725s]
+[2017-08-30 14:29:33.76148600][CORE_WARNING]:PHP Startup: Unable to load dynamic library '/usr/local/php56/lib/php/extensions/no-debug-non-zts-20131226/php_fileinfo.dll' - /usr/local/php56/lib/php/extensions/no-debug-non-zts-20131226/php_fileinfo.dll: cannot open shared object file: No such file or directory in Unknown on line 0
+[2017-08-30 14:34:21.71462700][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:34:21.74705600][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:34:21.85949300][DEBUG]:tasks\userinfo\userinfoTask [--END--][RunTime:0.155228s]
+[2017-08-30 14:36:16.32592700][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:36:16.35701100][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:36:16.44225900][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:36:16.46622200][ERROR]:SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 235
+[2017-08-30 14:37:24.25839000][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:37:24.29304400][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:37:24.37317900][DEBUG]:array (
+  0 => 
+  array (
+    'uid' => '1',
+    'user_name' => '1xxx',
+    'team_code' => 'x',
+    'team_name' => 's',
+    'team_type' => '1',
+    'is_leader' => '1',
+    'phone' => '1111',
+    'cid' => '1',
+    'card' => '1',
+    'system' => '1',
+    'company' => '1',
+    'county' => '1',
+    'secondary_units' => NULL,
+    'status' => NULL,
+    'check_status' => NULL,
+    'create_time' => NULL,
+    'update_time' => NULL,
+  ),
+)
+[2017-08-30 14:37:24.37428100][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:37:24.38519600][ERROR]:SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 235
+[2017-08-30 14:37:40.34291100][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:37:40.38258000][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:37:40.46830200][DEBUG]:array (
+  0 => 
+  array (
+    'uid' => '1',
+    'user_name' => '1xxx',
+    'team_code' => 'x',
+    'team_name' => 's',
+    'team_type' => '1',
+    'is_leader' => '1',
+    'phone' => '1111',
+    'cid' => '1',
+    'card' => '1',
+    'system' => '1',
+    'company' => '1',
+    'county' => '1',
+    'secondary_units' => NULL,
+    'status' => NULL,
+    'check_status' => NULL,
+    'create_time' => NULL,
+    'update_time' => NULL,
+  ),
+)
+[2017-08-30 14:37:40.46870000][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:37:40.48370300][NOTICE]:Undefined offset: 0 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver/Mysql.php on line 108
+[2017-08-30 14:37:40.48470100][DEBUG]:tasks\userinfo\userinfoTask [--END--][RunTime:0.151839s]
+[2017-08-30 14:38:26.06054200][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:38:26.09114200][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:38:26.16947600][DEBUG]:array (
+  0 => 
+  array (
+    'user_name' => '1xxx',
+    'team_code' => 'x',
+    'team_name' => 's',
+    'team_type' => '1',
+    'is_leader' => '1',
+    'phone' => '1111',
+    'cid' => '1',
+    'card' => '1',
+    'system' => '1',
+    'company' => '1',
+    'county' => '1',
+    'secondary_units' => NULL,
+    'status' => NULL,
+    'check_status' => NULL,
+    'create_time' => NULL,
+    'update_time' => NULL,
+  ),
+)
+[2017-08-30 14:38:26.16984900][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:38:26.17450700][ERROR]:SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 235
+[2017-08-30 14:38:59.61881500][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:38:59.62913200][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:38:59.69670700][DEBUG]:array (
+  0 => 
+  array (
+    'user_name' => '1xxx',
+    'team_code' => 'x',
+    'team_name' => 's',
+    'team_type' => '1',
+    'is_leader' => '1',
+    'phone' => '1111',
+    'cid' => '1',
+    'card' => '1',
+    'system' => '1',
+    'company' => '1',
+    'county' => '1',
+    'secondary_units' => NULL,
+    'status' => NULL,
+    'check_status' => NULL,
+    'create_time' => NULL,
+    'update_time' => NULL,
+  ),
+)
+[2017-08-30 14:38:59.69742300][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:38:59.72052500][ERROR]:SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 235
+[2017-08-30 14:40:02.60189500][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:40:02.63703500][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:40:02.72665600][DEBUG]:array (
+  0 => 
+  array (
+    'user_name' => '1xxx',
+    'team_code' => 'x',
+    'team_name' => 's',
+    'team_type' => '1',
+    'is_leader' => '1',
+    'phone' => '1111',
+    'cid' => '1',
+    'card' => '1',
+    'system' => '1',
+    'company' => '1',
+    'county' => '1',
+    'secondary_units' => NULL,
+    'status' => NULL,
+    'check_status' => NULL,
+    'create_time' => NULL,
+    'update_time' => NULL,
+  ),
+)
+[2017-08-30 14:40:02.72705600][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:40:02.73962600][ERROR]:SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 235
+[2017-08-30 14:40:14.56370300][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:40:14.59740800][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:40:14.68279900][DEBUG]:array (
+  0 => 
+  array (
+    'uid' => '1',
+    'user_name' => '1xxx',
+    'team_code' => 'x',
+    'team_name' => 's',
+    'team_type' => '1',
+    'is_leader' => '1',
+    'phone' => '1111',
+    'cid' => '1',
+    'card' => '1',
+    'system' => '1',
+    'company' => '1',
+    'county' => '1',
+    'secondary_units' => NULL,
+    'status' => NULL,
+    'check_status' => NULL,
+    'create_time' => NULL,
+    'update_time' => NULL,
+  ),
+)
+[2017-08-30 14:40:14.68319300][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:40:14.69158300][ERROR]:SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 235
+[2017-08-30 14:41:17.82919400][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:41:17.84832300][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:41:17.93817400][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:41:17.95501300][ERROR]:SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 235
+[2017-08-30 14:41:50.30449400][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:41:50.34336900][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:41:50.49506900][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:41:50.50768500][ERROR]:SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 235
+[2017-08-30 14:43:57.90506900][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:43:57.93841400][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:43:58.01802900][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:43:58.02401300][ERROR]:SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 235
+[2017-08-30 14:44:13.28539400][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:44:13.31651000][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:44:13.39163800][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:44:13.40045300][ERROR]:SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 235
+[2017-08-30 14:44:23.64008000][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:44:23.65338400][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:44:23.73979800][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:44:23.74954400][ERROR]:SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 235
+[2017-08-30 14:45:37.71456400][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:45:37.74912000][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:45:37.82497300][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:45:37.83878400][ERROR]:SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 235
+[2017-08-30 14:46:21.03410200][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:46:21.07102800][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:46:21.17593900][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:46:21.18238900][ERROR]:Class 'core\lib\db\Utils' not found in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 205
+[2017-08-30 14:46:41.60119000][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:46:41.63945800][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:46:41.65810700][PARSE]:syntax error, unexpected 'abstract' (T_ABSTRACT), expecting ',' or ';' in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 17
+[2017-08-30 14:46:54.74029900][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:46:54.76894700][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:46:54.85436800][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:46:54.86757700][ERROR]:Class 'core\lib\db\Utils' not found in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 206
+[2017-08-30 14:47:18.58664100][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:47:18.61210400][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:47:18.68187600][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:47:18.68763300][DEBUG]:REPLACE INTO `game_user_info` (`uid`,`user_name`,`team_code`,`team_name`,`team_type`,`is_leader`,`phone`,`cid`,`card`,`system`,`company`,`county`,`secondary_units`,`status`,`check_status`,`create_time`,`update_time`) VALUES (:0,:1,:2,:3,:4,:5,:6,:7,:8,:9,:10,:11)
+[2017-08-30 14:47:18.68881400][ERROR]:SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 239
+[2017-08-30 14:49:18.49896700][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:49:18.53271900][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:49:18.60961800][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:49:18.62114300][DEBUG]:REPLACE INTO `game_user_info` (`uid`,`user_name`,`team_code`,`team_name`,`team_type`,`is_leader`,`phone`,`cid`,`card`,`system`,`company`,`county`,`secondary_units`,`status`,`check_status`,`create_time`,`update_time`) VALUES (:0,:1,:2,:3,:4,:5,:6,:7,:8,:9,:10,:11)
+[2017-08-30 14:49:18.62243900][ERROR]:SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 239
+[2017-08-30 14:49:55.80955400][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:49:55.84143800][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:49:55.92352000][DEBUG]:array (
+  0 => 
+  array (
+    'uid' => '1',
+    'user_name' => '1xxx',
+    'team_code' => 'x',
+    'team_name' => 's',
+    'team_type' => '1',
+    'is_leader' => '1',
+    'phone' => '1111',
+    'cid' => '1',
+    'card' => '1',
+    'system' => '1',
+    'company' => '1',
+    'county' => '1',
+    'secondary_units' => NULL,
+    'status' => NULL,
+    'check_status' => NULL,
+    'create_time' => NULL,
+    'update_time' => NULL,
+  ),
+)
+[2017-08-30 14:49:55.92415800][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:49:55.93433800][DEBUG]:REPLACE INTO `game_user_info` (`uid`,`user_name`,`team_code`,`team_name`,`team_type`,`is_leader`,`phone`,`cid`,`card`,`system`,`company`,`county`,`secondary_units`,`status`,`check_status`,`create_time`,`update_time`) VALUES (:0,:1,:2,:3,:4,:5,:6,:7,:8,:9,:10,:11)
+[2017-08-30 14:49:55.93609100][ERROR]:SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 239
+[2017-08-30 14:51:23.77851200][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:51:23.80927700][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:51:23.88664000][DEBUG]:array (
+  0 => 
+  array (
+    'uid' => '1',
+    'user_name' => '1xxx',
+    'team_code' => 'x',
+    'team_name' => 's',
+    'team_type' => '1',
+    'is_leader' => '1',
+    'phone' => '1111',
+    'cid' => '1',
+    'card' => '1',
+    'system' => '1',
+    'company' => '1',
+    'county' => '1',
+    'secondary_units' => NULL,
+    'status' => NULL,
+    'check_status' => NULL,
+    'create_time' => NULL,
+    'update_time' => NULL,
+  ),
+)
+[2017-08-30 14:51:23.88706400][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:51:23.89877600][ERROR]:Class 'core\lib\db\Driver\Utils' not found in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver/Mysql.php on line 106
+[2017-08-30 14:52:06.56033900][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:52:06.59016500][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:52:06.88774900][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:52:06.89246100][DEBUG]:array (
+  0 => 
+  array (
+    'uid' => '1',
+    'user_name' => '1xxx',
+    'team_code' => 'x',
+    'team_name' => 's',
+    'team_type' => '1',
+    'is_leader' => '1',
+    'phone' => '1111',
+    'cid' => '1',
+    'card' => '1',
+    'system' => '1',
+    'company' => '1',
+    'county' => '1',
+    'secondary_units' => NULL,
+    'status' => NULL,
+    'check_status' => NULL,
+    'create_time' => NULL,
+    'update_time' => NULL,
+  ),
+)
+[2017-08-30 14:52:06.89276500][DEBUG]:REPLACE INTO `game_user_info` (`uid`,`user_name`,`team_code`,`team_name`,`team_type`,`is_leader`,`phone`,`cid`,`card`,`system`,`company`,`county`,`secondary_units`,`status`,`check_status`,`create_time`,`update_time`) VALUES (:0,:1,:2,:3,:4,:5,:6,:7,:8,:9,:10,:11)
+[2017-08-30 14:52:06.89336200][ERROR]:SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 239
+[2017-08-30 14:52:35.93581200][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:52:35.96585800][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:52:36.05750800][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:52:36.06206000][DEBUG]:REPLACE INTO `game_user_info` (`uid`,`user_name`,`team_code`,`team_name`,`team_type`,`is_leader`,`phone`,`cid`,`card`,`system`,`company`,`county`,`secondary_units`,`status`,`check_status`,`create_time`,`update_time`) VALUES (:0,:1,:2,:3,:4,:5,:6,:7,:8,:9,:10,:11)
+[2017-08-30 14:52:36.06228000][DEBUG]:REPLACE INTO `game_user_info` (`uid`,`user_name`,`team_code`,`team_name`,`team_type`,`is_leader`,`phone`,`cid`,`card`,`system`,`company`,`county`,`secondary_units`,`status`,`check_status`,`create_time`,`update_time`) VALUES (:0,:1,:2,:3,:4,:5,:6,:7,:8,:9,:10,:11)
+[2017-08-30 14:52:36.06295000][ERROR]:SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 239
+[2017-08-30 14:53:14.74585200][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:53:14.77784700][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:53:14.85972700][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:53:14.86858600][DEBUG]:array (
+  0 => '(:0,:1,:2,:3,:4,:5,:6,:7,:8,:9,:10,:11)',
+)
+[2017-08-30 14:53:14.86927600][DEBUG]:REPLACE INTO `game_user_info` (`uid`,`user_name`,`team_code`,`team_name`,`team_type`,`is_leader`,`phone`,`cid`,`card`,`system`,`company`,`county`,`secondary_units`,`status`,`check_status`,`create_time`,`update_time`) VALUES (:0,:1,:2,:3,:4,:5,:6,:7,:8,:9,:10,:11)
+[2017-08-30 14:53:14.86984300][ERROR]:SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 239
+[2017-08-30 14:53:39.45700300][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:53:39.49102500][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:53:39.56432500][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:53:39.57055500][DEBUG]:array (
+  'uid' => '1',
+  'user_name' => '1xxx',
+  'team_code' => 'x',
+  'team_name' => 's',
+  'team_type' => '1',
+  'is_leader' => '1',
+  'phone' => '1111',
+  'cid' => '1',
+  'card' => '1',
+  'system' => '1',
+  'company' => '1',
+  'county' => '1',
+  'secondary_units' => NULL,
+  'status' => NULL,
+  'check_status' => NULL,
+  'create_time' => NULL,
+  'update_time' => NULL,
+)
+[2017-08-30 14:53:39.57081900][DEBUG]:array (
+  'uid' => '1',
+  'user_name' => '1xxx',
+  'team_code' => 'x',
+  'team_name' => 's',
+  'team_type' => '1',
+  'is_leader' => '1',
+  'phone' => '1111',
+  'cid' => '1',
+  'card' => '1',
+  'system' => '1',
+  'company' => '1',
+  'county' => '1',
+  'secondary_units' => NULL,
+  'status' => NULL,
+  'check_status' => NULL,
+  'create_time' => NULL,
+  'update_time' => NULL,
+)
+[2017-08-30 14:53:39.57098800][DEBUG]:array (
+  'uid' => '1',
+  'user_name' => '1xxx',
+  'team_code' => 'x',
+  'team_name' => 's',
+  'team_type' => '1',
+  'is_leader' => '1',
+  'phone' => '1111',
+  'cid' => '1',
+  'card' => '1',
+  'system' => '1',
+  'company' => '1',
+  'county' => '1',
+  'secondary_units' => NULL,
+  'status' => NULL,
+  'check_status' => NULL,
+  'create_time' => NULL,
+  'update_time' => NULL,
+)
+[2017-08-30 14:53:39.57111400][DEBUG]:array (
+  'uid' => '1',
+  'user_name' => '1xxx',
+  'team_code' => 'x',
+  'team_name' => 's',
+  'team_type' => '1',
+  'is_leader' => '1',
+  'phone' => '1111',
+  'cid' => '1',
+  'card' => '1',
+  'system' => '1',
+  'company' => '1',
+  'county' => '1',
+  'secondary_units' => NULL,
+  'status' => NULL,
+  'check_status' => NULL,
+  'create_time' => NULL,
+  'update_time' => NULL,
+)
+[2017-08-30 14:53:39.57123300][DEBUG]:array (
+  'uid' => '1',
+  'user_name' => '1xxx',
+  'team_code' => 'x',
+  'team_name' => 's',
+  'team_type' => '1',
+  'is_leader' => '1',
+  'phone' => '1111',
+  'cid' => '1',
+  'card' => '1',
+  'system' => '1',
+  'company' => '1',
+  'county' => '1',
+  'secondary_units' => NULL,
+  'status' => NULL,
+  'check_status' => NULL,
+  'create_time' => NULL,
+  'update_time' => NULL,
+)
+[2017-08-30 14:53:39.57135100][DEBUG]:array (
+  'uid' => '1',
+  'user_name' => '1xxx',
+  'team_code' => 'x',
+  'team_name' => 's',
+  'team_type' => '1',
+  'is_leader' => '1',
+  'phone' => '1111',
+  'cid' => '1',
+  'card' => '1',
+  'system' => '1',
+  'company' => '1',
+  'county' => '1',
+  'secondary_units' => NULL,
+  'status' => NULL,
+  'check_status' => NULL,
+  'create_time' => NULL,
+  'update_time' => NULL,
+)
+[2017-08-30 14:53:39.57146600][DEBUG]:array (
+  'uid' => '1',
+  'user_name' => '1xxx',
+  'team_code' => 'x',
+  'team_name' => 's',
+  'team_type' => '1',
+  'is_leader' => '1',
+  'phone' => '1111',
+  'cid' => '1',
+  'card' => '1',
+  'system' => '1',
+  'company' => '1',
+  'county' => '1',
+  'secondary_units' => NULL,
+  'status' => NULL,
+  'check_status' => NULL,
+  'create_time' => NULL,
+  'update_time' => NULL,
+)
+[2017-08-30 14:53:39.57164900][DEBUG]:array (
+  'uid' => '1',
+  'user_name' => '1xxx',
+  'team_code' => 'x',
+  'team_name' => 's',
+  'team_type' => '1',
+  'is_leader' => '1',
+  'phone' => '1111',
+  'cid' => '1',
+  'card' => '1',
+  'system' => '1',
+  'company' => '1',
+  'county' => '1',
+  'secondary_units' => NULL,
+  'status' => NULL,
+  'check_status' => NULL,
+  'create_time' => NULL,
+  'update_time' => NULL,
+)
+[2017-08-30 14:53:39.57189000][DEBUG]:array (
+  'uid' => '1',
+  'user_name' => '1xxx',
+  'team_code' => 'x',
+  'team_name' => 's',
+  'team_type' => '1',
+  'is_leader' => '1',
+  'phone' => '1111',
+  'cid' => '1',
+  'card' => '1',
+  'system' => '1',
+  'company' => '1',
+  'county' => '1',
+  'secondary_units' => NULL,
+  'status' => NULL,
+  'check_status' => NULL,
+  'create_time' => NULL,
+  'update_time' => NULL,
+)
+[2017-08-30 14:53:39.57212100][DEBUG]:array (
+  'uid' => '1',
+  'user_name' => '1xxx',
+  'team_code' => 'x',
+  'team_name' => 's',
+  'team_type' => '1',
+  'is_leader' => '1',
+  'phone' => '1111',
+  'cid' => '1',
+  'card' => '1',
+  'system' => '1',
+  'company' => '1',
+  'county' => '1',
+  'secondary_units' => NULL,
+  'status' => NULL,
+  'check_status' => NULL,
+  'create_time' => NULL,
+  'update_time' => NULL,
+)
+[2017-08-30 14:53:39.57223800][DEBUG]:array (
+  'uid' => '1',
+  'user_name' => '1xxx',
+  'team_code' => 'x',
+  'team_name' => 's',
+  'team_type' => '1',
+  'is_leader' => '1',
+  'phone' => '1111',
+  'cid' => '1',
+  'card' => '1',
+  'system' => '1',
+  'company' => '1',
+  'county' => '1',
+  'secondary_units' => NULL,
+  'status' => NULL,
+  'check_status' => NULL,
+  'create_time' => NULL,
+  'update_time' => NULL,
+)
+[2017-08-30 14:53:39.57239300][DEBUG]:array (
+  'uid' => '1',
+  'user_name' => '1xxx',
+  'team_code' => 'x',
+  'team_name' => 's',
+  'team_type' => '1',
+  'is_leader' => '1',
+  'phone' => '1111',
+  'cid' => '1',
+  'card' => '1',
+  'system' => '1',
+  'company' => '1',
+  'county' => '1',
+  'secondary_units' => NULL,
+  'status' => NULL,
+  'check_status' => NULL,
+  'create_time' => NULL,
+  'update_time' => NULL,
+)
+[2017-08-30 14:53:39.57258100][DEBUG]:array (
+  'uid' => '1',
+  'user_name' => '1xxx',
+  'team_code' => 'x',
+  'team_name' => 's',
+  'team_type' => '1',
+  'is_leader' => '1',
+  'phone' => '1111',
+  'cid' => '1',
+  'card' => '1',
+  'system' => '1',
+  'company' => '1',
+  'county' => '1',
+  'secondary_units' => NULL,
+  'status' => NULL,
+  'check_status' => NULL,
+  'create_time' => NULL,
+  'update_time' => NULL,
+)
+[2017-08-30 14:53:39.57276500][DEBUG]:array (
+  'uid' => '1',
+  'user_name' => '1xxx',
+  'team_code' => 'x',
+  'team_name' => 's',
+  'team_type' => '1',
+  'is_leader' => '1',
+  'phone' => '1111',
+  'cid' => '1',
+  'card' => '1',
+  'system' => '1',
+  'company' => '1',
+  'county' => '1',
+  'secondary_units' => NULL,
+  'status' => NULL,
+  'check_status' => NULL,
+  'create_time' => NULL,
+  'update_time' => NULL,
+)
+[2017-08-30 14:53:39.57299400][DEBUG]:array (
+  'uid' => '1',
+  'user_name' => '1xxx',
+  'team_code' => 'x',
+  'team_name' => 's',
+  'team_type' => '1',
+  'is_leader' => '1',
+  'phone' => '1111',
+  'cid' => '1',
+  'card' => '1',
+  'system' => '1',
+  'company' => '1',
+  'county' => '1',
+  'secondary_units' => NULL,
+  'status' => NULL,
+  'check_status' => NULL,
+  'create_time' => NULL,
+  'update_time' => NULL,
+)
+[2017-08-30 14:53:39.57316100][DEBUG]:array (
+  'uid' => '1',
+  'user_name' => '1xxx',
+  'team_code' => 'x',
+  'team_name' => 's',
+  'team_type' => '1',
+  'is_leader' => '1',
+  'phone' => '1111',
+  'cid' => '1',
+  'card' => '1',
+  'system' => '1',
+  'company' => '1',
+  'county' => '1',
+  'secondary_units' => NULL,
+  'status' => NULL,
+  'check_status' => NULL,
+  'create_time' => NULL,
+  'update_time' => NULL,
+)
+[2017-08-30 14:53:39.57329500][DEBUG]:array (
+  'uid' => '1',
+  'user_name' => '1xxx',
+  'team_code' => 'x',
+  'team_name' => 's',
+  'team_type' => '1',
+  'is_leader' => '1',
+  'phone' => '1111',
+  'cid' => '1',
+  'card' => '1',
+  'system' => '1',
+  'company' => '1',
+  'county' => '1',
+  'secondary_units' => NULL,
+  'status' => NULL,
+  'check_status' => NULL,
+  'create_time' => NULL,
+  'update_time' => NULL,
+)
+[2017-08-30 14:53:39.57345700][DEBUG]:REPLACE INTO `game_user_info` (`uid`,`user_name`,`team_code`,`team_name`,`team_type`,`is_leader`,`phone`,`cid`,`card`,`system`,`company`,`county`,`secondary_units`,`status`,`check_status`,`create_time`,`update_time`) VALUES (:0,:1,:2,:3,:4,:5,:6,:7,:8,:9,:10,:11)
+[2017-08-30 14:53:39.57411200][ERROR]:SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 239
+[2017-08-30 14:54:09.49462800][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:54:09.53403300][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:54:09.67794900][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:54:09.68711900][DEBUG]:1
+[2017-08-30 14:54:09.68727900][DEBUG]:1xxx
+[2017-08-30 14:54:09.68750300][DEBUG]:x
+[2017-08-30 14:54:09.68772100][DEBUG]:s
+[2017-08-30 14:54:09.68793800][DEBUG]:1
+[2017-08-30 14:54:09.68826300][DEBUG]:1
+[2017-08-30 14:54:09.68841800][DEBUG]:1111
+[2017-08-30 14:54:09.68856400][DEBUG]:1
+[2017-08-30 14:54:09.68871100][DEBUG]:1
+[2017-08-30 14:54:09.68885700][DEBUG]:1
+[2017-08-30 14:54:09.68900100][DEBUG]:1
+[2017-08-30 14:54:09.68914600][DEBUG]:1
+[2017-08-30 14:54:09.68929800][DEBUG]:NULL
+[2017-08-30 14:54:09.68943900][DEBUG]:NULL
+[2017-08-30 14:54:09.68956700][DEBUG]:NULL
+[2017-08-30 14:54:09.68969300][DEBUG]:NULL
+[2017-08-30 14:54:09.68987100][DEBUG]:NULL
+[2017-08-30 14:54:09.69003300][DEBUG]:REPLACE INTO `game_user_info` (`uid`,`user_name`,`team_code`,`team_name`,`team_type`,`is_leader`,`phone`,`cid`,`card`,`system`,`company`,`county`,`secondary_units`,`status`,`check_status`,`create_time`,`update_time`) VALUES (:0,:1,:2,:3,:4,:5,:6,:7,:8,:9,:10,:11)
+[2017-08-30 14:54:09.69119100][ERROR]:SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 239
+[2017-08-30 14:55:17.33500400][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:55:17.36840400][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:55:17.45266200][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:55:17.45780200][DEBUG]:22
+[2017-08-30 14:55:17.45807500][DEBUG]:44
+[2017-08-30 14:55:17.45823000][DEBUG]:22
+[2017-08-30 14:55:17.45843500][DEBUG]:44
+[2017-08-30 14:55:17.45865200][DEBUG]:22
+[2017-08-30 14:55:17.45886200][DEBUG]:44
+[2017-08-30 14:55:17.45907600][DEBUG]:22
+[2017-08-30 14:55:17.45922200][DEBUG]:44
+[2017-08-30 14:55:17.45936700][DEBUG]:22
+[2017-08-30 14:55:17.45954000][DEBUG]:44
+[2017-08-30 14:55:17.45971500][DEBUG]:22
+[2017-08-30 14:55:17.45988500][DEBUG]:44
+[2017-08-30 14:55:17.46013500][DEBUG]:22
+[2017-08-30 14:55:17.46022500][DEBUG]:44
+[2017-08-30 14:55:17.46036600][DEBUG]:22
+[2017-08-30 14:55:17.46049700][DEBUG]:44
+[2017-08-30 14:55:17.46062900][DEBUG]:22
+[2017-08-30 14:55:17.46075700][DEBUG]:44
+[2017-08-30 14:55:17.46089100][DEBUG]:22
+[2017-08-30 14:55:17.46102000][DEBUG]:44
+[2017-08-30 14:55:17.46121000][DEBUG]:22
+[2017-08-30 14:55:17.46136700][DEBUG]:44
+[2017-08-30 14:55:17.46151100][DEBUG]:22
+[2017-08-30 14:55:17.46164400][DEBUG]:44
+[2017-08-30 14:55:17.46183300][DEBUG]:REPLACE INTO `game_user_info` (`uid`,`user_name`,`team_code`,`team_name`,`team_type`,`is_leader`,`phone`,`cid`,`card`,`system`,`company`,`county`,`secondary_units`,`status`,`check_status`,`create_time`,`update_time`) VALUES (:0,:1,:2,:3,:4,:5,:6,:7,:8,:9,:10,:11)
+[2017-08-30 14:55:17.46243100][ERROR]:SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 239
+[2017-08-30 14:58:32.01820400][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:58:32.04974700][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:58:32.13414700][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:58:32.14125200][DEBUG]:1
+[2017-08-30 14:58:32.14150900][DEBUG]:1xxx
+[2017-08-30 14:58:32.14172900][DEBUG]:x
+[2017-08-30 14:58:32.14194600][DEBUG]:s
+[2017-08-30 14:58:32.14225400][DEBUG]:1
+[2017-08-30 14:58:32.14249200][DEBUG]:1
+[2017-08-30 14:58:32.14267000][DEBUG]:1111
+[2017-08-30 14:58:32.14282100][DEBUG]:1
+[2017-08-30 14:58:32.14294900][DEBUG]:1
+[2017-08-30 14:58:32.14307300][DEBUG]:1
+[2017-08-30 14:58:32.14318600][DEBUG]:1
+[2017-08-30 14:58:32.14329600][DEBUG]:1
+[2017-08-30 14:58:32.14340000][DEBUG]:NULL
+[2017-08-30 14:58:32.14352800][DEBUG]:NULL
+[2017-08-30 14:58:32.14364200][DEBUG]:NULL
+[2017-08-30 14:58:32.14374400][DEBUG]:NULL
+[2017-08-30 14:58:32.14384600][DEBUG]:NULL
+[2017-08-30 14:58:32.14397800][DEBUG]:REPLACE INTO `game_user_info` (`uid`,`user_name`,`team_code`,`team_name`,`team_type`,`is_leader`,`phone`,`cid`,`card`,`system`,`company`,`county`,`secondary_units`,`status`,`check_status`,`create_time`,`update_time`) VALUES (:0,:1,:2,:3,:4,:5,:6,:7,:8,:9,:10,:11)
+[2017-08-30 14:58:32.14452100][ERROR]:SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 239
+[2017-08-30 14:59:16.32178700][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:59:16.35729900][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:59:16.49789000][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:59:16.50972700][DEBUG]:0
+[2017-08-30 14:59:16.50975300][DEBUG]:1
+[2017-08-30 14:59:16.50995300][DEBUG]:2
+[2017-08-30 14:59:16.51022500][DEBUG]:3
+[2017-08-30 14:59:16.51036400][DEBUG]:4
+[2017-08-30 14:59:16.51057700][DEBUG]:5
+[2017-08-30 14:59:16.51079400][DEBUG]:6
+[2017-08-30 14:59:16.51101000][DEBUG]:7
+[2017-08-30 14:59:16.51122900][DEBUG]:8
+[2017-08-30 14:59:16.51137600][DEBUG]:9
+[2017-08-30 14:59:16.51152300][DEBUG]:10
+[2017-08-30 14:59:16.51166800][DEBUG]:11
+[2017-08-30 14:59:16.51180900][DEBUG]:11
+[2017-08-30 14:59:16.51195000][DEBUG]:11
+[2017-08-30 14:59:16.51209000][DEBUG]:11
+[2017-08-30 14:59:16.51222900][DEBUG]:11
+[2017-08-30 14:59:16.51237000][DEBUG]:11
+[2017-08-30 14:59:16.51254100][DEBUG]:REPLACE INTO `game_user_info` (`uid`,`user_name`,`team_code`,`team_name`,`team_type`,`is_leader`,`phone`,`cid`,`card`,`system`,`company`,`county`,`secondary_units`,`status`,`check_status`,`create_time`,`update_time`) VALUES (:0,:1,:2,:3,:4,:5,:6,:7,:8,:9,:10,:11)
+[2017-08-30 14:59:16.51307000][ERROR]:SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 239
+[2017-08-30 14:59:54.04637000][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 14:59:54.07584300][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:59:54.16173900][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 14:59:54.16799500][DEBUG]:array (
+  0 => '(:0,:1,:2,:3,:4,:5,:6,:7,:8,:9,:10,:11)',
+)
+[2017-08-30 14:59:54.16839100][DEBUG]:REPLACE INTO `game_user_info` (`uid`,`user_name`,`team_code`,`team_name`,`team_type`,`is_leader`,`phone`,`cid`,`card`,`system`,`company`,`county`,`secondary_units`,`status`,`check_status`,`create_time`,`update_time`) VALUES (:0,:1,:2,:3,:4,:5,:6,:7,:8,:9,:10,:11)
+[2017-08-30 14:59:54.16942600][ERROR]:SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 239
+[2017-08-30 15:00:35.67298400][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 15:00:35.70912200][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 15:00:35.78849700][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 15:00:35.79992800][DEBUG]:array (
+  0 => '(:0,:1,:2,:3,:4,:5,:6,:7,:8,:9,:10,:11,:12,:13)',
+)
+[2017-08-30 15:00:35.80109800][DEBUG]:REPLACE INTO `game_user_info` (`uid`,`user_name`,`team_code`,`team_name`,`team_type`,`is_leader`,`phone`,`cid`,`card`,`system`,`company`,`county`,`secondary_units`,`status`,`check_status`,`create_time`,`update_time`) VALUES (:0,:1,:2,:3,:4,:5,:6,:7,:8,:9,:10,:11,:12,:13)
+[2017-08-30 15:00:35.80197700][ERROR]:SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 239
+[2017-08-30 15:00:50.60378800][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 15:00:50.63541100][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 15:00:50.72306100][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 15:00:50.73243500][DEBUG]:array (
+  0 => '(:1,:测试,:x,:s,:1,:1,:1111,:1,:1,:1,:1,:1,:2017-08-30 15:00:16,:2017-08-30 15:00:16)',
+)
+[2017-08-30 15:00:50.73247000][DEBUG]:REPLACE INTO `game_user_info` (`uid`,`user_name`,`team_code`,`team_name`,`team_type`,`is_leader`,`phone`,`cid`,`card`,`system`,`company`,`county`,`secondary_units`,`status`,`check_status`,`create_time`,`update_time`) VALUES (:1,:测试,:x,:s,:1,:1,:1111,:1,:1,:1,:1,:1,:2017-08-30 15:00:16,:2017-08-30 15:00:16)
+[2017-08-30 15:00:50.73279600][ERROR]:SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 239
+[2017-08-30 15:03:06.40484800][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 15:03:06.43376100][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 15:03:06.51968800][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 15:03:06.52891900][NOTICE]:Undefined variable: datas in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver/Mysql.php on line 106
+[2017-08-30 15:03:06.52934900][DEBUG]:tasks\userinfo\userinfoTask [--END--][RunTime:0.134851s]
+[2017-08-30 15:03:06.57333100][DEBUG]:UPDATE core_queue
+              SET content = 'a:112:{i:0;a:3:{i:0;s:19:"2017-08-27 15:50:31";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:1;a:3:{i:0;s:19:"2017-08-27 15:50:31";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:2;a:3:{i:0;s:19:"2017-08-27 15:50:31";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:3;a:3:{i:0;s:19:"2017-08-27 15:50:31";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:4;a:3:{i:0;s:19:"2017-08-27 15:50:31";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:5;a:3:{i:0;s:19:"2017-08-27 15:50:41";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:6;a:3:{i:0;s:19:"2017-08-27 15:50:41";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:7;a:3:{i:0;s:19:"2017-08-27 15:50:41";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:8;a:3:{i:0;s:19:"2017-08-27 15:50:41";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:9;a:3:{i:0;s:19:"2017-08-27 15:50:41";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:10;a:3:{i:0;s:19:"2017-08-27 15:50:41";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:11;a:3:{i:0;s:19:"2017-08-27 15:50:42";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:12;a:3:{i:0;s:19:"2017-08-27 15:50:42";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:13;a:3:{i:0;s:19:"2017-08-27 15:50:52";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:14;a:3:{i:0;s:19:"2017-08-27 15:51:02";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:15;a:3:{i:0;s:19:"2017-08-27 15:51:02";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:16;a:3:{i:0;s:19:"2017-08-27 15:51:03";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:17;a:3:{i:0;s:19:"2017-08-27 15:51:03";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:18;a:3:{i:0;s:19:"2017-08-27 15:51:03";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:19;a:3:{i:0;s:19:"2017-08-27 15:51:03";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:20;a:3:{i:0;s:19:"2017-08-27 15:51:04";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:21;a:3:{i:0;s:19:"2017-08-27 15:51:04";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:22;a:3:{i:0;s:19:"2017-08-27 15:51:12";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:23;a:3:{i:0;s:19:"2017-08-27 15:51:12";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:24;a:3:{i:0;s:19:"2017-08-27 15:51:12";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:25;a:3:{i:0;s:19:"2017-08-27 15:51:13";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:26;a:3:{i:0;s:19:"2017-08-27 15:51:13";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:27;a:3:{i:0;s:19:"2017-08-27 15:51:13";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:28;a:3:{i:0;s:19:"2017-08-27 15:51:13";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:29;a:3:{i:0;s:19:"2017-08-27 15:51:13";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:30;a:3:{i:0;s:19:"2017-08-27 15:51:23";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:31;a:3:{i:0;s:19:"2017-08-27 15:51:23";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:32;a:3:{i:0;s:19:"2017-08-27 15:51:23";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:33;a:3:{i:0;s:19:"2017-08-27 15:51:24";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:34;a:3:{i:0;s:19:"2017-08-27 15:51:24";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:35;a:3:{i:0;s:19:"2017-08-27 15:51:24";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:36;a:3:{i:0;s:19:"2017-08-27 15:51:24";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:37;a:3:{i:0;s:19:"2017-08-27 15:51:25";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:38;a:3:{i:0;s:19:"2017-08-27 15:51:33";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:39;a:3:{i:0;s:19:"2017-08-27 15:51:33";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:40;a:3:{i:0;s:19:"2017-08-27 15:51:33";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:41;a:3:{i:0;s:19:"2017-08-27 15:51:34";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:42;a:3:{i:0;s:19:"2017-08-27 15:51:34";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:43;a:3:{i:0;s:19:"2017-08-27 15:51:34";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:44;a:3:{i:0;s:19:"2017-08-27 15:51:34";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:45;a:3:{i:0;s:19:"2017-08-27 15:51:34";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:46;a:3:{i:0;s:19:"2017-08-27 15:51:44";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:47;a:3:{i:0;s:19:"2017-08-27 15:51:44";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:48;a:3:{i:0;s:19:"2017-08-27 15:51:44";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:49;a:3:{i:0;s:19:"2017-08-27 15:51:44";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:50;a:3:{i:0;s:19:"2017-08-27 15:51:45";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:51;a:3:{i:0;s:19:"2017-08-27 15:51:45";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:52;a:3:{i:0;s:19:"2017-08-27 15:51:45";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:53;a:3:{i:0;s:19:"2017-08-27 15:51:45";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:54;a:3:{i:0;s:19:"2017-08-27 15:51:54";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:55;a:3:{i:0;s:19:"2017-08-27 15:51:55";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:56;a:3:{i:0;s:19:"2017-08-27 15:51:55";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:57;a:3:{i:0;s:19:"2017-08-27 15:51:55";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:58;a:3:{i:0;s:19:"2017-08-27 15:51:56";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:59;a:3:{i:0;s:19:"2017-08-27 15:51:56";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:60;a:3:{i:0;s:19:"2017-08-27 15:51:56";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:61;a:3:{i:0;s:19:"2017-08-27 15:51:57";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:62;a:3:{i:0;s:19:"2017-08-27 15:52:06";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:63;a:3:{i:0;s:19:"2017-08-27 15:52:06";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:64;a:3:{i:0;s:19:"2017-08-27 15:52:06";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:65;a:3:{i:0;s:19:"2017-08-27 15:52:07";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:66;a:3:{i:0;s:19:"2017-08-27 15:52:07";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:67;a:3:{i:0;s:19:"2017-08-27 15:52:07";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:68;a:3:{i:0;s:19:"2017-08-27 15:52:07";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:69;a:3:{i:0;s:19:"2017-08-27 15:52:08";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:70;a:3:{i:0;s:19:"2017-08-27 15:52:16";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:71;a:3:{i:0;s:19:"2017-08-27 15:52:17";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:72;a:3:{i:0;s:19:"2017-08-27 15:52:18";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:73;a:3:{i:0;s:19:"2017-08-27 15:52:18";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:74;a:3:{i:0;s:19:"2017-08-27 15:52:18";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:75;a:3:{i:0;s:19:"2017-08-27 15:52:18";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:76;a:3:{i:0;s:19:"2017-08-27 15:52:19";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:77;a:3:{i:0;s:19:"2017-08-27 15:52:19";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:78;a:3:{i:0;s:19:"2017-08-27 15:52:20";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:79;a:3:{i:0;s:19:"2017-08-27 15:52:28";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:80;a:3:{i:0;s:19:"2017-08-27 15:52:28";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:81;a:3:{i:0;s:19:"2017-08-27 15:52:28";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:82;a:3:{i:0;s:19:"2017-08-27 15:52:29";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:83;a:3:{i:0;s:19:"2017-08-27 15:52:29";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:84;a:3:{i:0;s:19:"2017-08-27 15:52:29";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:85;a:3:{i:0;s:19:"2017-08-27 15:52:29";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:86;a:3:{i:0;s:19:"2017-08-27 15:52:30";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:87;a:3:{i:0;s:19:"2017-08-27 15:52:40";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:88;a:3:{i:0;s:19:"2017-08-27 15:52:40";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:89;a:3:{i:0;s:19:"2017-08-27 15:52:40";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:90;a:3:{i:0;s:19:"2017-08-27 15:52:41";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:91;a:3:{i:0;s:19:"2017-08-27 15:52:42";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:92;a:3:{i:0;s:19:"2017-08-27 15:52:42";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:93;a:3:{i:0;s:19:"2017-08-27 15:52:43";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:94;a:3:{i:0;s:19:"2017-08-27 15:52:51";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:95;a:3:{i:0;s:19:"2017-08-27 15:52:51";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:96;a:3:{i:0;s:19:"2017-08-27 15:52:51";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:97;a:3:{i:0;s:19:"2017-08-27 15:52:52";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:98;a:3:{i:0;s:19:"2017-08-27 15:52:52";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:99;a:3:{i:0;s:19:"2017-08-27 15:52:52";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:100;a:3:{i:0;s:19:"2017-08-27 15:52:52";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:101;a:3:{i:0;s:19:"2017-08-27 15:52:53";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:102;a:3:{i:0;s:19:"2017-08-27 15:53:02";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:103;a:3:{i:0;s:19:"2017-08-27 15:53:02";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:104;a:3:{i:0;s:19:"2017-08-27 15:53:02";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:105;a:3:{i:0;s:19:"2017-08-27 15:53:03";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:106;a:3:{i:0;s:19:"2017-08-27 15:53:03";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:107;a:3:{i:0;s:19:"2017-08-27 15:53:03";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:108;a:3:{i:0;s:19:"2017-08-30 14:29:33";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:109;a:3:{i:0;s:19:"2017-08-30 14:34:21";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:110;a:3:{i:0;s:19:"2017-08-30 14:37:40";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:111;a:3:{i:0;s:19:"2017-08-30 15:03:06";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}}'
+              WHERE name='task_loglist'
+[2017-08-30 15:03:06.59986100][DEBUG]:UPDATE core_queue
+              SET content = 'a:111:{i:0;a:3:{i:0;s:19:"2017-08-27 15:50:31";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:1;a:3:{i:0;s:19:"2017-08-27 15:50:31";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:2;a:3:{i:0;s:19:"2017-08-27 15:50:31";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:3;a:3:{i:0;s:19:"2017-08-27 15:50:31";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:4;a:3:{i:0;s:19:"2017-08-27 15:50:41";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:5;a:3:{i:0;s:19:"2017-08-27 15:50:41";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:6;a:3:{i:0;s:19:"2017-08-27 15:50:41";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:7;a:3:{i:0;s:19:"2017-08-27 15:50:41";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:8;a:3:{i:0;s:19:"2017-08-27 15:50:41";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:9;a:3:{i:0;s:19:"2017-08-27 15:50:41";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:10;a:3:{i:0;s:19:"2017-08-27 15:50:42";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:11;a:3:{i:0;s:19:"2017-08-27 15:50:42";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:12;a:3:{i:0;s:19:"2017-08-27 15:50:52";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:13;a:3:{i:0;s:19:"2017-08-27 15:51:02";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:14;a:3:{i:0;s:19:"2017-08-27 15:51:02";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:15;a:3:{i:0;s:19:"2017-08-27 15:51:03";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:16;a:3:{i:0;s:19:"2017-08-27 15:51:03";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:17;a:3:{i:0;s:19:"2017-08-27 15:51:03";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:18;a:3:{i:0;s:19:"2017-08-27 15:51:03";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:19;a:3:{i:0;s:19:"2017-08-27 15:51:04";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:20;a:3:{i:0;s:19:"2017-08-27 15:51:04";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:21;a:3:{i:0;s:19:"2017-08-27 15:51:12";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:22;a:3:{i:0;s:19:"2017-08-27 15:51:12";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:23;a:3:{i:0;s:19:"2017-08-27 15:51:12";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:24;a:3:{i:0;s:19:"2017-08-27 15:51:13";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:25;a:3:{i:0;s:19:"2017-08-27 15:51:13";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:26;a:3:{i:0;s:19:"2017-08-27 15:51:13";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:27;a:3:{i:0;s:19:"2017-08-27 15:51:13";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:28;a:3:{i:0;s:19:"2017-08-27 15:51:13";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:29;a:3:{i:0;s:19:"2017-08-27 15:51:23";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:30;a:3:{i:0;s:19:"2017-08-27 15:51:23";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:31;a:3:{i:0;s:19:"2017-08-27 15:51:23";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:32;a:3:{i:0;s:19:"2017-08-27 15:51:24";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:33;a:3:{i:0;s:19:"2017-08-27 15:51:24";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:34;a:3:{i:0;s:19:"2017-08-27 15:51:24";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:35;a:3:{i:0;s:19:"2017-08-27 15:51:24";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:36;a:3:{i:0;s:19:"2017-08-27 15:51:25";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:37;a:3:{i:0;s:19:"2017-08-27 15:51:33";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:38;a:3:{i:0;s:19:"2017-08-27 15:51:33";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:39;a:3:{i:0;s:19:"2017-08-27 15:51:33";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:40;a:3:{i:0;s:19:"2017-08-27 15:51:34";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:41;a:3:{i:0;s:19:"2017-08-27 15:51:34";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:42;a:3:{i:0;s:19:"2017-08-27 15:51:34";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:43;a:3:{i:0;s:19:"2017-08-27 15:51:34";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:44;a:3:{i:0;s:19:"2017-08-27 15:51:34";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:45;a:3:{i:0;s:19:"2017-08-27 15:51:44";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:46;a:3:{i:0;s:19:"2017-08-27 15:51:44";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:47;a:3:{i:0;s:19:"2017-08-27 15:51:44";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:48;a:3:{i:0;s:19:"2017-08-27 15:51:44";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:49;a:3:{i:0;s:19:"2017-08-27 15:51:45";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:50;a:3:{i:0;s:19:"2017-08-27 15:51:45";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:51;a:3:{i:0;s:19:"2017-08-27 15:51:45";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:52;a:3:{i:0;s:19:"2017-08-27 15:51:45";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:53;a:3:{i:0;s:19:"2017-08-27 15:51:54";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:54;a:3:{i:0;s:19:"2017-08-27 15:51:55";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:55;a:3:{i:0;s:19:"2017-08-27 15:51:55";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:56;a:3:{i:0;s:19:"2017-08-27 15:51:55";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:57;a:3:{i:0;s:19:"2017-08-27 15:51:56";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:58;a:3:{i:0;s:19:"2017-08-27 15:51:56";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:59;a:3:{i:0;s:19:"2017-08-27 15:51:56";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:60;a:3:{i:0;s:19:"2017-08-27 15:51:57";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:61;a:3:{i:0;s:19:"2017-08-27 15:52:06";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:62;a:3:{i:0;s:19:"2017-08-27 15:52:06";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:63;a:3:{i:0;s:19:"2017-08-27 15:52:06";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:64;a:3:{i:0;s:19:"2017-08-27 15:52:07";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:65;a:3:{i:0;s:19:"2017-08-27 15:52:07";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:66;a:3:{i:0;s:19:"2017-08-27 15:52:07";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:67;a:3:{i:0;s:19:"2017-08-27 15:52:07";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:68;a:3:{i:0;s:19:"2017-08-27 15:52:08";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:69;a:3:{i:0;s:19:"2017-08-27 15:52:16";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:70;a:3:{i:0;s:19:"2017-08-27 15:52:17";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:71;a:3:{i:0;s:19:"2017-08-27 15:52:18";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:72;a:3:{i:0;s:19:"2017-08-27 15:52:18";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:73;a:3:{i:0;s:19:"2017-08-27 15:52:18";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:74;a:3:{i:0;s:19:"2017-08-27 15:52:18";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:75;a:3:{i:0;s:19:"2017-08-27 15:52:19";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:76;a:3:{i:0;s:19:"2017-08-27 15:52:19";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:77;a:3:{i:0;s:19:"2017-08-27 15:52:20";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:78;a:3:{i:0;s:19:"2017-08-27 15:52:28";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:79;a:3:{i:0;s:19:"2017-08-27 15:52:28";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:80;a:3:{i:0;s:19:"2017-08-27 15:52:28";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:81;a:3:{i:0;s:19:"2017-08-27 15:52:29";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:82;a:3:{i:0;s:19:"2017-08-27 15:52:29";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:83;a:3:{i:0;s:19:"2017-08-27 15:52:29";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:84;a:3:{i:0;s:19:"2017-08-27 15:52:29";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:85;a:3:{i:0;s:19:"2017-08-27 15:52:30";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:86;a:3:{i:0;s:19:"2017-08-27 15:52:40";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:87;a:3:{i:0;s:19:"2017-08-27 15:52:40";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:88;a:3:{i:0;s:19:"2017-08-27 15:52:40";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:89;a:3:{i:0;s:19:"2017-08-27 15:52:41";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:90;a:3:{i:0;s:19:"2017-08-27 15:52:42";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:91;a:3:{i:0;s:19:"2017-08-27 15:52:42";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:92;a:3:{i:0;s:19:"2017-08-27 15:52:43";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:93;a:3:{i:0;s:19:"2017-08-27 15:52:51";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:94;a:3:{i:0;s:19:"2017-08-27 15:52:51";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:95;a:3:{i:0;s:19:"2017-08-27 15:52:51";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:96;a:3:{i:0;s:19:"2017-08-27 15:52:52";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:97;a:3:{i:0;s:19:"2017-08-27 15:52:52";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:98;a:3:{i:0;s:19:"2017-08-27 15:52:52";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:99;a:3:{i:0;s:19:"2017-08-27 15:52:52";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:100;a:3:{i:0;s:19:"2017-08-27 15:52:53";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:101;a:3:{i:0;s:19:"2017-08-27 15:53:02";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:102;a:3:{i:0;s:19:"2017-08-27 15:53:02";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:103;a:3:{i:0;s:19:"2017-08-27 15:53:02";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:104;a:3:{i:0;s:19:"2017-08-27 15:53:03";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:105;a:3:{i:0;s:19:"2017-08-27 15:53:03";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:106;a:3:{i:0;s:19:"2017-08-27 15:53:03";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:107;a:3:{i:0;s:19:"2017-08-30 14:29:33";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:108;a:3:{i:0;s:19:"2017-08-30 14:34:21";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:109;a:3:{i:0;s:19:"2017-08-30 14:37:40";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:110;a:3:{i:0;s:19:"2017-08-30 15:03:06";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}}'
+              WHERE name='task_loglist'
+[2017-08-30 15:03:39.27827200][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 15:03:39.30969900][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 15:03:39.40890600][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 15:03:39.41664800][NOTICE]:Undefined variable: datas in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver/Mysql.php on line 106
+[2017-08-30 15:03:39.41722000][DEBUG]:tasks\userinfo\userinfoTask [--END--][RunTime:0.149824s]
+[2017-08-30 15:03:39.46039100][DEBUG]:UPDATE core_queue
+              SET content = 'a:112:{i:0;a:3:{i:0;s:19:"2017-08-27 15:50:31";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:1;a:3:{i:0;s:19:"2017-08-27 15:50:31";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:2;a:3:{i:0;s:19:"2017-08-27 15:50:31";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:3;a:3:{i:0;s:19:"2017-08-27 15:50:31";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:4;a:3:{i:0;s:19:"2017-08-27 15:50:41";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:5;a:3:{i:0;s:19:"2017-08-27 15:50:41";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:6;a:3:{i:0;s:19:"2017-08-27 15:50:41";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:7;a:3:{i:0;s:19:"2017-08-27 15:50:41";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:8;a:3:{i:0;s:19:"2017-08-27 15:50:41";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:9;a:3:{i:0;s:19:"2017-08-27 15:50:41";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:10;a:3:{i:0;s:19:"2017-08-27 15:50:42";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:11;a:3:{i:0;s:19:"2017-08-27 15:50:42";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:12;a:3:{i:0;s:19:"2017-08-27 15:50:52";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:13;a:3:{i:0;s:19:"2017-08-27 15:51:02";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:14;a:3:{i:0;s:19:"2017-08-27 15:51:02";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:15;a:3:{i:0;s:19:"2017-08-27 15:51:03";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:16;a:3:{i:0;s:19:"2017-08-27 15:51:03";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:17;a:3:{i:0;s:19:"2017-08-27 15:51:03";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:18;a:3:{i:0;s:19:"2017-08-27 15:51:03";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:19;a:3:{i:0;s:19:"2017-08-27 15:51:04";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:20;a:3:{i:0;s:19:"2017-08-27 15:51:04";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:21;a:3:{i:0;s:19:"2017-08-27 15:51:12";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:22;a:3:{i:0;s:19:"2017-08-27 15:51:12";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:23;a:3:{i:0;s:19:"2017-08-27 15:51:12";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:24;a:3:{i:0;s:19:"2017-08-27 15:51:13";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:25;a:3:{i:0;s:19:"2017-08-27 15:51:13";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:26;a:3:{i:0;s:19:"2017-08-27 15:51:13";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:27;a:3:{i:0;s:19:"2017-08-27 15:51:13";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:28;a:3:{i:0;s:19:"2017-08-27 15:51:13";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:29;a:3:{i:0;s:19:"2017-08-27 15:51:23";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:30;a:3:{i:0;s:19:"2017-08-27 15:51:23";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:31;a:3:{i:0;s:19:"2017-08-27 15:51:23";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:32;a:3:{i:0;s:19:"2017-08-27 15:51:24";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:33;a:3:{i:0;s:19:"2017-08-27 15:51:24";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:34;a:3:{i:0;s:19:"2017-08-27 15:51:24";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:35;a:3:{i:0;s:19:"2017-08-27 15:51:24";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:36;a:3:{i:0;s:19:"2017-08-27 15:51:25";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:37;a:3:{i:0;s:19:"2017-08-27 15:51:33";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:38;a:3:{i:0;s:19:"2017-08-27 15:51:33";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:39;a:3:{i:0;s:19:"2017-08-27 15:51:33";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:40;a:3:{i:0;s:19:"2017-08-27 15:51:34";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:41;a:3:{i:0;s:19:"2017-08-27 15:51:34";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:42;a:3:{i:0;s:19:"2017-08-27 15:51:34";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:43;a:3:{i:0;s:19:"2017-08-27 15:51:34";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:44;a:3:{i:0;s:19:"2017-08-27 15:51:34";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:45;a:3:{i:0;s:19:"2017-08-27 15:51:44";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:46;a:3:{i:0;s:19:"2017-08-27 15:51:44";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:47;a:3:{i:0;s:19:"2017-08-27 15:51:44";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:48;a:3:{i:0;s:19:"2017-08-27 15:51:44";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:49;a:3:{i:0;s:19:"2017-08-27 15:51:45";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:50;a:3:{i:0;s:19:"2017-08-27 15:51:45";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:51;a:3:{i:0;s:19:"2017-08-27 15:51:45";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:52;a:3:{i:0;s:19:"2017-08-27 15:51:45";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:53;a:3:{i:0;s:19:"2017-08-27 15:51:54";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:54;a:3:{i:0;s:19:"2017-08-27 15:51:55";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:55;a:3:{i:0;s:19:"2017-08-27 15:51:55";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:56;a:3:{i:0;s:19:"2017-08-27 15:51:55";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:57;a:3:{i:0;s:19:"2017-08-27 15:51:56";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:58;a:3:{i:0;s:19:"2017-08-27 15:51:56";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:59;a:3:{i:0;s:19:"2017-08-27 15:51:56";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:60;a:3:{i:0;s:19:"2017-08-27 15:51:57";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:61;a:3:{i:0;s:19:"2017-08-27 15:52:06";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:62;a:3:{i:0;s:19:"2017-08-27 15:52:06";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:63;a:3:{i:0;s:19:"2017-08-27 15:52:06";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:64;a:3:{i:0;s:19:"2017-08-27 15:52:07";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:65;a:3:{i:0;s:19:"2017-08-27 15:52:07";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:66;a:3:{i:0;s:19:"2017-08-27 15:52:07";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:67;a:3:{i:0;s:19:"2017-08-27 15:52:07";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:68;a:3:{i:0;s:19:"2017-08-27 15:52:08";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:69;a:3:{i:0;s:19:"2017-08-27 15:52:16";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:70;a:3:{i:0;s:19:"2017-08-27 15:52:17";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:71;a:3:{i:0;s:19:"2017-08-27 15:52:18";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:72;a:3:{i:0;s:19:"2017-08-27 15:52:18";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:73;a:3:{i:0;s:19:"2017-08-27 15:52:18";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:74;a:3:{i:0;s:19:"2017-08-27 15:52:18";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:75;a:3:{i:0;s:19:"2017-08-27 15:52:19";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:76;a:3:{i:0;s:19:"2017-08-27 15:52:19";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:77;a:3:{i:0;s:19:"2017-08-27 15:52:20";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:78;a:3:{i:0;s:19:"2017-08-27 15:52:28";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:79;a:3:{i:0;s:19:"2017-08-27 15:52:28";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:80;a:3:{i:0;s:19:"2017-08-27 15:52:28";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:81;a:3:{i:0;s:19:"2017-08-27 15:52:29";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:82;a:3:{i:0;s:19:"2017-08-27 15:52:29";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:83;a:3:{i:0;s:19:"2017-08-27 15:52:29";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:84;a:3:{i:0;s:19:"2017-08-27 15:52:29";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:85;a:3:{i:0;s:19:"2017-08-27 15:52:30";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:86;a:3:{i:0;s:19:"2017-08-27 15:52:40";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:87;a:3:{i:0;s:19:"2017-08-27 15:52:40";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:88;a:3:{i:0;s:19:"2017-08-27 15:52:40";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:89;a:3:{i:0;s:19:"2017-08-27 15:52:41";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:90;a:3:{i:0;s:19:"2017-08-27 15:52:42";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:91;a:3:{i:0;s:19:"2017-08-27 15:52:42";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:92;a:3:{i:0;s:19:"2017-08-27 15:52:43";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:93;a:3:{i:0;s:19:"2017-08-27 15:52:51";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:94;a:3:{i:0;s:19:"2017-08-27 15:52:51";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:95;a:3:{i:0;s:19:"2017-08-27 15:52:51";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:96;a:3:{i:0;s:19:"2017-08-27 15:52:52";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:97;a:3:{i:0;s:19:"2017-08-27 15:52:52";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:98;a:3:{i:0;s:19:"2017-08-27 15:52:52";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:99;a:3:{i:0;s:19:"2017-08-27 15:52:52";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:100;a:3:{i:0;s:19:"2017-08-27 15:52:53";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:101;a:3:{i:0;s:19:"2017-08-27 15:53:02";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:102;a:3:{i:0;s:19:"2017-08-27 15:53:02";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:103;a:3:{i:0;s:19:"2017-08-27 15:53:02";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:104;a:3:{i:0;s:19:"2017-08-27 15:53:03";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:105;a:3:{i:0;s:19:"2017-08-27 15:53:03";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:106;a:3:{i:0;s:19:"2017-08-27 15:53:03";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:107;a:3:{i:0;s:19:"2017-08-30 14:29:33";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:108;a:3:{i:0;s:19:"2017-08-30 14:34:21";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:109;a:3:{i:0;s:19:"2017-08-30 14:37:40";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:110;a:3:{i:0;s:19:"2017-08-30 15:03:06";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:111;a:3:{i:0;s:19:"2017-08-30 15:03:39";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}}'
+              WHERE name='task_loglist'
+[2017-08-30 15:03:39.48443800][DEBUG]:UPDATE core_queue
+              SET content = 'a:111:{i:0;a:3:{i:0;s:19:"2017-08-27 15:50:31";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:1;a:3:{i:0;s:19:"2017-08-27 15:50:31";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:2;a:3:{i:0;s:19:"2017-08-27 15:50:31";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:3;a:3:{i:0;s:19:"2017-08-27 15:50:41";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:4;a:3:{i:0;s:19:"2017-08-27 15:50:41";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:5;a:3:{i:0;s:19:"2017-08-27 15:50:41";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:6;a:3:{i:0;s:19:"2017-08-27 15:50:41";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:7;a:3:{i:0;s:19:"2017-08-27 15:50:41";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:8;a:3:{i:0;s:19:"2017-08-27 15:50:41";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:9;a:3:{i:0;s:19:"2017-08-27 15:50:42";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:10;a:3:{i:0;s:19:"2017-08-27 15:50:42";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:11;a:3:{i:0;s:19:"2017-08-27 15:50:52";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:12;a:3:{i:0;s:19:"2017-08-27 15:51:02";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:13;a:3:{i:0;s:19:"2017-08-27 15:51:02";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:14;a:3:{i:0;s:19:"2017-08-27 15:51:03";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:15;a:3:{i:0;s:19:"2017-08-27 15:51:03";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:16;a:3:{i:0;s:19:"2017-08-27 15:51:03";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:17;a:3:{i:0;s:19:"2017-08-27 15:51:03";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:18;a:3:{i:0;s:19:"2017-08-27 15:51:04";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:19;a:3:{i:0;s:19:"2017-08-27 15:51:04";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:20;a:3:{i:0;s:19:"2017-08-27 15:51:12";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:21;a:3:{i:0;s:19:"2017-08-27 15:51:12";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:22;a:3:{i:0;s:19:"2017-08-27 15:51:12";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:23;a:3:{i:0;s:19:"2017-08-27 15:51:13";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:24;a:3:{i:0;s:19:"2017-08-27 15:51:13";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:25;a:3:{i:0;s:19:"2017-08-27 15:51:13";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:26;a:3:{i:0;s:19:"2017-08-27 15:51:13";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:27;a:3:{i:0;s:19:"2017-08-27 15:51:13";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:28;a:3:{i:0;s:19:"2017-08-27 15:51:23";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:29;a:3:{i:0;s:19:"2017-08-27 15:51:23";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:30;a:3:{i:0;s:19:"2017-08-27 15:51:23";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:31;a:3:{i:0;s:19:"2017-08-27 15:51:24";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:32;a:3:{i:0;s:19:"2017-08-27 15:51:24";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:33;a:3:{i:0;s:19:"2017-08-27 15:51:24";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:34;a:3:{i:0;s:19:"2017-08-27 15:51:24";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:35;a:3:{i:0;s:19:"2017-08-27 15:51:25";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:36;a:3:{i:0;s:19:"2017-08-27 15:51:33";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:37;a:3:{i:0;s:19:"2017-08-27 15:51:33";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:38;a:3:{i:0;s:19:"2017-08-27 15:51:33";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:39;a:3:{i:0;s:19:"2017-08-27 15:51:34";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:40;a:3:{i:0;s:19:"2017-08-27 15:51:34";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:41;a:3:{i:0;s:19:"2017-08-27 15:51:34";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:42;a:3:{i:0;s:19:"2017-08-27 15:51:34";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:43;a:3:{i:0;s:19:"2017-08-27 15:51:34";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:44;a:3:{i:0;s:19:"2017-08-27 15:51:44";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:45;a:3:{i:0;s:19:"2017-08-27 15:51:44";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:46;a:3:{i:0;s:19:"2017-08-27 15:51:44";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:47;a:3:{i:0;s:19:"2017-08-27 15:51:44";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:48;a:3:{i:0;s:19:"2017-08-27 15:51:45";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:49;a:3:{i:0;s:19:"2017-08-27 15:51:45";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:50;a:3:{i:0;s:19:"2017-08-27 15:51:45";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:51;a:3:{i:0;s:19:"2017-08-27 15:51:45";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:52;a:3:{i:0;s:19:"2017-08-27 15:51:54";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:53;a:3:{i:0;s:19:"2017-08-27 15:51:55";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:54;a:3:{i:0;s:19:"2017-08-27 15:51:55";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:55;a:3:{i:0;s:19:"2017-08-27 15:51:55";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:56;a:3:{i:0;s:19:"2017-08-27 15:51:56";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:57;a:3:{i:0;s:19:"2017-08-27 15:51:56";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:58;a:3:{i:0;s:19:"2017-08-27 15:51:56";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:59;a:3:{i:0;s:19:"2017-08-27 15:51:57";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:60;a:3:{i:0;s:19:"2017-08-27 15:52:06";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:61;a:3:{i:0;s:19:"2017-08-27 15:52:06";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:62;a:3:{i:0;s:19:"2017-08-27 15:52:06";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:63;a:3:{i:0;s:19:"2017-08-27 15:52:07";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:64;a:3:{i:0;s:19:"2017-08-27 15:52:07";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:65;a:3:{i:0;s:19:"2017-08-27 15:52:07";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:66;a:3:{i:0;s:19:"2017-08-27 15:52:07";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:67;a:3:{i:0;s:19:"2017-08-27 15:52:08";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:68;a:3:{i:0;s:19:"2017-08-27 15:52:16";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:69;a:3:{i:0;s:19:"2017-08-27 15:52:17";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:70;a:3:{i:0;s:19:"2017-08-27 15:52:18";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:71;a:3:{i:0;s:19:"2017-08-27 15:52:18";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:72;a:3:{i:0;s:19:"2017-08-27 15:52:18";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:73;a:3:{i:0;s:19:"2017-08-27 15:52:18";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:74;a:3:{i:0;s:19:"2017-08-27 15:52:19";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:75;a:3:{i:0;s:19:"2017-08-27 15:52:19";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:76;a:3:{i:0;s:19:"2017-08-27 15:52:20";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:77;a:3:{i:0;s:19:"2017-08-27 15:52:28";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:78;a:3:{i:0;s:19:"2017-08-27 15:52:28";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:79;a:3:{i:0;s:19:"2017-08-27 15:52:28";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:80;a:3:{i:0;s:19:"2017-08-27 15:52:29";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:81;a:3:{i:0;s:19:"2017-08-27 15:52:29";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:82;a:3:{i:0;s:19:"2017-08-27 15:52:29";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:83;a:3:{i:0;s:19:"2017-08-27 15:52:29";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:84;a:3:{i:0;s:19:"2017-08-27 15:52:30";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:85;a:3:{i:0;s:19:"2017-08-27 15:52:40";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:86;a:3:{i:0;s:19:"2017-08-27 15:52:40";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:87;a:3:{i:0;s:19:"2017-08-27 15:52:40";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:88;a:3:{i:0;s:19:"2017-08-27 15:52:41";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:89;a:3:{i:0;s:19:"2017-08-27 15:52:42";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:90;a:3:{i:0;s:19:"2017-08-27 15:52:42";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:91;a:3:{i:0;s:19:"2017-08-27 15:52:43";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:92;a:3:{i:0;s:19:"2017-08-27 15:52:51";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:93;a:3:{i:0;s:19:"2017-08-27 15:52:51";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:94;a:3:{i:0;s:19:"2017-08-27 15:52:51";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:95;a:3:{i:0;s:19:"2017-08-27 15:52:52";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:96;a:3:{i:0;s:19:"2017-08-27 15:52:52";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:97;a:3:{i:0;s:19:"2017-08-27 15:52:52";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:98;a:3:{i:0;s:19:"2017-08-27 15:52:52";i:1;s:29:"tasks\passenger\passengerTask";i:2;s:11:"run success";}i:99;a:3:{i:0;s:19:"2017-08-27 15:52:53";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:100;a:3:{i:0;s:19:"2017-08-27 15:53:02";i:1;s:23:"tasks\growup\growupTask";i:2;s:11:"run success";}i:101;a:3:{i:0;s:19:"2017-08-27 15:53:02";i:1;s:21:"tasks\level\levelTask";i:2;s:11:"run success";}i:102;a:3:{i:0;s:19:"2017-08-27 15:53:02";i:1;s:19:"tasks\rank\rankTask";i:2;s:11:"run success";}i:103;a:3:{i:0;s:19:"2017-08-27 15:53:03";i:1;s:21:"tasks\login\loginTask";i:2;s:11:"run success";}i:104;a:3:{i:0;s:19:"2017-08-27 15:53:03";i:1;s:27:"tasks\disaster\disasterTask";i:2;s:11:"run success";}i:105;a:3:{i:0;s:19:"2017-08-27 15:53:03";i:1;s:23:"tasks\driver\driverTask";i:2;s:11:"run success";}i:106;a:3:{i:0;s:19:"2017-08-30 14:29:33";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:107;a:3:{i:0;s:19:"2017-08-30 14:34:21";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:108;a:3:{i:0;s:19:"2017-08-30 14:37:40";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:109;a:3:{i:0;s:19:"2017-08-30 15:03:06";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}i:110;a:3:{i:0;s:19:"2017-08-30 15:03:39";i:1;s:27:"tasks\userinfo\userinfoTask";i:2;s:11:"run success";}}'
+              WHERE name='task_loglist'
+[2017-08-30 15:04:26.14179500][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 15:04:26.16758300][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 15:04:26.24666500][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 15:04:26.25208400][NOTICE]:Undefined variable: datas in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver/Mysql.php on line 106
+[2017-08-30 15:04:26.25255900][DEBUG]:tasks\userinfo\userinfoTask [--END--][RunTime:0.119477s]
+[2017-08-30 15:05:20.58927300][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 15:05:20.62100300][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 15:05:20.73059000][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 15:05:20.73627500][NOTICE]:Undefined variable: datas in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver/Mysql.php on line 106
+[2017-08-30 15:05:20.73661300][DEBUG]:tasks\userinfo\userinfoTask [--END--][RunTime:0.158848s]
+[2017-08-30 15:05:54.01463200][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 15:05:54.04942600][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 15:05:54.13522700][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 15:05:54.15043800][DEBUG]:tasks\userinfo\userinfoTask [--END--][RunTime:0.147358s]
+[2017-08-30 15:06:15.53777400][DEBUG]:tasks\userinfo\userinfoTask [--START--]
+[2017-08-30 15:06:15.55661600][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 15:06:15.63464300][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 15:06:15.65249300][DEBUG]:tasks\userinfo\userinfoTask [--END--][RunTime:0.121763s]
+[2017-08-30 15:40:50.41519600][DEBUG]:tasks\wxsport\wxsportTask [--START--]
+[2017-08-30 15:40:50.44841300][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 15:40:50.52684300][ERROR]:SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dolphin.wxsport' doesn't exist in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/db/Driver.php on line 188
+[2017-08-30 15:41:34.01810400][DEBUG]:tasks\wxsport\wxsportTask [--START--]
+[2017-08-30 15:41:34.04833600][NOTICE]:Undefined index: lite in /data/httpd/treeGame/vendor/taskphp/taskphp/core/lib/Db.php on line 36
+[2017-08-30 15:41:34.13642600][DEBUG]:tasks\wxsport\wxsportTask [--END--][RunTime:0.130553s]
