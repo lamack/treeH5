@@ -765,7 +765,7 @@ abstract class Builder
                 implode(' UNION ALL ', $values),
                 $this->parseComment($options['comment']),
             ], $this->insertAllSql);
-
+        
         return $sql;
     }
 

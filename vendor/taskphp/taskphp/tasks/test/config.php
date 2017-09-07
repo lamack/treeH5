@@ -20,85 +20,105 @@ return array(
             //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
             'class_name'=>true,   
             //crontad格式 :秒 分 时 天 月 年 周
-            'timer'     =>'10 20 1 * * 1 *', 
+            'timer'     =>'10 20 1 * * * *', 
         ),
-        'growup'=>array(
-            //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
-            'class_name'=>true,   
-            //crontad格式 :秒 分 时 天 月 年 周
-            'timer'     =>'10 20 1 * * 1 *',  
-        ),
-        'level'=>array(
-            //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
-            'class_name'=>true,   
-            //crontad格式 :秒 分 时 天 月 年 周
-            'timer'     =>'10 20 1 * * 1 *',  
-        ),
-        'rank'=>array(
-            //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
-            'class_name'=>true,   
-            //crontad格式 :秒 分 时 天 月 年 周
-            'timer'     =>'10 20 1 * * 1 *', 
-        ),
-        'login'=>array(
-            //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
-            'class_name'=>true,   
-            //crontad格式 :秒 分 时 天 月 年 周
-            'timer'     =>'10 20 1 * * 1 *', 
-        ),
-        'disaster'=>array(
-            //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
-            'class_name'=>true,   
-            //crontad格式 :秒 分 时 天 月 年 周
-            'timer'     =>'10 20 1 * * 1 *', 
-        ),
-        'driver'=>array(
-            //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
-            'class_name'=>true,   
-            //crontad格式 :秒 分 时 天 月 年 周
-            'timer'     =>'10 20 1 * * 1 *', 
-        ),
-        'syncdriver'=>array(
-            //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
-            'class_name'=>true,   
-            //crontad格式 :秒 分 时 天 月 年 周
-            'timer'     =>'10 20 1 * * 1 *', 
-        ),
-        'passenger'=>array(
-            //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
-            'class_name'=>true,   
-            //crontad格式 :秒 分 时 天 月 年 周
-            'timer'     =>'10 20 1 * * 1 *',  
-        ),
-        'syncpassenger'=>array(
-            //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
-            'class_name'=>true,   
-            //crontad格式 :秒 分 时 天 月 年 周
-            'timer'     =>'10 20 1 * * 1 *',  
-        ),
+        
         'userinfo'=>array(
             //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
             'class_name'=>true,   
             //crontad格式 :秒 分 时 天 月 年 周
-            'timer'     =>'10 20 1 * * 1 *', 
+            'timer'     =>'10 10 0 * * * *', 
         ),
         'syncuserinfo'=>array(
             //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
             'class_name'=>true,   
             //crontad格式 :秒 分 时 天 月 年 周
-            'timer'     =>'10 20 1 * * 1 *', 
+            'timer'     =>'10 50 0 * * * *', 
+        ),
+        
+        'driver'=>array(
+            //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
+            'class_name'=>true,   
+            //crontad格式 :秒 分 时 天 月 年 周
+            'timer'     =>'10 20 1 * * * *', 
+        ),
+        'syncdriver'=>array(
+            //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
+            'class_name'=>true,   
+            //crontad格式 :秒 分 时 天 月 年 周
+            'timer'     =>'10 50 1 * * * *', 
+        ),
+        'passenger'=>array(
+            //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
+            'class_name'=>true,   
+            //crontad格式 :秒 分 时 天 月 年 周
+            'timer'     =>'10 20 2 * * * *',  
+        ),
+        'syncpassenger'=>array(
+            //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
+            'class_name'=>true,   
+            //crontad格式 :秒 分 时 天 月 年 周
+            'timer'     =>'10 50 2 * * * *',  
         ),
         'wxsport'=>array(
             //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
             'class_name'=>true,   
             //crontad格式 :秒 分 时 天 月 年 周
-            'timer'     =>'/20 * * * * * *', 
+            'timer'     =>'10 20 3 * * * *', 
         ),
         'syncwxsport'=>array(
             //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
             'class_name'=>true,   
             //crontad格式 :秒 分 时 天 月 年 周
-            'timer'     =>'10 20 1 * * 1 *', 
+            'timer'     =>'10 50 3 * * * *', 
+        ),
+
+        
+        'growup'=>array(
+            //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
+            'class_name'=>true,   
+            //crontad格式 :秒 分 时 天 月 年 周
+            'timer'     =>'10 20 4 * * * *',  
+        ),
+        'level'=>array(
+            //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
+            'class_name'=>true,   
+            //crontad格式 :秒 分 时 天 月 年 周
+            'timer'     =>'10 50 4 * * * *',  
+        ),
+        
+        'login'=>array(
+            //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
+            'class_name'=>true,   
+            //crontad格式 :秒 分 时 天 月 年 周
+            'timer'     =>'10 10 5 * * * *', 
+        ),
+        
+        'synctask'=>array(
+            //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
+            'class_name'=>true,   
+            //crontad格式 :秒 分 时 天 月 年 周
+            'timer'     =>'10 40 5 * * * *', 
+        ),
+
+        'syncgreen'=>array(
+            //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
+            'class_name'=>true,   
+            //crontad格式 :秒 分 时 天 月 年 周
+            'timer'     =>'10 20 6 * * * *', 
+        ),
+        
+        'rank'=>array(
+            //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
+            'class_name'=>true,   
+            //crontad格式 :秒 分 时 天 月 年 周
+            'timer'     =>'10 50 6 * * * *', 
+        ),
+        'disaster'=>array(
+            //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
+            'class_name'=>true,   
+            //crontad格式 :秒 分 时 天 月 年 周
+            'timer'     =>'10 20 7 * * * *', 
         ),
     ),
 );
