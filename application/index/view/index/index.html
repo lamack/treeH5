@@ -344,8 +344,20 @@
                                 success: function(ref) {
                                     var data = ref.data;
                                     console.log(data)
-                                    if(data.list.level!=treeindex){
-                                        Tree.growing(data.list.level,data.list.level++)
+                                    var ind = 3;
+                                    switch (data.list.level) {
+                                        case 1:
+                                            ind = 2;
+                                            break;
+                                        case 2:
+                                            ind = 1;
+                                            break;
+                                        case 3:
+                                            ind = 0;
+                                            break;
+                                    }
+                                    if(ind!=treeindex){
+                                        Tree.growing(ind,ind++)
                                     }
                                 }
                             })
