@@ -29,7 +29,7 @@ set a.steps = CASE b.Step
         END,a.green = CASE b.Step
             WHEN b.Step>10000 THEN ceil(10000*0.6*2/1000)+a.green
             WHEN b.Step<10000 THEN ceil(b.Step*0.6*2/1000)+a.green
-        END,a.share = ceil(b.AccuracyNum*'.intval($develop['cash_share']).')+a.share,create_time = NOW() where TO_DAYS(a.create_time)<>TO_DAYS(NOW())';
+        END,a.share = ceil(b.AccuracyNum*'.intval($develop['cash_share']).')+a.share,create_time = unix_timestamp(b.AddTime) where TO_DAYS(a.create_time)=TO_DAYS(b.updatetime)';
         Utils::model("member")->execute($sql);
         
 
