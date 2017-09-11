@@ -53,6 +53,9 @@
 	        //排行列表用户点击
 	        $('.self-type-box').on('click', '.rank-list', function() {
 	            var id = $(this).attr('mid');
+                if(!id){
+                    return;
+                }
 	            var token = '{$_TOKEN_|json_encode}';
 	            location.href = "{:url('other/index')}?id="+id+"&token="+token;
 	        })
@@ -68,6 +71,11 @@
 	                '<div class="self-num">' + data[i].green + '</div>' +
 	                '</div>'
 	        }
+            if(!str){
+                str = '<div class="rank-list flex" >' +
+                    '暂无排行' +
+                    '</div>'
+            }
 	        $('.self-type-box').append(str);
 	    },
 	    switchicon(d) {
