@@ -50,6 +50,12 @@ class Index extends Home
             if ($res) {
                 $data['username'] = $res['user_name'];
                 $data['sign'] = $res['uid'];
+                $data['contact'] = $res['phone'];
+                $data['class_no'] = $res['team_code'];
+                $data['class'] = $res['team_name'];
+                $data['company'] = $res['company'];
+                $data['company_no'] = $res['company'];
+                $data['area'] = $res['county'];
                 db('member')->insert($data);
                 $this ->redirect('index/launch',array('uid' => $params['uid'],'sign' => $params['sign']),1, '会员同步登录中...');
             }
