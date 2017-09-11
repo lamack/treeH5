@@ -17,7 +17,7 @@ class syncwxsportTask extends Task{
       Utils::dbConfig(Utils::config('DB','syncwxsport'));
 
       //dis
-      $sql3 = 'drop table game_wxsport_temp';
+      $sql3 = 'delete from game_wxsport_temp';
       Utils::model("wxsport_temp")->execute($sql3);
       //update
       $sql4 = 'select * from game_wxsport b left join game_member a on b.LoginId = a.sign  where  unix_timestamp(b.updatetime)>a.create_time';
