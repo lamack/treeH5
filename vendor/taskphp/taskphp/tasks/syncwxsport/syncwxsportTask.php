@@ -32,8 +32,8 @@ class syncwxsportTask extends Task{
         $sql = 'update game_member a 
 inner join (select Step,AccuracyNum,AddTime,LoginId,updatetime from game_wxsport_temp WHERE 1 ) b on a.sign = b.LoginId  
 set a.steps = CASE b.Step
-            WHEN b.Step>10000 THEN 10000+a.steps
-            WHEN b.Step<10000 THEN b.Step+a.steps
+            WHEN b.Step>10000 THEN (10000+a.steps)
+            ELSE (b.Step+a.steps)
         END,a.green_max = CASE b.Step
             WHEN b.Step>10000 THEN ceil(10000*0.6*2/1000)+a.green_max
             WHEN b.Step<10000 THEN ceil(b.Step*0.6*2/1000)+a.green_max
