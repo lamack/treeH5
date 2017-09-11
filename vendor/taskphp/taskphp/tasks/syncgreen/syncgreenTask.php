@@ -25,8 +25,8 @@ where NOT EXISTS (select user_id from game_green_record where sign=1 and a.id = 
 
             if(Utils::model("member")->execute($sql1)){
                 $sql2 = 'insert into game_green_record (user_id,green,create_time,sign) 
-SELECT uid,38,NOW(),1 FROM game_user_info a 
-where not exists(select * from game_green_record where sign = 1 and a.uid = user_id)';
+SELECT id,38,NOW(),1 FROM game_member a 
+where not exists(select * from game_green_record where sign = 1 and a.id = user_id)';
                 Utils::model("green_record")->execute($sql2);
             } 
         }
@@ -40,8 +40,8 @@ where NOT EXISTS (select user_id from game_green_record where sign=2 and a.id = 
 
             if(Utils::model("member")->execute($sql3)){
                 $sql4 = 'insert into game_green_record (user_id,green,create_time,sign) 
-SELECT uid,58,NOW(),2 FROM game_user_info a 
-where not exists(select * from game_green_record where sign = 2 and a.uid = user_id)';
+SELECT id,58,NOW(),2 FROM game_member a 
+where not exists(select * from game_green_record where sign = 2 and a.id = user_id)';
                 Utils::model("green_record")->execute($sql4);
             } 
         }
@@ -54,8 +54,8 @@ where NOT EXISTS (select user_id from game_green_record where sign=3 and a.id = 
 
             if(Utils::model("member")->execute($sql5)){
                 $sql6 = 'insert into game_green_record (user_id,green,create_time,sign) 
-SELECT uid,58,NOW(),3 FROM game_user_info a 
-where not exists(select * from game_green_record where sign = 3 and a.uid = user_id)';
+SELECT id,58,NOW(),3 FROM game_member a 
+where not exists(select * from game_green_record where sign = 3 and a.id = user_id)';
                 Utils::model("green_record")->execute($sql6);
             } 
         }
@@ -68,8 +68,8 @@ where NOT EXISTS (select user_id from game_green_record where sign=4 and a.id = 
 
             if(Utils::model("member")->execute($sql5)){
                 $sql6 = 'insert into game_green_record (user_id,green,create_time,sign) 
-SELECT uid,58,NOW(),4 FROM game_user_info a 
-where not exists(select * from game_green_record where sign = 4 and a.uid = user_id)';
+SELECT id,58,NOW(),4 FROM game_member a 
+where not exists(select * from game_green_record where sign = 4 and a.id = user_id)';
                 Utils::model("green_record")->execute($sql6);
             } 
         }
