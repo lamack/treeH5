@@ -20,11 +20,11 @@ class syncwxsportTask extends Task{
       $sql3 = 'delete from game_wxsport_temp';
       Utils::model("wxsport_temp")->execute($sql3);
       //update
-      $sql4 = 'select b.* from game_wxsport b left join game_member a on b.LoginId = a.sign  where  unix_timestamp(b.updatetime)>a.create_time';
-      $res = Utils::model("wxsport")->execute($sql4);
-      if ($res) {
-        Utils::model("wxsport_temp")->addAll($res,array(),true);
-      }
+      $sql4 = 'insert into game_wxsport_temp (select b.* from game_wxsport b left join game_member a on b.LoginId = a.sign  where  unix_timestamp(b.updatetime)>a.create_time)';
+      $res = Utils::model("wxsport_temp")->execute($sql4);
+      // if ($res) {
+      //   Utils::model("wxsport_temp")->addAll($res,array(),true);
+      // }
       
       //兑换成长币
       $develop = Utils::model("develop")->find();
