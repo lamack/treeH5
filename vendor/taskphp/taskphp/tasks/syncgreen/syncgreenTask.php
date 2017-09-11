@@ -48,7 +48,7 @@ where not exists(select * from game_green_record where sign = 2 and a.uid = user
         //绑定“88共享”出行APP
         if (Utils::model("task")->where('type',3)->find()) {
             $sql5 = 'update game_member a 
-inner join (select PHONE, COUNT(PHONE) as cout,SOURCE from game_user_login where SOURCE='SGS') b on a.contact = b.PHONE 
+inner join (select PHONE, COUNT(PHONE) as cout,SOURCE from game_user_login where SOURCE="SGS") b on a.contact = b.PHONE 
 set a.green_nocash = a.green_nocash+58 , green_max = green_max+58 
 where NOT EXISTS (select user_id from game_green_record where sign=3 and a.id = user_id ) and b.cout>0';
 
@@ -62,7 +62,7 @@ where not exists(select * from game_green_record where sign = 3 and a.uid = user
         //绑定上海农商银行借记卡
         if (Utils::model("task")->where('type',4)->find()) {
             $sql5 = 'update game_member a 
-inner join (select PHONE, COUNT(PHONE) as cout,PAY_TYPE from game_passenger_trip where PAY_TYPE='SRCB') b on a.contact = b.PHONE 
+inner join (select PHONE, COUNT(PHONE) as cout,PAY_TYPE from game_passenger_trip where PAY_TYPE="SRCB") b on a.contact = b.PHONE 
 set a.green_nocash = a.green_nocash+58 , green_max = green_max+58 
 where NOT EXISTS (select user_id from game_green_record where sign=4 and a.id = user_id ) and b.cout>0';
 
