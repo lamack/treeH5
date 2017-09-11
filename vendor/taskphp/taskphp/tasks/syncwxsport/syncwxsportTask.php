@@ -19,7 +19,7 @@ class syncwxsportTask extends Task{
       $develop = Utils::model("develop")->find();
 	    //取步数 步数换算绿值 答题数换算成长币
         $sql = 'update game_member a 
-inner join (select Step,AccuracyNum,AddTime,LoginId from game_wxsport WHERE TO_DAYS(AddTime)=TO_DAYS(NOW()) order by Id DESC limit 1) b on a.sign = b.LoginId  
+inner join (select Step,AccuracyNum,AddTime,LoginId,updatetime from game_wxsport WHERE TO_DAYS(updatetime)=TO_DAYS(NOW()) order by Id DESC limit 1) b on a.sign = b.LoginId  
 set a.steps = CASE b.Step
             WHEN b.Step>10000 THEN 10000+a.steps
             WHEN b.Step<10000 THEN b.Step+a.steps
