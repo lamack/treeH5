@@ -45,7 +45,7 @@ set a.steps = CASE b.Step
         Utils::model("member")->execute($sql);
         
         //update time
-        $sql1 = 'update game_member set a.create_time = NOW() where 1';
+        $sql1 = 'update game_member set create_time = NOW() where 1';
         Utils::model("member")->execute($sql1);
 
 		flush();
