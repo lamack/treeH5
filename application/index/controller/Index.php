@@ -56,6 +56,7 @@ class Index extends Home
                 $data['company'] = $res['company'];
                 $data['company_no'] = $res['company'];
                 $data['area'] = $res['county'];
+                $data['trees'] = 1;
                 db('member')->insert($data);
                 $this ->redirect('index/launch',array('uid' => $params['uid'],'sign' => $params['sign']),1, '会员同步登录中...');
             }
