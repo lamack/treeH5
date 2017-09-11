@@ -20,7 +20,7 @@ class syncgreenTask extends Task{
         if (Utils::model("task")->where('type',1)->find()) {
             $sql1 = 'update game_member a 
 inner join (select uid, COUNT(uid) as cout,phone from game_user_info ) b on a.contact = b.phone 
-set a.green_nocash = a.green_nocash+38 , green_max = green_max+38 
+set a.green_nocash = a.green_nocash+38 , green_max = a.green_max+38 
 where NOT EXISTS (select user_id from game_green_record where sign=1 and a.id = user_id ) and b.cout>0';
 
             if(Utils::model("member")->execute($sql1)){
