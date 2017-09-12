@@ -161,7 +161,7 @@ class Conpontepy extends Admin
 
         $type_name = ConpontepyModel::where('id', 'in', $ids)->column('conpon_name');
 
-        return parent::setStatus($type, ['conpon_type_'.$type, 'conpon_type', 0, UID, implode('、', $type_name)]);
+        return parent::setStatus($type, ['conponType_'.$type, 'conponType', 0, UID, implode('、', $type_name)]);
     }
 
     public function import($id = null){
