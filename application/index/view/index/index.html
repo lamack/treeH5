@@ -312,6 +312,13 @@
                 var time = new Date().getTime();
                 var dif = starTime-parseInt(time/1000);
                 console.log(dif)
+
+                getData({
+                    url: '/disaster',
+                    success: function(ref) {
+                        console.log(ref)
+                    }
+                })
                 // if(dif<3600 && dif>0){
                 if(dif<600 && dif>0){    
                     var str = '';
