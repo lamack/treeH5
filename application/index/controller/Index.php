@@ -162,8 +162,8 @@ class Index extends Home
                     $disaster['disaster_value'] = null;
                     $disaster['start_time'] = time()+1000;
                     $disaster['mdate'] = __mdate($disaster['start_time']);
-                    $ts['is_show'] = 1; 
-                    db('trees')->where('id',$tree['id'])->update($ts);
+                    // $ts['is_show'] = 1; 
+                    // db('trees')->where('id',$tree['id'])->update($ts);
                     array_push($tips_adv, $tips[2]);
                 }
             }
@@ -268,6 +268,27 @@ class Index extends Home
 
         return $this->fetch(); // 渲染模板
     }
+    public function disaster(){
+
+        //取用户
+        $member = session('_MEMBER');
+
+        $request = Request::instance();
+        $params = $request->param();
+        $ts['is_show'] = 1; 
+        $trees_id = $this->_currentTree()['id'];
+        if ($trees_id) {
+            db('trees')->where('id',$trees_id)->update($ts);
+            $data = ['status'=>'succ','msg'=>'成功'];
+            return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
+        }else{
+            $data = ['status'=>'error','msg'=>'服务器错误'];
+            return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
+        }
+        
+
+    }
+
 
     public function prop()
     {
