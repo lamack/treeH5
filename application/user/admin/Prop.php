@@ -120,7 +120,7 @@ class Prop extends Admin
                         ['static', 'prop_affect', '道具作用', '',$list_group_affect[$group]],
                     ])
                     ->addText('cash', '购买设置', '', '', ['', '成长币可以购买一个'])
-                    ->addText('use_limit', '使用限制', '', '', ['每天可以使用', '次'])
+                    // ->addText('use_limit', '使用限制', '', '', ['每天可以使用', '次'])
                     ->setFormData($prop) // 设置表单数据
                     ->fetch();
                 }else{
@@ -133,7 +133,7 @@ class Prop extends Admin
                         ['static', 'prop_affect', '道具作用', '',$list_group_affect[$group]],
                     ])
                     ->addText('cash', '购买设置', '', '', ['', '成长币可以购买一个'])
-                    ->addText('use_limit', '使用限制', '', '', ['每天可以使用', '次'])
+                    // ->addText('use_limit', '使用限制', '', '', ['每天可以使用', '次'])
                     // ->addText('lives', '生命值设定', '', '', ['每次使用，可以增加', '点生命值'])
                     ->setFormData($prop) // 设置表单数据
                     ->fetch(); 
