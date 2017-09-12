@@ -24,7 +24,7 @@ set a.prop_day=1 where b.cout >0';
 
         //setInc prop_day
         $map['prop_day'] = array('gt',0);
-	    Utils::model("trees")->where($map)->setInc('prop_day',1);
+	    Utils::model("trees")->where($map)->whereTime('upate_time', 'yesterday')->setInc('prop_day',1);
 
 		flush();
 	}
