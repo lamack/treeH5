@@ -71,6 +71,11 @@ class Conpon extends Admin
         // 保存数据
         if ($this->request->isPost()) {
             $data = $this->request->post();
+            $f['id'] = $cid;
+            $f['conpon_status'] = 0;
+            if(!db('conpon')->where($f)->find()){
+               $this->error('已分配或优惠券不存在'); 
+            }
             //uid
             if ($data['uid']) {
                 $save['user_id'] = $data['uid'];
