@@ -22,7 +22,7 @@ class syncdriverTask extends Task{
       $sql5 = 'delete from game_driver_total';
       Utils::model("driver_total")->execute($sql5);
       //update
-      $sql4 = 'insert into game_driver_temp (select b.* from game_driver_trip b left join game_member a on b.PHONE = a.contact  where  unix_timestamp(b.END_DATETIME)>a.passenger_time)';
+      $sql4 = 'insert into game_driver_temp (select b.* from game_driver_trip b left join game_member a on b.PHONE = a.contact  where  unix_timestamp(b.END_DATETIME)>a.driver_time)';
       Utils::model("driver_temp")->execute($sql4);
       
       //总计
