@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>攻略</title>
+    <link rel="stylesheet" type="text/css" href="{$static_dir}home/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="{$static_dir}home/css/index.css">
+    <link rel="stylesheet" type="text/css" href="{$static_dir}home/css/notice.css">
+    <style type="text/css">
+    html,body{
+        background: #fffded;
+    }
+    #container{
+        height: 100% !important;
+    }
+        img{
+            width: 100%
+        }
+       .back-btn-wrap{
+            position: fixed;
+        }
+        .back-btn-wrap{
+            position: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div id="container">
+        <div class="tab-box game-notice-wrap active">
+            <div class="notice-content">
+                {$info.adv_content|default=""}
+            </div>
+        </div>
+        
+        <div class="back-btn-wrap"></div>
+    </div>
+    <script type="text/javascript" src="{$static_dir}home/js/zepto.js"></script>
+    <script type="text/javascript" src="{$static_dir}home/js/public.js"></script>
+    <script type="text/javascript">
+        $('.back-btn-wrap').click(function(){
+            window.history.back(-1);
+        })
+    </script>
+</body>
+
+</html>
