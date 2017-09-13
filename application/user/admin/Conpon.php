@@ -88,7 +88,7 @@ class Conpon extends Admin
                 //分配更新
                 $cpm['id'] = $cid;
                 $cp['conpon_status'] = 1;
-                db('recode')->where($cpm)->update($cp);
+                db('conpon')->where($cpm)->update($cp);
                 $this->success('分配成功', cookie('__forward__'));
             }else{
                 $this->error('分配失败');
