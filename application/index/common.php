@@ -64,7 +64,7 @@ if (!function_exists('is_mobile')) {
           $text = date('m月d日', $time); //一年内
           break;
          default:
-          $text = date('Y年m月d日', $time); //一年以前
+          $text = date('Y年m月d日 H:i', $time); //一年以前
           break;
         }
             

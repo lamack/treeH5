@@ -16,24 +16,40 @@ class levelTask extends Task{
 
 	    Utils::dbConfig(Utils::config('DB','level'));
 
-        //成长到第二阶段
-        $sql = 'update game_trees set `level`=2 where prop_day = 1 and TO_DAYS(upate_time) <> TO_DAYS(NOW())';
+        //成长到第二阶段 new
+        $sql = 'update game_trees set `level`=2 where prop_day > 1 and level =1 ';
         Utils::model("trees")->execute($sql);
 
+        //成长到第二阶段
+        // $sql = 'update game_trees set `level`=2 where prop_day = 1 and TO_DAYS(upate_time) <> TO_DAYS(NOW())';
+        // Utils::model("trees")->execute($sql);
 
-        //第三阶段
-        $sql1 = 'update game_trees a inner join 
-(select count(*) as cout,trees_id from game_my_prop where status=1) b on a.id = b.trees_id 
-set a.level=3,a.status=1 where b.cout >1 AND a.status = 0 AND a.disaster = 1 AND a.prop_day>2 and TO_DAYS(upate_time) <> TO_DAYS(NOW())';
+
+        //第三阶段 new
+        $sql1 = 'update game_trees set level=3,status=1 where status = 0  AND prop_day>4 and level=2';
         Utils::model("trees")->execute($sql1);
 
-       //处理prop_use
+        //第三阶段
+//         $sql1 = 'update game_trees a inner join 
+// (select count(*) as cout,trees_id from game_my_prop where status=1) b on a.id = b.trees_id 
+// set a.level=3,a.status=1 where b.cout >1 AND a.status = 0 AND a.disaster = 1 AND a.prop_day>2 and TO_DAYS(upate_time) <> TO_DAYS(NOW())';
+//         Utils::model("trees")->execute($sql1);
+
+        //处理prop_use new
        $sql2 = 'update game_trees a inner join (select count(*) as cout,trees_id from game_my_prop where status=1 and prop_type=1) b on a.id = b.trees_id inner join (select count(*) as cout,trees_id from game_my_prop where status=1 and prop_type=2) c on a.id = c.trees_id inner join (select count(*) as cout,trees_id from game_my_prop where status=1 and prop_type=3) d on a.id = d.trees_id set a.prop_use=1 where b.cout >0 and c.cout>0 and d.cout>0';
        Utils::model("trees")->execute($sql2);
 
-       //结果状态设置
-       $sql3 = 'update game_trees set status = 2 where prop_use = 1 AND prop_day>=4 AND status =1 and TO_DAYS(upate_time) <> TO_DAYS(NOW())';
+       //处理prop_use
+       // $sql2 = 'update game_trees a inner join (select count(*) as cout,trees_id from game_my_prop where status=1 and prop_type=1) b on a.id = b.trees_id inner join (select count(*) as cout,trees_id from game_my_prop where status=1 and prop_type=2) c on a.id = c.trees_id inner join (select count(*) as cout,trees_id from game_my_prop where status=1 and prop_type=3) d on a.id = d.trees_id set a.prop_use=1 where b.cout >0 and c.cout>0 and d.cout>0';
+       // Utils::model("trees")->execute($sql2);
+
+       //结果状态设置 new
+       $sql3 = 'update game_trees set status = 2 where prop_use = 1 AND prop_day>4 AND status =1 ';
        Utils::model("trees")->execute($sql3);
+
+       // //结果状态设置
+       // $sql3 = 'update game_trees set status = 2 where prop_use = 1 AND prop_day>=4 AND status =1 and TO_DAYS(upate_time) <> TO_DAYS(NOW())';
+       // Utils::model("trees")->execute($sql3);
        
        //生成果实
         $sql4 = 'insert into game_furit(trees_id,type) SELECT a.id,ceiling(RAND()*2) as type FROM game_trees a WHERE ( SELECT count(id) as count FROM game_furit WHERE game_furit.trees_id = a.id) <2 and level = 3 and status=1 and prop_use=1 and prop_day>4';

@@ -139,53 +139,63 @@ class Index extends Home
         //lunbo
         $lunboMap['adv_status'] = '1';
         $lunbo = db('announcement')->field('id,adv_type,adv_title,adv_status,create_time')->where($lunboMap)->select();
-        $this->assign('lunbo', $lunbo);
+        
         
         //互动提示
-        $tips = array(
-            '1'=>'使用道具可使用树苗成长哦',
-            '2'=>'灾害要来啦，快购买护盾，预防灾害吧',
-            '3'=>'绿值不够兑换小树苗，快去参与绿色出行吧'
-        );
-        //获得当前树状态
+        // $tips = array(
+        //     '1'=>'使用道具可使用树苗成长哦',
+        //     '2'=>'灾害要来啦，快购买护盾，预防灾害吧',
+        //     '3'=>'绿值不够兑换小树苗，快去参与绿色出行吧'
+        // );
+        // //获得当前树状态
         $tips_adv = [];
         $disaster = [];
-        if ($tree) {
-            if ($tree['level']==1) {
-                array_push($tips_adv, $tips[1]);
-            }
-            if ($tree['level']==2) {
-                if ($tree['disaster']==1&&$tree['is_show']==0) {
-                    $disaster['disaster_id'] = 1;
-                    $disaster['id'] = 1;
-                    $disaster['disaster_type'] = rand(0,2);
-                    $disaster['disaster_value'] = null;
-                    $disaster['start_time'] = time()+200;
-                    $disaster['mdate'] = __mdate($disaster['start_time']);
-                    // $ts['is_show'] = 1; 
-                    // db('trees')->where('id',$tree['id'])->update($ts);
-                    array_push($tips_adv, $tips[2]);
-                }
-            }
-        }else{
-             array_push($tips_adv, $tips[3]);
-        }
-        $this->assign('tips_adv', $tips_adv);
-        //灾害
-        // $now = time();
-        // $disasterMap['start_time'] = array('lt',$now);
-        // $disasterMap['end_time'] = array('gt',$now);
-        // $disaster = db('disaster')->where($disasterMap)->find();
-        // $myDisasterMap['disaster_id'] = $disaster['id'];
-        // $myDisasterMap['user_id'] = $member['id'];
-        // if ($disaster&&db('prop_disaster')->where($myDisasterMap)->find()) {
-        //     $disaster = array();//已经历过
+        // if ($tree) {
+        //     if ($tree['level']==1) {
+        //         array_push($tips_adv, $tips[1]);
+        //     }
+        //     if ($tree['level']==2) {
+        //         if ($tree['disaster']==1&&$tree['is_show']==0) {
+        //             // $disaster['disaster_id'] = 1;
+        //             // $disaster['id'] = 1;
+        //             // $disaster['disaster_type'] = rand(0,2);
+        //             // $disaster['disaster_value'] = null;
+        //             // $disaster['start_time'] = time()+200;
+        //             // $disaster['mdate'] = __mdate($disaster['start_time']);
+        //             // $ts['is_show'] = 1; 
+        //             // db('trees')->where('id',$tree['id'])->update($ts);
+        //             array_push($tips_adv, $tips[2]);
+        //         }
+        //     }
+        // }else{
+        //      array_push($tips_adv, $tips[3]);
         // }
+        $this->assign('tips_adv', $tips_adv);
+        // 
         
+        //灾害
+        $disasterArr = array('台风','洪水','干旱');
+        $now = time();
+        $disasterMap['push_flish_time'] = array('lt',$now);
+        $disasterMap['start_time'] = array('gt',$now);
+        $disaster1 = db('disaster')->where($disasterMap)->order('id DESC')->select();
+        foreach ($disaster1 as $key => $value) {
+            $disaster1[$key]['adv_type'] = 0;
+            $disaster1[$key]['adv_title'] = date('Y年m月d日 H:i',$value['start_time']).'将会有强烈'.$disasterArr[$value['disaster_type']].'来袭，请做好防护措施，护盾会自动弹出，能有效抵抗台风，保证树的安全！';
+            $disaster1[$key]['create_time'] = $value['push_flish_time'];
+        }
+        if ($disaster1) {
+            $lunbo = array_merge_recursive($lunbo,$disaster1);
+        }
+        
+
+        // print_r($lunbo);exit;
         // $disaster = db('adv_disaster')->order('id DESC')->find();
         // $disaster['start_time'] = $disaster['start_time'];
         // $disaster['mdate'] = __mdate($disaster['start_time']);
-        $this->assign('disaster', $disaster);  
+        $this->assign('disaster', $disaster); 
+
+        $this->assign('lunbo', $lunbo); 
         //个人排名
         $me_rank = [];
         $me_passenger_rank  = [];
@@ -311,16 +321,17 @@ class Index extends Home
             $findMap['user_id'] = $member['id'];
             $findMap['prop_type'] = $prop_type;
             $findMap['status'] = 1;
-            $propTd = db('my_prop')->field('count(*) as count')->where($findMap)->whereTime('create_time', 'today')->find();
+            $findMap['trees_id'] = $this->_currentTree()['id'];
+            $propTd = db('my_prop')->field('count(*) as count')->where($findMap)->find();
             // if ($propSetting&&$propTd&&($propTd['count']>=$propSetting['use_limit'])) {
             //     $data = ['status'=>'error','msg'=>'不能超过道具今日使用限制'];
             //     return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
             // }
             //调整只能使用一次
-            // if ($propSetting) {
-            //     $data = ['status'=>'error','msg'=>'不能超过道具使用限制，每个树苗只能使用一次道具哦'];
-            //     return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
-            // }
+            if ($propTd) {
+                $data = ['status'=>'error','msg'=>'不能超过道具使用限制，每个树苗只能使用一次道具哦'];
+                return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
+            }
             $data['status'] = 1;
             $trees_id = $this->_currentTree()['id'];
             if (!$trees_id) {

@@ -12,16 +12,28 @@ class disasterTask extends Task{
      * (non-PHPdoc)
      * @see \core\lib\Task::run()
      */
-	public function run(){
+    public function run(){
 
-	    Utils::dbConfig(Utils::config('DB','disaster'));
+        Utils::dbConfig(Utils::config('DB','disaster'));
+
+
+
+        $disaster =  Utils::model("disaster")->where(' end_time > UNIX_TIMESTAMP() and start_time < UNIX_TIMESTAMP() ')->find();
+
+        if($disaster === false){
+        flush();
+            exit;
+        }
+
+        Utils::model("disaster")->where(array("id",$disaster['id']))->save(array('status'=>2));
+        
+
 
 
         //找出没道具去成长值 
-        $sql='
-                update game_trees 
+        $sql=' update game_trees 
                 set level = 1,disaster=1
-                where status = 0 and disaster=0 and level =2 and user_id not in (select user_id from game_my_prop WHERE prop_type = 4 and `status`=0)';
+                where status = 0 and disaster=0 and level =2 and user_id not in (select user_id from game_my_prop WHERE prop_type = 4 and `status`=0 )';
         Utils::model("trees")->execute($sql);
 
         //有道具
@@ -83,6 +95,6 @@ SET game_trees.disaster=1 WHERE game_my_prop.status=1 and game_my_prop.prop_type
 //         }
         
 
-		flush();
-	}
+        flush();
+    }
 }

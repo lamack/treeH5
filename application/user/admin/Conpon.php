@@ -51,6 +51,8 @@ class Conpon extends Admin
             ->setTableName('Conpon') // 设置数据表名
             ->setExtraHtml('<strong style="color:red">未分配数量'.$c1.'&nbsp;&nbsp;分配数量'.$c2.'</strong>', 'toolbar_top')
             ->hideCheckbox()
+             ->addFilter('conpon_type', $list_module) // 添加筛选
+            ->addFilter('conpon_status', [0 => '未分配', 1 => '分配']) // 添加筛选
             ->addColumns([ // 批量添加列
                 ['conpon_type', '类型','','',$list_module],
                 ['conpon_no', '券号'],
