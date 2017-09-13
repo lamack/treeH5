@@ -328,7 +328,7 @@ class Index extends Home
             //     return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
             // }
             //调整只能使用一次
-            if ($propTd) {
+            if ($propTd['count']) {
                 $data = ['status'=>'error','msg'=>'不能超过道具使用限制，每个树苗只能使用一次道具哦'];
                 return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
             }
