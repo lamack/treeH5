@@ -451,7 +451,7 @@ class Index extends Home
             $sd['green_nocash'] = array('exp', 'green_nocash+'.$green);
             $sd['green_max'] = array('exp', 'green_max+'.$green);
             db('member')->where($smp)->update($sd);
-            
+
             if(db('green_record')->insert($save)){
                 //查询是否已领取完 自动兑换小树苗
                 $furitMap['id'] = $furit['id'];
@@ -459,7 +459,10 @@ class Index extends Home
                 if (!db('furit')->where($furitMap)->find()) {
                     $this->__handleTrees();
                 }
-                
+                //更新
+                $tmp['id'] = $trees_id;
+                $td['status'] = 3;
+                db('trees')->where($tmp)->update($td);
                 $data = ['status'=>'succ','msg'=>'获得绿值'.$green.'点'];
                 return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
             }else{
