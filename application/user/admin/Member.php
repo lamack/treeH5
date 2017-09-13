@@ -75,7 +75,7 @@ class Member extends Admin
                 ['green', '绿值'],
                 ['share', '成长币'],
                 ['trees', '树苗总数'],
-                ['right_button', '操作', 'btn']
+                // ['right_button', '操作', 'btn']
             ])
             // ->addRightButton('custom', $btn_1) // 添加查看祥情按钮
             // ->addRightButton('custom', $btn_2) // 添加查看记录按钮
