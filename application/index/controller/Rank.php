@@ -22,13 +22,12 @@ class Rank extends Home
         //植树
         $me_trees_rank = [];
         $trees_rank = db('rank')->where('type','0')->order('green DESC')->select();
-
         foreach ($trees_rank as $key => $value) {
-            if ($value['id']==$member['id']) {
+            if ($value['user_id']==$member['id']) {
                 $me_trees_rank['name'] = $value['name'];
                 $me_trees_rank['green'] = $value['green'];
-                $me_trees_rank['rank'] = $key;
-                $me_trees_rank['id'] = $member['id'];
+                $me_trees_rank['rank'] = $key+1;
+                $me_trees_rank['user_id'] = $member['id'];
             }
         }
         $this->assign('trees_rank', $trees_rank);

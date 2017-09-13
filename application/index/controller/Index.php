@@ -217,7 +217,7 @@ class Index extends Home
         // }
         //植树
         $me_trees_rank = [];
-        $trees_rank = db('rank')->field('name as username,green as green_max,user_id as id')->where('type','2')->order('green DESC')->select();
+        $trees_rank = db('rank')->field('name as username,green as green_max,user_id as id')->where('type','0')->order('green DESC')->select();
 
         foreach ($trees_rank as $key => $value) {
             if ($value['id']==$member['id']) {

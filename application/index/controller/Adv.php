@@ -42,7 +42,7 @@ class Adv extends Home
         $request = Request::instance();
         $params = $request->param();
         $info = db('announcement')->where('id',$params['id'])->find();
-        $info['type'] = $info['adv_type']=='0'?'游戏公告':'游戏介绍';
+        $info['type'] = $info['adv_type']=='0'?'游戏介绍':'游戏公告';
         $this->assign('info', $info);
         return $this->fetch(); // 渲染模板
     }
