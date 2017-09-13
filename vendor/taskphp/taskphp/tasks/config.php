@@ -117,7 +117,7 @@ return array(
             //class名称,(设置true或者不设置此参数)代表tasks目录里面的任务会自动找到该任务的class名称,非tasks目录里面的任务则填写完整的class名称core\lib\xxxx
             'class_name'=>true,   
             //crontad格式 :秒 分 时 天 月 年 周
-            'timer'     =>'10 20 07 * * * *', 
+            'timer'     =>'10 20 * * * * *', 
         ),
     ),
 );
