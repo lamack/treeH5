@@ -33,7 +33,7 @@ class syncpassengerTask extends Task{
         //取总量程
         $sql = 'update game_member a 
 inner join  game_passenger_total  b on a.contact = b.PHONE  
-set a.mileage = b.MILES,a.green_max = ceil(b.MILES)+a.green_max,a.green = ceil(b.MILES)+a.green where 1';
+set a.mileage = (a.mileage+b.MILES),a.green_max = ceil(b.MILES)+a.green_max,a.green = ceil(b.MILES)+a.green where 1';
       
         Utils::model("member")->execute($sql);
 
