@@ -91,7 +91,7 @@
         <div class="tab-box my-award">
             <ul class="task-list">
             {volist name="award" id="item" empty="暂无奖品"}
-            <a href="{:url('Me/award',['id' => $item['id'],'token'=>$_TOKEN_])}">
+            <a href="{:url('Me/award',['id' => $item['conpon_id'],'token'=>$_TOKEN_])}">
 	            <li >
 	                <div class="thumbnail flex">
 	                    <div class="thumb-img">
