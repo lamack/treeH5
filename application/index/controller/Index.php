@@ -446,6 +446,12 @@ class Index extends Home
             $save['green'] = $green;
             $save['create_time'] = time();
 
+            //添加
+            $smp['id'] = $member['id'];
+            $sd['green_nocash'] = array('exp', 'green_nocash+'.$green);
+            $sd['green_max'] = array('exp', 'green_max+'.$green);
+            db('member')->where($smp)->update($sd);
+            
             if(db('green_record')->insert($save)){
                 //查询是否已领取完 自动兑换小树苗
                 $furitMap['id'] = $furit['id'];
