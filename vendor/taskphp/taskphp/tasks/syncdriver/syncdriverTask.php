@@ -26,7 +26,7 @@ class syncdriverTask extends Task{
       Utils::model("driver_temp")->execute($sql4);
       
       //总计
-      $sql5 = 'insert into game_driver_total (MILES,PHONE) select sum(MILES) as MILES,PHONE from game_driver_temp where 1 group by PHONE';
+      $sql5 = 'insert into game_driver_total (MILES,PHONE) select (CASE  WHEN sum(MILES)>40 THEN 40 ELSE sum(MILES)  END) as MILES,PHONE from game_driver_temp where 1 group by PHONE';
       Utils::model("driver_total")->execute($sql5);
 
 	    //取总量程

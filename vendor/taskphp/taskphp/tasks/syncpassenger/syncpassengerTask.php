@@ -26,7 +26,7 @@ class syncpassengerTask extends Task{
       Utils::model("passenger_temp")->execute($sql4);
       
       //总计
-      $sql5 = 'insert into game_passenger_total (MILES,PHONE) select sum(MILES) as MILES,PHONE from game_passenger_temp where 1 group by PHONE';
+      $sql5 = 'insert into game_passenger_total (MILES,PHONE) select  (CASE  WHEN sum(MILES)>20 THEN 20 ELSE sum(MILES)  END) as MILES ,PHONE from game_passenger_temp where 1 group by PHONE';
       Utils::model("passenger_total")->execute($sql5);
 
 

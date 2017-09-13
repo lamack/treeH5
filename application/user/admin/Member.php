@@ -201,7 +201,7 @@ class Member extends Admin
         //更新会员表字段
         $sql = 'replace into game_member (username,company,class,contact,sign,class_no,company_no,industry,industry_no) 
 SELECT user_name,company,team_name,phone,uid,team_code,company,county,county FROM game_user_info a 
-where not exists(select * from game_member where contact = a.phone ) AND TO_DAYS(a.create_time) = TO_DAYS(NOW())';
+where   TO_DAYS(a.create_time) = TO_DAYS(NOW()) AND not exists(select * from game_member where contact = a.phone )';
        $is = Db::connect('mysql://root:Tripshare2017@rm-bp1c7jlz0045ph079o.mysql.rds.aliyuncs.com:3366/trees#utf8')->name("member")->execute($sql);
        $this->success('同步成功');
 
