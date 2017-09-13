@@ -160,7 +160,7 @@ class Index extends Home
                     $disaster['id'] = 1;
                     $disaster['disaster_type'] = rand(0,2);
                     $disaster['disaster_value'] = null;
-                    $disaster['start_time'] = time()+500;
+                    $disaster['start_time'] = time()+200;
                     $disaster['mdate'] = __mdate($disaster['start_time']);
                     // $ts['is_show'] = 1; 
                     // db('trees')->where('id',$tree['id'])->update($ts);

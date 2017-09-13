@@ -314,13 +314,8 @@
                 console.log(dif)
 
                 // if(dif<3600 && dif>0){
-                if(dif<600 && dif>0){ 
-                    getData({
-                        url: '/disaster',
-                        success: function(ref) {
-                            console.log(ref)
-                        }
-                    })   
+                if(dif<360 && dif>0){ 
+                       
                     var str = '';
                     switch(type){
                         case 0:
@@ -346,6 +341,12 @@
                             if($('.planting').find('.item').eq(3).find('.num').text()>0){
                                 Disaster.hudun();
                             }
+                            getData({
+                                url: '/disaster',
+                                success: function(ref) {
+                                    console.log(ref)
+                                }
+                            })
                             getData({
                                 url: '/level',
                                 success: function(ref) {
