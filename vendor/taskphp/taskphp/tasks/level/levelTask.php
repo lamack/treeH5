@@ -52,7 +52,7 @@ class levelTask extends Task{
        // Utils::model("trees")->execute($sql3);
        
        //生成果实
-        $sql4 = 'insert into game_furit(trees_id,type) SELECT a.id,ceiling(RAND()*2) as type FROM game_trees a WHERE ( SELECT count(id) as count FROM game_furit WHERE game_furit.trees_id = a.id) <2 and level = 3 and status=1 and prop_use=1 and prop_day>4';
+        $sql4 = 'insert into game_furit(trees_id,type) SELECT a.id,ceiling(RAND()*2) as type FROM game_trees a WHERE ( SELECT count(id) as count FROM game_furit WHERE game_furit.trees_id = a.id) <2 and level = 3 and status=2 and prop_use=1 and prop_day>4';
         Utils::model("furit")->execute($sql4);
        
         //使用
