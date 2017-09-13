@@ -21,6 +21,8 @@ class Strategy extends Home
 
     public function index()
     {
+        $info = db('announcement')->where('id','12')->find();
+        $this->assign('info', $info);
         return $this->fetch(); // 渲染模板
     }
 
