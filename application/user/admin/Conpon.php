@@ -84,6 +84,11 @@ class Conpon extends Admin
                 $save['conpon_id'] = $cid;
                 $save['create_time'] = time();
                 db('recode')->insert($save);
+
+                //分配更新
+                $cpm['id'] = $cid;
+                $cp['conpon_status'] = 1;
+                db('recode')->where($cpm)->update($cp);
                 $this->success('分配成功', cookie('__forward__'));
             }else{
                 $this->error('分配失败');
