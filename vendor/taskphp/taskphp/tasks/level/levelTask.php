@@ -52,8 +52,14 @@ class levelTask extends Task{
        // Utils::model("trees")->execute($sql3);
        
        //生成果实
-        $sql4 = 'insert into game_furit(trees_id,type) SELECT a.id,ceiling(RAND()*2) as type FROM game_trees a WHERE ( SELECT count(id) as count FROM game_furit WHERE game_furit.trees_id = a.id) <2 and level = 3 and status=2 and prop_use=1 and prop_day>4';
+        // $sql4 = 'insert into game_furit(trees_id,type) SELECT a.id,ceiling(RAND()*2) as type FROM game_trees a WHERE ( SELECT count(id) as count FROM game_furit WHERE game_furit.trees_id = a.id) <2 and level = 3 and status=2 and prop_use=1 and prop_day>4 ';
+        // Utils::model("furit")->execute($sql4);
+
+        $sql4 = 'insert into game_furit(trees_id,type) SELECT a.id,1 FROM game_trees a WHERE ( SELECT count(id) as count FROM game_furit WHERE game_furit.trees_id = a.id) <2 and level = 3 and status=2 and prop_use=1 and prop_day>4 ';
         Utils::model("furit")->execute($sql4);
+
+        $sql6 = 'insert into game_furit(trees_id,type) SELECT a.id,2 FROM game_trees a WHERE ( SELECT count(id) as count FROM game_furit WHERE game_furit.trees_id = a.id) <2 and level = 3 and status=2 and prop_use=1 and prop_day>4 ';
+        Utils::model("furit")->execute($sql6);
        
         //使用
         $sql5 = 'update game_trees a  inner join (select  trees_id,count(*) as count from game_furit where status=1 ) c on  a.id = c.trees_id
