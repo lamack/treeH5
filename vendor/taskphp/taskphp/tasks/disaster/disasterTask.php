@@ -18,7 +18,7 @@ class disasterTask extends Task{
 
 
 
-        $disaster =  Utils::model("disaster")->where(' end_time > UNIX_TIMESTAMP() and start_time < UNIX_TIMESTAMP() ')->find();
+        $disaster =  Utils::model("disaster")->where(' end_time > UNIX_TIMESTAMP() and start_time < UNIX_TIMESTAMP() and status = 0')->find();
 
         if($disaster === false){
         flush();
