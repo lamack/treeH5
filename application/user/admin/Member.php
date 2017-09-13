@@ -36,16 +36,16 @@ class Member extends Admin
         $page = $data_list->render();
 
         // 授权按钮
-        $btn_1 = [
-            'title' => '查看祥情',
-            'icon'  => 'fa fa-fw fa-binoculars',
-            'href'  => url('edit', ['uid' => '__id__'])
-        ];
-        $btn_2 = [
-            'title' => '查看记录',
-            'icon'  => 'fa fa-fw fa-newspaper-o',
-            'href'  => url('recode', ['uid' => '__id__'])
-        ];
+        // $btn_1 = [
+        //     'title' => '查看祥情',
+        //     'icon'  => 'fa fa-fw fa-binoculars',
+        //     'href'  => url('edit', ['uid' => '__id__'])
+        // ];
+        // $btn_2 = [
+        //     'title' => '查看记录',
+        //     'icon'  => 'fa fa-fw fa-newspaper-o',
+        //     'href'  => url('recode', ['uid' => '__id__'])
+        // ];
         $btn_3 = [
             'title' => '同步',
             'icon'  => 'fa fa-fw fa-copy',
@@ -77,8 +77,8 @@ class Member extends Admin
                 ['trees', '树苗总数'],
                 ['right_button', '操作', 'btn']
             ])
-            ->addRightButton('custom', $btn_1) // 添加查看祥情按钮
-            ->addRightButton('custom', $btn_2) // 添加查看记录按钮
+            // ->addRightButton('custom', $btn_1) // 添加查看祥情按钮
+            // ->addRightButton('custom', $btn_2) // 添加查看记录按钮
             ->addTopButton('custom', $btn_3) // 批量添加顶部按钮
             ->setRowList($data_list) // 设置表格数据
             ->setPages($page) // 设置分页数据

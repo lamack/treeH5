@@ -18,7 +18,7 @@ class Adv extends Home
             $this->assign('_TOKEN_', encrypt(session('_MEMBER')['id']));
         }
 
-        $info = db('announcement')->where('adv_status','1')->select();
+        $info = db('announcement')->where('adv_status','1')->order('id desc')->select();
         $adv = [];
         $in = [];
         foreach ($info as $key => $value) {
