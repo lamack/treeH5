@@ -333,7 +333,6 @@ class Admin extends Common
         $ids   = $this->request->isPost() ? input('post.ids/a') : input('param.ids');
         $table = input('param.table');
         $field = input('param.field', 'status');
-
         if (empty($ids)) $this->error('缺少主键');
         if (empty($table)) $this->error('缺少表名');
 
@@ -346,7 +345,9 @@ class Admin extends Common
                 $this->error('禁止操作');
             }
         }
-
+        if ($table == 'Conpontepy' ) {
+            $table ='conpon_type';
+        }
         $pk = Db::name($table)->getPk(); // 主键名称
         $map[$pk] = ['in', $ids];
 

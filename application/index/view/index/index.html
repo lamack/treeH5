@@ -666,18 +666,27 @@
                     var starTime = disasterArr.start_time;
                     switch (disasterArr.disaster_type) {
                         case 0:
-                            Lunbo.isShow(starTime,0,that.taifengcom);
-                            Lunbo.init();
+                            that.taifengcom()
+                            // Lunbo.isShow(starTime,0,that.taifengcom);
+                            // Lunbo.init();
                             break;
                         case 1:
-                            Lunbo.isShow(starTime,1,that.hongshuicom);
-                            Lunbo.init();
+                            that.hongshuicom()
+                            // Lunbo.isShow(starTime,1,that.hongshuicom);
+                            // Lunbo.init();
                             break;
                         case 2:
-                            Lunbo.isShow(starTime,2,that.ganhancom);
-                            Lunbo.init();
+                            that.ganhancom()
+                            // Lunbo.isShow(starTime,2,that.ganhancom);
+                            // Lunbo.init();
                             break;
                     }
+                    getData({
+                        url: '/disaster',
+                        success: function(ref) {
+                            console.log(ref)
+                        }
+                    })
 
                 }
 

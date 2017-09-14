@@ -178,7 +178,7 @@ class Index extends Home
         $now = time();
         $disasterMap['push_flish_time'] = array('lt',$now);
         $disasterMap['start_time'] = array('gt',$now);
-        $disaster1 = db('disaster')->where($disasterMap)->order('id DESC')->select();
+        $disaster1 = db('disaster')->where($disasterMap)->order('start_time ASC ,id DESC')->limit(1)->select();
         foreach ($disaster1 as $key => $value) {
             $disaster1[$key]['adv_type'] = 0;
             $disaster1[$key]['adv_title'] = date('Y年m月d日 H:i',$value['start_time']).'将会有强烈'.$disasterArr[$value['disaster_type']].'来袭，请做好防护措施，护盾会自动弹出，能有效抵抗台风，保证树的安全！';
@@ -186,13 +186,21 @@ class Index extends Home
         }
         if ($disaster1) {
             $lunbo = array_merge_recursive($lunbo,$disaster1);
+
         }
         
-
+        if ($tree['disaster']==1&&$tree['is_show']==0) {
+            $dsmap['start_time'] = array('lt',$now);
+            $dsmap['end_time'] = array('gt',$now);
+            $dsmap['push_flish_time'] = array('lt',$now);
+            $disaster = db('disaster')->where($dsmap)->order('start_time ASC ,id DESC')->find();
+            // print_r($disaster);exit;
+        }
         // print_r($lunbo);exit;
         // $disaster = db('adv_disaster')->order('id DESC')->find();
         // $disaster['start_time'] = $disaster['start_time'];
         // $disaster['mdate'] = __mdate($disaster['start_time']);
+        
         $this->assign('disaster', $disaster); 
 
         $this->assign('lunbo', $lunbo); 
