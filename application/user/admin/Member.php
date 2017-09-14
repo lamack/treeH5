@@ -71,10 +71,13 @@ class Member extends Admin
                 ['area', '所在区域'],
                 ['company', '所在企业'],
                 ['class', '所在班组'],
-                ['mileage', '里程数'],
-                ['green', '绿值'],
-                ['share', '成长币'],
-                ['trees', '树苗总数'],
+                ['mileage', '乘客里程数', 'text.edit'],
+                ['driver_mileage', '司机里程数', 'text.edit'],
+                ['green', '出行绿值', 'text.edit'],
+                ['green_nocash', '奖励绿值', 'text.edit'],
+                ['green_max', '总绿值', 'text.edit'],
+                ['share', '成长币', 'text.edit'],
+                ['trees', '树苗总数', 'text.edit'],
                 // ['right_button', '操作', 'btn']
             ])
             // ->addRightButton('custom', $btn_1) // 添加查看祥情按钮
