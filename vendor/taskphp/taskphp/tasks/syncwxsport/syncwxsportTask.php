@@ -26,7 +26,7 @@ class syncwxsportTask extends Task{
       $res = Utils::model("wxsport_temp")->execute($sql4);
       
       //总计
-      $sql5 = 'insert into game_wxsport_total(Step,LoginId,AccuracyNum) select sum(Step) as steps,LoginId,sum(AccuracyNum) as nums from game_wxsport_temp where 1 ';
+      $sql5 = 'insert into game_wxsport_total(Step,LoginId,AccuracyNum) select sum(Step) as steps,LoginId,sum(AccuracyNum) as nums from game_wxsport_temp where 1 group by LoginId ';
       Utils::model("wxsport_total")->execute($sql5);
       
       //兑换成长币
