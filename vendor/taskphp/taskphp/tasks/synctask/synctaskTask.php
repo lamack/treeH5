@@ -18,7 +18,7 @@ class synctaskTask extends Task{
 
         //获取所有完成任务记录
         $sql = 'SELECT *,sum(green) as total FROM game_task_recode a WHERE  NOT EXISTS( SELECT task_id  FROM game_task_process b WHERE  task_id=a.task_id) GROUP BY a.task_id';
-        $taskarr = Utils::model("task_recode")->execute($sql);
+        $taskarr = Utils::model("task_recode")->query($sql);
 
         //简单处理
         foreach ($taskarr as $key => $value) {

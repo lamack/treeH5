@@ -48,6 +48,7 @@ class Conpontepy extends Admin
                 ['conpon_name', '名称'],
                 ['conpon_parnter', '合作伙伴'],
                 ['conpon_code', '代号'],
+                ['copon_type', '类型','','',[0 => '奖励优惠券', 1 => '任务获得优惠券']],
                 ['right_button', '操作', 'btn']
             ])
             ->addTopButtons('add') // 批量添加顶部按钮
@@ -86,7 +87,9 @@ class Conpontepy extends Admin
             ->addFormItems([ // 批量添加表单项
                 ['text', 'conpon_name', '优惠券名'],
                 ['text', 'conpon_parnter', '合伙伙伴'],
+                ['radio', 'copon_type', '类型', '', ['奖励优惠券', '任务获得优惠券'], 0],
                 ['text', 'conpon_code', '代号'],
+
             ])
             ->addUeditor('conpon_introduce', '使用说明')
             // ->addTextarea('conpon_introduce', '使用说明')
@@ -129,6 +132,7 @@ class Conpontepy extends Admin
                 ['hidden', 'id'],
                 ['text', 'conpon_name', '优惠券名'],
                 ['text', 'conpon_parnter', '合伙伙伴'],
+                ['radio', 'copon_type', '类型', '', ['奖励优惠券', '任务获得优惠券'], 0],
                 ['text', 'conpon_code', '代号'],
             ])
             ->addUeditor('conpon_introduce', '使用说明')
