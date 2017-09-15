@@ -16,9 +16,11 @@ class rankTask extends Task{
 
 	    Utils::dbConfig(Utils::config('DB','rank'));
 
-        $sql = 'update game_member a inner join 
-(select count(*) as cout,user_id from game_trees where 1) b on a.id = b.user_id 
-set a.trees=b.cout  where b.cout >0 ';
+//         $sql = 'update game_member a inner join 
+// (select count(*) as cout,user_id from game_trees where 1) b on a.id = b.user_id 
+// set a.trees=b.cout  where b.cout >0 ';
+        $sql = 'UPDATE game_member  a SET a.trees = (SELECT count(*) FROM game_trees WHERE user_id = a.id)';
+
         Utils::model("member")->execute($sql);
 
         $sql3 = 'delete from game_rank';
