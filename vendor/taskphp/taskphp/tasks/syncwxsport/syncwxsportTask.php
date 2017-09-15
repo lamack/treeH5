@@ -22,7 +22,7 @@ class syncwxsportTask extends Task{
       $sql5 = 'delete from game_wxsport_total';
       Utils::model("wxsport_temp")->execute($sql5);
       //update
-      $sql4 = 'insert into game_wxsport_temp (select b.* from game_wxsport b left join game_member a on b.LoginId = a.sign  where  unix_timestamp(b.updatetime)>a.create_time)';
+      $sql4 = 'insert into game_wxsport_temp (select b.* from game_wxsport b left join game_member a on b.LoginId = a.sign  where  unix_timestamp(b.updatetime)>a.wxsport_time)';
       $res = Utils::model("wxsport_temp")->execute($sql4);
       
       //总计
@@ -52,7 +52,7 @@ set a.steps = b.Step+a.steps,a.green_max = ceil(b.Step*0.6*2/1000)+a.green_max,a
         Utils::model("member")->execute($sql);
         
         //update time
-        $sql1 = 'update game_member set create_time = unix_timestamp() where 1';
+        $sql1 = 'update game_member set wxsport_time = unix_timestamp() where 1';
         Utils::model("member")->execute($sql1);
 
 		flush();
