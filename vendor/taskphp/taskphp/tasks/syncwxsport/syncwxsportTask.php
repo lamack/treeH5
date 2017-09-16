@@ -47,7 +47,7 @@ class syncwxsportTask extends Task{
 
         $sql = 'update game_member a 
 inner join  game_wxsport_total b on a.sign = b.LoginId  
-set a.steps = b.Step+a.steps,a.green_max = round(b.Step*0.7*3/1000)+a.green_max,a.green = round(b.Step*0.7*3/1000)+a.green,a.share = round(b.AccuracyNum*4)+a.share,wxsport_time=unix_timestamp(),a.accuracyNum = b.AccuracyNum where 1 ';
+set a.steps = b.Step+a.steps,a.green_max = round(b.Step*0.7*3/1000)+a.green_max,a.green = round(b.Step*0.7*3/1000)+a.green,a.share = round(b.AccuracyNum*4)+a.share,wxsport_time=unix_timestamp(),a.accuracyNum = b.AccuracyNum+a.accuracyNum where 1 ';
 
         Utils::model("member")->execute($sql);
         
