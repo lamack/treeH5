@@ -186,7 +186,8 @@ class Conpontepy extends Admin
                 'conpon_type' => $id
             ];
             // 调用插件('插件',[路径,导入表名,字段限制,类型,条件,重复数据检测字段])
-            $import = plugin_action('Excel/Excel/import', [$full_path, 'conpon', $fields, $type = 0, $where = null, $main_field = 'conpon_no', $extra]);
+            // $import = plugin_action('Excel/Excel/import', [$full_path, 'conpon', $fields, $type = 0, $where = null, $main_field = 'conpon_no', $extra]);
+            $import = plugin_action('Excel/Excel/import', [$full_path, 'conpon', $fields, $type = 0, $where = null, $main_field = '_skip', $extra]);
             
             // 失败或无数据导入
             if ($import['error']){
