@@ -92,9 +92,9 @@ where not exists(select * from game_green_record where sign = 4 and a.id = user_
         if (Utils::model("task")->where('type',5)->find()) {
         
             $sql5 = 'insert into game_recode(user_id,conpon_id,create_time,type) SELECT a.id,1,unix_timestamp(),1 
-FROM game_member a   join  game_passenger_trip b on a.contact = b.PHONE 
+FROM game_member a   join  game_driver_trip b on a.contact = b.PHONE 
 WHERE ( SELECT count(id) as count FROM game_recode WHERE game_recode.user_id = a.id) <1 
-and ( SELECT count(PHONE) as count FROM game_passenger_trip WHERE PHONE = a.contact)>0
+and ( SELECT count(PHONE) as count FROM game_driver_trip WHERE PHONE = a.contact)>0
 and b.PHONE is not null  GROUP BY a.id';
 
             if(Utils::model("recode")->execute($sql5)){
@@ -122,9 +122,9 @@ where b.type = 1 ';
         if (Utils::model("task")->where('type',6)->find()) {
         
             $sql5 = 'insert into game_recode(user_id,conpon_id,create_time,type) SELECT a.id,1,unix_timestamp(),1 
-FROM game_member a   join  game_passenger_trip b on a.contact = b.PHONE 
+FROM game_member a   join  game_driver_trip b on a.contact = b.PHONE 
 WHERE ( SELECT count(id) as count FROM game_recode WHERE game_recode.user_id = a.id) <2 
-and ( SELECT count(PHONE) as count FROM game_passenger_trip WHERE PHONE = a.contact)>9
+and ( SELECT count(PHONE) as count FROM game_driver_trip WHERE PHONE = a.contact)>9
 and b.PHONE is not null  GROUP BY a.id';
 
             if(Utils::model("recode")->execute($sql5)){
