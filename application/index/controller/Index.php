@@ -58,6 +58,7 @@ class Index extends Home
                 $data['area'] = $res['county'];
                 $data['trees'] = 1;
                 db('member')->insert($data);
+
                 $this ->redirect('index/launch',array('uid' => $params['uid'],'sign' => $params['sign']),1, '会员同步登录中...');
             }
             return $this->fetch('error'); // 渲染模板
@@ -98,6 +99,12 @@ class Index extends Home
         $map['user_id'] = $member['id'];
         $map['status'] = array('lt',3);
         $tree = db('trees')->where($map)->find();
+        //初始化一棵树苗
+        if (!$tree) {
+            $data['user_id'] = $member['id'];
+            $data['create_time'] = time();
+            db('trees')->insert($data);
+        }
         
         //果实
         if ($tree) {
