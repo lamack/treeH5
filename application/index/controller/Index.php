@@ -101,9 +101,13 @@ class Index extends Home
         $tree = db('trees')->where($map)->find();
         //初始化一棵树苗
         if (!$tree) {
-            $data['user_id'] = $member['id'];
-            $data['create_time'] = time();
-            db('trees')->insert($data);
+            $trees = db('trees')->where('user_id',$member['id'])->find();
+            if (!$trees) {
+                $data['user_id'] = $member['id'];
+                $data['create_time'] = time();
+                db('trees')->insert($data);
+            }
+            
         }
         
         //果实
