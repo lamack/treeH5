@@ -32,7 +32,7 @@ class syncdriverTask extends Task{
 	    //取总量程
         $sql = 'update game_member a 
 inner join  game_driver_total  b on a.contact = b.PHONE  
-set a.driver_mileage = (a.driver_mileage+b.MILES),a.green_max = ceil(b.MILES)+a.green_max,a.green = ceil(b.MILES)+a.green where 1';
+set a.driver_mileage = (a.driver_mileage+b.MILES),a.green_max = round(b.MILES)+a.green_max,a.green = round(b.MILES)+a.green,driver_time = unix_timestamp() where 1';
 
        
       
@@ -40,8 +40,8 @@ set a.driver_mileage = (a.driver_mileage+b.MILES),a.green_max = ceil(b.MILES)+a.
         
         //同步时间
         //update time
-        $sql1 = 'update game_member set driver_time = unix_timestamp() where 1';
-        Utils::model("member")->execute($sql1);
+        // $sql1 = 'update game_member set driver_time = unix_timestamp() where 1';
+        // Utils::model("member")->execute($sql1);
         
 		flush();
 	}
