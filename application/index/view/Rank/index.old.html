@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>欢乐植树</title>
+    <link rel="stylesheet" type="text/css" href="{$static_dir}home/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="{$static_dir}home/css/index.css">
+    <style type="text/css">
+    body {
+    	background: #fff;
+    }
+    </style>
+</head>
+
+<body>
+<!-- <div id="header" style="background: rgb(66,172,250)">
+    <div id="back" >返回</div>
+    植树任务
+</div> -->
+   <div class="self-type-box active">
+        {notempty name="me_trees_rank"}
+        <div class="rank-list flex self">
+            <div class="rank-num"></div>
+            <div class="self-icon" mid="{$me_trees_rank.user_id}"><div class="jingling self1_png"></div></div>
+            <div class="self-name flex-1">{$me_trees_rank.name}</div>
+            <div class="self-num">{$me_trees_rank.green}</div>
+        </div>
+        {/notempty}
+    </div>
+<script type="text/javascript" src="{$static_dir}home/js/zepto.js"></script>
+<script type="text/javascript" src="{$static_dir}home/js/public.js"></script>
+<script type="text/javascript">
+
+	var flaginit = true;
+	// 个人排名
+	var Selfrank = {
+	    selfs:JSON.parse('{$trees_rank|json_encode}'),
+	    init: function() {
+	        var box = $('.rank-list');
+	        if (JSON.parse('{$me_trees_rank|json_encode}').length != 0) {
+	            var me1 = JSON.parse('{$me_trees_rank|json_encode}');
+	            me1 = me1.rank;
+	            box.eq(0).find('.rank-num').html(this.switchicon(me1))
+	        }
+	        //渲染排名
+	        this.render(this.selfs)
+	        this.bindEvent();
+	    },
+	    bindEvent: function() {
+	        var that = this;
+	        //排行列表用户点击
+	        $('.self-type-box').on('click', '.rank-list', function() {
+	            var id = $(this).attr('mid');
+                if(!id){
+                    return;
+                }
+	            var token = '{$_TOKEN_|json_encode}';
+	            location.href = "{:url('other/index')}?id="+id+"&token="+token;
+	        })
+	    },
+	    render: function(data) {
+	        var str = ''
+	        for (var i = 0; i < data.length; i++) {
+	            var rank = i + 1
+	            str += '<div class="rank-list flex" mid="'+data[i].user_id+'">' +
+	                '<div class="rank-num">' + this.switchicon(rank) + '</div>' +
+	                '<div class="self-icon"><div class="jingling self1_png"></div></div>' +
+	                '<div class="self-name flex-1">' + data[i].name + '</div>' +
+	                '<div class="self-num">' + data[i].green + '</div>' +
+	                '</div>'
+	        }
+            if(!str){
+                str = '<div class="rank-list flex" >' +
+                    '暂无排行' +
+                    '</div>'
+            }
+	        $('.self-type-box').append(str);
+	    },
+	    switchicon(d) {
+	        switch (d) {
+	            case 1:
+	                d = '<div class="jingling jin_png"></div>';
+	                break;
+	            case 2:
+	                d = '<div class="jingling yin_png"></div>';
+	                break;
+	            case 3:
+	                d = '<div class="jingling tong_png"></div>';
+	                break;
+	        }
+	        return d
+	    },
+	}
+	Selfrank.init();
+</script>
+</body>
+
+</html>

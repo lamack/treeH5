@@ -23,7 +23,8 @@
         color: #a05e00;
         z-index: 100000;
         top: 50%;
-        curosr: pointer
+        curosr: pointer;
+        display: none;
     }
     </style>
 </head>
@@ -246,7 +247,11 @@
     <script type="text/javascript" src="{$static_dir}home/js/zepto.js"></script>
     <script type="text/javascript" src="{$static_dir}home/js/public.js"></script>
     <script type="text/javascript" src="{$static_dir}home/js/touch.js"></script>
-    
+    <script type="text/javascript">
+        $('#bg').click(function() {
+            $('.back-btn-wrap').show();
+        })
+    </script>
 </body>
 
 </html>

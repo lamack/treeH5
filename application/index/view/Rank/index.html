@@ -1,100 +1,277 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>欢乐植树</title>
-    <link rel="stylesheet" type="text/css" href="{$static_dir}home/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="{$static_dir}home/css/index.css">
-    <style type="text/css">
-    body {
-    	background: #fff;
-    }
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>个人排行榜</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link href="{$static_dir}home/css/mui.min.css" rel="stylesheet" />
+    <link href="{$static_dir}home/css/iconfont.css" rel="stylesheet" />
+    <!-- <link href="js/common.css" rel="stylesheet" /> -->
+    
+    <style>
+        body {
+            background: #72d3c8;
+        }
+
+        .cishui {
+            float: left;
+            width: 100%;
+            color: #fff;
+        }
+
+        .cilist {
+            float: left;
+            width: 25%;
+            text-align: center;
+            line-height: 30px;
+            font-size: 80%;
+        }
+
+        .mci {
+            float: left;
+            width: 100%;
+            background: #72d3c8;
+            position: relative;
+        }
+
+        .grcshu {
+            position: absolute;
+            margin-top:-25%;
+            width: 100%;
+            font-size:7vw;
+            text-align: center;
+            color: #2AC845;
+            font-weight: bold;
+        }
+
+        .cilist1 {
+            float: left;
+            width: 25%;
+            text-align: center;
+            color: #fff;
+            line-height: 30px;
+            font-size: 120%;
+        }
+
+        .listpaihang {
+            float: left;
+            width: 94%;
+            margin-left: 3%;
+            margin-right: 3%;
+            padding: 3%;
+            background: #F9F9F9;
+            border-radius: 10px;
+        }
+
+        .paihanglsit {
+            float: left;
+            width: 100%;
+            border-bottom: 1px solid #ddd;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .phbcisu {
+            float: left;
+            background: url({$static_dir}home/img/pmbg.png) no-repeat top center;
+            background-size: 30px;
+            text-align: center;
+            width: 30px;
+            line-height: 30px;
+            color: #fff;
+            height: 40px;
+        }
+
+        .txiao {
+            width: 30px;
+            height: 30px;
+            border-radius: 30px;
+            margin-left: 5px;
+        }
+
+        .nmzi {
+            position: absolute;
+            line-height: 30px;
+            font-size: 80%;
+            color: #666;
+            padding-left: 5px;
+        }
+
+        .bushw {
+            color: #f90;
+            font-size: 110%;
+            font-weight: bold;
+            position: absolute;
+            right: 25%;
+            line-height: 30px;
+        }
+
+        .jtuou {
+            position: absolute;
+            right: 18%;
+            line-height: 35px;
+            color: #ddd;
+        }
+
+        .fxiang {
+            position: absolute;
+            right: 8%;
+            width: 30px;
+            height: 30px;
+        }
+
+        .slian {
+            width: 30px;
+            text-align: center;
+            font-size: 70%;
+            color: #999;
+        }
+
+        .tablei {
+            float: left;
+            width: 100%;
+            line-height: 45px;
+            height: 45px;
+            background: #fff;
+        }
+
+        .tablei-lest {
+            float: left;
+            width: 40%;
+            margin-left: 5%;
+            margin-right: 5%;
+            text-align: center;
+        }
+.tablei-lest  a{ color:#666}
+        .active {
+            border-bottom: 3px solid #19AFC7;
+            color: #19AFC7;
+            line-height: 40px;
+            height: 40px; 
+        }
     </style>
+
+
 </head>
+    <body>
+        
 
-<body>
-<!-- <div id="header" style="background: rgb(66,172,250)">
-    <div id="back" >返回</div>
-    植树任务
-</div> -->
-   <div class="self-type-box active">
-        {notempty name="me_trees_rank"}
-        <div class="rank-list flex self">
-            <div class="rank-num"></div>
-            <div class="self-icon" mid="{$me_trees_rank.user_id}"><div class="jingling self1_png"></div></div>
-            <div class="self-name flex-1">{$me_trees_rank.name}</div>
-            <div class="self-num">{$me_trees_rank.green}</div>
-        </div>
-        {/notempty}
+<div class="mui-content">
+    <header class="mui-bar mui-bar-nav">
+        <h1 class="mui-title">排行榜</h1>
+    </header>
+    <div class="tablei">
+        <!-- <div class="tablei-lest active">排行榜</div> -->
+        <!-- <div class="tablei-lest"><a href="{:url('Ranklist/team',['token'=>$_TOKEN_])}">团队</a></div> -->
+
     </div>
-<script type="text/javascript" src="{$static_dir}home/js/zepto.js"></script>
-<script type="text/javascript" src="{$static_dir}home/js/public.js"></script>
-<script type="text/javascript">
 
-	var flaginit = true;
-	// 个人排名
-	var Selfrank = {
-	    selfs:JSON.parse('{$trees_rank|json_encode}'),
-	    init: function() {
-	        var box = $('.rank-list');
-	        if (JSON.parse('{$me_trees_rank|json_encode}').length != 0) {
-	            var me1 = JSON.parse('{$me_trees_rank|json_encode}');
-	            me1 = me1.rank;
-	            box.eq(0).find('.rank-num').html(this.switchicon(me1))
-	        }
-	        //渲染排名
-	        this.render(this.selfs)
-	        this.bindEvent();
-	    },
-	    bindEvent: function() {
-	        var that = this;
-	        //排行列表用户点击
-	        $('.self-type-box').on('click', '.rank-list', function() {
-	            var id = $(this).attr('mid');
-                if(!id){
-                    return;
-                }
-	            var token = '{$_TOKEN_|json_encode}';
-	            location.href = "{:url('other/index')}?id="+id+"&token="+token;
-	        })
-	    },
-	    render: function(data) {
-	        var str = ''
-	        for (var i = 0; i < data.length; i++) {
-	            var rank = i + 1
-	            str += '<div class="rank-list flex" mid="'+data[i].user_id+'">' +
-	                '<div class="rank-num">' + this.switchicon(rank) + '</div>' +
-	                '<div class="self-icon"><div class="jingling self1_png"></div></div>' +
-	                '<div class="self-name flex-1">' + data[i].name + '</div>' +
-	                '<div class="self-num">' + data[i].green + '</div>' +
-	                '</div>'
-	        }
-            if(!str){
-                str = '<div class="rank-list flex" >' +
-                    '暂无排行' +
-                    '</div>'
-            }
-	        $('.self-type-box').append(str);
-	    },
-	    switchicon(d) {
-	        switch (d) {
-	            case 1:
-	                d = '<div class="jingling jin_png"></div>';
-	                break;
-	            case 2:
-	                d = '<div class="jingling yin_png"></div>';
-	                break;
-	            case 3:
-	                d = '<div class="jingling tong_png"></div>';
-	                break;
-	        }
-	        return d
-	    },
-	}
-	Selfrank.init();
-</script>
-</body>
+    <div class="mci">
+        <img src="{$static_dir}home/img/phbg.jpg" width="100%" />
+        <div class="grcshu">{$me_trees_rank['rank']|default='未上榜'}</div>
 
+        <div class="cishui1">
+            <div class="cilist1">{$member['trees']|default='1'}</div>
+            <div class="cilist1">{$member['green_max']|default='0'}</div>
+            <div class="cilist1">{$member['share']|default='0'}</div>
+            <div class="cilist1">{$member['total_time']|default='0'}秒</div>
+        </div>
+        <div class="cishui">
+            <div class="cilist">树量</div>
+            <div class="cilist">综合绿值</div>
+            <div class="cilist">成长币</div>
+            <div class="cilist">答题时间</div>
+        </div>
+
+        <div class="listpaihang">
+            {volist name="trees_rank" id="item" empty="暂无排名数据"}
+                {notempty name="trees_rank"}
+                <div class="paihanglsit">
+                    <div class="phbcisu">{$key+1}</div>
+                    <div class="touxiang">
+                        <!-- <img src="https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eqvgG4L4TQR2QvwibuUrpPVLyV9vFeJ3LekdfNuv1Fgnl6VqcQwyFp0Q1iaKc7Eq2LictEwOEiciaYNjTQ/0" class="txiao" /> -->
+                        <span class="nmzi">{$item['name']}</span>
+                        <span class="bushw">{$item['green']}</span>
+                        <!-- <span class="jtuou">></span>
+                        <span class="fxiang">
+                            <div class="slian">（10）</div>
+                            <div class="slian">
+                                <img src="{$static_dir}home/img/xin.png" width="15" />
+                            </div>
+                        </span> -->
+                    </div>
+
+                </div>
+                {else/}
+                    <div>
+                        暂无排名数据
+                    </div>
+                {/notempty}
+            {/volist} 
+            <!-- <div class="paihanglsit">
+                <div class="phbcisu">2</div>
+                <div class="touxiang">
+                    <img src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIiaIOs60WlHpCpanM1JGQuYPFmWE3qPS67RrgRrYHqFqicYgn1NTxGrr6M7yfwELVrxWrIj7gDxBqw/0" class="txiao" /><span class="nmzi">牟海水</span><span class="bushw">360440</span><span class="jtuou">></span><span class="fxiang"><div class="slian">（65）</div>
+                        <div class="slian">
+                            <img src="{$static_dir}home/img/xin.png" width="15" /></div>
+                    </span></div>
+
+            </div>
+            <div class="paihanglsit">
+                <div class="phbcisu">3</div>
+                <div class="touxiang">
+                    <img src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIMYf6jhHYu6dv80Liah1CuibiaPjBstclGcohwiavk1T0Ql8wImszWWafc9UqwoN3Kk7icTMgBJHrxofA/0" class="txiao" /><span class="nmzi">快乐点心</span><span class="bushw">329369</span><span class="jtuou">></span><span class="fxiang"><div class="slian">（26）</div>
+                        <div class="slian">
+                            <img src="{$static_dir}home/img/xin.png" width="15" /></div>
+                    </span></div>
+
+            </div>
+            <div class="paihanglsit">
+                <div class="phbcisu">4</div>
+                <div class="touxiang">
+                    <img src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIJz71VbjZcwDSaOmzPsiabicqCBTiaOTLsiaLdk580OX8cumNqBY6EBicRZvKctgamdWmP8U8ibVz0hm7w/0" class="txiao" /><span class="nmzi">bingo</span><span class="bushw">286254</span><span class="jtuou">></span><span class="fxiang"><div class="slian">（18）</div>
+                        <div class="slian">
+                            <img src="{$static_dir}home/img/xin.png" width="15" /></div>
+                    </span></div>
+
+            </div>
+            <div class="paihanglsit">
+                <div class="phbcisu">5</div>
+                <div class="touxiang">
+                    <img src="https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83ermY6B8rsEDe6jpwBlEpLr52mJN8wxTmF54eAjoqYM9W5qRYA8hqECLhBjWx4bd3yYoZnZuryCQnQ/0" class="txiao" /><span class="nmzi">余洪海</span><span class="bushw">249411</span><span class="jtuou">></span><span class="fxiang"><div class="slian">（45）</div>
+                        <div class="slian">
+                            <img src="{$static_dir}home/img/xin.png" width="15" /></div>
+                    </span></div>
+
+            </div>
+            
+            
+            
+            
+            
+            <div class="paihanglsit">
+                <div class="phbcisu">6</div>
+                <div class="touxiang">
+                    <img src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLibBd8sHiawh8qVG2yuCzT0eSGmEraibBHgKOWIS6Oxj12E4nWkOwd9kEEB9TQ7DyuL5icAiarTQUmSzQ/0" class="txiao" /><span class="nmzi">嗨加游赛事</span><span class="bushw">146094</span><span class="jtuou">></span><span class="fxiang"><div class="slian">（35）</div>
+                        <div class="slian">
+                            <img src="image/xin.png" width="15" /></div>
+                    </span></div>
+
+            </div> -->
+
+
+        </div>
+
+
+
+    </div>
+</div>
+
+
+        <script src="{$static_dir}home/js/mui.min.js"></script>
+    </body>
 </html>
