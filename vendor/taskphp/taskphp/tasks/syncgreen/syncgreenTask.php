@@ -43,7 +43,7 @@ where not exists(select * from game_green_record where sign = 1 and a.id = user_
             $sql3 = 'update game_member a 
 inner join game_user_info b on a.contact = b.phone 
 set a.green_nocash = a.green_nocash+58 , green_max = green_max+58 
-where NOT EXISTS (select user_id from game_green_record where sign=2 and a.id = user_id ) and b.is_bind=1 and b.uid is not null';
+where NOT EXISTS (select user_id from game_green_record where sign=2 and a.id = user_id ) and b.is_bind>0 and b.uid is not null';
             if(Utils::model("member")->execute($sql3)){
                 $sql4 = 'insert into game_green_record (user_id,green,create_time,sign) 
 SELECT id,58,unix_timestamp(),2 FROM game_member a 
