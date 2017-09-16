@@ -112,10 +112,13 @@ where a.conpon_id=1 and a.type = 1 limit 1';
 set conpon_status =  1 
 where b.type = 1 ';
                     Utils::model("conpon")->execute($sql6);
-                    //分配为空的即删除
-                    Utils::model("recode")->where('conpon_id',0)->delete();
+
 
                 }
+                //分配为空的即删除
+                $del['conpon_id'] = 0;
+                $del['type'] = 1;
+                Utils::model("recode")->where($del)->delete();
                 
             } 
         }
@@ -144,9 +147,11 @@ where a.conpon_id=1 and a.type = 1 limit 1';
 set conpon_status =  1 
 where b.type = 1 ';
                     Utils::model("conpon")->execute($sql6);
-                    //分配为空的即删除
-                    Utils::model("recode")->where('conpon_id',0)->delete();
                 }
+                //分配为空的即删除
+                $del['conpon_id'] = 0;
+                $del['type'] = 1;
+                Utils::model("recode")->where($del)->delete();
                 
             } 
         }
