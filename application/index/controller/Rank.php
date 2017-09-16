@@ -28,12 +28,13 @@ class Rank extends Home
                 $me_trees_rank['green'] = $value['green'];
                 $me_trees_rank['rank'] = $key+1;
                 $me_trees_rank['user_id'] = $member['id'];
-                unset($trees_rank[$key]);
+                // unset($trees_rank[$key]);
             }
         }
         // $trees_rank = array_values($trees_rank);
         // print_r($me_trees_rank);exit;
         $this->assign('trees_rank', $trees_rank);
+        $this->assign('member', $member);
         $this->assign('me_trees_rank', $me_trees_rank);
         return $this->fetch(); // 渲染模板
     }

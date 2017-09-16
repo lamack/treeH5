@@ -79,10 +79,11 @@ class Ranklist extends Common
                 $me_trees_rank['green'] = $value['green'];
                 $me_trees_rank['rank'] = $key;
                 $me_trees_rank['id'] = $info['id'];
-                unset($trees_rank[$key]);
+                // unset($trees_rank[$key]);
             }
         }
         $this->assign('trees_rank', $trees_rank);
+        $this->assign('member', $member);
         $this->assign('me_trees_rank', $me_trees_rank);
 
         return $this->fetch(); // 渲染模板
