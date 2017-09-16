@@ -29,13 +29,13 @@ class rankTask extends Task{
         $sql1 = 'INSERT INTO game_rank
             (type,name,green,user_id)
   select 0,username,trees,id from game_member where 
-not exists(select * from game_rank where game_rank.user_id=game_member.id ) and  game_member.type = 0 AND game_member.trees>0  order by trees DESC,order by green_max DESC,order by share DESC, order by total_time DESC limit 100';
+not exists(select * from game_rank where game_rank.user_id=game_member.id ) and  game_member.type = 0 AND game_member.trees>0  order by trees DESC, green_max DESC, share DESC,  total_time DESC limit 100';
         Utils::model("rank")->execute($sql1);
         //班组排名 综合排名
-        $sql2 = 'INSERT INTO game_rank
-           (type,name,green)
- select 1,class,sum(trees) as max from game_member where not exists(select * from game_rank where game_rank.name=game_member.class and game_rank.type=1 ) and  game_member.class is not null  and game_member.trees>0 group by class_no order by max DESC limit 100';
-        Utils::model("rank")->execute($sql2);
+ //        $sql2 = 'INSERT INTO game_rank
+ //           (type,name,green)
+ // select 1,class,sum(trees) as max from game_member where not exists(select * from game_rank where game_rank.name=game_member.class and game_rank.type=1 ) and  game_member.class is not null  and game_member.trees>0 group by class_no order by max DESC limit 100';
+ //        Utils::model("rank")->execute($sql2);
         //
  //        //个人
  //        $sql = 'INSERT INTO game_rank
