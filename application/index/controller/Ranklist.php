@@ -83,7 +83,7 @@ class Ranklist extends Common
             }
         }
         $this->assign('trees_rank', $trees_rank);
-        $this->assign('member', $member);
+        $this->assign('member', $info);
         $this->assign('me_trees_rank', $me_trees_rank);
 
         return $this->fetch(); // 渲染模板
