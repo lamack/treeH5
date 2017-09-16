@@ -61,7 +61,7 @@ class Index extends Home
 
                 $this ->redirect('index/launch',array('uid' => $params['uid'],'sign' => $params['sign']),1, '会员同步登录中...');
             }
-            return $this->fetch('error'); // 渲染模板
+            return $this->fetch('error1'); // 渲染模板
             $data = ['msg'=>'用户不存在','status'=>'error'];
             return json($data);
         }

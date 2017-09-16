@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>欢乐植树</title>
+    <link rel="stylesheet" type="text/css" href="{$static_dir}home/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="{$static_dir}home/css/index.css">
+    <style type="text/css">
+    body {}
+    .back-btn-wrap{
+        width: 9rem;
+        height: 2.5rem;
+        position: fixed;
+        left: 50%;
+        margin-left: -4.5rem;
+        background: #fffded;
+        text-align: center;
+        border: 1px solid #dfd8ab;
+        border-radius: 25px;
+        line-height: 2.5rem;
+        color: #a05e00;
+        z-index: 100000;
+        top: 50%;
+        curosr: pointer
+    }
+    </style>
+</head>
+
+<body>
+     
+    <div id="bg" style="display:block;background-color: #000;width: 100%;position:absolute;height: 100%;opacity: 0.5;z-index: 99999;">
+    </div>  
+    <div class="back-btn-wrap"><a href="http://activity.cluster.shengongshe.org/bzds2/index.php?s=/addon/ActivityTeam/Wap/home/publicid/2/open_type/app.html">去报名</a></div>
+    <div class="container">
+        <div class="blur_container hei">
+            <div class="blur_bg"></div>
+            <div class="blur_box none">
+                <div class="item_row flex flex-justify-arround">
+                    <div class="">
+                        <div class="jingling green_png"></div>
+                        <p class="">{$_MEMBER.green_max|default=0}</p>
+                    </div>
+                    <div class="">
+                        <div class="jingling duihuan_png"></div>
+                        <p class="">{$_MEMBER.green|default=0}</p>
+                    </div>
+                    <div class="">
+                        <div class="jingling budui_png"></div>
+                        <p class="">{$_MEMBER.green_nocash|default=0}</p>
+                    </div>
+                    <div class="item-cash">
+                        <div class="jingling hsf2_png"></div>
+                        <p class="">{$_MEMBER.share|default=0}</p>
+                    </div>
+                    <div class="">
+                        <div class="jingling bigtree_png"></div>
+                        <p class="">{$count|default=1}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bomb daoju-bomb">
+            <div class="bomb-po">
+                <div class="title">道具使用</div>
+                <div class="close"></div>
+                <div class="bomb-box">
+                    <div class="middle clearfix">
+                        请选择使用或者兑换工具
+                    </div>
+                    <div class="bottom">
+                        <div class="status">
+                            <div class="use btn">使用</div>
+                            <div class="exchange btn">兑换</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bomb bomb-dialog">
+           <div class="bomb-po">
+               <div class="title">温馨提示</div>
+               <div class="close"></div>
+               <div class="bomb-box">
+                   <div class="middle clearfix">
+                       请先去兑换工具
+                   </div>
+                   <div class="bottom">
+                       <div class="status">
+                           <div class="use btn">确定</div>
+                           <div class="exchange btn">取消</div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+        </div>
+        <div class="bomb guoshi-bomb">
+            <div class="bomb-po">
+                <div class="title">温馨提示</div>
+                <div class="close"></div>
+                <div class="bomb-box">
+                    <div class="middle clearfix">
+                    </div>
+                    <div class="bottom">
+                        <div class="status">
+                            <div class="btn">确定</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bomb hudun-bomb">
+            <div class="bomb-po">
+                <div class="title">温馨提示</div>
+                <div class="close"></div>
+                <div class="bomb-box">
+                    <div class="middle clearfix">
+                        是否需要兑换护盾？
+                    </div>
+                    <div class="bottom">
+                        <div class="status">
+                            <div class="use btn">兑换</div>
+                            <div class="exchange btn">取消</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tree">
+            <div class="gethudun"><img src="{$static_dir}home/img/hudun1.png" /></div>
+            <div class="old tree-box"><img src="{$static_dir}home/img/oldtree.png"></div>
+            <div class="grow tree-box"><img src="{$static_dir}home/img/growtree.png"></div>
+            <div class="child tree-box active"><img src="{$static_dir}home/img/childtree.png"></div>
+            <div class="tree-box active"></div>
+        </div>
+        <div class="blur_container col">
+            <div class="blur_bg"></div>
+            <div class="blur_box flex flex-col flex-justify-arround">
+                <div class="item_col flex-1">
+                    <a href="" class="flex flex-align">
+                        <div class="center">
+                            <div class="jingling notice_png"></div> 公告
+                        </div>
+                    </a>
+                </div>
+                <div class="item_col flex-1">
+                    <a href="" class="flex flex-align">
+                        <div class="center">
+                            <div class="jingling mapicon_png"></div> 森林
+                        </div>
+                    </a>
+                </div>
+                <div class="item_col flex-1">
+                    <a href="" class="flex flex-align">
+                        <div class="center">
+                            <div class="jingling taskicon_png"></div> 奖励
+                        </div>
+                    </a>
+                </div>
+                <div class="item_col flex-1">
+                    <a href="" class="flex flex-align">
+                        <div class="center">
+                            <img src="{$static_dir}home/img/rank.png"> 排行榜
+                        </div>
+                    </a>
+                </div>
+                <div class="item_col flex-1">
+                    <a href="" class="flex flex-align">
+                        <div class="center">
+                            <img src="{$static_dir}home/img/gonglue.png"> 攻略
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="planting flex">
+            <div class="planting-item flex-1 flex flex-justify-arround flex-align">
+                <div class="item watering">
+                    <div class="water act">
+                        <img src="{$static_dir}home/img/water.png" class="water1">
+                        <img src="{$static_dir}home/img/water2.png" class="water2">
+                    </div>
+                    <img src="{$static_dir}home/img/water.png"> x
+                    <span class="num">{$waterprop|default=0}</span>
+                    <div class="add1 one">+1</div>
+                    <div class="minus1 one">-1</div>
+                </div>
+                <div class="item cutting">
+                    <div class="cut act">
+                        <img src="{$static_dir}home/img/cut.png" class="cut1">
+                        <img src="{$static_dir}home/img/cut2.png" class="cut2">
+                    </div>
+                    <img src="{$static_dir}home/img/cut.png"> x
+                    <span class="num">{$cutprop|default=0}</span>
+                    <div class="add1 one">+1</div>
+                    <div class="minus1 one">-1</div>
+                </div>
+                <div class="item feeding">
+                    <div class="shifei act">
+                        <img src="{$static_dir}home/img/shifei.png" class="shifei1">
+                        <img src="{$static_dir}home/img/shifei1.png" class="shifei2">
+                    </div>
+                    <img src="{$static_dir}home/img/shifei.png"> x
+                    <span class="num">{$shifeiprop|default=0}</span>
+                    <div class="add1 one">+1</div>
+                    <div class="minus1 one">-1</div>
+                </div>
+                <div class="item defense">
+                    <img src="{$static_dir}home/img/hudun.png" class="hudun act">
+                    <img src="{$static_dir}home/img/hudun.png"> x
+                    <span class="num">{$hudunprop|default=0}</span>
+                    <div class="add1 one">+1</div>
+                    <div class="minus1 one">-1</div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="me">
+            <a href="" class="">
+                <div class="jingling self_png"></div>
+         </a>
+        </div>
+        <div class="disaster">
+            <div class="hongshui">
+                <img src="{$static_dir}home/img/hongshui1.png">
+                <div class="inline"></div>
+                <img src="{$static_dir}home/img/hongshui2.png">
+            </div>
+            <div class="cloud">
+                <img src="{$static_dir}home/img/cloud.png">
+            </div>
+            <div class="ganhan"></div>
+            <div class="taifeng">
+                <img src="{$static_dir}home/img/taifeng.png">
+            </div>
+        </div>
+        <div class="lunbo">
+            <div class="lunbobg"></div>
+            <div class="lunbobox">
+                <div class="xx"><div class="x"><div class="x-move"><span id="marq"> </span></div></div></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="{$static_dir}home/js/zepto.js"></script>
+    <script type="text/javascript" src="{$static_dir}home/js/public.js"></script>
+    <script type="text/javascript" src="{$static_dir}home/js/touch.js"></script>
+    
+</body>
+
+</html>

@@ -45,7 +45,7 @@ class TreesMap extends Home
             $data[$i]['num'] = db('trees')->alias('a')->join(' member b',' b.id = a.user_id','LEFT')->where('b.area',$value)->count();;
             $i++;
         }
-
+// print_r($data);exit;
         //区域
         $areaArr1 = array(
             'putuo'=>'普陀',

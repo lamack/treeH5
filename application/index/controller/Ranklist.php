@@ -56,7 +56,7 @@ class Ranklist extends Common
             if (!$info) {
                 session('_MEMBER',null);//
                 $data = ['msg'=>'用户不存在','status'=>'error'];
-                return $this->fetch('error'); // 渲染模板
+                return $this->fetch('error1'); // 渲染模板
                 return json($data);
             }
             $info['sign'] = $params['sign'];
