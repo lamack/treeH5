@@ -62,6 +62,8 @@ class Conpon extends Admin
             ])
             // ->addTopButton('custom', $btn_1) // 批量添加顶部按钮
             ->addRightButton('custom', $btn_1) // 添加导入按钮
+            ->addRightButtons('delete') // 批量添加右侧按钮
+            ->replaceRightButton(['conpon_status' => 1], '<button class="btn btn-danger btn-xs" type="button" disabled>不可操作</button>') // 修改id为1的按钮
             ->setRowList($data_list) // 设置表格数据
             ->setPages($page) // 设置分页数据
             ->fetch(); // 渲染页面
@@ -109,6 +111,36 @@ class Conpon extends Admin
             ])
             ->setFormData() // 设置表单数据
             ->fetch();
+    }
+    /**
+     * 删除用户
+     * @param array $record 行为日志
+
+     * @return mixed
+     */
+    public function delete($record = [])
+    {
+        //是否分配
+        
+        
+        return $this->setStatus('delete');
+    }
+
+
+    /**
+     * 设置用户状态：删除、禁用、启用
+     * @param string $type 类型：delete/enable/disable
+     * @param array $record
+
+     * @return mixed
+     */
+    public function setStatus($type = '', $record = [])
+    {
+        $ids       = $this->request->isPost() ? input('post.ids/a') : input('param.ids');
+
+        $type_name = ConponModel::where('id', 'in', $ids)->column('conpon_no');
+
+        return parent::setStatus($type, ['conpon_'.$type, 'conpon', 0, UID, implode('、', $type_name)]);
     }
    
 }
