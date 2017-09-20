@@ -26,7 +26,7 @@ class syncwxsportTask extends Task{
       $res = Utils::model("wxsport_temp")->execute($sql4);
       
       //总计
-      $sql5 = 'insert into game_wxsport_total(Step,LoginId,AccuracyNum) select sum(Step) as steps,LoginId,sum(AccuracyNum) as nums from game_wxsport_temp where 1 group by LoginId ';
+      $sql5 = 'insert into game_wxsport_total(Step,LoginId,AccuracyNum,UserTime) select sum(Step) as steps,LoginId,sum(AccuracyNum) as nums,sum(UserTime) as UserTimes from game_wxsport_temp where 1 group by LoginId ';
       Utils::model("wxsport_total")->execute($sql5);
       
       //兑换成长币
@@ -47,7 +47,7 @@ class syncwxsportTask extends Task{
 
         $sql = 'update game_member a 
 inner join  game_wxsport_total b on a.sign = b.LoginId  
-set a.steps = b.Step+a.steps,a.green_max = round(b.Step*0.7*3/1000)+a.green_max,a.green = round(b.Step*0.7*3/1000)+a.green,a.share = round(b.AccuracyNum*4)+a.share,wxsport_time=unix_timestamp(),a.accuracyNum = b.AccuracyNum+a.accuracyNum where 1 ';
+set a.steps = b.Step+a.steps,a.green_max = round(b.Step*0.7*3/1000)+a.green_max,a.green = round(b.Step*0.7*3/1000)+a.green,a.share = round(b.AccuracyNum*4)+a.share,wxsport_time=unix_timestamp(),a.accuracyNum = b.AccuracyNum+a.accuracyNum,a.total_time = b.UserTime+a.total_time where 1 ';
 
         Utils::model("member")->execute($sql);
         

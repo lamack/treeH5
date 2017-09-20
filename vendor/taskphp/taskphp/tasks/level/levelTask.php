@@ -36,7 +36,12 @@ class levelTask extends Task{
 //         Utils::model("trees")->execute($sql1);
 
         //处理prop_use new
-       $sql2 = 'update game_trees a inner join (select count(*) as cout,trees_id from game_my_prop where status=1 and prop_type=1) b on a.id = b.trees_id inner join (select count(*) as cout,trees_id from game_my_prop where status=1 and prop_type=2) c on a.id = c.trees_id inner join (select count(*) as cout,trees_id from game_my_prop where status=1 and prop_type=3) d on a.id = d.trees_id set a.prop_use=1 where b.cout >0 and c.cout>0 and d.cout>0';
+       $sql2 = 'update  game_trees a inner join 
+(select count(*) as cout,trees_id from game_my_prop where status=1 and prop_type=1 group by trees_id) b on a.id = b.trees_id 
+inner join (select count(*) as cout,trees_id from game_my_prop where status=1 and prop_type=2 group by trees_id) c on a.id = c.trees_id 
+inner join (select count(*) as cout,trees_id from game_my_prop where status=1 and prop_type=3 group by trees_id) d on a.id = d.trees_id 
+set a.prop_use = 1 
+where b.cout >0 and c.cout>0 and d.cout>0';
        Utils::model("trees")->execute($sql2);
 
        //处理prop_use
