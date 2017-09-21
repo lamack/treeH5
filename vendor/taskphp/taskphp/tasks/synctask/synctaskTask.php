@@ -21,22 +21,25 @@ class synctaskTask extends Task{
         $taskarr = Utils::model("task_recode")->query($sql);
 
         //简单处理
-        foreach ($taskarr as $key => $value) {
-            $user_id = $this->_getuserid($value);
-            if (!$user_id) {
-                continue;
-            }
-            $data['user_id'] = $user_id;
-            $data['task_id'] = $value['task_id'];
-            $data['status'] = $user_id;
-            $data['create_time'] = time();
-            Utils::model("task_process")->add($data);
-            //生成获得记录
-            $recode['user_id'] = $user_id;
-            $recode['green'] = $value['total'];
-            $recode['create_time'] = time();
-            Utils::model("green_record")->add($recode);
-        }  
+        if (is_array($taskarr)) {
+            foreach ($taskarr as $key => $value) {
+                $user_id = $this->_getuserid($value);
+                if (!$user_id) {
+                    continue;
+                }
+                $data['user_id'] = $user_id;
+                $data['task_id'] = $value['task_id'];
+                $data['status'] = $user_id;
+                $data['create_time'] = time();
+                Utils::model("task_process")->add($data);
+                //生成获得记录
+                $recode['user_id'] = $user_id;
+                $recode['green'] = $value['total'];
+                $recode['create_time'] = time();
+                Utils::model("green_record")->add($recode);
+            }  
+        }
+        
 
 		flush();
 	}
