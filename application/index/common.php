@@ -36,6 +36,38 @@ if (!function_exists('is_mobile')) {
         }
     }
 
+    function _getGreen($uid){
+        if (!$uid) {
+            return null;
+        }
+        $me = db('member')->where('id',$uid)->find();
+        if ($me) {
+            return $me['green_max'];
+        }
+    }
+
+    function _getShare($uid){
+        if (!$uid) {
+            return null;
+        }
+        $me = db('member')->where('id',$uid)->find();
+        if ($me) {
+            return $me['share'];
+        }
+    }
+
+    function _getTime($uid){
+        if (!$uid) {
+            return null;
+        }
+        $me = db('member')->where('id',$uid)->find();
+        if ($me) {
+            return $me['total_time'];
+        }
+    }
+
+
+
     function __mdate($time = NULL) {
         $text = '';
         $time = $time === NULL || $time > time() ? time() : intval($time);
