@@ -33,6 +33,10 @@ class Rank extends Admin
         
         // 数据列表
         $data_list = RankModel::where($map)->order($order)->paginate();
+        foreach ($data_list as $key => $value) {
+            $rank = $key+1;
+            $data_list[$key]['rank'] = $rank;
+        }
 
         // 分页数据
         $page = $data_list->render();
@@ -46,7 +50,7 @@ class Rank extends Admin
             ->hideCheckbox()
             ->setSearch([ 'name' => '名称']) // 设置搜索参数
             ->addColumns([ // 批量添加列
-                ['__INDEX__', '名次'],
+                ['rank', '名次'],
                 ['type', '类型','','', [0 => '个人排名', 1 => '班组排名']],
                 ['name', '名称'],
                 ['green', '树苗数量']
