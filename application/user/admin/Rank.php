@@ -36,6 +36,11 @@ class Rank extends Admin
         foreach ($data_list as $key => $value) {
             $rank = $key+1;
             $data_list[$key]['rank'] = $rank;
+
+            $data_list[$key]['green_max'] = _getGreen($value['user_id']);
+            $data_list[$key]['share'] = _getShare($rank);
+            $data_list[$key]['total_time'] = _getTime($rank);
+
         }
 
         // 分页数据
@@ -53,7 +58,11 @@ class Rank extends Admin
                 ['rank', '名次'],
                 ['type', '类型','','', [0 => '个人排名', 1 => '班组排名']],
                 ['name', '名称'],
-                ['green', '树苗数量']
+                ['green', '树苗数量'],
+
+                ['green_max', '综合绿值'],
+                ['share', '成长币'],
+                ['total_time', '答题时间']
             ])
             ->setRowList($data_list) // 设置表格数据
             ->setPages($page) // 设置分页数据
