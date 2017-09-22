@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="{$static_dir}home/css/index.css">
     <style type="text/css">
     body {}
+    .mask{ display: none;position: fixed;top: 0;bottom: 0;left: 0;right: 0;background: black;opacity: 0.6;z-index: 1001; } .mask .intro{ position: absolute; right: 10px; top: 60px; width: 77%; } .mask .intro li{ float: left; width: 20%; color: #fff; font-size: 10px; text-align: center; }
     </style>
 </head>
 
@@ -235,12 +236,35 @@
             </div>
         </div>
     </div>
+    <div class="mask">
+        <ul class="intro">
+        <li>综合绿植</li>
+        <li>出行绿植</li>
+        <li>奖励绿植</li>
+        <li>成长币</li>
+        <li>树木数量</li>
+        </ul>
+    </div>
     <script type="text/javascript" src="{$static_dir}home/js/zepto.js"></script>
     <script type="text/javascript" src="{$static_dir}home/js/public.js"></script>
     <script type="text/javascript" src="{$static_dir}home/js/touch.js"></script>
     <!-- <script type="text/javascript" src="{$static_dir}home/js/index.js"></script> -->
     <script type="text/javascript">
     $(function() {
+        var flag = localStorage.getItem('flag');
+        console.log(flag);
+        if (typeof flag === 'object') {
+            $('.mask').show();
+            // 5s隐藏简介
+            setTimeout(function() {
+                $('.mask').hide();
+            },5000);
+            localStorage.setItem('flag',true);
+        } else {
+            $('.mask').hide();
+        }
+        
+
         var adv = JSON.parse('{$tips_adv|json_encode}');
         var lunboadv = JSON.parse('{$lunbo|json_encode}');
 
