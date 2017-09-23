@@ -34,12 +34,11 @@ class Rank extends Admin
             $page = intval($_GET['page']);
         }
         if(isset($_GET['list_rows'])){
-            $limit = $page*$_GET['list_rows'];
+            // $limit = $page*$_GET['list_rows'];
+            $limit = (page-1)*$_GET['list_rows'] + 1;
         }else{
-            $limit = $page*20;
-            if ($page==1) {
-                $limit = 0;
-            }
+            
+            $limit = (page-1)*20 + 1;
             
         }
         // 数据列表
