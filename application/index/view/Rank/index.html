@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -7,274 +8,290 @@
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    
     <link href="{$static_dir}home/css/mui.min.css" rel="stylesheet" />
     <link href="{$static_dir}home/css/iconfont.css" rel="stylesheet" />
     <!-- <link href="js/common.css" rel="stylesheet" /> -->
-    
     <style>
-        body {
-            background: #72d3c8;
-        }
+    body {
+        background: #72d3c8;
+    }
 
-        .cishui {
-            float: left;
-            width: 100%;
-            color: #fff;
-        }
+    .cishui {
+        float: left;
+        width: 100%;
+        color: #fff;
+    }
 
-        .cilist {
-            float: left;
-            width: 25%;
-            text-align: center;
-            line-height: 30px;
-            font-size: 80%;
-        }
+    .cilist {
+        float: left;
+        width: 25%;
+        text-align: center;
+        line-height: 30px;
+        font-size: 80%;
+    }
 
-        .mci {
-            float: left;
-            width: 100%;
-            background: #72d3c8;
-            position: relative;
-        }
+    .cishui-title {
+        float: left;
+        width: 100%;
+        color: #fff;
+        background: #2b870b;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        height: 3rem;
+    }
 
-        .grcshu {
-            position: absolute;
-            margin-top:-25%;
-            width: 100%;
-            font-size:7vw;
-            text-align: center;
-            color: #2AC845;
-            font-weight: bold;
-        }
+    .cishui-title .cilist {
+        float: left;
+        width: 16%;
+        text-align: center;
+        line-height: 3rem;
+        font-size: 80%;
+        margin-right: 0.1rem;
+    }
 
-        .cilist1 {
-            float: left;
-            width: 25%;
-            text-align: center;
-            color: #fff;
-            line-height: 30px;
-            font-size: 120%;
-        }
+    .mci {
+        float: left;
+        width: 100%;
+        background: #72d3c8;
+        position: relative;
+    }
 
-        .listpaihang {
-            float: left;
-            width: 94%;
-            margin-left: 3%;
-            margin-right: 3%;
-            padding: 3%;
-            background: #F9F9F9;
-            border-radius: 10px;
-        }
+    .grcshu {
+        position: absolute;
+        margin-top: -25%;
+        width: 100%;
+        font-size: 7vw;
+        text-align: center;
+        color: #2AC845;
+        font-weight: bold;
+    }
 
-        .paihanglsit {
-            float: left;
-            width: 100%;
-            border-bottom: 1px solid #ddd;
-            margin-top: 5px;
-            margin-bottom: 5px;
-        }
+    .cilist1 {
+        float: left;
+        width: 25%;
+        text-align: center;
+        color: #fff;
+        line-height: 30px;
+        font-size: 120%;
+    }
 
-        .phbcisu {
-            float: left;
-            background: url({$static_dir}home/img/pmbg.png) no-repeat top center;
-            background-size: 30px;
-            text-align: center;
-            width: 30px;
-            line-height: 30px;
-            color: #fff;
-            height: 40px;
-        }
+    .listpaihang {
+        float: left;
+        width: 94%;
+        margin-left: 3%;
+        margin-right: 3%;
+        background: #F9F9F9;
+        border-radius: 10px;
+    }
 
-        .txiao {
-            width: 30px;
-            height: 30px;
-            border-radius: 30px;
-            margin-left: 5px;
-        }
+    .listpaihang-content {
+        padding: 3%;
+    }
 
-        .nmzi {
-            position: absolute;
-            line-height: 30px;
-            font-size: 80%;
-            color: #666;
-            padding-left: 5px;
-        }
+    .paihanglsit {
+        float: left;
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
 
-        .bushw {
-            color: #333;
-            font-size: 90%;
-            font-weight: bold;
-            position: absolute;
-            right: 25%;
-            line-height: 30px;
-        }
+    .phbcisu {
+        float: left;
+        background: url({$static_dir}home/img/pmbg.png) no-repeat top center;
+        background-size: 30px;
+        text-align: center;
+        width: 30px;
+        line-height: 30px;
+        color: #fff;
+        height: 40px;
+    }
 
-        .jtuou {
-            position: absolute;
-            right: 18%;
-            line-height: 35px;
-            color: #ddd;
-        }
+    .txiao {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        margin-left: 3px;
+    }
 
-        .fxiang {
-            position: absolute;
-            right: 8%;
-            width: 30px;
-            height: 30px;
-        }
+    .nmzi {
+        position: absolute;
+        line-height: 30px;
+        font-size: 80%;
+        color: #666;
+        padding-left: 5px;
+    }
 
-        .slian {
-            width: 30px;
-            text-align: center;
-            font-size: 70%;
-            color: #999;
-        }
+    .bushw {
+        color: #333;
+        font-size: 90%;
+        font-weight: bold;
+        position: absolute;
+        right: 25%;
+        line-height: 30px;
+    }
 
-        .tablei {
-            float: left;
-            width: 100%;
-            line-height: 45px;
-            height: 45px;
-            background: #fff;
-        }
+    .jtuou {
+        position: absolute;
+        right: 18%;
+        line-height: 35px;
+        color: #ddd;
+    }
 
-        .tablei-lest {
-            float: left;
-            width: 40%;
-            margin-left: 5%;
-            margin-right: 5%;
-            text-align: center;
-        }
-.tablei-lest  a{ color:#666}
-        .active {
-            border-bottom: 3px solid #19AFC7;
-            color: #19AFC7;
-            line-height: 40px;
-            height: 40px; 
-        }
+    .fxiang {
+        position: absolute;
+        right: 8%;
+        width: 30px;
+        height: 30px;
+    }
+
+    .slian {
+        width: 30px;
+        text-align: center;
+        font-size: 70%;
+        color: #999;
+    }
+
+    .tablei {
+        float: left;
+        width: 100%;
+        line-height: 45px;
+        height: 45px;
+        background: #fff;
+    }
+
+    .tablei-lest {
+        float: left;
+        width: 40%;
+        margin-left: 5%;
+        margin-right: 5%;
+        text-align: center;
+    }
+
+    .tablei-lest a {
+        color: #666
+    }
+
+    .active {
+        border-bottom: 3px solid #19AFC7;
+        color: #19AFC7;
+        line-height: 40px;
+        height: 40px;
+    }
     </style>
-
-
 </head>
-    <body>
-        
 
-<div class="mui-content">
-    <header class="mui-bar mui-bar-nav">
-        <h1 class="mui-title">排行榜</h1>
-    </header>
-    <div class="tablei">
-        <!-- <div class="tablei-lest active">排行榜</div> -->
-        <!-- <div class="tablei-lest"><a href="{:url('Ranklist/team',['token'=>$_TOKEN_])}">团队</a></div> -->
-
-    </div>
-
-    <div class="mci">
-        <img src="{$static_dir}home/img/phbg.jpg" width="100%" />
-        <div class="grcshu">{$me_trees_rank['rank']|default='未上榜'}</div>
-
-        <div class="cishui1">
-            <div class="cilist1">{$member['trees']|default='1'}</div>
-            <div class="cilist1">{$member['green_max']|default='0'}</div>
-            <div class="cilist1">{$member['share']|default='0'}</div>
-            <div class="cilist1">{$member['total_time']|default='0'}秒</div>
+<body>
+    <div class="mui-content">
+        <header class="mui-bar mui-bar-nav">
+            <h1 class="mui-title">排行榜</h1>
+        </header>
+        <div class="tablei">
+            <!-- <div class="tablei-lest active">排行榜</div> -->
+            <!-- <div class="tablei-lest"><a href="{:url('Ranklist/team',['token'=>$_TOKEN_])}">团队</a></div> -->
         </div>
-        <div class="cishui">
-            <div class="cilist">树木数量</div>
-            <div class="cilist">综合绿值</div>
-            <div class="cilist">成长币</div>
-            <div class="cilist">答题时间</div>
-        </div>
-
-        <div class="listpaihang">
-            {volist name="trees_rank" id="item" empty="暂无排名数据"}
-                {notempty name="trees_rank"}
-                <div class="paihanglsit">
-                    <div class="phbcisu">{$key+1}</div>
-                    <div class="touxiang">
-                        <!-- <img src="https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eqvgG4L4TQR2QvwibuUrpPVLyV9vFeJ3LekdfNuv1Fgnl6VqcQwyFp0Q1iaKc7Eq2LictEwOEiciaYNjTQ/0" class="txiao" /> -->
-                        <span class="nmzi">{$item['name']}</span>
-                        <span class="bushw" style="right:65%">{$item['green']}</span>
-                        <span class="bushw" style="right:50%">{$item['user_id']|_getGreen}</span>
-                        <span class="bushw" style="right:35%">{$item['user_id']|_getShare}</span>
-                        <span class="bushw" style="right:15%">{$item['user_id']|_getTime}秒</span>
-                        <!-- <span class="jtuou">></span>
+        <div class="mci">
+            <img src="{$static_dir}home/img/phbg.jpg" width="100%" />
+            <div class="grcshu">{$me_trees_rank['rank']|default='未上榜'}</div>
+            <div class="cishui1">
+                <div class="cilist1">{$member['trees']|default='1'}</div>
+                <div class="cilist1">{$member['green_max']|default='0'}</div>
+                <div class="cilist1">{$member['share']|default='0'}</div>
+                <div class="cilist1">{$member['total_time']|default='0'}秒</div>
+            </div>
+            <div class="cishui">
+                <div class="cilist">树木数量</div>
+                <div class="cilist">综合绿值</div>
+                <div class="cilist">成长币</div>
+                <div class="cilist">答题时间</div>
+            </div>
+            <div class="listpaihang">
+                <div class="cishui-title">
+                    <div class="cilist">名次</div>
+                    <div class="cilist">姓名</div>
+                    <div class="cilist">树木数量</div>
+                    <div class="cilist">综合绿植</div>
+                    <div class="cilist">成长币</div>
+                    <div class="cilist">答题时间</div>
+                </div>
+                <div class="listpaihang-content">
+                    {volist name="trees_rank" id="item" empty="暂无排名数据"} {notempty name="trees_rank"}
+                    <div class="paihanglsit">
+                        <div class="phbcisu">{$key+1}</div>
+                        <div class="touxiang">
+                            <!-- <img src="https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eqvgG4L4TQR2QvwibuUrpPVLyV9vFeJ3LekdfNuv1Fgnl6VqcQwyFp0Q1iaKc7Eq2LictEwOEiciaYNjTQ/0" class="txiao" /> -->
+                            <span class="nmzi">{$item['name']}</span>
+                            <span class="bushw" style="right:65%">{$item['green']}</span>
+                            <span class="bushw" style="right:50%">{$item['user_id']|_getGreen}</span>
+                            <span class="bushw" style="right:35%">{$item['user_id']|_getShare}</span>
+                            <span class="bushw" style="right:15%">{$item['user_id']|_getTime}秒</span>
+                            <!-- <span class="jtuou">></span>
                         <span class="fxiang">
                             <div class="slian">（10）</div>
                             <div class="slian">
                                 <img src="{$static_dir}home/img/xin.png" width="15" />
                             </div>
                         </span> -->
+                        </div>
                     </div>
-
-                </div>
-                {else/}
+                    {else/}
                     <div>
                         暂无排名数据
                     </div>
-                {/notempty}
-            {/volist} 
-            <!-- <div class="paihanglsit">
-                <div class="phbcisu">2</div>
-                <div class="touxiang">
-                    <img src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIiaIOs60WlHpCpanM1JGQuYPFmWE3qPS67RrgRrYHqFqicYgn1NTxGrr6M7yfwELVrxWrIj7gDxBqw/0" class="txiao" /><span class="nmzi">牟海水</span><span class="bushw">360440</span><span class="jtuou">></span><span class="fxiang"><div class="slian">（65）</div>
+                    {/notempty} {/volist}
+                    <!-- <div class="paihanglsit">
+                        <div class="phbcisu">2</div>
+                        <div class="touxiang">
+                            <img src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIiaIOs60WlHpCpanM1JGQuYPFmWE3qPS67RrgRrYHqFqicYgn1NTxGrr6M7yfwELVrxWrIj7gDxBqw/0" class="txiao" />
+                            <span class="nmzi">牟海水</span>
+                            <span class="bushw">360440</span>
+                            <span class="jtuou">></span>
+                            <span class="fxiang">
+                                <div class="slian">（65）</div>
+                                <div class="slian">
+                                    <img src="{$static_dir}home/img/xin.png" width="15" />
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="paihanglsit">
+                        <div class="phbcisu">3</div>
+                        <div class="touxiang">
+                            <img src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIMYf6jhHYu6dv80Liah1CuibiaPjBstclGcohwiavk1T0Ql8wImszWWafc9UqwoN3Kk7icTMgBJHrxofA/0" class="txiao" /><span class="nmzi">快乐点心</span><span class="bushw">329369</span><span class="jtuou">></span><span class="fxiang"><div class="slian">（26）</div>
                         <div class="slian">
                             <img src="{$static_dir}home/img/xin.png" width="15" /></div>
                     </span></div>
-
-            </div>
-            <div class="paihanglsit">
-                <div class="phbcisu">3</div>
-                <div class="touxiang">
-                    <img src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIMYf6jhHYu6dv80Liah1CuibiaPjBstclGcohwiavk1T0Ql8wImszWWafc9UqwoN3Kk7icTMgBJHrxofA/0" class="txiao" /><span class="nmzi">快乐点心</span><span class="bushw">329369</span><span class="jtuou">></span><span class="fxiang"><div class="slian">（26）</div>
+                    </div>
+                    <div class="paihanglsit">
+                        <div class="phbcisu">4</div>
+                        <div class="touxiang">
+                            <img src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIJz71VbjZcwDSaOmzPsiabicqCBTiaOTLsiaLdk580OX8cumNqBY6EBicRZvKctgamdWmP8U8ibVz0hm7w/0" class="txiao" /><span class="nmzi">bingo</span><span class="bushw">286254</span><span class="jtuou">></span><span class="fxiang"><div class="slian">（18）</div>
                         <div class="slian">
                             <img src="{$static_dir}home/img/xin.png" width="15" /></div>
                     </span></div>
-
-            </div>
-            <div class="paihanglsit">
-                <div class="phbcisu">4</div>
-                <div class="touxiang">
-                    <img src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIJz71VbjZcwDSaOmzPsiabicqCBTiaOTLsiaLdk580OX8cumNqBY6EBicRZvKctgamdWmP8U8ibVz0hm7w/0" class="txiao" /><span class="nmzi">bingo</span><span class="bushw">286254</span><span class="jtuou">></span><span class="fxiang"><div class="slian">（18）</div>
+                    </div>
+                    <div class="paihanglsit">
+                        <div class="phbcisu">5</div>
+                        <div class="touxiang">
+                            <img src="https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83ermY6B8rsEDe6jpwBlEpLr52mJN8wxTmF54eAjoqYM9W5qRYA8hqECLhBjWx4bd3yYoZnZuryCQnQ/0" class="txiao" /><span class="nmzi">余洪海</span><span class="bushw">249411</span><span class="jtuou">></span><span class="fxiang"><div class="slian">（45）</div>
                         <div class="slian">
                             <img src="{$static_dir}home/img/xin.png" width="15" /></div>
                     </span></div>
-
-            </div>
-            <div class="paihanglsit">
-                <div class="phbcisu">5</div>
-                <div class="touxiang">
-                    <img src="https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83ermY6B8rsEDe6jpwBlEpLr52mJN8wxTmF54eAjoqYM9W5qRYA8hqECLhBjWx4bd3yYoZnZuryCQnQ/0" class="txiao" /><span class="nmzi">余洪海</span><span class="bushw">249411</span><span class="jtuou">></span><span class="fxiang"><div class="slian">（45）</div>
-                        <div class="slian">
-                            <img src="{$static_dir}home/img/xin.png" width="15" /></div>
-                    </span></div>
-
-            </div>
-            
-            
-            
-            
-            
-            <div class="paihanglsit">
-                <div class="phbcisu">6</div>
-                <div class="touxiang">
-                    <img src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLibBd8sHiawh8qVG2yuCzT0eSGmEraibBHgKOWIS6Oxj12E4nWkOwd9kEEB9TQ7DyuL5icAiarTQUmSzQ/0" class="txiao" /><span class="nmzi">嗨加游赛事</span><span class="bushw">146094</span><span class="jtuou">></span><span class="fxiang"><div class="slian">（35）</div>
+                    </div>
+                    <div class="paihanglsit">
+                        <div class="phbcisu">6</div>
+                        <div class="touxiang">
+                            <img src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLibBd8sHiawh8qVG2yuCzT0eSGmEraibBHgKOWIS6Oxj12E4nWkOwd9kEEB9TQ7DyuL5icAiarTQUmSzQ/0" class="txiao" /><span class="nmzi">嗨加游赛事</span><span class="bushw">146094</span><span class="jtuou">></span><span class="fxiang"><div class="slian">（35）</div>
                         <div class="slian">
                             <img src="image/xin.png" width="15" /></div>
-                    </span></div>
-
-            </div> -->
-
-
+                    </span>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
         </div>
-
-
-
     </div>
-</div>
+    <script src="{$static_dir}home/js/mui.min.js"></script>
+</body>
 
-
-        <script src="{$static_dir}home/js/mui.min.js"></script>
-    </body>
 </html>
