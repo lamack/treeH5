@@ -49,9 +49,41 @@ class Task extends Home
                 }
                 
             }
+            $is = 0;
+            //特殊任务处理
+            if ($value['type']>0) {
+                switch ($value['type']) {
+                    case '1':
+                        $sm['user_id'] = $member['id'];
+                        $sm['sign'] = 1;
+                        $is = db('green_record')->where($sm)->count();
+                        break;
+                    case '2':
+                        $sm['user_id'] = $member['id'];
+                        $sm['sign'] = 2;
+                        $is = db('green_record')->where($sm)->count();
+                        break;
+                    case '3':
+                        $sm['user_id'] = $member['id'];
+                        $sm['sign'] = 3;
+                        $is = db('green_record')->where($sm)->count();
+                        break;
+                    case '4':
+                        $sm['user_id'] = $member['id'];
+                        $sm['sign'] = 4;
+                        $is = db('green_record')->where($sm)->count();
+                        break;               
+                    
+                    default:
+                        # code...
+                        break;
+                }
+            }
+            if ($is>0) {
+                $info[$key]['status'] =2;
+            }
         }
         
-
         $this->assign('task', $info);
         return $this->fetch(); // 渲染模板
     }
@@ -84,9 +116,10 @@ class Task extends Home
         foreach ($list as $key => $value) {
             $task[$value['task_id']][$key] = $value;
         }
+
         if ($task) {
             foreach ($info as $key => $value) {
-                if ($task[$value['id']]) {
+                if (isset($task[$value['id']])) {
                     $info[$key]['status'] = 2;
                 }
                
