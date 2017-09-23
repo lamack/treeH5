@@ -62,7 +62,7 @@ if (!function_exists('is_mobile')) {
         }
         $me = db('member')->where('id',$uid)->find();
         if ($me) {
-            return $me['total_time'];
+            return intval($me['total_time']);
         }
     }
 
