@@ -71,17 +71,18 @@ class Ranklist extends Common
 
 
         $me_trees_rank = [];
-        $trees_rank = db('rank')->where('type','0')->order('green DESC')->select();
+        $trees_rank = db('rank')->where('type','0')->order('green DESC')->limit(100)->select();
 
         foreach ($trees_rank as $key => $value) {
-            if ($value['id']==$info['id']) {
+            if ($value['user_id']==$info['id']) {
                 $me_trees_rank['name'] = $value['name'];
                 $me_trees_rank['green'] = $value['green'];
-                $me_trees_rank['rank'] = $key;
+                $me_trees_rank['rank'] = $key+1;
                 $me_trees_rank['id'] = $info['id'];
                 // unset($trees_rank[$key]);
             }
         }
+        // print_r($info);exit;
         $this->assign('trees_rank', $trees_rank);
         $this->assign('member', $info);
         $this->assign('me_trees_rank', $me_trees_rank);

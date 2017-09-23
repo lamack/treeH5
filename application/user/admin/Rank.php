@@ -28,28 +28,51 @@ class Rank extends Admin
 
         // 获取查询条件
         $map = $this->getMap();
-        $order = $this->getOrder();
-        
-        
+        // $order = $this->getOrder();
+        $page = 1;
+        if (isset($_GET['page'])) {
+            $page = intval($_GET['page']);
+        }
+        if(isset($_GET['list_rows'])){
+            // $limit = $page*$_GET['list_rows'];
+            $limit = ($page-1)*$_GET['list_rows'] + 1;
+        }else{
+            
+            $limit = ($page-1)*20 + 1;
+            
+        }
         // 数据列表
-        $data_list = RankModel::where($map)->order($order)->paginate();
+        $data_list = RankModel::where($map)->order('green DESC')->paginate();
+        foreach ($data_list as $key => $value) {
+            $rank = ($key)+$limit;
+            $data_list[$key]['rank'] = $rank;
+
+            $data_list[$key]['green_max'] = _getGreen($value['user_id']);
+            $data_list[$key]['share'] = _getShare($value['user_id']);
+            $data_list[$key]['total_time'] = intval(_getTime($value['user_id']));
+
+        }
 
         // 分页数据
-        $page = $data_list->render();
+        $page = $data_list->render(); 
 
 
         // 使用ZBuilder快速创建数据表格
         return ZBuilder::make('table')
             ->setPageTitle('排行榜') // 设置页面标题
             ->setTableName('rank') // 设置数据表名
-            ->addOrder('green') // 添加排序
+            // ->addOrder('green') // 添加排序
             ->hideCheckbox()
             ->setSearch([ 'name' => '名称']) // 设置搜索参数
             ->addColumns([ // 批量添加列
-                ['__INDEX__', '名次'],
+                ['rank', '名次'],
                 ['type', '类型','','', [0 => '个人排名', 1 => '班组排名']],
                 ['name', '名称'],
-                ['green', '树苗数量']
+                ['green', '树苗数量'],
+
+                ['green_max', '综合绿值'],
+                ['share', '成长币'],
+                ['total_time', '答题时间']
             ])
             ->setRowList($data_list) // 设置表格数据
             ->setPages($page) // 设置分页数据
