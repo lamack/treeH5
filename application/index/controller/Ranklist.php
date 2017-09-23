@@ -71,7 +71,7 @@ class Ranklist extends Common
 
 
         $me_trees_rank = [];
-        $trees_rank = db('rank')->where('type','0')->order('green DESC')->limit(100)->select();
+        $trees_rank = db('rank')->where('type','0')->order('id ASC')->limit(100)->select();
 
         foreach ($trees_rank as $key => $value) {
             if ($value['user_id']==$info['id']) {
