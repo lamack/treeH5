@@ -52,7 +52,7 @@ class Rank extends Admin
         ];
 
         // 数据列表
-        $data_list = RankModel::where($map)->order('green DESC')->paginate();
+        $data_list = RankModel::where($map)->order('id ASC')->paginate();
         foreach ($data_list as $key => $value) {
             $rank = ($key)+$limit;
             // $data_list[$key]['rank'] = $rank;
