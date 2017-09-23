@@ -44,7 +44,7 @@ class Rank extends Admin
         }
 
         // 分页数据
-        $page = $data_list->render();
+        $page = $data_list->render(); 
 
 
         // 使用ZBuilder快速创建数据表格
