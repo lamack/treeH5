@@ -44,7 +44,7 @@ class Rank extends Admin
         // 数据列表
         $data_list = RankModel::where($map)->order('green DESC')->paginate();
         foreach ($data_list as $key => $value) {
-            $rank = ($key+1)+$limit;
+            $rank = ($key)+$limit;
             $data_list[$key]['rank'] = $rank;
 
             $data_list[$key]['green_max'] = _getGreen($value['user_id']);
