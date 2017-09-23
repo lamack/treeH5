@@ -37,6 +37,10 @@ class Rank extends Admin
             $limit = $page*$_GET['list_rows'];
         }else{
             $limit = $page*20;
+            if ($page==1) {
+                $limit = 0;
+            }
+            
         }
         // 数据列表
         $data_list = RankModel::where($map)->order($order)->paginate();
