@@ -30,7 +30,23 @@
             line-height: 30px;
             font-size: 80%;
         }
-
+.cishui-title {
+        float: left;
+        width: 100%;
+        color: #fff;
+        background: #2b870b;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        height: 3rem;
+    }
+    .cishui-title .cilist {
+        float: left;
+        width: 16%;
+        text-align: center;
+        line-height: 3rem;
+        font-size: 80%;
+        margin-right: 0.1rem;
+    }
         .mci {
             float: left;
             width: 100%;
@@ -62,11 +78,12 @@
             width: 94%;
             margin-left: 3%;
             margin-right: 3%;
-            padding: 3%;
             background: #F9F9F9;
             border-radius: 10px;
         }
-
+.listpaihang-content {
+        padding: 3%;
+    }
         .paihanglsit {
             float: left;
             width: 100%;
@@ -188,6 +205,15 @@
         </div>
 
         <div class="listpaihang">
+            <div class="cishui-title">
+                    <div class="cilist">名次</div>
+                    <div class="cilist">姓名</div>
+                    <div class="cilist">树木数量</div>
+                    <div class="cilist">综合绿植</div>
+                    <div class="cilist">成长币</div>
+                    <div class="cilist">答题时间</div>
+                </div>
+                <div class="listpaihang-content">
             {volist name="trees_rank" id="item" empty="暂无排名数据"}
                 {notempty name="trees_rank"}
                 <div class="paihanglsit">
@@ -266,7 +292,7 @@
 
             </div> -->
 
-
+</div>
         </div>
 
 
