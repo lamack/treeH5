@@ -62,7 +62,7 @@ body{width:100%;}
   height:100%;
   line-height: 30px;
     white-space: nowrap;
-  animation: xmove 8s linear infinite;
+  animation: xmove 18s linear infinite;
 }
 @keyframes xmove{
   0%{left:255px;}
