@@ -38,8 +38,8 @@ class Rank extends Admin
             $data_list[$key]['rank'] = $rank;
 
             $data_list[$key]['green_max'] = _getGreen($value['user_id']);
-            $data_list[$key]['share'] = _getShare($rank);
-            $data_list[$key]['total_time'] = _getTime($rank);
+            $data_list[$key]['share'] = _getShare($value['user_id']);
+            $data_list[$key]['total_time'] = _getTime($value['user_id']);
 
         }
 
