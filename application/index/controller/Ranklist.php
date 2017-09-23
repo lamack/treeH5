@@ -77,7 +77,7 @@ class Ranklist extends Common
             if ($value['user_id']==$info['id']) {
                 $me_trees_rank['name'] = $value['name'];
                 $me_trees_rank['green'] = $value['green'];
-                $me_trees_rank['rank'] = $key;
+                $me_trees_rank['rank'] = $key+1;
                 $me_trees_rank['id'] = $info['id'];
                 // unset($trees_rank[$key]);
             }
