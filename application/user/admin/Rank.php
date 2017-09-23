@@ -28,21 +28,21 @@ class Rank extends Admin
 
         // 获取查询条件
         $map = $this->getMap();
-        $order = $this->getOrder();
+        // $order = $this->getOrder();
         $page = 1;
         if (isset($_GET['page'])) {
             $page = intval($_GET['page']);
         }
         if(isset($_GET['list_rows'])){
             // $limit = $page*$_GET['list_rows'];
-            $limit = (page-1)*$_GET['list_rows'] + 1;
+            $limit = ($page-1)*$_GET['list_rows'] + 1;
         }else{
             
-            $limit = (page-1)*20 + 1;
+            $limit = ($page-1)*20 + 1;
             
         }
         // 数据列表
-        $data_list = RankModel::where($map)->order($order)->paginate();
+        $data_list = RankModel::where($map)->order('green DESC')->paginate();
         foreach ($data_list as $key => $value) {
             $rank = ($key+1)+$limit;
             $data_list[$key]['rank'] = $rank;
@@ -61,7 +61,7 @@ class Rank extends Admin
         return ZBuilder::make('table')
             ->setPageTitle('排行榜') // 设置页面标题
             ->setTableName('rank') // 设置数据表名
-            ->addOrder('green') // 添加排序
+            // ->addOrder('green') // 添加排序
             ->hideCheckbox()
             ->setSearch([ 'name' => '名称']) // 设置搜索参数
             ->addColumns([ // 批量添加列
