@@ -21,7 +21,7 @@ class Rank extends Home
         
         //植树
         $me_trees_rank = [];
-        $trees_rank = db('rank')->where('type','0')->order('green DESC')->limit(100)->select();
+        $trees_rank = db('rank')->where('type','0')->order('id DESC')->limit(100)->select();
         foreach ($trees_rank as $key => $value) {
             if ($value['user_id']==$member['id']) {
                 $me_trees_rank['name'] = $value['name'];
