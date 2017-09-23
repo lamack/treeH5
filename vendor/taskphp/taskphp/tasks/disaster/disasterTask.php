@@ -20,32 +20,29 @@ class disasterTask extends Task{
 
         $disaster =  Utils::model("disaster")->where(' end_time > UNIX_TIMESTAMP() and start_time < UNIX_TIMESTAMP() and status = 0')->find();
 
-        if($disaster === false){
-        flush();
-            exit;
-        }
-
-        Utils::model("disaster")->where(array("id",$disaster['id']))->save(array('status'=>2));
+        if($disaster){
+            Utils::model("disaster")->where(array("id",$disaster['id']))->save(array('status'=>2));
         
 
+            //找出没道具去成长值 
+            $sql=' update game_trees 
+                    set level = 1,disaster=1
+                    where status = 0 and disaster=0 and level =2 and user_id not in (select user_id from game_my_prop WHERE prop_type = 4 and `status`=0 )';
+            Utils::model("trees")->execute($sql);
 
+            //有道具
+            $sql1='update game_my_prop a inner join(select * from game_my_prop where status = 0 and prop_type=4 limit 1) b on a.id = b.id
+    inner join(select * from game_trees where status = 0 and level=2 and disaster=0) c on a.user_id = c.user_id
+    set  a.disaster_id = ceiling(RAND()*3),a.status=1,a.trees_id=c.id where 
+    a.status = 0  and a.prop_type=4 and a.id = b.id ';
+            Utils::model("my_prop")->execute($sql1);
 
-        //找出没道具去成长值 
-        $sql=' update game_trees 
-                set level = 1,disaster=1
-                where status = 0 and disaster=0 and level =2 and user_id not in (select user_id from game_my_prop WHERE prop_type = 4 and `status`=0 )';
-        Utils::model("trees")->execute($sql);
+            $sql2 ='UPDATE game_trees INNER JOIN game_my_prop ON game_trees.id=game_my_prop.trees_id
+    SET game_trees.disaster=1 WHERE game_my_prop.status=1 and game_my_prop.prop_type=4';
+            Utils::model("my_prop")->execute($sql2);
+        }
 
-        //有道具
-        $sql1='update game_my_prop a inner join(select * from game_my_prop where status = 0 and prop_type=4 limit 1) b on a.id = b.id
-inner join(select * from game_trees where status = 0 and level=2 and disaster=0) c on a.user_id = c.user_id
-set  a.disaster_id = ceiling(RAND()*3),a.status=1,a.trees_id=c.id where 
-a.status = 0  and a.prop_type=4 and a.id = b.id ';
-        Utils::model("my_prop")->execute($sql1);
-
-        $sql2 ='UPDATE game_trees INNER JOIN game_my_prop ON game_trees.id=game_my_prop.trees_id
-SET game_trees.disaster=1 WHERE game_my_prop.status=1 and game_my_prop.prop_type=4';
-        Utils::model("my_prop")->execute($sql2);
+        
 
 //         //公告时间
 //         $sql = 'INSERT INTO game_adv_disaster
