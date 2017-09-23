@@ -33,10 +33,15 @@ class Rank extends Admin
         if (isset($_GET['page'])) {
             $page = intval($_GET['page']);
         }
+        if(isset($_GET['list_rows'])){
+            $limit = $page*$_GET['list_rows'];
+        }else{
+            $limit = $page*20;
+        }
         // 数据列表
         $data_list = RankModel::where($map)->order($order)->paginate();
         foreach ($data_list as $key => $value) {
-            $rank = ($key+1)*$page;
+            $rank = ($key+1)+$limit;
             $data_list[$key]['rank'] = $rank;
 
             $data_list[$key]['green_max'] = _getGreen($value['user_id']);
