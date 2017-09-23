@@ -41,11 +41,21 @@ class Rank extends Admin
             $limit = ($page-1)*20 + 1;
             
         }
+
+        $btn_3 = [
+            'title' => '同步',
+            'icon'  => 'fa fa-fw fa-copy',
+            'class' => 'btn btn-primary ajax-get confirm',
+            'data-title' => '确定更新排行数据吗？',
+            'data-tips' => '同步数据量非常大，确认在网络不拥挤下执行操作',
+            'href'  => url('synchro')
+        ];
+
         // 数据列表
         $data_list = RankModel::where($map)->order('green DESC')->paginate();
         foreach ($data_list as $key => $value) {
             $rank = ($key)+$limit;
-            $data_list[$key]['rank'] = $rank;
+            // $data_list[$key]['rank'] = $rank;
 
             $data_list[$key]['green_max'] = _getGreen($value['user_id']);
             $data_list[$key]['share'] = _getShare($value['user_id']);
@@ -75,8 +85,23 @@ class Rank extends Admin
                 ['total_time', '答题时间']
             ])
             ->setRowList($data_list) // 设置表格数据
+            ->addTopButton('custom', $btn_3) // 批量添加顶部按钮
             ->setPages($page) // 设置分页数据
             ->fetch(); // 渲染页面
+    }
+
+    public function synchro(){
+        $sql = 'truncate table game_rank_temp';
+        db("rank_temp")->execute($sql);
+
+        $sql = 'INSERT INTO game_rank_temp
+            (user_id)
+  select user_id from game_rank';
+        db("rank_temp")->execute($sql);
+        $sql = 'UPDATE game_rank  a SET a.rank = (SELECT id FROM game_rank_temp WHERE user_id = a.user_id)';
+        db("rank_temp")->execute($sql);
+        
+        $this->success('同步成功');
     }
 
 
