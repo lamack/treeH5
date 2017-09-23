@@ -29,12 +29,14 @@ class Rank extends Admin
         // 获取查询条件
         $map = $this->getMap();
         $order = $this->getOrder();
-        
-        
+        $page = 1;
+        if (isset($_GET['page'])) {
+            $page = intval($_GET['page']);
+        }
         // 数据列表
         $data_list = RankModel::where($map)->order($order)->paginate();
         foreach ($data_list as $key => $value) {
-            $rank = $key+1;
+            $rank = ($key+1)*$page;
             $data_list[$key]['rank'] = $rank;
 
             $data_list[$key]['green_max'] = _getGreen($value['user_id']);
