@@ -14,7 +14,7 @@ class wxsportTask extends Task{
      * @see \core\lib\Task::run()
      */
   public function run(){
-
+      ini_set("memory_limit","512M");
       $res = Utils::model("wxsport",'','mysql://root:Tripshare2017@rm-bp1c7jlz0045ph079o.mysql.rds.aliyuncs.com:3366/jianbuzou#utf8')->select();
       //切换数据库
       if ($res) {
