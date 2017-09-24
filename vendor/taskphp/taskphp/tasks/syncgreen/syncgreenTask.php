@@ -15,52 +15,61 @@ class syncgreenTask extends Task{
 	public function run(){
 
 	    Utils::dbConfig(Utils::config('DB','syncgreen'));
-
+        Utils::log(time().':tasks\syncgreen\syncgreen task one [--START--]');
         //注册了申工社APP
         if (Utils::model("task")->where('type',1)->find()) {
 //             $sql1 = 'update game_member a 
-// inner join (select uid, COUNT(uid) as cout,phone from game_user_info ) b on a.contact = b.phone 
+// inner join game_user_info b on a.contact = b.phone 
 // set a.green_nocash = a.green_nocash+38 , green_max = a.green_max+38 
-// where NOT EXISTS (select user_id from game_green_record where sign=1 and a.id = user_id ) and b.cout>0';
+// where NOT EXISTS (select user_id from game_green_record where sign=1 and a.id = user_id ) and b.uid is not null';
+
             $sql1 = 'update game_member a 
-inner join game_user_info b on a.contact = b.phone 
+inner join game_user_info b on a.contact = b.phone left join game_green_record c on a.id = c.user_id
 set a.green_nocash = a.green_nocash+38 , green_max = a.green_max+38 
-where NOT EXISTS (select user_id from game_green_record where sign=1 and a.id = user_id ) and b.uid is not null';
+where  c.sign=1 and c.user_id is null and b.uid is not null';
             if(Utils::model("member")->execute($sql1)){
                 $sql2 = 'insert into game_green_record (user_id,green,create_time,sign) 
 SELECT id,38,unix_timestamp(),1 FROM game_member a 
 where not exists(select * from game_green_record where sign = 1 and a.id = user_id)';
                 Utils::model("green_record")->execute($sql2);
             } 
+          
         }
-
+         Utils::log(time().':tasks\syncgreen\syncgreen task one [--END--]');  
         //绑定“申工社”APP
+        Utils::log(time().':tasks\syncgreen\syncgreen task two [--START--]');
         if (Utils::model("task")->where('type',2)->find()) {
+        
 //             $sql3 = 'update game_member a 
-// inner join (select uid, COUNT(uid) as cout,phone from game_user_info where is_bind=1) b on a.contact = b.phone 
+// inner join game_user_info b on a.contact = b.phone 
 // set a.green_nocash = a.green_nocash+58 , green_max = green_max+58 
-// where NOT EXISTS (select user_id from game_green_record where sign=2 and a.id = user_id ) and b.cout>0';
+// where NOT EXISTS (select user_id from game_green_record where sign=2 and a.id = user_id ) and b.is_bind>0 and b.uid is not null';
             $sql3 = 'update game_member a 
-inner join game_user_info b on a.contact = b.phone 
+inner join game_user_info b on a.contact = b.phone left join game_green_record c on a.id = c.user_id
 set a.green_nocash = a.green_nocash+58 , green_max = green_max+58 
-where NOT EXISTS (select user_id from game_green_record where sign=2 and a.id = user_id ) and b.is_bind>0 and b.uid is not null';
+where c.sign=2 and c.user_id is null and b.is_bind>0 and b.uid is not null';
+
             if(Utils::model("member")->execute($sql3)){
                 $sql4 = 'insert into game_green_record (user_id,green,create_time,sign) 
 SELECT id,58,unix_timestamp(),2 FROM game_member a 
 where not exists(select * from game_green_record where sign = 2 and a.id = user_id)';
                 Utils::model("green_record")->execute($sql4);
             } 
+            
         }
+        Utils::log(time().':tasks\syncgreen\syncgreen task two [--END--]'); 
         //绑定“88共享”出行APP
+        Utils::log(time().':tasks\syncgreen\syncgreen task three [--START--]');
         if (Utils::model("task")->where('type',3)->find()) {
+        
 //             $sql5 = 'update game_member a 
-// inner join (select PHONE, COUNT(PHONE) as cout,SOURCE from game_user_login where SOURCE="SGS") b on a.contact = b.PHONE 
+// inner join  game_user_login b on a.contact = b.PHONE 
 // set a.green_nocash = a.green_nocash+58 , green_max = green_max+58 
-// where NOT EXISTS (select user_id from game_green_record where sign=3 and a.id = user_id ) and b.cout>0';
+// where NOT EXISTS (select user_id from game_green_record where sign=3 and a.id = user_id ) and b.SOURCE="SGS" and b.PHONE is not null';
             $sql5 = 'update game_member a 
-inner join  game_user_login b on a.contact = b.PHONE 
+inner join  game_user_login b on a.contact = b.PHONE left join game_green_record c on a.id = c.user_id
 set a.green_nocash = a.green_nocash+58 , green_max = green_max+58 
-where NOT EXISTS (select user_id from game_green_record where sign=3 and a.id = user_id ) and b.SOURCE="SGS" and b.PHONE is not null';
+where c.sign=3 and c.user_id is null and b.SOURCE="SGS" and b.PHONE is not null';
             if(Utils::model("member")->execute($sql5)){
                 $sql6 = 'insert into game_green_record (user_id,green,create_time,sign) 
 SELECT id,58,unix_timestamp(),3 FROM game_member a 
@@ -68,17 +77,19 @@ where not exists(select * from game_green_record where sign = 3 and a.id = user_
                 Utils::model("green_record")->execute($sql6);
             } 
         }
+        Utils::log(time().':tasks\syncgreen\syncgreen task three [--END--]');
         //绑定上海农商银行借记卡
+        Utils::log(time().':tasks\syncgreen\syncgreen task four [--START--]');
         if (Utils::model("task")->where('type',4)->find()) {
 //             $sql5 = 'update game_member a 
-// inner join (select PHONE, COUNT(PHONE) as cout,PAY_TYPE from game_passenger_trip where PAY_TYPE="SRCB") b on a.contact = b.PHONE 
+// inner join  game_passenger_trip  b on a.contact = b.PHONE 
 // set a.green_nocash = a.green_nocash+58 , green_max = green_max+58 
-// where NOT EXISTS (select user_id from game_green_record where sign=4 and a.id = user_id ) and b.cout>0';
+// where NOT EXISTS (select user_id from game_green_record where sign=4 and a.id = user_id ) and b.PAY_TYPE="SRCB" and b.PHONE is not null';
         
             $sql5 = 'update game_member a 
-inner join  game_passenger_trip  b on a.contact = b.PHONE 
+inner join  game_passenger_trip  b on a.contact = b.PHONE left join game_green_record c on a.id = c.user_id
 set a.green_nocash = a.green_nocash+58 , green_max = green_max+58 
-where NOT EXISTS (select user_id from game_green_record where sign=4 and a.id = user_id ) and b.PAY_TYPE="SRCB" and b.PHONE is not null';
+where c.sign=4 and c.user_id is null and b.PAY_TYPE="SRCB" and b.PHONE is not null';
 
             if(Utils::model("member")->execute($sql5)){
                 $sql6 = 'insert into game_green_record (user_id,green,create_time,sign) 
@@ -87,8 +98,9 @@ where not exists(select * from game_green_record where sign = 4 and a.id = user_
                 Utils::model("green_record")->execute($sql6);
             } 
         }
-
+        Utils::log(time().':tasks\syncgreen\syncgreen task four [--END--]');
         //司机首单获取20元洗车券
+        Utils::log(time().':tasks\syncgreen\syncgreen task five [--START--]');
         if (Utils::model("task")->where('type',5)->find()) {
         
             $sql5 = 'insert into game_recode(user_id,conpon_id,create_time,type) SELECT a.id,1,unix_timestamp(),1 
@@ -122,8 +134,9 @@ where b.type = 1 ';
                 
             } 
         }
-
+        Utils::log(time().':tasks\syncgreen\syncgreen task five [--END--]');
         //司机首次完成10单拼车获取20元洗车券
+        Utils::log(time().':tasks\syncgreen\syncgreen task six [--START--]');
         if (Utils::model("task")->where('type',6)->find()) {
         
             $sql5 = 'insert into game_recode(user_id,conpon_id,create_time,type) SELECT a.id,1,unix_timestamp(),1 
@@ -155,7 +168,7 @@ where b.type = 1 ';
                 
             } 
         }
-
+        Utils::log(time().':tasks\syncgreen\syncgreen task six [--END--]');
 		flush();
 	}
 
