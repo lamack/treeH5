@@ -55,6 +55,26 @@ class Ranklist extends Common
             $info = db('member')->where('sign',$params['uid'])->find();
             if (!$info) {
                 session('_MEMBER',null);//
+                //获得中间库用户信息
+                $db = Db::connect('mysql://root:Tripshare2017@rm-bp1c7jlz0045ph079o.mysql.rds.aliyuncs.com:3366/sgs_bzds#utf8');//正式
+                // $db = Db::connect('mysql://root:Innketek201306@139.196.20.81:3306/dolphin#utf8');
+                //$res = $db->name('game_user_info')->where('uid',$params['uid'])->find();
+                $res = $db->name('user_info')->where('uid',$params['uid'])->find();
+
+                if ($res) {
+                    $data['username'] = $res['user_name'];
+                    $data['sign'] = $res['uid'];
+                    $data['contact'] = $res['phone'];
+                    $data['class_no'] = $res['team_code'];
+                    $data['class'] = $res['team_name'];
+                    $data['company'] = $res['company'];
+                    $data['company_no'] = $res['company'];
+                    $data['area'] = $res['county'];
+                    $data['trees'] = 1;
+                    db('member')->insert($data);
+
+                    $this ->redirect('index/launch',array('uid' => $params['uid'],'sign' => $params['sign']),1, '会员同步登录中...');
+                }
                 $data = ['msg'=>'用户不存在','status'=>'error'];
                 return $this->fetch('error1'); // 渲染模板
                 return json($data);
