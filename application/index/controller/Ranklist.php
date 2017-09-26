@@ -6,6 +6,7 @@ namespace app\index\controller;
 use app\common\controller\Common;
 
 use \think\Request;
+use \think\Db;
 
 /**
  * 前台首页控制器
