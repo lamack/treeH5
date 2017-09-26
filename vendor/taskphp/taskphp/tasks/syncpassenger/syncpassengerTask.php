@@ -22,7 +22,7 @@ class syncpassengerTask extends Task{
       $sql5 = 'delete from game_passenger_total';
       Utils::model("passenger_total")->execute($sql5);
       //update
-      $sql4 = 'insert into game_passenger_temp (select b.* from game_passenger_trip b left join game_member a on b.PHONE = a.contact  where  unix_timestamp(b.END_DATETIME)>a.passenger_time) order by b.id limit 2';
+      $sql4 = 'insert into game_passenger_temp (select b.* from game_passenger_trip b left join game_member a on b.PHONE = a.contact  where  unix_timestamp(b.END_DATETIME)>a.passenger_time limit 2) order by b.id ';
       Utils::model("passenger_temp")->execute($sql4);
       
       //总计
