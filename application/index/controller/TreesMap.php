@@ -21,7 +21,11 @@ class TreesMap extends Home
         $profile_trees = db('trees')->where('user_id',$member['id'])->count();
 
         //班级
-        $class_count = db('trees')->alias('a')->join(' member b',' b.id = a.user_id','LEFT')->where('b.class_no',$member['class_no'])->count();   
+        $class_count = 0;
+        if ($member['class_no']) {
+            $class_count = db('trees')->alias('a')->join(' member b',' b.id = a.user_id','LEFT')->where('b.class_no',$member['class_no'])->count();  
+        }
+         
         //公司
         $company_count = db('trees')->alias('a')->join(' member b',' b.id = a.user_id','LEFT')->where('b.company_no',$member['company_no'])->count();  
 
