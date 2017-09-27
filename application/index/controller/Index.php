@@ -431,6 +431,7 @@ class Index extends Home
             }
             //添加记录
             $save['user_id'] = $member['id'];
+            $save['cash'] = $prop['cash'];
             $save['recode'] = '兑换道具，消耗成长币'.$prop['cash'];
             $save['create_time'] = time();
             db('growCoin')->insert($save);
@@ -521,6 +522,15 @@ class Index extends Home
         
     }
     
+    public function cash_coin(){
+        $info = db('grow_coin')->select();
+        foreach ($info as $key => $value) {
+            $mp['id'] = $value['id'];
+            $sv['cash'] = substr($value['recode'],-2);
+            db('grow_coin')->where($mp)->update($sv);
+        }
+    }
+
     public function getaward(){
         //取用户
         $member = session('_MEMBER');
