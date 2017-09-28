@@ -29,13 +29,22 @@ class syncpassengerTask extends Task{
       $sql5 = 'insert into game_passenger_total (MILES,PHONE) select  (CASE  WHEN sum(MILES)>20 THEN 20 ELSE sum(MILES)  END) as MILES ,PHONE from game_passenger_temp where 1 group by PHONE';
       Utils::model("passenger_total")->execute($sql5);
 
-
-        //取总量程
+      //取总量程
         $sql = 'update game_member a 
 inner join  game_passenger_total  b on a.contact = b.PHONE  
-set a.mileage = (a.mileage+b.MILES),a.green_max = round(b.MILES)+a.green_max,a.green = round(b.MILES)+a.green,passenger_time = unix_timestamp() where 1';
-      
+set a.mileage = (a.mileage+b.MILES),a.green_mileage = round(b.MILES)+a.green_mileage,passenger_time = unix_timestamp() where 1';
         Utils::model("member")->execute($sql);
+
+        $sql = 'update game_member set green = green_mileage + green_steps - green_spent, green_max = green_mileage + green_steps + green_noc
+ach';
+        Utils::model("member")->execute($sql);
+        
+//         //取总量程
+//         $sql = 'update game_member a 
+// inner join  game_passenger_total  b on a.contact = b.PHONE  
+// set a.mileage = (a.mileage+b.MILES),a.green_max = round(b.MILES)+a.green_max,a.green = round(b.MILES)+a.green,passenger_time = unix_timestamp() where 1';
+      
+//         Utils::model("member")->execute($sql);
 
          //update time
         // $sql1 = 'update game_member set passenger_time = unix_timestamp() where 1';
