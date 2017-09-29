@@ -307,7 +307,9 @@ class Index extends Home
         $ts['is_show'] = 1; 
         $trees_id = $this->_currentTree()['id'];
         if ($trees_id) {
-            db('trees')->where('id',$trees_id)->update($ts);
+            $map['id'] = $trees_id;
+            $map['disaster'] = 1;
+            db('trees')->where($map)->update($ts);
             $data = ['status'=>'succ','msg'=>'成功'];
             return json(['data'=>$data,'code'=>1,'message'=>'获得成功']);
         }else{
